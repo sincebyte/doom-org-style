@@ -1,33 +1,34 @@
 
 # Table of Contents
 
-1.  [使用](#orgaebf7ec)
-2.  [字体样式](#orgc16ce17)
-3.  [特殊说明](#org9254e02)
-    1.  [quote 摘要、引用](#org3a7d786)
-    2.  [notice 注意事项、提醒](#orgcbc6bad)
-4.  [段落及高亮](#org75651c1)
-5.  [表格](#org5aa9359)
-    1.  [awk 表格](#org0c84b00)
-    2.  [表格自增id](#org7375c4d)
-6.  [LaTex 公式](#org21e3546)
-7.  [代码](#org7cd7d2f)
-    1.  [Java代码](#orgdcbc134)
-    2.  [babel java](#org6d08550)
-8.  [图片](#orgea71702)
-    1.  [引用本地图片](#org809f7b8)
-    2.  [引用网络图片](#org577ffd6)
-    3.  [dot graphviz](#org09c3cbf)
-    4.  [plantuml](#org119913c)
-9.  [org转Word](#org4d89cef)
-10. [插入时间](#org1223fa0)
+1.  [使用](#org731d57c)
+2.  [字体样式](#orgac9d8e6)
+3.  [特殊说明](#orgf4b609f)
+    1.  [quote 摘要、引用](#org3cb0b4f)
+    2.  [notice 注意事项、提醒](#org88a8f1f)
+4.  [段落及高亮](#org550bbf2)
+5.  [表格](#org7dca22d)
+    1.  [awk 表格](#orgd29def7)
+    2.  [表格自增id](#org35518d1)
+6.  [LaTex 公式](#orge1ff4b6)
+7.  [代码](#org3ef9e8d)
+    1.  [Java代码](#org4c588b0)
+    2.  [babel java](#org9e163e5)
+8.  [图片](#orgc45aa05)
+    1.  [引用本地图片](#org2427490)
+    2.  [引用网络图片](#orga8c0412)
+    3.  [dot graphviz](#org8f70878)
+    4.  [plantuml](#org1909c6c)
+9.  [org转Word](#org3c9eb0f)
+10. [插入时间](#org89cea06)
 
 > 样式引用：<https://docs.doomemacs.org/latest/#/modules>  
 
 ![img](./image/doom-org-style.png)  
+一个类 **doom doc** 的 **org html** 样式模版 [点此预览🪄](http://1.117.167.195/doc/doomorgstyle.html)  
 
 
-<a id="orgaebf7ec"></a>
+<a id="org731d57c"></a>
 
 # 使用
 
@@ -50,18 +51,18 @@
     #+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
     #+latex:\newpage
 
-<div class="notice-info" id="org0e88b57">
+<div class="notice-info" id="org54afc0b">
 <p>
 想使用在线版的静态文件，可以使用下面的配置进行替换<br />
 </p>
 
 </div>
 
-    <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet"></link>
-    <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
+    #+HTML_HEAD: <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet"></link>
+    #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
 
 
-<a id="orgc16ce17"></a>
+<a id="orgac9d8e6"></a>
 
 # 字体样式
 
@@ -106,12 +107,12 @@
 </table>
 
 
-<a id="org9254e02"></a>
+<a id="orgf4b609f"></a>
 
 # 特殊说明
 
 
-<a id="org3a7d786"></a>
+<a id="org3cb0b4f"></a>
 
 ## quote 摘要、引用
 
@@ -121,25 +122,25 @@
 > A combination text editor/really horrible ProgrammingLanguage. To quote the paper &ldquo;RealProgrammers don&rsquo;t use Pascal&rdquo; (1983):  
 
 
-<a id="orgcbc6bad"></a>
+<a id="org88a8f1f"></a>
 
 ## notice 注意事项、提醒
 
-<div class="notice-info" id="orgdd73698">
+<div class="notice-info" id="org161a451">
 <p>
 你有许多已标记的项目并且你可能错过一个重要的项目时，提醒可以提供帮助<br />
 </p>
 
 </div>
 
-<div class="notice-warning" id="org82e60b2">
+<div class="notice-warning" id="org2c54d8e">
 <p>
 Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverflow. Kindly refer them to this section.<br />
 </p>
 
 </div>
 
-<div class="notice-example" id="org614cbf6">
+<div class="notice-example" id="orgee604c8">
 <p>
 这是1个例子<br />
 </p>
@@ -147,7 +148,7 @@ Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverf
 </div>
 
 
-<a id="org75651c1"></a>
+<a id="org550bbf2"></a>
 
 # 段落及高亮
 
@@ -164,7 +165,7 @@ HDFS是如何实现大数据高速、可靠的存储和访问的呢？
 -   Hadoop分布式文件系统HDFS的设计目标是管理数以千计的服务器、数以万计的磁盘，将大规模的服务器计算资源当作一个单一存储系统进行管理，对应用程序提供数以PB计的存储容量，让应用程序像使用普通文件系统一样存储大规模的文件数据。
 
 
-<a id="org5aa9359"></a>
+<a id="org7dca22d"></a>
 
 # 表格
 
@@ -405,11 +406,11 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
-<a id="org0c84b00"></a>
+<a id="orgd29def7"></a>
 
 ## awk 表格
 
-<table id="orgfb5cebb" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org61cf504" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -560,7 +561,7 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
-<a id="org7375c4d"></a>
+<a id="org35518d1"></a>
 
 ## 表格自增id
 
@@ -602,7 +603,7 @@ org table `M-k` `M-j` for move Rows up and down
 `C-c` `C-c` to execute it  
 
 
-<a id="org21e3546"></a>
+<a id="orge1ff4b6"></a>
 
 # LaTex 公式
 
@@ -620,12 +621,12 @@ $$\begin{aligned}
 \end{aligned} $$  
 
 
-<a id="org7cd7d2f"></a>
+<a id="org3ef9e8d"></a>
 
 # 代码
 
 
-<a id="orgdcbc134"></a>
+<a id="org4c588b0"></a>
 
 ## Java代码
 
@@ -653,7 +654,7 @@ $$\begin{aligned}
     }
 
 
-<a id="org6d08550"></a>
+<a id="org9e163e5"></a>
 
 ## babel java
 
@@ -663,33 +664,33 @@ $$\begin{aligned}
 `C-c` `C-c` to execute it, but export to html will fail when the babel java result generated.  
 
 
-<a id="orgea71702"></a>
+<a id="orgc45aa05"></a>
 
 # 图片
 
 
-<a id="org809f7b8"></a>
+<a id="org2427490"></a>
 
 ## 引用本地图片
 
 ![img](./image/excalidraw-demo.svg "create by <https://excalidraw.com/>")  
 
 
-<a id="org577ffd6"></a>
+<a id="orga8c0412"></a>
 
 ## 引用网络图片
 
 ![img](https://raw.githubusercontent.com/doomemacs/doomemacs/screenshots/main.png "from doom emacs readme.md")  
 
 
-<a id="org09c3cbf"></a>
+<a id="org8f70878"></a>
 
 ## dot graphviz
 
 ![img](image/dot-graphviz-demo.svg "XX系统v1.2.3架构图")  
 
 
-<a id="org119913c"></a>
+<a id="org1909c6c"></a>
 
 ## plantuml
 
@@ -714,14 +715,14 @@ $$\begin{aligned}
     ![img](image/plantuml-c4.svg "系统Contex架构图")  
 
 
-<a id="org4d89cef"></a>
+<a id="org3c9eb0f"></a>
 
 # org转Word
 
     pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
 
 
-<a id="org1223fa0"></a>
+<a id="org89cea06"></a>
 
 # 插入时间
 

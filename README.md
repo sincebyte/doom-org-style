@@ -1,1 +1,1 @@
-![img](./image/doom org style.png "")
+![avatar](./image/doom org style.png)

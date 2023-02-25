@@ -16,7 +16,7 @@
 样式引用：https://docs.doomemacs.org/latest/#/modules
 #+end_quote
 #+latex:\newpage
-[[file:./image/doom org style.png]]
+[[file:./image/doom-org-style.png]]
 * 使用
 配置 *snippet* 模版，然后在 *org mode* 文件中使用 ~t~ ~t~ ~tab~ 就可展开此模版。
 #+begin_src org

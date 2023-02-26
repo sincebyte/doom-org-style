@@ -2,8 +2,8 @@
 :ID:       d33b18eb-be5d-4fce-b793-a4d3e51bd915
 :END:
 #+title: doom org style
-#+SUBTITLE: A vairty of template about org mode code which one referenced the doom doc style
-#+AUTHOR: vanniuner
+#+subtitle: A vairty of template about org mode code which one referenced the doom doc style
+#+author: vanniuner
 #+HTML_HEAD: <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet"></link>
 #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>

@@ -236,6 +236,7 @@ $$\begin{aligned}
 #+CAPTION[Short caption]: from doom emacs readme.md
 [[https://raw.githubusercontent.com/doomemacs/doomemacs/screenshots/main.png]]
 ** dot graphviz
+*** dot
 #+BEGIN_SRC dot :file image/dot-graphviz-demo.svg
     digraph G {
         node [shape="box",fontcolor="#4EAEEF"]
@@ -270,6 +271,41 @@ $$\begin{aligned}
 #+CAPTION: XX系统v1.2.3架构图
 #+RESULTS:
 [[file:image/dot-graphviz-demo.svg]]
+
+*** dot sk
+
+#+BEGIN_SRC dotsk :file image/dot-sk-graphviz-demo.svg
+digraph G {
+    node [shape="box",fontcolor="#4EAEEF"]
+    edge [color="#a69fe0" fontcolor=white]
+    bgcolor="transparent"
+    rankdir = TD
+    compound=true
+
+    subgraph clusterD {
+        fontcolor=white
+        label = "Local";
+        SlaughterServerB -> LocalDBB [splines=ortho]
+        SlaughterServerB -> SlaughterClientB [minlen=1]
+        {rank=same;  SlaughterServerB , LocalDBB }
+    }
+
+    subgraph clusterM {
+        node [shape="box",fontcolor="#c475db"]
+        fontcolor=white
+        label = "Local";
+        SlaughterServerA -> LocalDBA [splines=ortho ]
+        SlaughterServerA -> SlaughterClientA [minlen=1]
+        {rank=same;  SlaughterServerA , LocalDBA }
+    }
+    EBS -> SlaughterServerA [dir=both minlen=2 label="ϟ" lhead="clusterM"][constraint=true];
+    EBS -> SlaughterServerB [dir=both,minlen=2,label="ϟ" lhead="clusterD" color="#a69fe0:#c475db"]
+}
+#+END_SRC
+
+#+CAPTION: 手绘风格的dot graphviz
+#+RESULTS:
+[[file:image/dot-sk-graphviz-demo.svg]]
 
 ** plantuml
 *** plantuml with style css
@@ -358,6 +394,25 @@ DARKORANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN
 #+CAPTION: 系统Contex架构图
 #+RESULTS:
 [[file:image/plantuml-c4.svg]]
+*** 泳道图
+#+BEGIN_SRC plantuml :file ./image/plantuml-swiming.svg
+!define LIGHTGREEN
+!includeurl /Users/van/org/org-roam/C4-PlantUML/juststyle.puml
+skinparam backgroundColor transparent
+|#gray|原材料成品仓库\l(中台)|
+|#white|车间库\l(中台)|
+|#gray|车间\l(MES)|
+:打印领料申请;
+|#gray|原材料成品仓库\l(中台)|
+:转库单;
+|#white|车间库\l(中台)|
+:车间入库;
+
+#+END_SRC
+
+#+RESULTS:
+[[file:./image/plantuml-swiming.svg]]
+
 * org转Word
 #+begin_src shell
 pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org

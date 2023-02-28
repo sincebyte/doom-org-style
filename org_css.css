@@ -64,17 +64,17 @@ a:link, a:hover, a:visited {
                  }
 
 a:link {
-    background: #ff8;
+    /* background: #kf8; */
 }
 
 a:visited {
     color: #4EAEEF;
-    background: #ffc;
+    /* background: #ffc; */
 }
 
 a:link:hover,
 a:visited:hover {
-    background: #ff0;
+    /* background: #ff0; */
 }
 
 a[href^="http"] {
@@ -322,7 +322,7 @@ pre {
     border: 0;
     box-shadow: none;
     margin: 0em;
-    margin-top: 2em;
+    margin-top: 0.5em;
     margin-bottom: 2em;
 }
 
@@ -347,9 +347,16 @@ pre {
 
 pre.src {
 	background-color: #24272E;
-    padding: 0.5em;
-    border-left: 4px solid hsla(222,12%,10%);
+    padding: 0em;
+    padding-top: 0.1em;
+    padding-bottom: 0.2rem;
+    /* border-left: 4px solid hsla(222,12%,10%); */
     /* box-shadow: 1px 1px 1px hsla(222,12%,9%); */
+}
+
+pre.src span{
+    font-size: .875rem;
+    line-height: 1rem;
 }
 
 pre.src:before {
@@ -559,7 +566,7 @@ pre.src:hover:before{
 
     a:visited {
         color: black;
-        background: #ff8;
+        /* background: #ff8; */
     }
 
     a[href^="http"]:visited {
@@ -658,12 +665,12 @@ caption {
 }
 
 .linenr {
-    background: hsl(286,59%,66%);
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    line-height: 0;
+    background: rgb(52, 58, 64);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    font-size: .875rem;
+    line-height: 1rem;
 }
 
 mjx-container {

@@ -251,8 +251,8 @@ div.notice p ,div.notice-info p, div.notice-warning p ,div.notice-example p{
 }
 
 .notice-example {
-    background: #def;
-    color: #069;
+    background: hsla(219,23%,54%,25%);
+    color: hsla(219,23%,54%,100%);
     position: relative;
     padding: 0.25em 1em;
     border-left: 4px solid;
@@ -261,7 +261,7 @@ div.notice p ,div.notice-info p, div.notice-warning p ,div.notice-example p{
 
 .notice-info {
     background: hsla(85,40%,56%,30%);
-    color: hsla(0,0%,87%,100%);
+    color: hsla(0,0%,87%,70%);
     position: relative;
     padding: 0.25em 1em;
     border-left: 4px solid #060;
@@ -370,6 +370,26 @@ pre.src:before {
     border: 0;
     color: #4eaeef;
     font-size: 80%;
+}
+
+.org-src-container::before {
+    content: "⎘";
+    font-size: 200%;
+    color: black;
+    background-color: hsl(204,65%,60%,30%);;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    left: 102%;
+    padding-left: 2px;
+    padding-right: 2px;
+    line-height: 1em;
+    top: 1.3em;
+}
+
+.org-src-container:hover::before  {
+    color: hsl(204,65%,60%,100%);
 }
 
 pre.src-plantuml:before {
@@ -671,6 +691,7 @@ caption {
     padding-left: 5px;
     font-size: .875rem;
     line-height: 1rem;
+    user-select:none;
 }
 
 mjx-container {

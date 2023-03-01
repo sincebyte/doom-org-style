@@ -21,33 +21,33 @@
 一个类 *doom doc* 的 *org html* 样式模版 [[http://1.117.167.195/doc/doomorgstyle.html][点此预览🪄]]
 * 使用
 配置 *snippet* 模版，然后在 *org mode* 文件中使用 ~t~ ~t~ ~tab~ 就可展开此模版。
-#+begin_src org
-# -*- mode: snippet -*-
-# name: title
-# key: tt
-# --
-#+title: `(file-name-sans-extension (buffer-name))`
-#+SUBTITLE: this is subtitle
-#+AUTHOR: autor
-#+HTML_HEAD: <script src="scroll.js"></script>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org_css.css"/>
-#+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-#+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
-#+LATEX_COMPILER: xelatex
-#+LATEX_CLASS: elegantpaper
-#+MACRO: htmlred @@html:<font color="red"></font>@@
-#+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
-#+latex:\newpage
+#+begin_src org -n
+    # -*- mode: snippet -*-
+    # name: title
+    # key: tt
+    # --
+    #+title: `(file-name-sans-extension (buffer-name))`
+    #+SUBTITLE: this is subtitle
+    #+AUTHOR: autor
+    #+HTML_HEAD: <script src="scroll.js"></script>
+    #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org_css.css"/>
+    #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    #+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
+    #+LATEX_COMPILER: xelatex
+    #+LATEX_CLASS: elegantpaper
+    #+MACRO: htmlred @@html:<font color="red"></font>@@
+    #+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
+    #+latex:\newpage
 #+end_src
 
 #+begin_notice-info
 想使用在线版的静态文件，可以使用下面的配置进行替换
 #+end_notice-info
 
-#+begin_src org
-#+HTML_HEAD: <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet"></link>
-#+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-#+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
+#+begin_src org -n
+    #+HTML_HEAD: <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet"></link>
+    #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
 #+end_src
 * 字体样式
 #+CAPTION:字体样式说明
@@ -172,7 +172,7 @@ org table ~M-k~ ~M-j~ for move Rows up and down
 #+end_src
 ~C-c~ ~C-c~ to execute it
 * LaTex 公式
-#+begin_src txt
+#+begin_src txt -n
 $\mbox{需求的价格弹性系数} = \frac{\mbox{需求的变动率}}{\mbox{价格的变动率}}$
 #+end_src
 
@@ -192,7 +192,7 @@ $$\begin{aligned}
 
 * 代码
 代码片段开启行号，修改 `~/.emacs.d/.local/straight/repos/org/lisp/ox-html.el`
-#+begin_src lisp
+#+begin_src lisp -n
   (let* ((code-lines (split-string code "\n"))
 	 (code-length (length code-lines))
 	 (num-fmt
@@ -419,7 +419,7 @@ skinparam backgroundColor transparent
 [[file:./image/plantuml-swiming.svg]]
 
 * org转Word
-#+begin_src shell
+#+begin_src shell -n
 pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
 #+end_src
 

@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 jQuery( document).ready(function($){
     var copyid = 0;
-    $('.org-src-container').before().click(function (ev) {
+    $('div.org-src-container').before().click(function (ev) {
       const element = $(this);
       const storage = document.createElement('textarea');
       const contentCode = element.clone()

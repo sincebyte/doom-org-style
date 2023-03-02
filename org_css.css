@@ -321,6 +321,7 @@ pre {
     font-family: Inconsolata;
     border: 0;
     box-shadow: none;
+    padding-top: 0pt;
     margin: 0em;
     margin-top: 0.5em;
     margin-bottom: 2em;
@@ -346,11 +347,11 @@ pre {
 }
 
 pre.src {
-	background-color: #24272E;
-    padding: 0em;
+    background-color: #24272E;
+    /* padding: 0em; */
     padding-top: 0.1em;
     padding-bottom: 0.2rem;
-    /* border-left: 4px solid hsla(222,12%,10%); */
+    border-left: 4px solid hsla(222,12%,30%,80%) !important;
     /* box-shadow: 1px 1px 1px hsla(222,12%,9%); */
 }
 
@@ -367,7 +368,7 @@ pre.src:before {
     right: 0;
     padding: 0.25em 0.5em;
     /* border-bottom-left-radius: 8px; */
-    border: 0;
+    /* border: 0; */
     color: #4eaeef;
     font-size: 80%;
 }
@@ -649,7 +650,7 @@ blockquote {
     font-size: 95%;
     line-height: 1.5;
     color: #DEDEDE;
-    border: 0px solid hsl(204,65%,60%,30%);
+    /* border: 0px solid hsl(204,65%,60%,30%); */
     /* box-shadow: 2px 2px 2px hsl(204,65%,60%,28%); */
     border-left: 4px solid hsl(204,65%,60%,100%);
     margin: 0em;
@@ -689,6 +690,7 @@ caption {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
+    margin-left: -10px;
     font-size: .875rem;
     line-height: 1rem;
     user-select:none;

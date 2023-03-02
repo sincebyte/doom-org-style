@@ -5,7 +5,7 @@
 #+subtitle: A vairty of template about org mode code which one referenced the doom doc style
 #+author: vanniuner
 #+OPTIONS: prop:nil timestamp:nil \n:t ^:nil f:t toc:t author:t num:t H:2
-#+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+#+HTML_HEAD: <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
 # #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
 # #+HTML_HEAD: <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet"></link>
 #+HTML_HEAD: <script src="scroll.js"></script>
@@ -17,7 +17,6 @@
 样式引用：https://docs.doomemacs.org/latest/#/modules
 #+end_quote
 #+latex:\newpage
-[[file:./image/doom-org-style.png]]
 一个类 *doom doc* 的 *org html* 样式模版 [[http://1.117.167.195/doc/doomorgstyle.html][点此预览🪄]]
 * 使用
 配置 *snippet* 模版，然后在 *org mode* 文件中使用 ~t~ ~t~ ~tab~ 就可展开此模版。
@@ -228,9 +227,13 @@ $$\begin{aligned}
 #+latex:\newpage
 
 ** babel java
-#+begin_src java -n :results value list
-  List<Integer> a = Arrays.asList(1, 2);
-  return a;
+#+begin_src java :results value list
+List<Integer> a = Arrays.asList(1, 2);
+List<Integer> a = Arrays.asList(1, 2);
+List<Integer> a = Arrays.asList(1, 2);
+List<Integer> a = Arrays.asList(1, 2);
+List<Integer> a = Arrays.asList(1, 2);
+return a;
 #+end_src
 ~C-c~ ~C-c~ to execute it, but export to html will fail when the babel java result generated.
 * 图片
@@ -238,8 +241,8 @@ $$\begin{aligned}
 #+CAPTION[Short caption]: create by https://excalidraw.com/
 [[file:./image/excalidraw-demo.svg]]
 ** 引用网络图片
-#+CAPTION[Short caption]: from doom emacs readme.md
-[[https://raw.githubusercontent.com/doomemacs/doomemacs/screenshots/main.png]]
+# #+CAPTION[Short caption]: from doom emacs readme.md
+# [[https://raw.githubusercontent.com/doomemacs/doomemacs/screenshots/main.png]]
 ** dot graphviz
 *** dot
 #+BEGIN_SRC dot :file image/dot-graphviz-demo.svg

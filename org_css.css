@@ -373,6 +373,9 @@ pre.src:before {
     font-size: 80%;
 }
 
+.org-src-container {
+    pointer-events: none;
+}
 .org-src-container::before {
     content: "⎘";
     font-size: 200%;
@@ -387,6 +390,7 @@ pre.src:before {
     padding-right: 2px;
     line-height: 1em;
     top: 1.3em;
+    pointer-events: auto;
 }
 
 .org-src-container:hover::before  {
@@ -690,7 +694,8 @@ caption {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
-    margin-left: -10px;
+    margin-left: -12px;
+    margin-right: 8px;
     font-size: .875rem;
     line-height: 1rem;
     user-select:none;

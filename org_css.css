@@ -375,6 +375,7 @@ pre.src:before {
 
 .org-src-container {
     pointer-events: none;
+    position: relative;
 }
 .org-src-container::before {
     content: "⎘";
@@ -382,14 +383,14 @@ pre.src:before {
     color: black;
     background-color: hsl(204,65%,60%,30%);;
     cursor: pointer;
-    position: relative;
+    position: absolute;
     display: inline-block;
     text-decoration: none;
     left: 102%;
     padding-left: 2px;
     padding-right: 2px;
     line-height: 1em;
-    top: 1.3em;
+    /* top: 1.3em; */
     pointer-events: auto;
 }
 

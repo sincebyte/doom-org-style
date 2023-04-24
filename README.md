@@ -1,69 +1,68 @@
 
 # Table of Contents
 
-1.  [使用](#orgfedbc0d)
-2.  [字体样式](#orgc71c830)
-3.  [特殊说明](#orged2cd18)
-    1.  [quote 摘要、引用](#org63d93ce)
-    2.  [notice 注意事项、提醒](#org2b9939d)
-4.  [段落及高亮](#org7d7ad70)
-5.  [表格](#org18dc8ca)
-    1.  [awk 表格](#org9add05a)
-    2.  [表格自增id](#org7764c81)
-6.  [LaTex 公式](#orgbd68645)
-7.  [代码](#org2384442)
-    1.  [Java代码](#org18efc8d)
-    2.  [babel java](#org040df90)
-8.  [图片](#org681bc44)
-    1.  [引用本地图片](#org0583962)
-    2.  [引用网络图片](#org7254670)
-    3.  [dot graphviz](#orgf679c25)
-    4.  [plantuml](#orgc00844e)
-9.  [org转Word](#orgd019951)
-10. [插入时间](#org94bf4e0)
+1.  [使用](#orga2fd454)
+2.  [字体样式](#org247c9e3)
+3.  [特殊说明](#org3cfca41)
+    1.  [quote 摘要、引用](#org47a25d6)
+    2.  [notice 注意事项、提醒](#orgab1b5ec)
+4.  [段落及高亮](#org0565da7)
+5.  [表格](#org5f4a74c)
+    1.  [awk 表格](#org607dee9)
+    2.  [表格自增id](#orgfcc3f17)
+6.  [LaTex 公式](#org23c7911)
+7.  [代码](#orgcb841e2)
+    1.  [Java代码](#org390f60e)
+    2.  [babel java](#org3324f59)
+8.  [图片](#org30a9b18)
+    1.  [引用本地图片](#orga80f44f)
+    2.  [引用网络图片](#org86d7677)
+    3.  [dot graphviz](#org5fa4170)
+    4.  [plantuml](#org5791ef6)
+9.  [org转Word](#org84f878f)
+10. [插入时间](#org9c63a9f)
 
 > 样式引用：<https://docs.doomemacs.org/latest/#/modules>  
 
-![img](./image/doom-org-style.png)  
 一个类 **doom doc** 的 **org html** 样式模版 [点此预览🪄](http://1.117.167.195/doc/doomorgstyle.html)  
 
 
-<a id="orgfedbc0d"></a>
+<a id="orga2fd454"></a>
 
 # 使用
 
-配置 **snippet** 模版，然后在 **org mode** 文件中使用 `t` `t` `tab` 就可展开此模版。  
+配置 **snippet** 模版，然后在 **org mode** 文件中使用 `tt` `tab` 就可展开此模版。  
 
-    # -*- mode: snippet -*-
-    # name: title
-    # key: tt
-    # --
-    #+title: `(file-name-sans-extension (buffer-name))`
-    #+SUBTITLE: this is subtitle
-    #+AUTHOR: autor
-    #+HTML_HEAD: <script src="scroll.js"></script>
-    #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org_css.css"/>
-    #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    #+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
-    #+LATEX_COMPILER: xelatex
-    #+LATEX_CLASS: elegantpaper
-    #+MACRO: htmlred @@html:<font color="red"></font>@@
-    #+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
-    #+latex:\newpage
+     1      # -*- mode: snippet -*-
+     2      # name: title
+     3      # key: tt
+     4      # --
+     5      #+title: `(file-name-sans-extension (buffer-name))`
+     6      #+SUBTITLE: this is subtitle
+     7      #+AUTHOR: autor
+     8      #+HTML_HEAD: <script src="scroll.js"></script>
+     9      #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org_css.css"/>
+    10      #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    11      #+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
+    12      #+LATEX_COMPILER: xelatex
+    13      #+LATEX_CLASS: elegantpaper
+    14      #+MACRO: htmlred @@html:<font color="red"></font>@@
+    15      #+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
+    16      #+latex:\newpage
 
-<div class="notice-info" id="org65b72ac">
+<div class="notice-info" id="orgdce76b1">
 <p>
 想使用在线版的静态文件，可以使用下面的配置进行替换<br />
 </p>
 
 </div>
 
-    #+HTML_HEAD: <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet"></link>
-    #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
+    1      #+HTML_HEAD: <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet"></link>
+    2      #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    3      #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
 
 
-<a id="orgc71c830"></a>
+<a id="org247c9e3"></a>
 
 # 字体样式
 
@@ -108,12 +107,12 @@
 </table>
 
 
-<a id="orged2cd18"></a>
+<a id="org3cfca41"></a>
 
 # 特殊说明
 
 
-<a id="org63d93ce"></a>
+<a id="org47a25d6"></a>
 
 ## quote 摘要、引用
 
@@ -123,25 +122,25 @@
 > A combination text editor/really horrible ProgrammingLanguage. To quote the paper &ldquo;RealProgrammers don&rsquo;t use Pascal&rdquo; (1983):  
 
 
-<a id="org2b9939d"></a>
+<a id="orgab1b5ec"></a>
 
 ## notice 注意事项、提醒
 
-<div class="notice-info" id="org1a35225">
+<div class="notice-info" id="org2279dcd">
 <p>
 你有许多已标记的项目并且你可能错过一个重要的项目时，提醒可以提供帮助<br />
 </p>
 
 </div>
 
-<div class="notice-warning" id="org3a2761d">
+<div class="notice-warning" id="org2e206ce">
 <p>
 Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverflow. Kindly refer them to this section.<br />
 </p>
 
 </div>
 
-<div class="notice-example" id="org2c82195">
+<div class="notice-example" id="org609f928">
 <p>
 这是1个例子<br />
 </p>
@@ -149,7 +148,7 @@ Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverf
 </div>
 
 
-<a id="org7d7ad70"></a>
+<a id="org0565da7"></a>
 
 # 段落及高亮
 
@@ -166,7 +165,7 @@ HDFS是如何实现大数据高速、可靠的存储和访问的呢？
 -   Hadoop分布式文件系统HDFS的设计目标是管理数以千计的服务器、数以万计的磁盘，将大规模的服务器计算资源当作一个单一存储系统进行管理，对应用程序提供数以PB计的存储容量，让应用程序像使用普通文件系统一样存储大规模的文件数据。
 
 
-<a id="org18dc8ca"></a>
+<a id="org5f4a74c"></a>
 
 # 表格
 
@@ -407,11 +406,11 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
-<a id="org9add05a"></a>
+<a id="org607dee9"></a>
 
 ## awk 表格
 
-<table id="orgd36b907" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org39ecdad" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -562,7 +561,7 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
-<a id="org7764c81"></a>
+<a id="orgfcc3f17"></a>
 
 ## 表格自增id
 
@@ -604,11 +603,11 @@ org table `M-k` `M-j` for move Rows up and down
 `C-c` `C-c` to execute it  
 
 
-<a id="orgbd68645"></a>
+<a id="org23c7911"></a>
 
 # LaTex 公式
 
-    $\mbox{需求的价格弹性系数} = \frac{\mbox{需求的变动率}}{\mbox{价格的变动率}}$
+    1  $\mbox{需求的价格弹性系数} = \frac{\mbox{需求的变动率}}{\mbox{价格的变动率}}$
 
 $$\mbox{需求的价格弹性系数} = \frac{\mbox{需求的变动率}}{\mbox{价格的变动率}}$$  
 
@@ -622,69 +621,79 @@ $$\begin{aligned}
 \end{aligned} $$  
 
 
-<a id="org2384442"></a>
+<a id="orgcb841e2"></a>
 
 # 代码
 
+代码片段开启行号，修改 \`~/.emacs.d/.local/straight/repos/org/lisp/ox-html.el\`  
 
-<a id="org18efc8d"></a>
+    1    (let* ((code-lines (split-string code "\n"))
+    2  	 (code-length (length code-lines))
+    3  	 (num-fmt
+    4  	  (and num-start
+    5  	       (format "%%%ds "
+    6  	       (format "%%%ds: "
+
+
+<a id="org390f60e"></a>
 
 ## Java代码
 
-    
-    /**
-     * @param request 调用的请求参数
-     * @param needLog true 需要记录日志  false 不记录日志
-     * @return
-     */
-    protected NcApiResponse runApply(NcApiRequest request, Boolean needLog) {
-        NcApiResponse ncApiResponse = null;
-        try {
-            final NcApiRequest ncApiRequest = executeBefore(request);
-            ncApiResponse = executeGetRequest(ncApiRequest);
-        } catch (Exception e) {
-            afterExecute(needLog, e, request, ncApiResponse);
-            if (e instanceof BizException) {
-                throw new BizException("NC提示", ((BizException) e).getErrorMsg(), e);
-            } else {
-                throw new BizException("NC异常", e.getMessage());
-            }
-        }
-    
-        return ncApiResponse;
-    }
+    10      /**
+    11       * @param request 调用的请求参数
+    12       * @param needLog true 需要记录日志  false 不记录日志
+    13       * @return
+    14       */
+    15      protected NcApiResponse runApply(NcApiRequest request, Boolean needLog) {
+    16          NcApiResponse ncApiResponse = null;
+    17          try {
+    18              final NcApiRequest ncApiRequest = executeBefore(request);
+    19              ncApiResponse = executeGetRequest(ncApiRequest);
+    20          } catch (Exception e) {
+    21              afterExecute(needLog, e, request, ncApiResponse);
+    22              if (e instanceof BizException) {
+    23                  throw new BizException("NC提示", ((BizException) e).getErrorMsg(), e);
+    24              } else {
+    25                  throw new BizException("NC异常", e.getMessage());
+    26              }
+    27          }
+    28  
+    29          return ncApiResponse;
+    30      }
 
 
-<a id="org040df90"></a>
+<a id="org3324f59"></a>
 
 ## babel java
 
+    List<Integer> a = Arrays.asList(1, 2);
+    List<Integer> a = Arrays.asList(1, 2);
+    List<Integer> a = Arrays.asList(1, 2);
+    List<Integer> a = Arrays.asList(1, 2);
     List<Integer> a = Arrays.asList(1, 2);
     return a;
 
 `C-c` `C-c` to execute it, but export to html will fail when the babel java result generated.  
 
 
-<a id="org681bc44"></a>
+<a id="org30a9b18"></a>
 
 # 图片
 
 
-<a id="org0583962"></a>
+<a id="orga80f44f"></a>
 
 ## 引用本地图片
 
 ![img](./image/excalidraw-demo.svg "create by <https://excalidraw.com/>")  
 
 
-<a id="org7254670"></a>
+<a id="org86d7677"></a>
 
 ## 引用网络图片
 
-![img](https://raw.githubusercontent.com/doomemacs/doomemacs/screenshots/main.png "from doom emacs readme.md")  
 
-
-<a id="orgf679c25"></a>
+<a id="org5fa4170"></a>
 
 ## dot graphviz
 
@@ -697,7 +706,7 @@ $$\begin{aligned}
     ![img](image/dot-sk-graphviz-demo.svg "手绘风格的dot graphviz")  
 
 
-<a id="orgc00844e"></a>
+<a id="org5791ef6"></a>
 
 ## plantuml
 
@@ -726,14 +735,14 @@ $$\begin{aligned}
     ![img](./image/plantuml-swiming.svg)  
 
 
-<a id="orgd019951"></a>
+<a id="org84f878f"></a>
 
 # org转Word
 
-    pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
+    1  pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
 
 
-<a id="org94bf4e0"></a>
+<a id="org9c63a9f"></a>
 
 # 插入时间
 

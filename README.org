@@ -421,6 +421,81 @@ skinparam backgroundColor transparent
 #+RESULTS:
 [[file:./image/plantuml-swiming.svg]]
 
+*** plantuml htmlstyle
+#+BEGIN_SRC dot -Tpng :file image/oa-center.svg
+    digraph G {
+        node [shape="box",fontcolor="0xfffff", style=rounded]
+        bgcolor="transparent"
+        node [shape="box",fontcolor="#c475db"]
+        edge [color="#a69fe0",fontcolor=white]
+        UserCenter [shape=none margin=0 label=
+        <<table border="0" cellspacing="0" cellborder="1">
+        <tr>
+        <td width="9"  height="9" fixedsize="true" sides="b"></td>
+        <td width="81" height="9" fixedsize="true" sides="tl"></td>
+        <td width="9"  height="9" fixedsize="true" sides="tr"></td>
+        </tr>
+        <tr>
+        <td width="9"  height="37" fixedsize="true" sides="l"></td>
+        <td width="81" height="37" fixedsize="true" sides="t">用户中心</td>
+        <td width="9"  height="37" fixedsize="true" sides="lr"></td>
+        </tr>
+        <tr>
+        <td width="9"  height="9" fixedsize="true" sides="lb"></td>
+        <td width="81" height="9" fixedsize="true" sides="b"></td>
+        <td width="9"  height="9" fixedsize="true" sides="tl"></td>
+        </tr>
+        </table>>]
+
+        BPMCenter [shape=none margin=0 label=
+        <<table border="0" cellspacing="0" cellborder="1">
+        <tr>
+        <td width="9"  height="9" fixedsize="true" sides="b"></td>
+        <td width="81" height="9" fixedsize="true" sides="tl"></td>
+        <td width="9"  height="9" fixedsize="true" sides="tr"></td>
+        </tr>
+        <tr>
+        <td width="9"  height="23" fixedsize="true" sides="l"></td>
+        <td width="81" height="23" fixedsize="true" sides="t">流程中心</td>
+        <td width="9"  height="23" fixedsize="true" sides="lr"></td>
+        </tr>
+        <tr>
+        <td width="9"  height="9" fixedsize="true" sides="lb"></td>
+        <td width="81" height="9" fixedsize="true" sides="b"></td>
+        <td width="9"  height="9" fixedsize="true" sides="tl"></td>
+        </tr>
+        </table>>]
+
+        CenterApp [shape=none margin=0 label=
+        <<table border="0" cellspacing="0" cellborder="1">
+        <tr>
+        <td width="9"  height="9" fixedsize="true" sides="b"></td>
+        <td width="81" height="9" fixedsize="true" sides="tl"></td>
+        <td width="9"  height="9" fixedsize="true" sides="tr"></td>
+        </tr>
+        <tr>
+        <td width="9"  height="23" fixedsize="true" sides="l"></td>
+        <td width="81" height="23" fixedsize="true" sides="t">应用中心</td>
+        <td width="9"  height="23" fixedsize="true" sides="lr"></td>
+        </tr>
+        <tr>
+        <td width="9"  height="9" fixedsize="true" sides="lb"></td>
+        <td width="81" height="9" fixedsize="true" sides="b"></td>
+        <td width="9"  height="9" fixedsize="true" sides="tl"></td>
+        </tr>
+        </table>>]
+
+        rankdir = LR
+        OA -> UserCenter [dir=back,minlen=2,label="HTTP API 接口"]
+        OA -> BPMCenter [dir=back,minlen=2,label="HTTP API 接口"]
+        BPMCenter -> CenterApp [dir=back,minlen=2,label="微服务接口"]
+        UserCenter -> CenterApp [dir=back,minlen=2,label="微服务接口"]
+    }
+#+END_SRC
+
+#+RESULTS:
+[[file:image/oa-center.svg]]
+
 * org转Word
 #+begin_src shell -n
 pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org

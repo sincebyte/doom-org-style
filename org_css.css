@@ -127,9 +127,14 @@ a[href^="http"]:after {
     border-bottom: 0;
 }
 
+#text-table-of-contents>ul {
+    overflow-y: auto;
+    height: 100vh;
+}
+
 #table-of-contents ul {
     list-style: none;
-    padding-left:0;
+    padding-left: 0;
     font-weight: normal;
 }
 
@@ -518,7 +523,7 @@ div.figure p:nth-child(2) {
         height: 100vh;
         font-size: 14px;
         background: hsl(217deg 12% 12%);
-        overflow: auto;
+        /* overflow: auto; */
     }
 
     #table-of-contents ul>li>ul>li>ul>li {
@@ -735,4 +740,33 @@ mjx-container {
     .github-corner .octo-arm {
         animation:octocat-wave 560ms ease-in-out
     }
+}
+/* 美化滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  /* display: none; */
+}
+
+::-webkit-scrollbar-track {
+  width: 6px;
+  background: rgba(#101f1c, 0.1);
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(144, 147, 153, 0.5);
+  background-clip: padding-box;
+  min-height: 28px;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(144, 147, 153, 0.3);
 }

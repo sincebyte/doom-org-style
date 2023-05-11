@@ -48,4 +48,25 @@ jQuery( document).ready(function($){
       document.execCommand('copy');
       $(storage).remove();
     });
+  $('body').append('<div class="toggletheme"><input class="container_toggle" type="checkbox" id="switch" name="mode" /> <label for="switch">切换</label></div>');
+  var checkbox = document.querySelector("input[id=switch]");
+
+  checkbox.addEventListener("change", function () {
+    // dark
+    if (this.checked) {
+      trans();
+      document.documentElement.classList.add("dark");
+    } else {
+      // light
+      trans();
+      document.documentElement.classList.remove("dark");
+    }
+  });
+
+  let trans = () => {
+    document.documentElement.classList.add("transition");
+    window.setTimeout(() => {
+      document.documentElement.classList.remove("transition");
+    }, 1000);
+  };
 });

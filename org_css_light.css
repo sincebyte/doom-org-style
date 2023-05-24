@@ -1,4 +1,4 @@
-body {
+.light body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.4;
@@ -6,155 +6,154 @@ body {
     background: "#fafafa";
 }
 
-code {
+.light code {
     font-family: "Inconsolata", monospace;
     font-size: 16px;
     padding: 0px 4px 0px;
     color: hsla(209,99%,65%,100%);
 }
 
-p>code, li>code, td>code {
+.light p>code, .light li>code, .light td>code {
     background-color: "#fafafa";
     outline: 1px solid "#fafafa";
     cursor: pointer;
 }
 
-h1, h2, h3 ,h4, h5{
+.light h1, .light h2, .light h3 ,.light h4, .light h5{
     font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
 }
 
-h2 {
+.light h2 {
     border-bottom: 8px solid hsl(247,51%,75%);
     padding-bottom: 0.5em;
     font-size: 1.75em;
 }
 
-h3 {
+.light h3 {
     border-bottom: 1px solid hsla(286, 59%, 66%, 100%);
     margin-top: 2em;
     font-size: 1.5em;
 }
 
-h4 {
+.light h4 {
     border-bottom: 1px solid hsla(286, 59%, 66%, 100%);
     margin-top: 2em;
     font-size: 1.5em;
     color: hsl(286deg 60% 67%);
 }
 
-h5 {
+.light h5 {
     border-bottom: 1px solid hsla(286, 59%, 66%, 100%);
     margin-top: 2em;
     font-size: 1.5em;
     font-size: 1em;
 }
 
-h2 code, h3 code, h4 code, h5 code {
+.light h2 code, .light h3 code, .light h4 code, .light h5 code {
     font-family: inherit !important;
     font-size: inherit !important;
 }
 
-td code {
+.light td code {
     font-weight: bold;
 }
 
-a:link, a:hover, a:visited {
+.light a:link, a:hover, a:visited {
     text-decoration: none;
     color: black;
 }
 
-a:link {
+.light a:link {
     /* background: #kf8; */
 }
 
-a:visited {
+.light a:visited {
     color: black;
     /* background: #ffc; */
 }
 
-a:link:hover,
-a:visited:hover {
+.light a:link:hover,
+.light a:visited:hover {
     /* background: #ff0; */
 }
 
-a[href^="http"] {
+.light a[href^="http"] {
     color: hsla(204,69%,40%, 100%);
     background-color: hsla(204,69%,40%, 0.075);
 }
 
-a[href^="http"]:visited {
+.light a[href^="http"]:visited {
     color: hsla(204,69%,40%, 100%);
     background-color: hsla(204,69%,40%, 0.075);
 }
 
-a[href^="http"]:link:hover,
-a[href^="http"]:visited:hover {
+.light a[href^="http"]:link:hover,
+.light a[href^="http"]:visited:hover {
     color: hsla(204,69%,40%, 100%);
     background-color: hsla(204,69%,40%, 0.075);
 }
 
-a[href^="http"]:after {
+.light a[href^="http"]:after {
     /* content: "\21B3"; */
     /* background-color: hsla(204,83%,62%, 0.075); */
     /* padding-left: 0.2em; */
 }
 
-#meta {
+.light #meta {
     margin-top: 2em;
 }
-.figure-number::after{
+.light .figure-number::after{
     content: ' ▲ '
 }
-.table-number::after{
+.light .table-number::after{
     content: ' ▲'
 }
-#table-of-contents a:link,
-#table-of-contents a:visited {
+.light #table-of-contents a:link,
+.light #table-of-contents a:visited {
     /* background: transparent; */
     display: block;
 }
 
-
-#table-of-contents a:hover {
+.light #table-of-contents a:hover {
     color: black;
     background: transparent;
 }
 
-#table-of-contents {
+.light #table-of-contents {
     line-height: 1.2;
     /* background: "#fafafa"; */
 }
-#table-of-contents h2 {
+.light #table-of-contents h2 {
     border-bottom: 0;
     /* color: white; */
 }
 
-#text-table-of-contents>ul {
+.light #text-table-of-contents>ul {
     overflow-y: auto;
     height: 100vh;
 }
 
-#table-of-contents ul {
+.light #table-of-contents ul {
     list-style: none;
     padding-left: 0;
     font-weight: normal;
 }
 
-#table-of-contents div>ul>li {
+.light #table-of-contents div>ul>li {
     margin-top: 5px;
     font-weight: bold;
 }
-#table-of-contents a:hover{
+.light #table-of-contents a:hover{
     background-color: hsla(0, 0%, 66%, 20%);
     color: whiter;
 }
 
-#table-of-contents a.active{
+.light #table-of-contents a.active{
     background-color: hsla(0, 0%, 66%, 20%);
     color: whiter;
 }
 
-#table-of-contents>div>ul>li>a {
+.light #table-of-contents>div>ul>li>a {
     /* padding: 2px; */
     padding-top: 5px;
     padding-bottom: 5px;
@@ -164,7 +163,7 @@ a[href^="http"]:after {
     padding-left: 2em;
 }
 
-#table-of-contents>div>ul>li>ul>li>a {
+.light #table-of-contents>div>ul>li>ul>li>a {
     /* padding: 2px; */
     color: hsl(219deg 18% 11%);
     padding-left: 3em;
@@ -174,65 +173,65 @@ a[href^="http"]:after {
     background: transparent;
 }
 
-#table-of-contents .tag {
+.light #table-of-contents .tag {
     display: none;
 }
 
-#table-of-contents .todo,
-#table-of-contents .done {
+.light #table-of-contents .todo,
+.light #table-of-contents .done {
     font-size: 80%;
 }
 
-#table-of-contents ol>li {
+.light #table-of-contents ol>li {
     margin-top: 1em;
 }
 
-table {
+.light table {
     width: 100%;
 }
 
-table, th, td {
+.light table, .light th, .light td {
     border: 1px solid #666;
 }
 
-th, td {
+.light th, .light td {
     padding: 0.5em;
     text-align: left;
 }
 
 
-tbody {
+.light tbody {
     margin-bottom: 2em;
 }
-tbody tr:nth-child(odd) {
+.light tbody tr:nth-child(odd) {
     background-color: hsl(219deg 17% 89%);
 }
 
-img {
+.light img {
     max-width: 90%;
 }
 
-div.notice {
+.light div.notice {
     position: relative;
     padding: 0.25em 1em;
     margin-bottom: 1em;
     border-left: 4px solid;
 }
 
-table + div.notice {
+.light table + div.notice {
     margin-top: 2em;
 }
 
-div.notice a {
+.light div.notice a {
     background: transparent !important;
     border-bottom: 1px dotted;
 }
 
-div.notice a[href^="http"]:after {
+.light div.notice a[href^="http"]:after {
     background: transparent !important;
 }
 
-div.notice:before {
+.light div.notice:before {
     font-size: 200%;
     position: absolute;
     top: 50%;
@@ -245,11 +244,14 @@ div.notice:before {
     content: "💡";
 }
 
-div.notice p ,div.notice-info p, div.notice-warning p ,div.notice-example p{
+.light div.notice p ,
+.light div.notice-info p,
+.light div.notice-warning p ,
+.light div.notice-example p{
     padding-left: 4em;
 }
 
-.notice-warning {
+.light .notice-warning {
     background: hsla(35,47%,70%,28%);
     /* color: hsla(0,0%,87%,100%); */
     position: relative;
@@ -258,7 +260,7 @@ div.notice p ,div.notice-info p, div.notice-warning p ,div.notice-example p{
     margin-bottom: 1em;
 }
 
-.notice-example {
+.light .notice-example {
     background: hsla(219,23%,54%,25%);
     color: hsla(219,23%,54%,100%);
     position: relative;
@@ -267,7 +269,7 @@ div.notice p ,div.notice-info p, div.notice-warning p ,div.notice-example p{
     margin-bottom: 1em;
 }
 
-.notice-info {
+.light .notice-info {
     background: hsla(85,40%,56%,30%);
     /* color: hsla(0,0%,87%,70%); */
     position: relative;
@@ -276,19 +278,19 @@ div.notice p ,div.notice-info p, div.notice-warning p ,div.notice-example p{
     margin-bottom: 1em;
 }
 
-.notice-warning a {
+.light .notice-warning a {
     color: #600;
 }
 
-.notice-example a {
+.light .notice-example a {
     color: #069;
 }
 
-.notice-info a {
+.light .notice-info a {
     color: #060;
 }
 
-div.notice-warning:before {
+.light div.notice-warning:before {
     font-size: 200%;
     position: absolute;
     top: 50%;
@@ -302,7 +304,7 @@ div.notice-warning:before {
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Noto Emoji";
 }
 
-div.notice-example:before {
+.light div.notice-example:before {
     position: absolute;
     font-size: 200%;
     top: 50%;
@@ -315,7 +317,7 @@ div.notice-example:before {
     content: "🍐️";
 }
 
-div.notice-info:before {
+.light div.notice-info:before {
     font-size: 200%;
     position: absolute;
     top: 50%;
@@ -328,7 +330,7 @@ div.notice-info:before {
     content: "💡";
 }
 
-pre {
+.light pre {
     font-family: Inconsolata;
     border: 0;
     box-shadow: none;
@@ -338,26 +340,26 @@ pre {
     margin-bottom: 2em;
 }
 
-pre.example:before {
+.light pre.example:before {
     content: "Properties";
     display: block;
     border-bottom: 1px dotted;
     margin-bottom: 1em;
 }
 
-pre.example {
+.light pre.example {
     background: #fec;
     color: #666;
     font-size: 0.85em;
 }
 
-pre {
+.light pre {
     background-color: #f8f8f8;
     background-size: 8px 8px;
     background-image: linear-gradient(135deg, transparent 25%, rgba(0, 0, 0, 0.02) 25%, rgba(0, 0, 0, 0.02) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, 0.02) 75%, rgba(0, 0, 0, 0.02));
 }
 
-pre.src {
+.light pre.src {
     background-color: hsla(0,0%,98%);
     /* padding: 0em; */
     padding-top: 0.1em;
@@ -366,12 +368,12 @@ pre.src {
     /* box-shadow: 1px 1px 1px hsla(222,12%,9%); */
 }
 
-pre.src span{
+.light pre.src span{
     font-size: .875rem;
     line-height: 1rem;
 }
 
-pre.src:before {
+.light pre.src:before {
     display: block;
     position: absolute;
     background-color: hsla(0,1%,90%,90%);
@@ -384,11 +386,11 @@ pre.src:before {
     font-size: 80%;
 }
 
-.org-src-container {
+.light .org-src-container {
     pointer-events: none;
     position: relative;
 }
-.org-src-container::before {
+.light .org-src-container::before {
     content: "⎘";
     font-size: 200%;
     color: black;
@@ -405,75 +407,78 @@ pre.src:before {
     pointer-events: auto;
 }
 
-.org-src-container:hover::before  {
+.light .org-src-container:hover::before  {
     color: hsl(204,65%,60%,100%);
 }
 
-pre.src-plantuml:before {
+.light pre.src-plantuml:before {
     content: "UML";
 }
 
-pre.src-javascript:before {
+.light pre.src-javascript:before {
     content: "JS";
 }
 
-pre.src-clojure:before {
+.light pre.src-clojure:before {
     content: "CLJ";
 }
 
-pre.src-c:before {
+.light pre.src-c:before {
     content: "C";
 }
 
-span.org-string {
+.light span.org-string {
     color: #f94;
 }
 
-span.org-keyword {
+.light span.org-keyword {
     color: #c07;
 }
 
-span.org-variable-name {
+.light span.org-variable-name {
     color: #f04;
 }
 
-span.org-clojure-keyword {
+.light span.org-clojure-keyword {
     color: #09f;
 }
 
-span.org-comment, span.org-comment-delimiter {
+.light span.org-comment,
+.light span.org-comment-delimiter {
     color: #999;
 }
 
-span.org-rainbow-delimiters-depth-1, span.org-rainbow-delimiters-depth-5 {
+.light span.org-rainbow-delimiters-depth-1,
+.light span.org-rainbow-delimiters-depth-5 {
     color: #666;
 }
 
-span.org-rainbow-delimiters-depth-2, span.org-rainbow-delimiters-depth-6 {
+.light span.org-rainbow-delimiters-depth-2,
+.light span.org-rainbow-delimiters-depth-6 {
     color: #888;
 }
 
-span.org-rainbow-delimiters-depth-3, span.org-rainbow-delimiters-depth-7 {
+.light span.org-rainbow-delimiters-depth-3, .light span.org-rainbow-delimiters-depth-7 {
     color: #aaa;
 }
 
-span.org-rainbow-delimiters-depth-4, span.org-rainbow-delimiters-depth-8 {
+.light span.org-rainbow-delimiters-depth-4,.light  span.org-rainbow-delimiters-depth-8 {
     color: #ccc;
 }
 
-div.figure {
+.light div.figure {
     font-size: 0.85em;
     color:hsl(286,59%,66%);
 }
 
-div.figure p:nth-child(1) {
+.light div.figure p:nth-child(1) {
     margin-bottom: 0px;
 }
-div.figure p:nth-child(2) {
+.light div.figure p:nth-child(2) {
     margin-top: 0px;
 }
 
-.tag {
+.light .tag {
     font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
     font-size: 11px;
     font-weight: normal;
@@ -482,45 +487,45 @@ div.figure p:nth-child(2) {
     background: transparent;
 }
 
-.tag span {
+.light .tag span {
     background: #ccc;
     padding: 0 0.5em;
     border-radius: 0.2em;
     color: white;
 }
 
-.todo, .done {
+.light .todo,.light .done {
     font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
     font-weight: normal;
     padding: 0 0.25em;
     /* border-radius: 0.2em; */
 }
 
-.todo {
+.light .todo {
     background: #1f2228;
     color: hsla(35, 74%, 70%, 100%);
 }
 
-.done {
+.light .done {
     background: #1f2228;
     color: green;
 }
 
-#content h3 {
+.light #content h3 {
     color: hsl(203.871, 82%, 50%);
 }
 
 @media screen {
-    h1.title {
+    .light h1.title {
         text-align: left;
         margin: 1em 0 0 280px;
     }
 
-    h2 {
+    .light h2 {
         margin-top: 3em;
     }
 
-    #table-of-contents {
+    .light #table-of-contents {
         position: fixed;
         top: 0;
         left: 0;
@@ -532,58 +537,58 @@ div.figure p:nth-child(2) {
         /* overflow: auto; */
     }
 
-    #table-of-contents ul>li>ul>li>ul>li {
+    .light #table-of-contents ul>li>ul>li>ul>li {
         display: none;
     }
 
-    #table-of-contents h2 {
+    .light #table-of-contents h2 {
         margin-top: 0;
         margin-left: .5em;
     }
 
-    #table-of-contents code {
+    .light #table-of-contents code {
         font-size: 12px;
     }
 
-    div.outline-2, #footnotes {
+    .light div.outline-2,.light  #footnotes {
         max-width: 960px;
     }
 }
 
-.title {
+.light .title {
     font-weight: 800;
     line-height: 1;
     font-size: 2.3em;
 }
 
-.subtitle {
+.light .subtitle {
     color: hsla(255,51%,47%,100%);
     font-weight: 400;
 }
 
 
 @media screen and (max-width: 1024px) {
-    html, body {
+    .light html, .light body {
         font-size: 14px;
     }
 
-    #table-of-contents {
+    .light #table-of-contents {
         display: none;
     }
 
 
-    div.outline-2, #footnotes {
+    .light div.outline-2,.light  #footnotes {
         margin-left: 5%;
         max-width: 90%;
     }
 }
-pre.src:hover:before{
+.light pre.src:hover:before{
     margin-top: 0px;
 }
 
 @media print {
 
-    body {
+    .light body {
         color: black;
     }
 
@@ -591,44 +596,44 @@ pre.src:hover:before{
         margin: 25mm;
     }
 
-    h2, h3,h4,h5 {
+    .light h2, .light h3,.light h4,.light h5 {
         color: hsl(286,59%,66%);
         page-break-before: always;
         margin-top: 0;
     }
 
-    table {
+    .light table {
         page-break-inside: avoid;
     }
 
-    a:visited {
+    .light a:visited {
         color: black;
         /* background: #ff8; */
     }
 
-    a[href^="http"]:visited {
+    .light a[href^="http"]:visited {
         background: #bff;
     }
 
-    div.notice:before {
+    .light div.notice:before {
         display: none;
     }
 }
-.src-java {
+.light .src-java {
 	color: #24272E;
     background: hsla(0,0%,98%);
 }
 
-.src-org span:not(.linenr) {
+.light .src-org span:not(.linenr) {
 	color:#24272E !important;
     background: hsla(0,0%,98%);
 }
 
-.src {
+.light .src {
     color: #24272E;
     background: hsla(0,0%,98%);
 }
-#postamble{
+.light #postamble{
     right: 0;
     bottom: 0;
     margin-right: 100px;
@@ -639,7 +644,7 @@ pre.src:hover:before{
     display: none;
     /* background-color: hsla(222, 12%, 11%, 100%); */
 }
-#preamble {
+.light #preamble {
     right: 0;
     bottom: 0;
     margin-right: 100px;
@@ -650,10 +655,10 @@ pre.src:hover:before{
     z-index: 100;
 }
 
-blockquote:before {
+.light blockquote:before {
     content: "📌";
 }
-blockquote:before {
+.light blockquote:before {
     font-size: 200%;
     position: absolute;
     top: 50%;
@@ -665,7 +670,7 @@ blockquote:before {
     text-shadow: 0 0 6px hsl(0,0%,100%,100%)
 }
 
-blockquote {
+.light blockquote {
     padding: 0.1em 1.8em;
     background-color: hsl(204,65%,60%,30%);
     adding: 0.4em 1.8em;
@@ -681,7 +686,7 @@ blockquote {
     margin-top: 1em;
 }
 
-.section-number-2,.section-number-3,.section-number-4,.section-number-5 {
+.light .section-number-2,.light .section-number-3,.light .section-number-4,.light .section-number-5 {
     display: inline-block;
     width: 80px;
     margin-right: 18px;
@@ -692,23 +697,23 @@ blockquote {
     color: hsla(207, 6%, 38%, 100%);
 }
 
-b {
+.light b {
     color: #56a2e7;
     /* background: #1f2228; */
 }
 
-i {
+.light i {
     color: hsl(286,59%,66%);
 }
 
-caption {
+.light caption {
     padding-bottom: 20px;
     caption-side: bottom;
     color: hsl(286,59%,68%);;
     text-align: left;
 }
 
-.linenr {
+.light .linenr {
     background: hsl(0,8%,90%,100%);
     color: black;
     padding-top: 5px;
@@ -721,11 +726,11 @@ caption {
     user-select:none;
 }
 
-mjx-container {
+.light mjx-container {
     text-align: left !important;
 }
 
-.github-corner {
+.light .github-corner {
     border-bottom: 0;
     position: fixed;
     right: 0;
@@ -733,7 +738,7 @@ mjx-container {
     top: 0;
     z-index: 1001 !important;
 }
-.github-corner:hover .octo-arm {
+.light .github-corner:hover .octo-arm {
     animation:octocat-wave 560ms ease-in-out
 }
 @keyframes octocat-wave {
@@ -748,10 +753,10 @@ mjx-container {
     }
 }
 @media (max-width:500px) {
-    .github-corner:hover .octo-arm{
+    .light .github-corner:hover .octo-arm{
         animation:none
     }
-    .github-corner .octo-arm {
+    .light .github-corner .octo-arm {
         animation:octocat-wave 560ms ease-in-out
     }
 }
@@ -784,9 +789,9 @@ mjx-container {
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(144, 147, 153, 0.3);
 }
-span.style {
+.light span.style {
     color: white !important;
 }
-.timestamp {
+.light .timestamp {
     color: rgba(144, 147, 163, 1);;
 }

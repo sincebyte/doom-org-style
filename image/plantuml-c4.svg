@@ -28,7 +28,7 @@ reverse link juju to Publisher--><path d="M403,43.72 C403,60.91 403,90.17 403,11
 link Publisher to storage--><path d="M387.08,153.99 C375.74,169.73 360.81,192.2 351,213.73 C333.68,251.76 322.5,300.16 317.7,323.68 " fill="none" id="Publisher-to-storage" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="316.56,328.36,322.2338,320.3097,317.5323,323.4555,314.3866,318.754,316.56,328.36" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[c358e924f5976ea10609a9b885a45a79]
 link Publisher to publisher--><path d="M408.59,154.05 C413.88,173.89 421.65,203.08 426.23,220.28 " fill="none" id="Publisher-to-publisher" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="427.77,225.04,429.3196,215.3138,426.4835,220.2084,421.5889,217.3723,427.77,225.04" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[ea47db41f171ee94fcd799857f4bfcd0]
 link storage to Storage--><path d="M324.23,338.79 C372.52,338.79 420.81,338.79 469.09,338.79 " fill="none" id="storage-Storage" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[0c2dfc3a1e965285de57aeea4d532e38]
-reverse link juju to Storage--><path d="M416.62,40.53 C443.96,62.31 503.02,109.39 504,110.36 C545.71,151.97 567.45,158.15 587,213.73 C593.4,231.92 594.05,239.16 587,257.1 C577.56,281.13 557.22,302.25 540.1,316.85 " fill="none" id="juju-backto-Storage" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="413.21,37.02,417.7624,45.7536,417.1227,40.133,422.7433,39.4933,413.21,37.02" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[a1c618fce835336a15588667013f230e]
+reverse link juju to Storage--><path d="M416.62,40.53 C443.96,62.31 503.02,109.39 504,110.36 C545.71,151.97 567.45,158.15 587,213.73 C593.4,231.92 594.05,239.16 587,257.1 C577.56,281.13 557.22,302.25 540.1,316.85 " fill="none" id="juju-backto-Storage" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="413.21,37.02,417.7624,45.7536,417.1227,40.133,422.7433,39.4933,413.21,37.02" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[206ef0084af51093a5b081360916fa0b]
 @startuml
 !define LIGHTBLUE
 !includeurl C4-PlantUML/juststyle.puml
@@ -389,8 +389,8 @@ skinparam storage {
 
 PlantUML version 1.2021.7(Sun May 23 20:40:07 CST 2021)
 (GPL source distribution)
-Java Runtime: Java(TM) SE Runtime Environment
-JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
 Default Encoding: UTF-8
 Language: zh
 Country: CN

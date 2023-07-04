@@ -387,7 +387,7 @@
 }
 
 .light .org-src-container {
-    pointer-events: none;
+    /* pointer-events: none; */
     position: relative;
 }
 .light .org-src-container::before {

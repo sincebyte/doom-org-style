@@ -368,7 +368,7 @@
 }
 
 .dark .org-src-container {
-    pointer-events: none;
+    /* pointer-events: none; */
     position: relative;
 }
 .dark .org-src-container::before {

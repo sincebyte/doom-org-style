@@ -1,33 +1,37 @@
 
 # Table of Contents
 
-1.  [使用](#orgd1eb9fa)
-2.  [字体样式](#org25da322)
-3.  [特殊说明](#orgb9f1660)
-    1.  [quote 摘要、引用](#org362d825)
-    2.  [notice 注意事项、提醒](#org7fe2bbd)
-4.  [段落及高亮](#org090ab77)
-5.  [表格](#org6005efc)
-    1.  [awk 表格](#org5822c8e)
-    2.  [表格自增 id](#orgc5648e9)
-6.  [LaTex 公式](#orgc0b0c4b)
-7.  [Org 代码](#org3da9290)
-    1.  [Java 代码](#org63662d6)
-    2.  [babel java](#orgf804b08)
-8.  [图片](#org9660fc6)
-    1.  [引用本地图片](#orgc13dd53)
-    2.  [引用网络图片](#org4bbb795)
-    3.  [dot graphviz](#org455590e)
-    4.  [plantuml](#orgad6ba1e)
-9.  [org 转 Word](#org0239e23)
-10. [插入时间](#org9618bbf)
+1.  [使用](#org9eccb45)
+2.  [字体样式](#org40231a5)
+3.  [特殊说明](#org7b6d1b0)
+    1.  [quote 摘要、引用](#orgbd38d9f)
+    2.  [notice 注意事项、提醒](#orgabb3965)
+    3.  [declare a reference](#orge9f631e)
+4.  [段落及高亮](#org2189ce1)
+5.  [表格](#org741cbb5)
+    1.  [awk 表格](#org2e921b2)
+    2.  [表格自增 id](#org3da7c62)
+6.  [LaTex 公式](#orgf0c2def)
+7.  [Org 代码](#orgcc7530a)
+    1.  [Java 代码](#org10502e0)
+    2.  [babel java](#orgc432818)
+8.  [图片](#orge139eab)
+    1.  [引用本地图片](#orgbeb94e6)
+    2.  [dot](#orgdb3d6ef)
+    3.  [dot sk](#org12ef42a)
+    4.  [plantuml with style css](#org2ec2977)
+    5.  [plant uml 系统 Contex 架构图](#orgf74f511)
+    6.  [泳道图](#org69347ca)
+    7.  [plantuml 通过html自定义图片样式](#orga6c57d6)
+9.  [org 转 Word](#org48e8db8)
+10. [插入时间](#orgaed6368)
 
 > 样式引用：<https://docs.doomemacs.org/latest/#/modules>  
 
 一个类 **doom doc** 的 **org html** 样式模版 [点此预览🪄](http://1.117.167.195/doc/doomorgstyle.html)  
 
 
-<a id="orgd1eb9fa"></a>
+<a id="org9eccb45"></a>
 
 # 使用
 
@@ -50,7 +54,7 @@
     #+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
     #+latex:\newpage
 
-<div class="notice-info" id="org71c862f">
+<div class="notice-info" id="orgc593081">
 <p>
 想使用在线版的静态文件，可以使用下面的配置进行替换<br />
 </p>
@@ -62,7 +66,7 @@
     #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
 
 
-<a id="org25da322"></a>
+<a id="org40231a5"></a>
 
 # 字体样式
 
@@ -107,12 +111,12 @@
 </table>
 
 
-<a id="orgb9f1660"></a>
+<a id="org7b6d1b0"></a>
 
 # 特殊说明
 
 
-<a id="org362d825"></a>
+<a id="orgbd38d9f"></a>
 
 ## quote 摘要、引用
 
@@ -122,25 +126,25 @@
 > A combination text editor/really horrible ProgrammingLanguage. To quote the paper &ldquo;RealProgrammers don&rsquo;t use Pascal&rdquo; (1983):  
 
 
-<a id="org7fe2bbd"></a>
+<a id="orgabb3965"></a>
 
 ## notice 注意事项、提醒
 
-<div class="notice-info" id="orga656aca">
+<div class="notice-info" id="orgc03c1bc">
 <p>
 你有许多已标记的项目并且你可能错过一个重要的项目时，提醒可以提供帮助<br />
 </p>
 
 </div>
 
-<div class="notice-warning" id="org47f2232">
+<div class="notice-warning" id="org1ec62e1">
 <p>
 Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverflow. Kindly refer them to this section.<br />
 </p>
 
 </div>
 
-<div class="notice-example" id="org33a9bc1">
+<div class="notice-example" id="orge63ebe5">
 <p>
 这是 1 个例子<br />
 </p>
@@ -148,7 +152,17 @@ Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverf
 </div>
 
 
-<a id="org090ab77"></a>
+<a id="orge9f631e"></a>
+
+## declare a reference
+
+According to the documentation [Internal-Links](https://orgmode.org/manual/Internal-Links.html) we know there have two ways to sign a particular tag.  
+
+1.  the outline of org mode is an natural linkable tag.
+2.  use <a id="orge3625fb"></a> to declare a linkable tag.
+
+
+<a id="org2189ce1"></a>
 
 # 段落及高亮
 
@@ -165,7 +179,7 @@ HDFS 是如何实现大数据高速、可靠的存储和访问的呢？
 -   Hadoop 分布式文件系统 HDFS 的设计目标是管理数以千计的服务器、数以万计的磁盘，将大规模的服务器计算资源当作一个单一存储系统进行管理，对应用程序提供数以 PB 计的存储容量，让应用程序像使用普通文件系统一样存储大规模的文件数据。
 
 
-<a id="org6005efc"></a>
+<a id="org741cbb5"></a>
 
 # 表格
 
@@ -406,11 +420,11 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
-<a id="org5822c8e"></a>
+<a id="org2e921b2"></a>
 
 ## awk 表格
 
-<table id="org1762ce2" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org671d5c9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -561,9 +575,12 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
-<a id="orgc5648e9"></a>
+<a id="org3da7c62"></a>
 
 ## 表格自增 id
+
+The target scope which at the left of equation , @ means row number and $ means column nubmer of increasing from one.  
+The expression which at the right of equation  , @# stands for the row number of increasing from zero.  
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -577,7 +594,7 @@ org table `M-k` `M-j` for move Rows up and down
 </colgroup>
 <tbody>
 <tr>
-<td class="org-right">0</td>
+<td class="org-right">序号</td>
 <td class="org-left">字段名</td>
 <td class="org-left">名称</td>
 </tr>
@@ -603,7 +620,7 @@ org table `M-k` `M-j` for move Rows up and down
 `C-c` `C-c` to execute it  
 
 
-<a id="orgc0b0c4b"></a>
+<a id="orgf0c2def"></a>
 
 # LaTex 公式
 
@@ -621,7 +638,7 @@ $$\begin{aligned}
 \end{aligned} $$  
 
 
-<a id="org3da9290"></a>
+<a id="orgcc7530a"></a>
 
 # Org 代码
 
@@ -632,10 +649,13 @@ $$\begin{aligned}
        (num-fmt
     	(and num-start
     	     (format "%%%ds "
-    	     (format "%%%ds: "
+    	     (format "%(add-hook 'code-review-mode-hook
+            (lambda ()
+              ;; include *Code-Review* buffer into current workspace
+              (persp-add-buffer (current-buffer))))%%ds: "
 
 
-<a id="org63662d6"></a>
+<a id="org10502e0"></a>
 
 ## Java 代码
 
@@ -662,91 +682,90 @@ $$\begin{aligned}
     }
 
 
-<a id="orgf804b08"></a>
+<a id="orgc432818"></a>
 
 ## babel java
 
-    List<Integer> a = Arrays.asList(1, 2);
-    List<Integer> a = Arrays.asList(1, 2);
-    List<Integer> a = Arrays.asList(1, 2);
-    List<Integer> a = Arrays.asList(1, 2);
     List<Integer> a = Arrays.asList(1, 2);
     return a;
 
 `C-c` `C-c` to execute it, but export to html will fail when the babel java result generated.  
 
 
-<a id="org9660fc6"></a>
+<a id="orge139eab"></a>
 
 # 图片
 
 
-<a id="orgc13dd53"></a>
+<a id="orgbeb94e6"></a>
 
 ## 引用本地图片
 
 ![img](./image/excalidraw-demo.svg "create by <https://excalidraw.com/>")  
 
 
-<a id="org4bbb795"></a>
+<a id="orgdb3d6ef"></a>
 
-## 引用网络图片
+## dot
 
-
-<a id="org455590e"></a>
-
-## dot graphviz
-
-1.  dot
-
-    ![img](image/dot-graphviz-demo.svg "XX 系统 v1.2.3 架构图")  
-
-2.  dot sk
-
-    ![img](image/dot-sk-graphviz-demo.svg "手绘风格的 dot graphviz")  
+![img](image/dot-graphviz-demo.svg "XX 系统 v1.2.3 架构图")  
 
 
-<a id="orgad6ba1e"></a>
+<a id="org12ef42a"></a>
 
-## plantuml
+## dot sk
 
-1.  plantuml with style css
-
-    plantuml 替换原生样式  
-    DARKO   RANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN  
-    
-        !define LIGHTORANGE
-        !includeurl C4-PlantUML/juststyle.puml
-    
-    ![img](image/plant-uml-order.svg "有样式的 plantuml 时序图")  
-
-2.  plant uml 系统 Contex 架构图
-
-    plantuml 替换原生样式  
-    DARKORANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN  
-    
-        !define LIGHTBLUE
-        !includeurl C4-PlantUML/juststyle.puml
-    
-    ![img](image/plantuml-c4.svg "系统 Contex 架构图")  
-
-3.  泳道图
-
-    ![img](./image/plantuml-swiming.svg)  
-
-4.  plantuml htmlstyle
-
-    ![img](image/oa-center.svg)  
+![img](image/dot-sk-graphviz-demo.svg "手绘风格的 dot graphviz")  
 
 
-<a id="org0239e23"></a>
+<a id="org2ec2977"></a>
+
+## plantuml with style css
+
+plantuml 替换原生样式  
+DARKO   RANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN  
+
+    !define LIGHTORANGE
+    !includeurl C4-PlantUML/juststyle.puml
+
+![img](image/plant-uml-order.svg "有样式的 plantuml 时序图")  
+
+
+<a id="orgf74f511"></a>
+
+## plant uml 系统 Contex 架构图
+
+plantuml 替换原生样式  
+DARKORANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN  
+
+    !define LIGHTBLUE
+    !includeurl C4-PlantUML/juststyle.puml
+
+![img](image/plantuml-c4.svg "系统 Contex 架构图")  
+
+
+<a id="org69347ca"></a>
+
+## 泳道图
+
+![img](./image/plantuml-swiming.svg)  
+
+
+<a id="orga6c57d6"></a>
+
+## plantuml 通过html自定义图片样式
+
+![img](image/oa-center.svg)  
+
+
+<a id="org48e8db8"></a>
 
 # org 转 Word
 
     pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
 
 
-<a id="org9618bbf"></a>
+<a id="orgaed6368"></a>
 
 # 插入时间
 

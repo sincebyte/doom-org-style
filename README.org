@@ -76,6 +76,10 @@ Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverf
 #+begin_notice-example
 这是 1 个例子
 #+end_notice-example
+** declare a reference
+According to the documentation [[https://orgmode.org/manual/Internal-Links.html][Internal-Links]] we know there have two ways to sign a particular tag.
+1. the outline of org mode is an natural linkable tag.
+2. use <<a particular tag>> to declare a linkable tag.
 * 段落及高亮
 Example of an @@comment:inline@@ comment.
 
@@ -161,10 +165,13 @@ org table ~M-k~ ~M-j~ for move Rows up and down
 | macfoo  | 555-6480 | 1200/300      | A |
 | sabafoo | 555-2127 | 1200/300      | C |
 ** 表格自增 id
-| 0 | 字段名 | 名称       |
-| 1 | age    | 年龄       |
-| 2 | bir    | 出生年月日 |
-#+tblfm: $1=@#-1
+The target scope which at the left of equation , @ means row number and $ means column nubmer of increasing from one.
+The expression which at the right of equation  , @# stands for the row number of increasing from zero.
+
+| 序号 | 字段名 | 名称       |
+|    1 | age    | 年龄       |
+|    2 | bir    | 出生年月日 |
+#+tblfm: @2..$1=@#-1
 
 #+begin_src txt
 #+tblfm: $1=@#-1
@@ -232,22 +239,19 @@ $$\begin{aligned}
 ** babel java
 #+begin_src java :results value list
 List<Integer> a = Arrays.asList(1, 2);
-List<Integer> a = Arrays.asList(1, 2);
-List<Integer> a = Arrays.asList(1, 2);
-List<Integer> a = Arrays.asList(1, 2);
-List<Integer> a = Arrays.asList(1, 2);
 return a;
 #+end_src
+
+#+RESULTS:
+- 1
+- 2
+
 ~C-c~ ~C-c~ to execute it, but export to html will fail when the babel java result generated.
 * 图片
 ** 引用本地图片
 #+CAPTION[Short caption]: create by https://excalidraw.com/
 [[file:./image/excalidraw-demo.svg]]
-** 引用网络图片
-# #+CAPTION[Short caption]: from doom emacs readme.md
-# [[https://raw.githubusercontent.com/doomemacs/doomemacs/screenshots/main.png]]
-** dot graphviz
-*** dot
+** dot
 #+BEGIN_SRC dot :file image/dot-graphviz-demo.svg
     digraph G {
         node [shape="box",fontcolor="#4EAEEF"]
@@ -283,7 +287,7 @@ return a;
 #+RESULTS:
 [[file:image/dot-graphviz-demo.svg]]
 
-*** dot sk
+** dot sk
 
 #+BEGIN_SRC dotsk :file image/dot-sk-graphviz-demo.svg
 digraph G {
@@ -318,8 +322,7 @@ digraph G {
 #+RESULTS:
 [[file:image/dot-sk-graphviz-demo.svg]]
 
-** plantuml
-*** plantuml with style css
+** plantuml with style css
 plantuml 替换原生样式
 DARKO   RANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN
 #+begin_src txt
@@ -359,7 +362,7 @@ SharePoint -> SharePoint: << AppInstalled >>
 #+RESULTS:
 [[file:image/plant-uml-order.svg]]
 
-*** plant uml 系统 Contex 架构图
+** plant uml 系统 Contex 架构图
 plantuml 替换原生样式
 DARKORANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN
 #+begin_src txt
@@ -405,7 +408,7 @@ DARKORANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN
 #+CAPTION: 系统 Contex 架构图
 #+RESULTS:
 [[file:image/plantuml-c4.svg]]
-*** 泳道图
+** 泳道图
 #+BEGIN_SRC plantuml :file ./image/plantuml-swiming.svg
 !define LIGHTGREEN
 !includeurl C4-PlantUML/juststyle.puml
@@ -424,7 +427,7 @@ skinparam backgroundColor transparent
 #+RESULTS:
 [[file:./image/plantuml-swiming.svg]]
 
-*** plantuml htmlstyle
+** plantuml 通过html自定义图片样式
 #+BEGIN_SRC dot -Tpng :file image/oa-center.svg
     digraph G {
         node [shape="box",fontcolor="0xfffff", style=rounded]

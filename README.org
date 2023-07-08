@@ -164,7 +164,7 @@ org table ~M-k~ ~M-j~ for move Rows up and down
 | foot    | 555-6699 | 1200/300      | B |
 | macfoo  | 555-6480 | 1200/300      | A |
 | sabafoo | 555-2127 | 1200/300      | C |
-** 表格自增 id
+** 表格自增 ID
 The target scope which at the left of equation , @ means row number and $ means column nubmer of increasing from one.
 The expression which at the right of equation  , @# stands for the row number of increasing from zero.
 
@@ -512,3 +512,8 @@ pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
 | ~K~     | lask week                     |
 | ~J~     | next week                     |
 | ~L~     | next day                      |
+* Unicode 字符
+Use unicode character could express of what you think more directly,cause an image symbol alway make the understanding more clearly.
+Here are some unicode website of listing those character,✌
+- https://unicode.yunser.com/common
+- https://cn.piliapp.com/symbol/

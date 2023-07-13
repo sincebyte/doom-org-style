@@ -76,7 +76,7 @@ Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverf
 #+begin_notice-example
 这是 1 个例子
 #+end_notice-example
-** declare a reference
+** Declare a reference
 According to the documentation [[https://orgmode.org/manual/Internal-Links.html][Internal-Links]] we know there have two ways to sign a particular tag.
 1. the outline of org mode is an natural linkable tag.
 2. use <<a particular tag>> to declare a linkable tag.
@@ -141,7 +141,7 @@ org table ~M-k~ ~M-j~ for move Rows up and down
 #+TBLFM: $6=vsum($P1..$P3)::$7=10*$Tot/$max;%.1f::$at=vmean(@-II..@-I);%.1f
 #+TBLFM: $2=$1^2::$3=$1^3::$4=$1^4::$5=sqrt($1)::$6=sqrt(sqrt(($1)))
 #+latex:\newpage
-** awk 表格
+** AWK 表格
 #+name: bbs-list
 | aardvark | 555-5553 | 1200/300      | B |
 | alpo-net | 555-3412 | 2400/1200/300 | A |
@@ -502,6 +502,53 @@ skinparam backgroundColor transparent
 #+RESULTS:
 [[file:image/oa-center.svg]]
 
+** plot 折线图
+use ~org-plot/gnuplot~ for generate.
+
+#+PLOT: title:"2023年考勤状态曲线" type:2d linetype:4 file:"zxt.svg"
+#+PLOT: set:"key right top"
+#+PLOT: set:"xlabel 'Month'"
+#+PLOT: set:"ylabel 'Counts'"
+#+PLOT: set:"xtics font ',10'"
+#+PLOT: set:"ytics font ',10'"
+#+PLOT: set:"yrange [0:]"
+#+PLOT: set:"size ratio 0.5"
+#+PLOT: ind:1
+#+PLOT: with:"linespoints linewidth 3 pointsize 1.0"
+| 月份 | 旷工次数 | 漏签次数 | 早退次数 | 迟到次数 |
+|------+----------+----------+----------+----------|
+|   01 |     9598 |     7319 |       44 |      673 |
+|   02 |    13788 |     8963 |       65 |      719 |
+|   03 |    15024 |     8837 |       60 |     1005 |
+|   04 |    11977 |    10662 |       92 |      807 |
+|   05 |    10942 |     6005 |      191 |      575 |
+|   06 |     9958 |     5943 |      142 |      530 |
+|   07 |     5443 |      902 |       24 |       89 |
+
+#+CAPTION: 折线图
+[[./zxt.svg]]
+** plot 柱状图
+#+PLOT: title:"Citas" file:"vvt.svg"
+#+PLOT: type:2d
+#+PLOT: set:"style histogram clustered gap 1"
+#+PLOT: set:"style fill solid 1.0 border -1"
+#+PLOT: set:"key right top"
+#+PLOT: set:"xlabel 'Cities'"
+#+PLOT: set:"ylabel 'Metrics'"
+#+PLOT: set:"xtics font ',10'"
+#+PLOT: set:"ytics font ',10'"
+#+PLOT: set:"yrange [0:]"
+#+PLOT: with:histograms
+#+PLOT: ind:1
+| Sede      | Max cites | H-xndex1 | H-index |
+|-----------+-----------+----------+---------|
+| Chile     |    257.72 |     21.3 |   81.39 |
+| Leeds     |    165.77 |     19.6 |   19.68 |
+| Sao Paolo |     71.00 |     41.5 |   81.50 |
+| Stockholm |    134.19 |     12.3 |   94.33 |
+| Morelia   |    257.56 |     19.6 |   97.67 |
+
+[[./vvt.svg]]
 * org 转 Word
 #+begin_src shell
 pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org

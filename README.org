@@ -549,6 +549,55 @@ use ~org-plot/gnuplot~ for generate.
 | Morelia   |    257.56 |     19.6 |   97.67 |
 
 [[./vvt.svg]]
+** WHAT IS CONNECTOR
+#+begin_src d2 :file test.svg
+direction: right
+platform : BPM
+
+platform -> RocketMq: invoke  {
+  style.animated: true
+}
+platform -> API: interface/http/https  {
+  style.animated: true
+}
+platform -> DataBase: DB_Link  {style.animated: true}
+RocketMq: {
+shape: image
+icon: https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Apache_RocketMQ_logo.svg/130px-Apache_RocketMQ_logo.svg.png?20210417072453
+width: 10
+style: {
+    stroke: green
+    font-color: green
+    fill: white
+  }
+}
+
+DataBase: {
+shape: image
+icon: https://cdn.icon-icons.com/icons2/1508/PNG/512/mysqlworkbench_103806.png
+width: 20
+}
+
+API.style.multiple: true
+
+
+RocketMq -> System : belong{
+ style.animated: true
+ style.stroke: "#53C0D8"
+}
+API -> System : belong{
+ style.animated: true
+ style.stroke: "#53C0D8"
+}
+DataBase -> System : belong{
+ style.animated: true
+ style.stroke: "#53C0D8"
+}
+
+#+end_src
+
+#+RESULTS:
+[[file:test.svg]]
 * org 转 Word
 #+begin_src shell
 pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org

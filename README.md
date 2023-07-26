@@ -1,41 +1,47 @@
 
 # Table of Contents
 
-1.  [使用](#org1e0be63)
-2.  [字体样式](#org164ab47)
-3.  [特殊说明](#orgd29e667)
-    1.  [quote 摘要、引用](#orgd23efd3)
-    2.  [notice 注意事项、提醒](#org1c87428)
-    3.  [Declare a reference](#orgb482669)
-4.  [段落及高亮](#org8c5f5af)
-5.  [表格](#org5495301)
-    1.  [AWK 表格](#orgd3a3588)
-    2.  [表格自增 ID](#org9fb5aa7)
-6.  [LaTex 公式](#org2abdf4b)
-7.  [Org 代码](#orgafc7a6c)
-    1.  [Java 代码](#orgb2e4b34)
-    2.  [babel java](#org34afdb6)
-8.  [图片](#org9e46c53)
-    1.  [引用本地图片](#orgc1cfe5f)
-    2.  [dot](#orgbf4f7d7)
-    3.  [dot sk](#org9ee97f3)
-    4.  [plantuml with style css](#orgb8475ac)
-    5.  [plant uml 系统 Contex 架构图](#org9ba53e6)
-    6.  [泳道图](#org59c3a0d)
-    7.  [plantuml 通过html自定义图片样式](#org7c18eaa)
-    8.  [plot 折线图](#org36242d7)
-    9.  [plot 柱状图](#org3493f18)
-    10. [WHAT IS CONNECTOR](#org8581967)
-9.  [org 转 Word](#orgb07ea74)
-10. [插入时间](#orgdb34e6c)
-11. [Unicode 字符](#org3bfdd13)
+1.  [使用](#org171f5fc)
+2.  [字体样式](#orgebd1149)
+3.  [特殊说明](#orgb8dfcb0)
+    1.  [quote 摘要、引用](#org1e64630)
+    2.  [notice 注意事项、提醒](#org4d3c24c)
+    3.  [Declare a reference](#org587437a)
+4.  [段落及高亮](#org7c857e0)
+5.  [表格](#orga76bcc0)
+    1.  [AWK 表格](#org8ee5f97)
+    2.  [表格自增 ID](#org3899083)
+6.  [LaTex 公式](#org0b00f5a)
+7.  [Org 代码](#org7bc69f7)
+    1.  [Java 代码](#orgefb3e39)
+    2.  [babel java](#org916c538)
+8.  [图片](#org7d8ec2f)
+    1.  [引用本地图片](#org6800fcd)
+    2.  [dot](#org264ee2f)
+    3.  [dot sk](#orgf851688)
+    4.  [plantuml with style css](#orgf762f11)
+    5.  [plant uml 系统 Contex 架构图](#orgefbc7bf)
+    6.  [泳道图](#org5c98ee5)
+    7.  [plantuml 通过html自定义图片样式](#org0c6fd4a)
+    8.  [plot 折线图](#org2dbbd7d)
+    9.  [plot 柱状图](#orgbe3e13d)
+    10. [WHAT IS CONNECTOR](#org9e823d4)
+    11. [d2 workflow](#org1d95c2d)
+9.  [org 转 Word](#org54cb324)
+10. [插入时间](#orgc9245c6)
+11. [Unicode 字符](#orgb8f654d)
+
+PROPERTIES:  
+:ID:       d33b18eb-be5d-4fce-b793-a4d3e51bd915  
+
+:END:  
 
 > 样式引用：<https://docs.doomemacs.org/latest/#/modules>  
 
 一个类 **doom doc** 的 **org html** 样式模版 [点此预览🪄](http://1.117.167.195/doc/doomorgstyle.html)  
 
 
-<a id="org1e0be63"></a>
+<a id="org171f5fc"></a>
 
 # 使用
 
@@ -58,7 +64,7 @@
     #+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
     #+latex:\newpage
 
-<div class="notice-info" id="org2263512">
+<div class="notice-info" id="org09d1216">
 <p>
 想使用在线版的静态文件，可以使用下面的配置进行替换<br />
 </p>
@@ -70,7 +76,7 @@
     #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
 
 
-<a id="org164ab47"></a>
+<a id="orgebd1149"></a>
 
 # 字体样式
 
@@ -115,12 +121,12 @@
 </table>
 
 
-<a id="orgd29e667"></a>
+<a id="orgb8dfcb0"></a>
 
 # 特殊说明
 
 
-<a id="orgd23efd3"></a>
+<a id="org1e64630"></a>
 
 ## quote 摘要、引用
 
@@ -130,25 +136,25 @@
 > A combination text editor/really horrible ProgrammingLanguage. To quote the paper &ldquo;RealProgrammers don&rsquo;t use Pascal&rdquo; (1983):  
 
 
-<a id="org1c87428"></a>
+<a id="org4d3c24c"></a>
 
 ## notice 注意事项、提醒
 
-<div class="notice-info" id="orga2577b6">
+<div class="notice-info" id="orge1db696">
 <p>
 你有许多已标记的项目并且你可能错过一个重要的项目时，提醒可以提供帮助<br />
 </p>
 
 </div>
 
-<div class="notice-warning" id="org354374c">
+<div class="notice-warning" id="org3deeb53">
 <p>
 Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverflow. Kindly refer them to this section.<br />
 </p>
 
 </div>
 
-<div class="notice-example" id="org510b296">
+<div class="notice-example" id="org44beb85">
 <p>
 这是 1 个例子<br />
 </p>
@@ -156,17 +162,17 @@ Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverf
 </div>
 
 
-<a id="orgb482669"></a>
+<a id="org587437a"></a>
 
 ## Declare a reference
 
 According to the documentation [Internal-Links](https://orgmode.org/manual/Internal-Links.html) we know there have two ways to sign a particular tag.  
 
 1.  the outline of org mode is an natural linkable tag.
-2.  use <a id="org24a8c72"></a> to declare a linkable tag.
+2.  use <a id="org2c3e174"></a> to declare a linkable tag.
 
 
-<a id="org8c5f5af"></a>
+<a id="org7c857e0"></a>
 
 # 段落及高亮
 
@@ -183,7 +189,7 @@ HDFS 是如何实现大数据高速、可靠的存储和访问的呢？
 -   Hadoop 分布式文件系统 HDFS 的设计目标是管理数以千计的服务器、数以万计的磁盘，将大规模的服务器计算资源当作一个单一存储系统进行管理，对应用程序提供数以 PB 计的存储容量，让应用程序像使用普通文件系统一样存储大规模的文件数据。
 
 
-<a id="org5495301"></a>
+<a id="orga76bcc0"></a>
 
 # 表格
 
@@ -424,11 +430,11 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
-<a id="orgd3a3588"></a>
+<a id="org8ee5f97"></a>
 
 ## AWK 表格
 
-<table id="org0f4d72e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org2afd74d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -579,7 +585,7 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
-<a id="org9fb5aa7"></a>
+<a id="org3899083"></a>
 
 ## 表格自增 ID
 
@@ -624,7 +630,7 @@ The expression which at the right of equation  , @# stands for the row number of
 `C-c` `C-c` to execute it  
 
 
-<a id="org2abdf4b"></a>
+<a id="org0b00f5a"></a>
 
 # LaTex 公式
 
@@ -642,7 +648,7 @@ $$\begin{aligned}
 \end{aligned} $$  
 
 
-<a id="orgafc7a6c"></a>
+<a id="org7bc69f7"></a>
 
 # Org 代码
 
@@ -659,7 +665,7 @@ $$\begin{aligned}
               (persp-add-buffer (current-buffer))))%%ds: "
 
 
-<a id="orgb2e4b34"></a>
+<a id="orgefb3e39"></a>
 
 ## Java 代码
 
@@ -686,7 +692,7 @@ $$\begin{aligned}
     }
 
 
-<a id="org34afdb6"></a>
+<a id="org916c538"></a>
 
 ## babel java
 
@@ -696,33 +702,33 @@ $$\begin{aligned}
 `C-c` `C-c` to execute it, but export to html will fail when the babel java result generated.  
 
 
-<a id="org9e46c53"></a>
+<a id="org7d8ec2f"></a>
 
 # 图片
 
 
-<a id="orgc1cfe5f"></a>
+<a id="org6800fcd"></a>
 
 ## 引用本地图片
 
 ![img](./image/excalidraw-demo.svg "create by <https://excalidraw.com/>")  
 
 
-<a id="orgbf4f7d7"></a>
+<a id="org264ee2f"></a>
 
 ## dot
 
 ![img](image/dot-graphviz-demo.svg "XX 系统 v1.2.3 架构图")  
 
 
-<a id="org9ee97f3"></a>
+<a id="orgf851688"></a>
 
 ## dot sk
 
 ![img](image/dot-sk-graphviz-demo.svg "手绘风格的 dot graphviz")  
 
 
-<a id="orgb8475ac"></a>
+<a id="orgf762f11"></a>
 
 ## plantuml with style css
 
@@ -735,7 +741,7 @@ DARKO   RANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGRE
 ![img](image/plant-uml-order.svg "有样式的 plantuml 时序图")  
 
 
-<a id="org9ba53e6"></a>
+<a id="orgefbc7bf"></a>
 
 ## plant uml 系统 Contex 架构图
 
@@ -748,21 +754,21 @@ DARKORANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN
 ![img](image/plantuml-c4.svg "系统 Contex 架构图")  
 
 
-<a id="org59c3a0d"></a>
+<a id="org5c98ee5"></a>
 
 ## 泳道图
 
 ![img](./image/plantuml-swiming.svg)  
 
 
-<a id="org7c18eaa"></a>
+<a id="org0c6fd4a"></a>
 
 ## plantuml 通过html自定义图片样式
 
 ![img](image/oa-center.svg)  
 
 
-<a id="org36242d7"></a>
+<a id="org2dbbd7d"></a>
 
 ## plot 折线图
 
@@ -860,7 +866,7 @@ use `org-plot/gnuplot` for generate.
 ![img](./zxt.svg "折线图")  
 
 
-<a id="org3493f18"></a>
+<a id="orgbe3e13d"></a>
 
 ## plot 柱状图
 
@@ -930,21 +936,28 @@ use `org-plot/gnuplot` for generate.
 ![img](./vvt.svg)  
 
 
-<a id="org8581967"></a>
+<a id="org9e823d4"></a>
 
 ## WHAT IS CONNECTOR
 
 ![img](test.svg)  
 
 
-<a id="orgb07ea74"></a>
+<a id="org1d95c2d"></a>
+
+## d2 workflow
+
+![img](devflow.svg)  
+
+
+<a id="org54cb324"></a>
 
 # org 转 Word
 
     pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
 
 
-<a id="orgdb34e6c"></a>
+<a id="orgc9245c6"></a>
 
 # 插入时间
 
@@ -983,7 +996,7 @@ use `org-plot/gnuplot` for generate.
 </table>
 
 
-<a id="org3bfdd13"></a>
+<a id="orgb8f654d"></a>
 
 # Unicode 字符
 

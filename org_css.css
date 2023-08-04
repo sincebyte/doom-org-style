@@ -6,6 +6,8 @@
     right: 150px;
     top: 0;
     --white:#fff;
+    transform: translate(-50%, -50%);
+  /* 其他样式属性 */
 }
 
 .toggletheme input[type="checkbox"] {
@@ -61,4 +63,3 @@
   transform: translateX(-100%);
 }
 
-/*# sourceMappingURL=index.css.map */

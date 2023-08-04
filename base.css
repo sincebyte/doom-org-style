@@ -4,8 +4,11 @@
     z-index: 999;
     position: fixed;
     right: 150px;
-    top: 0;
+    /* top: 0; */
+    top: 5%;
+    right: 6%;
     --white:#fff;
+    transform: translate(-50%, -50%);
 }
 
 .toggletheme input[type="checkbox"] {
@@ -17,8 +20,8 @@
 .toggletheme label {
   cursor: pointer;
   text-indent: -9999px;
-  width: 55px;
-  height: 30px;
+  width: 30.5px;
+  height: 15px;
   background: black;
   margin: 0 auto;
   display: flex;
@@ -33,14 +36,14 @@
 .toggletheme label:after {
   content: "";
   background:var(--white);
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
   position: absolute;
-  top: 5px;
-  left: 4px;
+  top: 1.2px;
+  left: 2px;
   transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
 }
 
@@ -53,7 +56,7 @@
 }
 
 .toggletheme input:checked + label:after {
-  left: calc(100% - 5px);
+  left: calc(100% - 1px);
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
   -ms-transform: translateX(-100%);

@@ -7,22 +7,21 @@ $(document).ready(function () {
   bindEvent();
 });
 
-function getQueryVariable(variable)
-{
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i=0;i<vars.length;i++) {
-        var pair = vars[i].split("=");
-        if(pair[0] == variable){return pair[1];}
-    }
-    return(false);
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) { return pair[1]; }
+  }
+  return (false);
 }
 
 /* 创建主题切换按钮*/
 function createCheckbox() {
   var isChecked = localStorage.getItem("doomToggleStyle");
   let dom = `<div class="toggletheme">
-              <input class="container_toggle" type="checkbox" id="switch"  ${(isChecked=='dark' ? 'checked' : '')} name="mode" />
+              <input class="container_toggle" type="checkbox" id="switch"  ${(isChecked == 'dark' ? 'checked' : '')} name="mode" />
              <label for="switch">切换</label>
             </div>`;
 

@@ -3,10 +3,9 @@
 .toggletheme {
     z-index: 999;
     position: fixed;
-    right: 150px;
     /* top: 0; */
-    top: 5%;
-    right: 6%;
+    top: 4%;
+    right: 4%;
     --white:#fff;
     transform: translate(-50%, -50%);
 }
@@ -42,7 +41,7 @@
   -moz-border-radius: 50%;
   border-radius: 50%;
   position: absolute;
-  top: 1.2px;
+  top: 1.4px;
   left: 2px;
   transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
 }

@@ -552,6 +552,7 @@ use ~org-plot/gnuplot~ for generate.
 ** WHAT IS CONNECTOR
 #+begin_src ds2 :file test.svg
 direction: right
+style.fill : transparent
 platform : BPM
 
 platform -> RocketMq: invoke  {
@@ -601,6 +602,8 @@ DataBase -> System : belong{
 ** d2 workflow
 #+begin_src d2 :file devflow.svg
     direction: right
+    style.fill : transparent
+
     "禅道需求": "需求-PRD"{
     shape: image
     icon: https://pp.myapp.com/ma_icon/0/icon_54212284_1655281546/256

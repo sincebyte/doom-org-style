@@ -41,7 +41,7 @@
   -moz-border-radius: 50%;
   border-radius: 50%;
   position: absolute;
-  top: 1.4px;
+  top: 1.5px;
   left: 2px;
   transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
 }
@@ -62,5 +62,8 @@
   -o-transform: translateX(-100%);
   transform: translateX(-100%);
 }
-
+#content {
+  max-width: 65em;
+  padding-left: 240px;
+}
 /*# sourceMappingURL=index.css.map */

@@ -613,7 +613,7 @@
 .dark #postamble{
     right: 0;
     bottom: 0;
-    margin-right: 100px;
+    margin-right: 0px;
     margin-bottom: 10px;
     position: fixed;
     color: hsla(204, 83%, 62%, 100%);
@@ -624,7 +624,7 @@
 .dark #preamble {
     right: 0;
     bottom: 0;
-    margin-right: 100px;
+    margin-right: 0px;
     margin-bottom: 10px;
     position: fixed;
     color: hsla(204, 83%, 62%, 100%);

@@ -782,11 +782,20 @@
         margin-left: 5%;
         max-width: 90%;
     }
+
+    .dark h1.title {
+        text-align: left;
+        margin: 1em 0 0 0%;
+    }
 }
 
 @media screen and (min-width: 1335px) {
     #content {
         max-width: 60em;
         padding-left: 240px;
+    }
+    .dark h1.title {
+        text-align: left;
+        margin: 1em 0 0 0%;
     }
 }

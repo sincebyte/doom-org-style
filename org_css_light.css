@@ -518,7 +518,7 @@
 @media screen {
     .light h1.title {
         text-align: left;
-        margin: 1em 0 0 280px;
+        /* margin: 1em 0 0 5%; */
     }
 
     .light h2 {
@@ -567,21 +567,7 @@
 }
 
 
-@media screen and (max-width: 1024px) {
-    .light html, .light body {
-        font-size: 14px;
-    }
 
-    .light #table-of-contents {
-        display: none;
-    }
-
-
-    .light div.outline-2,.light  #footnotes {
-        margin-left: 5%;
-        max-width: 90%;
-    }
-}
 .light pre.src:hover:before{
     margin-top: 0px;
 }
@@ -794,4 +780,41 @@
 }
 .light .timestamp {
     color: rgba(144, 147, 163, 1);;
+}
+
+@media screen and (max-width: 1335px) {
+    .light html, .light body {
+        font-size: 14px;
+    }
+
+    .light #table-of-contents {
+        display: none;
+    }
+
+    #content {
+      max-width: 75em;
+      padding-left: 20px;
+    }
+
+    .light div.outline-2,.light  #footnotes {
+        margin-left: 5%;
+        max-width: 90%;
+    }
+
+    .light h1.title {
+        text-align: left;
+        margin: 1em 0 0 5%;
+    }
+}
+
+@media screen and (min-width: 1335px) {
+    #content {
+        max-width: 60em;
+        padding-left: 240px;
+    }
+
+    .light h1.title {
+        text-align: left;
+        margin: 1em 0 0 0px;
+    }
 }

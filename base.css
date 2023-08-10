@@ -1,11 +1,13 @@
 @import url('org_css_dark.css');
 @import url('org_css_light.css');
+
+
 .toggletheme {
     z-index: 999;
     position: fixed;
     /* top: 0; */
-    top: 4%;
-    right: 4%;
+    top: 2%;
+    right: 7%;
     --white:#fff;
     transform: translate(-50%, -50%);
 }
@@ -61,9 +63,5 @@
   -ms-transform: translateX(-100%);
   -o-transform: translateX(-100%);
   transform: translateX(-100%);
-}
-#content {
-  max-width: 65em;
-  padding-left: 240px;
 }
 /*# sourceMappingURL=index.css.map */

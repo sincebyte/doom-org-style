@@ -544,22 +544,6 @@
     font-weight: 400;
 }
 
-
-@media screen and (max-width: 1024px) {
-    .dark html, .dark body {
-        font-size: 14px;
-    }
-
-    .dark #table-of-contents {
-        display: none;
-    }
-
-
-    .dark div.outline-2,.dark  #footnotes {
-        margin-left: 5%;
-        max-width: 90%;
-    }
-}
 .dark pre.src:hover:before{
     margin-top: 0px;
 }
@@ -766,4 +750,31 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(144, 147, 153, 0.3);
+}
+
+@media screen and (max-width: 1335px) {
+    .dark html, .dark body {
+        font-size: 14px;
+    }
+
+    .dark #table-of-contents {
+        display: none;
+    }
+
+    #content {
+      max-width: 75em;
+      padding-left: 20px;
+    }
+
+    .dark div.outline-2,.dark  #footnotes {
+        margin-left: 5%;
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width: 1335px) {
+    #content {
+        max-width: 60em;
+        padding-left: 240px;
+    }
 }

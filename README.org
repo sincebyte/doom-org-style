@@ -1,4 +1,4 @@
-PROPERTIES:
+:PROPERTIES:
 :ID:       d33b18eb-be5d-4fce-b793-a4d3e51bd915
 :END:
 #+title: doom org style

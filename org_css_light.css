@@ -240,7 +240,7 @@
     transform: translateY(-50%);
     text-align: center;
     /* text-shadow: 0 0 6px hsl(220,13%,18%,100%); */
-    text-shadow: 0 0 6px hsl(0,0%,100%,100%)
+    text-shadow: 0 0 6px hsl(0,0%,100%,100%);
     content: "💡";
 }
 
@@ -370,7 +370,7 @@
 
 .light pre.src span{
     font-size: .875rem;
-    line-height: 1rem;
+    line-height: 1.3rem;
 }
 
 .light pre.src:before {
@@ -391,24 +391,36 @@
     position: relative;
 }
 .light .org-src-container::before {
-    content: "⎘";
+    content: "❒";
     font-size: 200%;
-    color: black;
-    background-color: hsl(204,65%,60%,30%);;
+    color: rgb(36, 41, 47);
+    background-color: rgb(246, 248, 250);
+    border-radius: 6px;
     cursor: pointer;
     position: absolute;
     display: inline-block;
     text-decoration: none;
     left: 102%;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
     line-height: 1em;
     /* top: 1.3em; */
     pointer-events: auto;
+    border-color: rgba(35, 40, 46, 0.573);
+    border: .5px solid;
+}
+.light .hover-btn-style::before {
+    content: "❐";
+    border-color: rgba(35, 40, 46, 0.573);
+    background-color: rgb(246, 255, 250);
 }
 
-.light .org-src-container:hover::before  {
-    color: hsl(204,65%,60%,100%);
+.light .click-btn-style::before  {
+    content: "✓";
+    color: #2ECC71;
+    border-color: #2ECC71;
+    background-color: rgb(246, 255, 250);
 }
 
 .light pre.src-plantuml:before {

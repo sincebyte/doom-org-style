@@ -371,25 +371,37 @@
     /* pointer-events: none; */
     position: relative;
 }
+
 .dark .org-src-container::before {
-    content: "⎘";
+    content: "❒";
     font-size: 200%;
-    color: black;
-    background-color: hsl(204,65%,60%,30%);;
+    color: #a39b8f;
+    background-color: rgb(28, 30, 31);
+    border-radius: 6px;
     cursor: pointer;
     position: absolute;
     display: inline-block;
     text-decoration: none;
     left: 102%;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
     line-height: 1em;
     /* top: 1.3em; */
     pointer-events: auto;
+    border-color: rgba(35, 40, 46, 0.573);
+    border: 0.5px solid;
+}
+.dark .hover-btn-style::before {
+    content: "❐";
+    background-color: rgb(28, 30, 31);
 }
 
-.dark .org-src-container:hover::before  {
-    color: hsl(204,65%,60%,100%);
+.dark .click-btn-style::before  {
+    content: "✓";
+    color: #2ECC71;
+    border-color: #2ECC71;
+    background-color: rgb(28, 30, 31);
 }
 
 .dark pre.src-plantuml:before {

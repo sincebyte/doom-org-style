@@ -32,7 +32,24 @@ function createCheckbox() {
 function bindEvent() {
   var currentt = true;
 
+
+  $('div.org-src-container').before().hover(function (ev) {
+    if(ev.target.nodeName === 'DIV'){
+      $(ev.target).addClass('hover-btn-style');
+    }
+  }, function (ev) {
+    if(ev.target.nodeName === 'DIV'){
+      $(ev.target).removeClass('hover-btn-style');
+    }
+  });
+
   $('div.org-src-container').before().click(function (ev) {
+    if(ev.target.nodeName === 'DIV'){
+      $(ev.target).addClass('click-btn-style');
+      setTimeout(function(){
+        $(ev.target).removeClass('click-btn-style');
+      }, 5000);
+    }
     const element = $(this);
     const storage = document.createElement('textarea');
     const contentCode = element.clone()

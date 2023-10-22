@@ -707,13 +707,16 @@
     background: hsl(0,8%,90%,100%);
     color: black;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 18.2px;
     padding-left: 5px;
     margin-left: -12px;
     margin-right: 8px;
     font-size: .875rem;
     line-height: 1rem;
     user-select:none;
+}
+.src span:first-child{
+    padding-top: 30px;
 }
 
 .light mjx-container {

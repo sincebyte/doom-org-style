@@ -1,47 +1,7 @@
-
-# Table of Contents
-
-1.  [使用](#org171f5fc)
-2.  [字体样式](#orgebd1149)
-3.  [特殊说明](#orgb8dfcb0)
-    1.  [quote 摘要、引用](#org1e64630)
-    2.  [notice 注意事项、提醒](#org4d3c24c)
-    3.  [Declare a reference](#org587437a)
-4.  [段落及高亮](#org7c857e0)
-5.  [表格](#orga76bcc0)
-    1.  [AWK 表格](#org8ee5f97)
-    2.  [表格自增 ID](#org3899083)
-6.  [LaTex 公式](#org0b00f5a)
-7.  [Org 代码](#org7bc69f7)
-    1.  [Java 代码](#orgefb3e39)
-    2.  [babel java](#org916c538)
-8.  [图片](#org7d8ec2f)
-    1.  [引用本地图片](#org6800fcd)
-    2.  [dot](#org264ee2f)
-    3.  [dot sk](#orgf851688)
-    4.  [plantuml with style css](#orgf762f11)
-    5.  [plant uml 系统 Contex 架构图](#orgefbc7bf)
-    6.  [泳道图](#org5c98ee5)
-    7.  [plantuml 通过html自定义图片样式](#org0c6fd4a)
-    8.  [plot 折线图](#org2dbbd7d)
-    9.  [plot 柱状图](#orgbe3e13d)
-    10. [WHAT IS CONNECTOR](#org9e823d4)
-    11. [d2 workflow](#org1d95c2d)
-9.  [org 转 Word](#org54cb324)
-10. [插入时间](#orgc9245c6)
-11. [Unicode 字符](#orgb8f654d)
-
-PROPERTIES:  
-:ID:       d33b18eb-be5d-4fce-b793-a4d3e51bd915  
-
-:END:  
-
 > 样式引用：<https://docs.doomemacs.org/latest/#/modules>  
 
 一个类 **doom doc** 的 **org html** 样式模版 [点此预览🪄](http://1.117.167.195/doc/doomorgstyle.html)  
 
-
-<a id="org171f5fc"></a>
 
 # 使用
 
@@ -64,7 +24,7 @@ PROPERTIES:
     #+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
     #+latex:\newpage
 
-<div class="notice-info" id="org09d1216">
+<div class="notice-info" id="org607dcf1">
 <p>
 想使用在线版的静态文件，可以使用下面的配置进行替换<br />
 </p>
@@ -75,8 +35,6 @@ PROPERTIES:
     #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
 
-
-<a id="orgebd1149"></a>
 
 # 字体样式
 
@@ -121,12 +79,8 @@ PROPERTIES:
 </table>
 
 
-<a id="orgb8dfcb0"></a>
-
 # 特殊说明
 
-
-<a id="org1e64630"></a>
 
 ## quote 摘要、引用
 
@@ -136,25 +90,23 @@ PROPERTIES:
 > A combination text editor/really horrible ProgrammingLanguage. To quote the paper &ldquo;RealProgrammers don&rsquo;t use Pascal&rdquo; (1983):  
 
 
-<a id="org4d3c24c"></a>
-
 ## notice 注意事项、提醒
 
-<div class="notice-info" id="orge1db696">
+<div class="notice-info" id="orgd296ef9">
 <p>
 你有许多已标记的项目并且你可能错过一个重要的项目时，提醒可以提供帮助<br />
 </p>
 
 </div>
 
-<div class="notice-warning" id="org3deeb53">
+<div class="notice-warning" id="orgea37774">
 <p>
 Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverflow. Kindly refer them to this section.<br />
 </p>
 
 </div>
 
-<div class="notice-example" id="org44beb85">
+<div class="notice-example" id="org08aa720">
 <p>
 这是 1 个例子<br />
 </p>
@@ -162,17 +114,13 @@ Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverf
 </div>
 
 
-<a id="org587437a"></a>
-
 ## Declare a reference
 
 According to the documentation [Internal-Links](https://orgmode.org/manual/Internal-Links.html) we know there have two ways to sign a particular tag.  
 
 1.  the outline of org mode is an natural linkable tag.
-2.  use <a id="org2c3e174"></a> to declare a linkable tag.
+2.  use <a id="org6539cf4"></a> to declare a linkable tag.
 
-
-<a id="org7c857e0"></a>
 
 # 段落及高亮
 
@@ -188,8 +136,6 @@ HDFS 是如何实现大数据高速、可靠的存储和访问的呢？
 
 -   Hadoop 分布式文件系统 HDFS 的设计目标是管理数以千计的服务器、数以万计的磁盘，将大规模的服务器计算资源当作一个单一存储系统进行管理，对应用程序提供数以 PB 计的存储容量，让应用程序像使用普通文件系统一样存储大规模的文件数据。
 
-
-<a id="orga76bcc0"></a>
 
 # 表格
 
@@ -430,11 +376,9 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
-<a id="org8ee5f97"></a>
-
 ## AWK 表格
 
-<table id="org2afd74d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orge768ffe" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -585,8 +529,6 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
-<a id="org3899083"></a>
-
 ## 表格自增 ID
 
 The target scope which at the left of equation , @ means row number and $ means column nubmer of increasing from one.  
@@ -630,8 +572,6 @@ The expression which at the right of equation  , @# stands for the row number of
 `C-c` `C-c` to execute it  
 
 
-<a id="org0b00f5a"></a>
-
 # LaTex 公式
 
     $\mbox{需求的价格弹性系数} = \frac{\mbox{需求的变动率}}{\mbox{价格的变动率}}$
@@ -648,8 +588,6 @@ $$\begin{aligned}
 \end{aligned} $$  
 
 
-<a id="org7bc69f7"></a>
-
 # Org 代码
 
 代码片段开启行号，修改 \`~/.emacs.d/.local/straight/repos/org/lisp/ox-html.el\`  
@@ -657,15 +595,13 @@ $$\begin{aligned}
     (let* ((code-lines (split-string code "\n"))
        (code-length (length code-lines))
        (num-fmt
-    	(and num-start
-    	     (format "%%%ds "
-    	     (format "%(add-hook 'code-review-mode-hook
+        (and num-start
+             (format "%%%ds "
+             (format "%(add-hook 'code-review-mode-hook
             (lambda ()
               ;; include *Code-Review* buffer into current workspace
               (persp-add-buffer (current-buffer))))%%ds: "
 
-
-<a id="orgefb3e39"></a>
 
 ## Java 代码
 
@@ -692,8 +628,6 @@ $$\begin{aligned}
     }
 
 
-<a id="org916c538"></a>
-
 ## babel java
 
     List<Integer> a = Arrays.asList(1, 2);
@@ -702,33 +636,48 @@ $$\begin{aligned}
 `C-c` `C-c` to execute it, but export to html will fail when the babel java result generated.  
 
 
-<a id="org7d8ec2f"></a>
-
 # 图片
 
-
-<a id="org6800fcd"></a>
 
 ## 引用本地图片
 
 ![img](./image/excalidraw-demo.svg "create by <https://excalidraw.com/>")  
 
 
-<a id="org264ee2f"></a>
-
 ## dot
 
 ![img](image/dot-graphviz-demo.svg "XX 系统 v1.2.3 架构图")  
 
 
-<a id="orgf851688"></a>
-
 ## dot sk
 
-![img](image/dot-sk-graphviz-demo.svg "手绘风格的 dot graphviz")  
+    digraph G {
+        node [shape="box",fontcolor="#4EAEEF"]
+        edge [color="#a69fe0" fontcolor=white]
+        bgcolor="transparent"
+        rankdir = TD
+        compound=true
+    
+        subgraph clusterD {
+            fontcolor=white
+            label = "Local";
+            SlaughterServerB -> LocalDBB [splines=ortho]
+            SlaughterServerB -> SlaughterClientB [minlen=1]
+            {rank=same;  SlaughterServerB , LocalDBB }
+        }
+    
+        subgraph clusterM {
+            node [shape="box",fontcolor="#c475db"]
+            fontcolor=white
+            label = "Local";
+            SlaughterServerA -> LocalDBA [splines=ortho ]
+            SlaughterServerA -> SlaughterClientA [minlen=1]
+            {rank=same;  SlaughterServerA , LocalDBA }
+        }
+        EBS -> SlaughterServerA [dir=both minlen=2 label="ϟ" lhead="clusterM"][constraint=true];
+        EBS -> SlaughterServerB [dir=both,minlen=2,label="ϟ" lhead="clusterD" color="#a69fe0:#c475db"]
+    }
 
-
-<a id="orgf762f11"></a>
 
 ## plantuml with style css
 
@@ -741,8 +690,6 @@ DARKO   RANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGRE
 ![img](image/plant-uml-order.svg "有样式的 plantuml 时序图")  
 
 
-<a id="orgefbc7bf"></a>
-
 ## plant uml 系统 Contex 架构图
 
 plantuml 替换原生样式  
@@ -754,21 +701,15 @@ DARKORANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN
 ![img](image/plantuml-c4.svg "系统 Contex 架构图")  
 
 
-<a id="org5c98ee5"></a>
-
 ## 泳道图
 
 ![img](./image/plantuml-swiming.svg)  
 
 
-<a id="org0c6fd4a"></a>
-
 ## plantuml 通过html自定义图片样式
 
 ![img](image/oa-center.svg)  
 
-
-<a id="org2dbbd7d"></a>
 
 ## plot 折线图
 
@@ -866,8 +807,6 @@ use `org-plot/gnuplot` for generate.
 ![img](./zxt.svg "折线图")  
 
 
-<a id="orgbe3e13d"></a>
-
 ## plot 柱状图
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -936,28 +875,177 @@ use `org-plot/gnuplot` for generate.
 ![img](./vvt.svg)  
 
 
-<a id="org9e823d4"></a>
-
 ## WHAT IS CONNECTOR
 
-![img](test.svg)  
+    direction: right
+    style.fill : transparent
+    platform : BPM
+    
+    platform -> RocketMq: invoke  {
+      style.animated: true
+    }
+    platform -> API: interface/http/https  {
+      style.animated: true
+    }
+    platform -> DataBase: DB_Link  {style.animated: true}
+    RocketMq: {
+    shape: image
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Apache_RocketMQ_logo.svg/130px-Apache_RocketMQ_logo.svg.png?20210417072453
+    width: 10
+    style: {
+        stroke: green
+        font-color: green
+        fill: white
+      }
+    }
+    
+    DataBase: {
+    shape: image
+    icon: https://cdn.icon-icons.com/icons2/1508/PNG/512/mysqlworkbench_103806.png
+    width: 20
+    }
+    
+    API.style.multiple: true
+    
+    
+    RocketMq -> System : belong{
+     style.animated: true
+     style.stroke: "#53C0D8"
+    }
+    API -> System : belong{
+     style.animated: true
+     style.stroke: "#53C0D8"
+    }
+    DataBase -> System : belong{
+     style.animated: true
+     style.stroke: "#53C0D8"
+    }
 
-
-<a id="org1d95c2d"></a>
 
 ## d2 workflow
 
-![img](devflow.svg)  
+    direction: right
+    style.fill : transparent
+    
+    "禅道需求": "需求-PRD"{
+    shape: image
+    icon: https://pp.myapp.com/ma_icon/0/icon_54212284_1655281546/256
+    width: 60
+    height: 60
+    }
+    产品经理: "产品" {
+    shape: person
+    width: 52
+    height: 54
+    style.fill: "#85929E"
+    style.stroke: "#01020d"
+    style.stroke-width: 1
+    }
+    
+    产品经理 -> 禅道需求 : 创建  {
+    #style.animated: true
+    style.stroke-width: 3
+    style.stroke: "#F4D03F"
+    }
+    
+    禅道需求 -> development : 负责人分配  {
+    #style.animated: true
+    style.stroke-width: 3
+    style.stroke: "#F4D03F"
+    }
+    
+    development: "研发" {
+    shape: person
+    width: 52
+    height: 54
+    style.fill: "#4b9ae5"
+    style.stroke-width: 1
+    }
+    概要设计: "DOC\n概要设计" {
+    shape: page
+    width: 59
+    height: 94
+    style.fill: transparent
+    style.fill: "gray"
+    style.stroke-width: 1
+    }
+    development -> 概要设计 : output  {
+    #style.animated: true
+    }
+    方案评审: "评审会议" {
+    icon: https://cdn-icons-png.flaticon.com/512/1324/1324843.png
+    shape: image
+    height: 124
+    height: 124
+    }
+    概要设计 -> 方案评审
+    # development -> 方案评审 : Meeting  {
+    #   #style.animated: true
+    #   # style.stroke-width: 3
+    #   style.stroke: "#F4D03F"
+    # }
+    排期表 : "排期表"{
+    icon: https://icons.terrastruct.com/essentials/092-graph%20bar.svg
+    shape: image
+    }
+    方案评审 -> 排期表 : output{
+    }
+    
+    研发迭代 <- 排期表 : development {
+    #style.animated: true
+    style.stroke-width: 3
+    }
+    测试: "测试" {
+    shape: person
+    width: 52
+    height: 54
+    style.fill: "#EB984E"
+    style.stroke: "#01020d"
+    style.stroke-width: 1
+    }
+    
+    测试 <- 研发迭代 : 提测{
+    style.stroke-width: 3
+    }
+    dev : "dev 环境"{
+    shape: cloud
+    style.fill: "#58D68D"
+    style.stroke: "#2ECC71"
+    style.font-color: "white"
+    
+    }
+    研发迭代 : "研发迭代" {
+    style.3d: true
+    }
+    
+    研发迭代 -> dev : 自测
+    
+    
+    禅道缺陷 : "BUG"{
+    shape: image
+    icon: https://pp.myapp.com/ma_icon/0/icon_54212284_1655281546/256
+    width: 60
+    height: 60
+    }
+    测试 -> 禅道缺陷 : 提交bug {
+    style.animated: true
+    style.stroke-width: 3
+    style.stroke: "red"
+    }
+    禅道缺陷 -> development : 分配 {
+    style.animated: true
+    style.stroke-width: 3
+    }
+    development -> 测试 : 解决bug{
+    style.animated: true
+    style.stroke-width: 3
+    }
 
-
-<a id="org54cb324"></a>
 
 # org 转 Word
 
     pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
 
-
-<a id="orgc9245c6"></a>
 
 # 插入时间
 
@@ -995,8 +1083,6 @@ use `org-plot/gnuplot` for generate.
 </tbody>
 </table>
 
-
-<a id="orgb8f654d"></a>
 
 # Unicode 字符
 

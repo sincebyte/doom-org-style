@@ -98,6 +98,20 @@ function bindEvent() {
   document.querySelector("input[id=switch]").addEventListener("change", function () {
     setTheme(this.checked ? "dark" : 'light');
   });
+
+  $('#table-of-contents').before().click(function (ev) {
+    if( $(ev.target).attr("class") == undefined
+          || $(ev.target).attr("class") == "" ){
+      $(ev.target).addClass('hidden-content');
+      $('#content').css('padding-left','0px');
+    } else {
+      $(ev.target).removeClass('hidden-content');
+      $('#content').removeClass('content-pdl');
+      $('#content').css('padding-left','240px');
+    }
+  })
+
+
 }
 
 /** 设置动画效果 */
@@ -108,7 +122,7 @@ function trans() {
   }, 1000);
 };
 
-/** 设置主题色*/
+/** 设置主题色 */
 function setTheme(theme) {
   document.documentElement.classList.add(theme);
   document.documentElement.classList.remove(theme === 'light' ? 'dark' : 'light');

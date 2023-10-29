@@ -9,6 +9,7 @@
     right: 7%;
     --white:#fff;
     transform: translate(-50%, -50%);
+    filter: drop-shadow(2px 3px 1px rgb(0 0 0 / 0.4));
 }
 
 .toggletheme input[type="checkbox"] {
@@ -48,4 +49,65 @@
 .toggletheme input:checked + label:after {
 	left: calc(100% - 1.5px);
 	transform: translateX(-100%);
+}
+#table-of-contents::before {
+  content: '';
+  background: url("./swap_horizontal_circle_black_24dp.svg") no-repeat center/2rem 2rem;
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  right: -15px;
+  top: 30px;
+  margin: 0px;
+  padding: 0px;
+  text-shadow: 0 0 10px blue;
+  /* filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)); */
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  border: 1px solid
+
+}
+
+
+
+@media screen and (max-width: 1335px) {
+    .light html, .light body {
+        font-size: 14px;
+    }
+
+    .light #table-of-contents {
+        display: none;
+    }
+
+    #content {
+      max-width: 75em;
+      padding-left: 20px;
+    }
+
+    .light div.outline-2,.light  #footnotes {
+        margin-left: 5%;
+        max-width: 90%;
+    }
+
+    .light h1.title {
+        text-align: left;
+        margin: 1em 0 0 0%;
+    }
+}
+
+@media screen and (min-width: 1335px) {
+
+   .hidden-content {
+      transform: translateX(-240px);
+   }
+
+   #content {
+       max-width: 60em;
+       padding-left: 240px;
+   }
+
+    .light h1.title {
+        text-align: left;
+        margin: 1em 0 0 0px;
+    }
 }

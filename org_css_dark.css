@@ -392,6 +392,7 @@
     pointer-events: auto;
     border-color: rgba(35, 40, 46, 0.573);
     border: 0.5px solid;
+    filter: drop-shadow(2px 3px 1px rgb(0 0 0 / 0.6));
 }
 
 .dark .click-btn-style::before  {
@@ -725,14 +726,6 @@
         transform:rotate(10deg)
     }
 }
-@media (max-width:500px) {
-    .github-corner:hover .octo-arm{
-        animation:none
-    }
-    .github-corner .octo-arm {
-        animation:octocat-wave 560ms ease-in-out
-    }
-}
 /* 美化滚动条 */
 ::-webkit-scrollbar {
   width: 8px;
@@ -763,38 +756,3 @@
   background-color: rgba(144, 147, 153, 0.3);
 }
 
-@media screen and (max-width: 1335px) {
-    .dark html, .dark body {
-        font-size: 14px;
-    }
-
-    .dark #table-of-contents {
-        display: none;
-    }
-
-    #content {
-      max-width: 75em;
-      padding-left: 20px;
-    }
-
-    .dark div.outline-2,.dark  #footnotes {
-        margin-left: 5%;
-        max-width: 90%;
-    }
-
-    .dark h1.title {
-        text-align: left;
-        margin: 1em 0 0 0%;
-    }
-}
-
-@media screen and (min-width: 1335px) {
-    #content {
-        max-width: 60em;
-        padding-left: 240px;
-    }
-    .dark h1.title {
-        text-align: left;
-        margin: 1em 0 0 0%;
-    }
-}

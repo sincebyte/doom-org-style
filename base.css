@@ -5,7 +5,6 @@
 .toggletheme {
     z-index: 999;
     position: fixed;
-    /* top: 0; */
     top: 2%;
     right: 7%;
     --white:#fff;
@@ -13,9 +12,10 @@
 }
 
 .toggletheme input[type="checkbox"] {
-  height: 0;
-  width: 0;
   visibility: hidden;
+}
+
+.toggletheme input[type=checkbox]{
 }
 
 .toggletheme label {
@@ -23,45 +23,29 @@
   text-indent: -9999px;
   width: 30.5px;
   height: 15px;
-  background: black;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 100px;
+  background: #2c3e50;
+  display: block;
+  border-radius: 15px;
   position: relative;
 }
 
 .toggletheme label:after {
-  content: "";
-  background:var(--white);
-  width: 12px;
-  height: 12px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+  content: '';
   position: absolute;
   top: 1.5px;
-  left: 2px;
-  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-}
-
-.toggletheme input:checked + label:after {
-  background: black;
+  left: 1.5px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
 .toggletheme input:checked + label {
-  background: white;
+	background: hsl(219deg 17% 77%);
 }
 
 .toggletheme input:checked + label:after {
-  left: calc(100% - 1px);
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  transform: translateX(-100%);
+	left: calc(100% - 1.5px);
+	transform: translateX(-100%);
 }
-/*# sourceMappingURL=index.css.map */

@@ -242,47 +242,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8373c34">1. 使用</a></li>
-<li><a href="#org2f0331b">2. 字体样式</a></li>
-<li><a href="#orgd88001a">3. 特殊说明</a>
-<ul>
-<li><a href="#orgc4c13ef">3.1. quote 摘要、引用</a></li>
-<li><a href="#org1000cc2">3.2. notice 注意事项、提醒</a></li>
-<li><a href="#org0c39076">3.3. Declare a reference</a></li>
-</ul>
-</li>
-<li><a href="#org1f8448e">4. 段落及高亮</a></li>
-<li><a href="#org5cf5704">5. 表格</a>
-<ul>
-<li><a href="#org181335f">5.1. AWK 表格</a></li>
-<li><a href="#orgec63f43">5.2. 表格自增 ID</a></li>
-</ul>
-</li>
-<li><a href="#orgf4a3b05">6. LaTex 公式</a></li>
-<li><a href="#org876c44c">7. Org 代码</a>
-<ul>
-<li><a href="#org4bd0ac3">7.1. Java 代码</a></li>
-<li><a href="#orged308de">7.2. babel java</a></li>
-</ul>
-</li>
-<li><a href="#org538fb70">8. 图片</a>
-<ul>
-<li><a href="#org6850cda">8.1. 引用本地图片</a></li>
-<li><a href="#org6d206dc">8.2. dot</a></li>
-<li><a href="#orgcf6ae93">8.3. dot sk</a></li>
-<li><a href="#org2415114">8.4. plantuml with style css</a></li>
-<li><a href="#org3eda028">8.5. plant uml 系统 Contex 架构图</a></li>
-<li><a href="#org58fb65d">8.6. 泳道图</a></li>
-<li><a href="#org3598345">8.7. plantuml 通过html自定义图片样式</a></li>
-<li><a href="#org9c20a77">8.8. plot 折线图</a></li>
-<li><a href="#orgb01e95f">8.9. plot 柱状图</a></li>
-<li><a href="#org85dca8e">8.10. WHAT IS CONNECTOR</a></li>
-<li><a href="#orge176418">8.11. d2 workflow</a></li>
-</ul>
-</li>
-<li><a href="#orge50c005">9. org 转 Word</a></li>
-<li><a href="#org5e77bb4">10. 插入时间</a></li>
-<li><a href="#org1af6024">11. Unicode 字符</a></li>
+<li><a href="#orga6fce1b">1. 使用</a></li>
+<li><a href="#org1604cfb">2. 字体样式</a></li>
+<li><a href="#org7fde46d">3. 特殊说明</a></li>
+<li><a href="#org86e3811">4. 段落及高亮</a></li>
+<li><a href="#orgcd06ea7">5. 表格</a></li>
+<li><a href="#org93037a4">6. LaTex 公式</a></li>
+<li><a href="#org40b54b1">7. Org 代码</a></li>
+<li><a href="#orgc817029">8. 图片</a></li>
+<li><a href="#orge1e62a4">9. org 转 Word</a></li>
+<li><a href="#org3eb09a3">10. 插入时间</a></li>
+<li><a href="#org95eb76d">11. Unicode 字符</a></li>
 </ul>
 </div>
 </div>
@@ -294,33 +264,33 @@
 <p>
 一个类 <b>doom doc</b> 的 <b>org html</b> 样式模版 <a href="http://1.117.167.195/doc/doomorgstyle.html">点此预览🪄</a><br />
 </p>
-<div id="outline-container-org8373c34" class="outline-2">
-<h2 id="org8373c34"><span class="section-number-2">1.</span> 使用</h2>
+<div id="outline-container-orga6fce1b" class="outline-2">
+<h2 id="orga6fce1b"><span class="section-number-2">1.</span> 使用</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 配置 <b>snippet</b> 模版，然后在 <b>org mode</b> 文件中使用 <code>tt</code> <code>tab</code> 就可展开此模版。<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #545c5e;">    # -*- mode: snippet -*-</span>
-<span style="color: #545c5e;">    # name: title</span>
-<span style="color: #545c5e;">    # key: tt</span>
-<span style="color: #545c5e;">    # --</span>
-<span style="color: #4d9391;">    #+title:</span> <span style="color: #80bcb6; font-size: 110%; font-weight: bold;">`(file-name-sans-extension (buffer-name))`</span>
-<span style="color: #4d9391;">    #+SUBTITLE:</span> <span style="color: #80bcb6;">this is subtitle</span>
-<span style="color: #4d9391;">    #+AUTHOR:</span> <span style="color: #80bcb6;">autor</span>
-<span style="color: #4d9391;">    #+HTML_HEAD: &lt;script src="scroll.js"&gt;&lt;/script&gt;</span>
-<span style="color: #4d9391;">    #+HTML_HEAD: &lt;link rel="stylesheet" type="text/css" href="org_css.css"/&gt;</span>
-<span style="color: #4d9391;">    #+HTML_HEAD: &lt;script src="<a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js</a>"&gt;&lt;/script&gt;</span>
-<span style="color: #4d9391;">    #+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2</span>
-<span style="color: #4d9391;">    #+LATEX_COMPILER: xelatex</span>
-<span style="color: #4d9391;">    #+LATEX_CLASS: elegantpaper</span>
-<span style="color: #4d9391;">    #+MACRO: htmlred @@html:&lt;font color="red"&gt;&lt;/font&gt;@@</span>
-<span style="color: #4d9391;">    #+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@</span>
-<span style="color: #4d9391;">    #+latex:\newpage</span>
+<pre class="src src-org"><span class="linenr"> 1 </span><span style="color: #545c5e;"># -*- mode: snippet -*-</span>
+<span class="linenr"> 2 </span><span style="color: #545c5e;"># name: title</span>
+<span class="linenr"> 3 </span><span style="color: #545c5e;"># key: tt</span>
+<span class="linenr"> 4 </span><span style="color: #545c5e;"># --</span>
+<span class="linenr"> 5 </span><span style="color: #4d9391;">#+title:</span> <span style="color: #80bcb6; font-size: 110%; font-weight: bold;">`(file-name-sans-extension (buffer-name))`</span>
+<span class="linenr"> 6 </span><span style="color: #4d9391;">#+SUBTITLE:</span> <span style="color: #80bcb6;">this is subtitle</span>
+<span class="linenr"> 7 </span><span style="color: #4d9391;">#+AUTHOR:</span> <span style="color: #80bcb6;">autor</span>
+<span class="linenr"> 8 </span><span style="color: #4d9391;">#+HTML_HEAD: &lt;script src="scroll.js"&gt;&lt;/script&gt;</span>
+<span class="linenr"> 9 </span><span style="color: #4d9391;">#+HTML_HEAD: &lt;link rel="stylesheet" type="text/css" href="org_css.css"/&gt;</span>
+<span class="linenr">10 </span><span style="color: #4d9391;">#+HTML_HEAD: &lt;script src="<a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js</a>"&gt;&lt;/script&gt;</span>
+<span class="linenr">11 </span><span style="color: #4d9391;">#+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2</span>
+<span class="linenr">12 </span><span style="color: #4d9391;">#+LATEX_COMPILER: xelatex</span>
+<span class="linenr">13 </span><span style="color: #4d9391;">#+LATEX_CLASS: elegantpaper</span>
+<span class="linenr">14 </span><span style="color: #4d9391;">#+MACRO: htmlred @@html:&lt;font color="red"&gt;&lt;/font&gt;@@</span>
+<span class="linenr">15 </span><span style="color: #4d9391;">#+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@</span>
+<span class="linenr">16 </span><span style="color: #4d9391;">#+latex:\newpage</span>
 </pre>
 </div>
 
-<div class="notice-info" id="org47c115b">
+<div class="notice-info" id="orga068a97">
 <p>
 想使用在线版的静态文件，可以使用下面的配置进行替换<br />
 </p>
@@ -335,8 +305,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org2f0331b" class="outline-2">
-<h2 id="org2f0331b"><span class="section-number-2">2.</span> 字体样式</h2>
+<div id="outline-container-org1604cfb" class="outline-2">
+<h2 id="org1604cfb"><span class="section-number-2">2.</span> 字体样式</h2>
 <div class="outline-text-2" id="text-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-bottom"><span class="table-number">Table 1:</span> 字体样式说明</caption>
@@ -375,12 +345,12 @@
 </table>
 </div>
 </div>
-<div id="outline-container-orgd88001a" class="outline-2">
-<h2 id="orgd88001a"><span class="section-number-2">3.</span> 特殊说明</h2>
+<div id="outline-container-org7fde46d" class="outline-2">
+<h2 id="org7fde46d"><span class="section-number-2">3.</span> 特殊说明</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgc4c13ef" class="outline-3">
-<h3 id="orgc4c13ef"><span class="section-number-3">3.1.</span> quote 摘要、引用</h3>
+<ol class="org-ol">
+<li><a id="orgb0ed858"></a>quote 摘要、引用<br />
 <div class="outline-text-3" id="text-3-1">
 <p>
 可使用`quote`来进行代码块补全，表示摘要，引用<br />
@@ -392,47 +362,46 @@ A combination text editor/really horrible ProgrammingLanguage. To quote the pape
 </p>
 </blockquote>
 </div>
-</div>
-<div id="outline-container-org1000cc2" class="outline-3">
-<h3 id="org1000cc2"><span class="section-number-3">3.2.</span> notice 注意事项、提醒</h3>
+</li>
+<li><a id="orgb4070c7"></a>notice 注意事项、提醒<br />
 <div class="outline-text-3" id="text-3-2">
-<div class="notice-info" id="orgcef9d93">
+<div class="notice-info" id="orgf87fd3d">
 <p>
 你有许多已标记的项目并且你可能错过一个重要的项目时，提醒可以提供帮助<br />
 </p>
 
 </div>
 
-<div class="notice-warning" id="orga8f01f2">
+<div class="notice-warning" id="orga875102">
 <p>
 Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverflow. Kindly refer them to this section.<br />
 </p>
 
 </div>
 
-<div class="notice-example" id="org929681d">
+<div class="notice-example" id="orgd3bc80c">
 <p>
 这是 1 个例子<br />
 </p>
 
 </div>
 </div>
-</div>
-<div id="outline-container-org0c39076" class="outline-3">
-<h3 id="org0c39076"><span class="section-number-3">3.3.</span> Declare a reference</h3>
+</li>
+<li><a id="org730f2a9"></a>Declare a reference<br />
 <div class="outline-text-3" id="text-3-3">
 <p>
 According to the documentation <a href="https://orgmode.org/manual/Internal-Links.html">Internal-Links</a> we know there have two ways to sign a particular tag.<br />
 </p>
 <ol class="org-ol">
 <li>the outline of org mode is an natural linkable tag.<br /></li>
-<li>use <a id="org3e3b7b3"></a> to declare a linkable tag.<br /></li>
+<li>use <a id="orgb4b2ecf"></a> to declare a linkable tag.<br /></li>
 </ol>
 </div>
+</li>
+</ol>
 </div>
-</div>
-<div id="outline-container-org1f8448e" class="outline-2">
-<h2 id="org1f8448e"><span class="section-number-2">4.</span> 段落及高亮</h2>
+<div id="outline-container-org86e3811" class="outline-2">
+<h2 id="org86e3811"><span class="section-number-2">4.</span> 段落及高亮</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Example of an  comment.<br />
@@ -458,8 +427,8 @@ HDFS 是如何实现大数据高速、可靠的存储和访问的呢？<br />
 </ul>
 </div>
 </div>
-<div id="outline-container-org5cf5704" class="outline-2">
-<h2 id="org5cf5704"><span class="section-number-2">5.</span> 表格</h2>
+<div id="outline-container-orgcd06ea7" class="outline-2">
+<h2 id="orgcd06ea7"><span class="section-number-2">5.</span> 表格</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 <code>C-c ~</code> to convert to tabel.el table<br />
@@ -690,10 +659,10 @@ org table <code>M-k</code> <code>M-j</code> for move Rows up and down<br />
 </tbody>
 </table>
 </div>
-<div id="outline-container-org181335f" class="outline-3">
-<h3 id="org181335f"><span class="section-number-3">5.1.</span> AWK 表格</h3>
+<ol class="org-ol">
+<li><a id="org1eb5cc0"></a>AWK 表格<br />
 <div class="outline-text-3" id="text-5-1">
-<table id="org63248cc" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org5f64ece" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -833,9 +802,8 @@ org table <code>M-k</code> <code>M-j</code> for move Rows up and down<br />
 </tbody>
 </table>
 </div>
-</div>
-<div id="outline-container-orgec63f43" class="outline-3">
-<h3 id="orgec63f43"><span class="section-number-3">5.2.</span> 表格自增 ID</h3>
+</li>
+<li><a id="orgc72514c"></a>表格自增 ID<br />
 <div class="outline-text-3" id="text-5-2">
 <p>
 The target scope which at the left of equation , @ means row number and $ means column nubmer of increasing from one.<br />
@@ -881,10 +849,11 @@ The expression which at the right of equation  , @# stands for the row number of
 <code>C-c</code> <code>C-c</code> to execute it<br />
 </p>
 </div>
+</li>
+</ol>
 </div>
-</div>
-<div id="outline-container-orgf4a3b05" class="outline-2">
-<h2 id="orgf4a3b05"><span class="section-number-2">6.</span> LaTex 公式</h2>
+<div id="outline-container-org93037a4" class="outline-2">
+<h2 id="org93037a4"><span class="section-number-2">6.</span> LaTex 公式</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-txt">$\mbox{需求的价格弹性系数} = \frac{\mbox{需求的变动率}}{\mbox{价格的变动率}}$
@@ -907,27 +876,27 @@ The expression which at the right of equation  , @# stands for the row number of
 </p>
 </div>
 </div>
-<div id="outline-container-org876c44c" class="outline-2">
-<h2 id="org876c44c"><span class="section-number-2">7.</span> Org 代码</h2>
+<div id="outline-container-org40b54b1" class="outline-2">
+<h2 id="org40b54b1"><span class="section-number-2">7.</span> Org 代码</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 代码片段开启行号，修改 `~/.emacs.d/.local/straight/repos/org/lisp/ox-html.el`<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp">  (<span style="color: #4d9391;">let*</span> ((code-lines (split-string code <span style="color: #6fb593;">"\n"</span>))
-     (code-length (length code-lines))
-     (num-fmt
-      (and num-start
-           (format <span style="color: #6fb593;">"%%%ds "</span>
-           (format <span style="color: #6fb593;">"%(add-hook 'code-review-mode-hook</span>
-<span style="color: #6fb593;">          (lambda ()</span>
-<span style="color: #6fb593;">            ;; include *Code-Review* buffer into current workspace</span>
-<span style="color: #6fb593;">            (persp-add-buffer (current-buffer))))%%ds: "</span>
+<pre class="src src-lisp"><span class="linenr">10 </span>  (<span style="color: #4d9391;">let*</span> ((code-lines (split-string code <span style="color: #6fb593;">"\n"</span>))
+<span class="linenr">11 </span>     (code-length (length code-lines))
+<span class="linenr">12 </span>     (num-fmt
+<span class="linenr">13 </span>      (and num-start
+<span class="linenr">14 </span>           (format <span style="color: #6fb593;">"%%%ds "</span>
+<span class="linenr">15 </span>           (format <span style="color: #6fb593;">"%(add-hook 'code-review-mode-hook</span>
+<span class="linenr">16 </span><span style="color: #6fb593;">          (lambda ()</span>
+<span class="linenr">17 </span><span style="color: #6fb593;">            ;; include *Code-Review* buffer into current workspace</span>
+<span class="linenr">18 </span><span style="color: #6fb593;">            (persp-add-buffer (current-buffer))))%%ds: "</span>
 </pre>
 </div>
 </div>
-<div id="outline-container-org4bd0ac3" class="outline-3">
-<h3 id="org4bd0ac3"><span class="section-number-3">7.1.</span> Java 代码</h3>
+<ol class="org-ol">
+<li><a id="orgfcaf946"></a>Java 代码<br />
 <div class="outline-text-3" id="text-7-1">
 <div class="org-src-container">
 <pre class="src src-java">    <span style="color: #5D8272;">/**</span>
@@ -954,9 +923,8 @@ The expression which at the right of equation  , @# stands for the row number of
 </pre>
 </div>
 </div>
-</div>
-<div id="outline-container-orged308de" class="outline-3">
-<h3 id="orged308de"><span class="section-number-3">7.2.</span> babel java</h3>
+</li>
+<li><a id="org5ec70ad"></a>babel java<br />
 <div class="outline-text-3" id="text-7-2">
 <div class="org-src-container">
 <pre class="src src-java"><span style="color: #cd9575;">List</span><span style="color: #6bd9db;">&lt;</span><span style="color: #cd9575;">Integer</span><span style="color: #6bd9db;">&gt;</span> <span style="color: #968cc7;">a</span> = Arrays.asList<span style="color: #6bd9db;">(</span><span style="color: #cd5c60;">1</span>, <span style="color: #cd5c60;">2</span><span style="color: #6bd9db;">)</span>;
@@ -968,17 +936,18 @@ The expression which at the right of equation  , @# stands for the row number of
 <code>C-c</code> <code>C-c</code> to execute it, but export to html will fail when the babel java result generated.<br />
 </p>
 </div>
+</li>
+</ol>
 </div>
-</div>
-<div id="outline-container-org538fb70" class="outline-2">
-<h2 id="org538fb70"><span class="section-number-2">8.</span> 图片</h2>
+<div id="outline-container-orgc817029" class="outline-2">
+<h2 id="orgc817029"><span class="section-number-2">8.</span> 图片</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org6850cda" class="outline-3">
-<h3 id="org6850cda"><span class="section-number-3">8.1.</span> 引用本地图片</h3>
+<ol class="org-ol">
+<li><a id="org42fa298"></a>引用本地图片<br />
 <div class="outline-text-3" id="text-8-1">
 
-<div id="orgc472943" class="figure">
+<div id="orgf5d8398" class="figure">
 <p><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmll
 d0JveD0iMCAwIDUyNy42MTcxODc1IDE5OS4wNjgzNTkzNzUiIHdpZHRoPSI1MjcuNjE3MTg3NSIg
 aGVpZ2h0PSIxOTkuMDY4MzU5Mzc1Ij4KICA8IS0tIHN2Zy1zb3VyY2U6ZXhjYWxpZHJhdyAtLT4K
@@ -1153,45 +1122,117 @@ c3ZnPg=="excalidraw-demo.svg width=100% /><br />
 <p><span class="figure-number">Figure 1: </span>create by <a href="https://excalidraw.com/">https://excalidraw.com/</a></p>
 </div>
 </div>
-</div>
-<div id="outline-container-org6d206dc" class="outline-3">
-<h3 id="org6d206dc"><span class="section-number-3">8.2.</span> dot</h3>
+</li>
+<li><a id="org870df78"></a>dot<br />
 <div class="outline-text-3" id="text-8-2">
-<div class="org-src-container">
-<pre class="src src-dotsk">    digraph G {
-        node [shape="box",fontcolor="#4EAEEF"]
-        edge [color="#a69fe0" fontcolor=white]
-        bgcolor="transparent"
-        rankdir = TD
-        compound=true
 
-        subgraph clusterD {
-            fontcolor=white
-            label = "Local";
-            SlaughterServerB -&gt; LocalDBB [splines=ortho]
-            SlaughterServerB -&gt; SlaughterClientB [minlen=1]
-            {rank=same;  SlaughterServerB , LocalDBB }
-        }
-
-        subgraph clusterM {
-            node [shape="box",fontcolor="#c475db"]
-            fontcolor=white
-            label = "Local";
-            SlaughterServerA -&gt; LocalDBA [splines=ortho ]
-            SlaughterServerA -&gt; SlaughterClientA [minlen=1]
-            {rank=same;  SlaughterServerA , LocalDBA }
-        }
-        EBS -&gt; SlaughterServerA [dir=both minlen=2 label="ϟ" lhead="clusterM"][constraint=true];
-        EBS -&gt; SlaughterServerB [dir=both,minlen=2,label="ϟ" lhead="clusterD" color="#a69fe0:#c475db"]
-
-
-    }
-</pre>
+<div id="org757dadf" class="figure">
+<p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjwh
+RE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3
+LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBi
+eSBncmFwaHZpeiB2ZXJzaW9uIDkuMC4wICgyMDIzMDkxMS4xODI3KQogLS0+CjwhLS0gVGl0bGU6
+IEcgUGFnZXM6IDEgLS0+Cjxzdmcgd2lkdGg9IjUxMHB0IiBoZWlnaHQ9IjI4MnB0Igogdmlld0Jv
+eD0iMC4wMCAwLjAwIDUxMC4wMCAyODIuMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAw
+L3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgo8ZyBpZD0i
+Z3JhcGgwIiBjbGFzcz0iZ3JhcGgiIHRyYW5zZm9ybT0ic2NhbGUoMSAxKSByb3RhdGUoMCkgdHJh
+bnNsYXRlKDQgMjc4KSI+Cjx0aXRsZT5HPC90aXRsZT4KPGcgaWQ9ImNsdXN0MSIgY2xhc3M9ImNs
+dXN0ZXIiPgo8dGl0bGU+Y2x1c3RlckQ8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJv
+a2U9ImJsYWNrIiBwb2ludHM9IjgsLTggOCwtMTU3LjUgMjQ2LC0xNTcuNSAyNDYsLTggOCwtOCIv
+Pgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxMjciIHk9Ii0xNDAuMiIgZm9udC1mYW1p
+bHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIiBmaWxsPSJ3aGl0ZSI+TG9jYWw8L3Rl
+eHQ+CjwvZz4KPGcgaWQ9ImNsdXN0MyIgY2xhc3M9ImNsdXN0ZXIiPgo8dGl0bGU+Y2x1c3Rlck08
+L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjI1NCwt
+OCAyNTQsLTE1Ny41IDQ5NCwtMTU3LjUgNDk0LC04IDI1NCwtOCIvPgo8dGV4dCB0ZXh0LWFuY2hv
+cj0ibWlkZGxlIiB4PSIzNzQiIHk9Ii0xNDAuMiIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBm
+b250LXNpemU9IjE0LjAwIiBmaWxsPSJ3aGl0ZSI+TG9jYWw8L3RleHQ+CjwvZz4KPCEtLSBTbGF1
+Z2h0ZXJTZXJ2ZXJCIC0tPgo8ZyBpZD0ibm9kZTEiIGNsYXNzPSJub2RlIj4KPHRpdGxlPlNsYXVn
+aHRlclNlcnZlckI8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBw
+b2ludHM9IjEyOCwtMTI1IDE2LC0xMjUgMTYsLTg5IDEyOCwtODkgMTI4LC0xMjUiLz4KPHRleHQg
+dGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNzIiIHk9Ii0xMDEuOTUiIGZvbnQtZmFtaWx5PSJUaW1l
+cyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCIgZmlsbD0iIzRlYWVlZiI+U2xhdWdodGVyU2VydmVy
+QjwvdGV4dD4KPC9nPgo8IS0tIExvY2FsREJCIC0tPgo8ZyBpZD0ibm9kZTIiIGNsYXNzPSJub2Rl
+Ij4KPHRpdGxlPkxvY2FsREJCPC90aXRsZT4KPHBvbHlnb24gZmlsbD0ibm9uZSIgc3Ryb2tlPSJi
+bGFjayIgcG9pbnRzPSIyMzguMjUsLTEyNSAxNjMuNzUsLTEyNSAxNjMuNzUsLTg5IDIzOC4yNSwt
+ODkgMjM4LjI1LC0xMjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjAxIiB5PSIt
+MTAxLjk1IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiIGZpbGw9
+IiM0ZWFlZWYiPkxvY2FsREJCPC90ZXh0Pgo8L2c+CjwhLS0gU2xhdWdodGVyU2VydmVyQiYjNDU7
+Jmd0O0xvY2FsREJCIC0tPgo8ZyBpZD0iZWRnZTEiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPlNsYXVn
+aHRlclNlcnZlckImIzQ1OyZndDtMb2NhbERCQjwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0
+cm9rZT0iI2E2OWZlMCIgZD0iTTEyOC40NCwtMTA3QzEzNi4yNSwtMTA3IDE0NC4wNSwtMTA3IDE1
+MS44NiwtMTA3Ii8+Cjxwb2x5Z29uIGZpbGw9IiNhNjlmZTAiIHN0cm9rZT0iI2E2OWZlMCIgcG9p
+bnRzPSIxNTEuNzksLTExMC41IDE2MS43OSwtMTA3IDE1MS43OSwtMTAzLjUgMTUxLjc5LC0xMTAu
+NSIvPgo8L2c+CjwhLS0gU2xhdWdodGVyQ2xpZW50QiAtLT4KPGcgaWQ9Im5vZGUzIiBjbGFzcz0i
+bm9kZSI+Cjx0aXRsZT5TbGF1Z2h0ZXJDbGllbnRCPC90aXRsZT4KPHBvbHlnb24gZmlsbD0ibm9u
+ZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIxMjYuODgsLTUyIDE3LjEyLC01MiAxNy4xMiwtMTYg
+MTI2Ljg4LC0xNiAxMjYuODgsLTUyIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijcy
+IiB5PSItMjguOTUiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCIg
+ZmlsbD0iIzRlYWVlZiI+U2xhdWdodGVyQ2xpZW50QjwvdGV4dD4KPC9nPgo8IS0tIFNsYXVnaHRl
+clNlcnZlckImIzQ1OyZndDtTbGF1Z2h0ZXJDbGllbnRCIC0tPgo8ZyBpZD0iZWRnZTIiIGNsYXNz
+PSJlZGdlIj4KPHRpdGxlPlNsYXVnaHRlclNlcnZlckImIzQ1OyZndDtTbGF1Z2h0ZXJDbGllbnRC
+PC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYTY5ZmUwIiBkPSJNNzIsLTg4Ljgx
+QzcyLC04MS4yMyA3MiwtNzIuMSA3MiwtNjMuNTQiLz4KPHBvbHlnb24gZmlsbD0iI2E2OWZlMCIg
+c3Ryb2tlPSIjYTY5ZmUwIiBwb2ludHM9Ijc1LjUsLTYzLjU0IDcyLC01My41NCA2OC41LC02My41
+NCA3NS41LC02My41NCIvPgo8L2c+CjwhLS0gU2xhdWdodGVyU2VydmVyQSAtLT4KPGcgaWQ9Im5v
+ZGU0IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT5TbGF1Z2h0ZXJTZXJ2ZXJBPC90aXRsZT4KPHBvbHln
+b24gZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIzNzQuMzgsLTEyNSAyNjEuNjIs
+LTEyNSAyNjEuNjIsLTg5IDM3NC4zOCwtODkgMzc0LjM4LC0xMjUiLz4KPHRleHQgdGV4dC1hbmNo
+b3I9Im1pZGRsZSIgeD0iMzE4IiB5PSItMTAxLjk1IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYi
+IGZvbnQtc2l6ZT0iMTQuMDAiIGZpbGw9IiNjNDc1ZGIiPlNsYXVnaHRlclNlcnZlckE8L3RleHQ+
+CjwvZz4KPCEtLSBMb2NhbERCQSAtLT4KPGcgaWQ9Im5vZGU1IiBjbGFzcz0ibm9kZSI+Cjx0aXRs
+ZT5Mb2NhbERCQTwvdGl0bGU+Cjxwb2x5Z29uIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHBv
+aW50cz0iNDg1LjYyLC0xMjUgNDEwLjM4LC0xMjUgNDEwLjM4LC04OSA0ODUuNjIsLTg5IDQ4NS42
+MiwtMTI1Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ0OCIgeT0iLTEwMS45NSIg
+Zm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIiBmaWxsPSIjYzQ3NWRi
+Ij5Mb2NhbERCQTwvdGV4dD4KPC9nPgo8IS0tIFNsYXVnaHRlclNlcnZlckEmIzQ1OyZndDtMb2Nh
+bERCQSAtLT4KPGcgaWQ9ImVkZ2UzIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT5TbGF1Z2h0ZXJTZXJ2
+ZXJBJiM0NTsmZ3Q7TG9jYWxEQkE8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNh
+NjlmZTAiIGQ9Ik0zNzQuODgsLTEwN0MzODIuODQsLTEwNyAzOTAuOCwtMTA3IDM5OC43NiwtMTA3
+Ii8+Cjxwb2x5Z29uIGZpbGw9IiNhNjlmZTAiIHN0cm9rZT0iI2E2OWZlMCIgcG9pbnRzPSIzOTgu
+NSwtMTEwLjUgNDA4LjUsLTEwNyAzOTguNSwtMTAzLjUgMzk4LjUsLTExMC41Ii8+CjwvZz4KPCEt
+LSBTbGF1Z2h0ZXJDbGllbnRBIC0tPgo8ZyBpZD0ibm9kZTYiIGNsYXNzPSJub2RlIj4KPHRpdGxl
+PlNsYXVnaHRlckNsaWVudEE8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJs
+YWNrIiBwb2ludHM9IjM3My4yNSwtNTIgMjYyLjc1LC01MiAyNjIuNzUsLTE2IDM3My4yNSwtMTYg
+MzczLjI1LC01MiIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIzMTgiIHk9Ii0yOC45
+NSIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIiBmaWxsPSIjYzQ3
+NWRiIj5TbGF1Z2h0ZXJDbGllbnRBPC90ZXh0Pgo8L2c+CjwhLS0gU2xhdWdodGVyU2VydmVyQSYj
+NDU7Jmd0O1NsYXVnaHRlckNsaWVudEEgLS0+CjxnIGlkPSJlZGdlNCIgY2xhc3M9ImVkZ2UiPgo8
+dGl0bGU+U2xhdWdodGVyU2VydmVyQSYjNDU7Jmd0O1NsYXVnaHRlckNsaWVudEE8L3RpdGxlPgo8
+cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNhNjlmZTAiIGQ9Ik0zMTgsLTg4LjgxQzMxOCwtODEu
+MjMgMzE4LC03Mi4xIDMxOCwtNjMuNTQiLz4KPHBvbHlnb24gZmlsbD0iI2E2OWZlMCIgc3Ryb2tl
+PSIjYTY5ZmUwIiBwb2ludHM9IjMyMS41LC02My41NCAzMTgsLTUzLjU0IDMxNC41LC02My41NCAz
+MjEuNSwtNjMuNTQiLz4KPC9nPgo8IS0tIEVCUyAtLT4KPGcgaWQ9Im5vZGU3IiBjbGFzcz0ibm9k
+ZSI+Cjx0aXRsZT5FQlM8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNr
+IiBwb2ludHM9IjIyMiwtMjc0IDE2OCwtMjc0IDE2OCwtMjM4IDIyMiwtMjM4IDIyMiwtMjc0Ii8+
+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjE5NSIgeT0iLTI1MC45NSIgZm9udC1mYW1p
+bHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIiBmaWxsPSIjNGVhZWVmIj5FQlM8L3Rl
+eHQ+CjwvZz4KPCEtLSBFQlMmIzQ1OyZndDtTbGF1Z2h0ZXJTZXJ2ZXJCIC0tPgo8ZyBpZD0iZWRn
+ZTYiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPkVCUyYjNDU7Jmd0O1NsYXVnaHRlclNlcnZlckI8L3Rp
+dGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNhNjlmZTAiIGQ9Ik0xNzIuNDIsLTIyOS41
+N0MxNTcuODIsLTIxMi4xMyAxMzguMDIsLTE4OC40NiAxMTkuODEsLTE2Ni42OSIvPgo8cGF0aCBm
+aWxsPSJub25lIiBzdHJva2U9IiNjNDc1ZGIiIGQ9Ik0xNzMuOTUsLTIyOC4yOUMxNTkuMzYsLTIx
+MC44NCAxMzkuNTYsLTE4Ny4xOCAxMjEuMzQsLTE2NS40MSIvPgo8cG9seWdvbiBmaWxsPSIjYzQ3
+NWRiIiBzdHJva2U9IiNjNDc1ZGIiIHBvaW50cz0iMTcwLjMzLC0yMzAuOTggMTc5LjQ0LC0yMzYu
+NCAxNzUuNywtMjI2LjQ4IDE3MC4zMywtMjMwLjk4Ii8+Cjxwb2x5Z29uIGZpbGw9IiNhNjlmZTAi
+IHN0cm9rZT0iI2E2OWZlMCIgcG9pbnRzPSIxMjMuNDksLTE2NC4wOCAxMTQuMzksLTE1OC42NiAx
+MTguMTIsLTE2OC41OCAxMjMuNDksLTE2NC4wOCIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxl
+IiB4PSIxNTIiIHk9Ii0xODcuNyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9
+IjE0LjAwIiBmaWxsPSJ3aGl0ZSI+z588L3RleHQ+CjwvZz4KPCEtLSBFQlMmIzQ1OyZndDtTbGF1
+Z2h0ZXJTZXJ2ZXJBIC0tPgo8ZyBpZD0iZWRnZTUiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPkVCUyYj
+NDU7Jmd0O1NsYXVnaHRlclNlcnZlckE8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9
+IiNhNjlmZTAiIGQ9Ik0yMTYuODEsLTIyOC45M0MyMzEuNDEsLTIxMS40OCAyNTEuMjEsLTE4Ny44
+MiAyNjkuNDMsLTE2Ni4wNSIvPgo8cG9seWdvbiBmaWxsPSIjYTY5ZmUwIiBzdHJva2U9IiNhNjlm
+ZTAiIHBvaW50cz0iMjE0LjMsLTIyNi40OCAyMTAuNTYsLTIzNi40IDIxOS42NywtMjMwLjk4IDIx
+NC4zLC0yMjYuNDgiLz4KPHBvbHlnb24gZmlsbD0iI2E2OWZlMCIgc3Ryb2tlPSIjYTY5ZmUwIiBw
+b2ludHM9IjI3MS44OCwtMTY4LjU4IDI3NS42MSwtMTU4LjY2IDI2Ni41MSwtMTY0LjA4IDI3MS44
+OCwtMTY4LjU4Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1NiIgeT0iLTE4Ny43
+IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiIGZpbGw9IndoaXRl
+Ij7PnzwvdGV4dD4KPC9nPgo8L2c+Cjwvc3ZnPgo="dot-graphviz-demo.svg width=100% /><br />
+</p>
+<p><span class="figure-number">Figure 2: </span>XX 系统 v1.2.3 架构图</p>
 </div>
 </div>
-</div>
-<div id="outline-container-orgcf6ae93" class="outline-3">
-<h3 id="orgcf6ae93"><span class="section-number-3">8.3.</span> dot sk</h3>
+</li>
+<li><a id="orgf8097bf"></a>dot sk<br />
 <div class="outline-text-3" id="text-8-3">
 <div class="org-src-container">
 <pre class="src src-dotsk">digraph G {
@@ -1223,9 +1264,8 @@ c3ZnPg=="excalidraw-demo.svg width=100% /><br />
 </pre>
 </div>
 </div>
-</div>
-<div id="outline-container-org2415114" class="outline-3">
-<h3 id="org2415114"><span class="section-number-3">8.4.</span> plantuml with style css</h3>
+</li>
+<li><a id="org0f43b1b"></a>plantuml with style css<br />
 <div class="outline-text-3" id="text-8-4">
 <p>
 plantuml 替换原生样式<br />
@@ -1239,7 +1279,7 @@ DARKO   RANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGRE
 
 
 
-<div id="orgb244c84" class="figure">
+<div id="org6eead50" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2
 ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 d3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U2NyaXB0VHlwZT0iYXBwbGljYXRpb24vZWNt
@@ -1504,12 +1544,11 @@ VE0pIFNFIFJ1bnRpbWUgRW52aXJvbm1lbnQKSlZNOiBKYXZhIEhvdFNwb3QoVE0pIDY0LUJpdCBT
 ZXJ2ZXIgVk0KRGVmYXVsdCBFbmNvZGluZzogVVRGLTgKTGFuZ3VhZ2U6IGVuCkNvdW50cnk6IENO
 Ci0tPjwvZz48L3N2Zz4="plant-uml-order.svg width=100% /><br />
 </p>
-<p><span class="figure-number">Figure 2: </span>有样式的 plantuml 时序图</p>
+<p><span class="figure-number">Figure 3: </span>有样式的 plantuml 时序图</p>
 </div>
 </div>
-</div>
-<div id="outline-container-org3eda028" class="outline-3">
-<h3 id="org3eda028"><span class="section-number-3">8.5.</span> plant uml 系统 Contex 架构图</h3>
+</li>
+<li><a id="org24c2504"></a>plant uml 系统 Contex 架构图<br />
 <div class="outline-text-3" id="text-8-5">
 <p>
 plantuml 替换原生样式<br />
@@ -1521,7 +1560,7 @@ DARKORANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN<
 </pre>
 </div>
 
-<div id="org9dae320" class="figure">
+<div id="org6ee8c87" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2
 ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 d3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U2NyaXB0VHlwZT0iYXBwbGljYXRpb24vZWNt
@@ -1869,15 +1908,14 @@ c291cmNlIGRpc3RyaWJ1dGlvbikKSmF2YSBSdW50aW1lOiBKYXZhKFRNKSBTRSBSdW50aW1lIEVu
 dmlyb25tZW50CkpWTTogSmF2YSBIb3RTcG90KFRNKSA2NC1CaXQgU2VydmVyIFZNCkRlZmF1bHQg
 RW5jb2Rpbmc6IFVURi04Ckxhbmd1YWdlOiBlbgpDb3VudHJ5OiBDTgotLT48L2c+PC9zdmc+"plantuml-c4.svg width=100% /><br />
 </p>
-<p><span class="figure-number">Figure 3: </span>系统 Contex 架构图</p>
+<p><span class="figure-number">Figure 4: </span>系统 Contex 架构图</p>
 </div>
 </div>
-</div>
-<div id="outline-container-org58fb65d" class="outline-3">
-<h3 id="org58fb65d"><span class="section-number-3">8.6.</span> 泳道图</h3>
+</li>
+<li><a id="orgef9b58f"></a>泳道图<br />
 <div class="outline-text-3" id="text-8-6">
 
-<div id="org86fa1f7" class="figure">
+<div id="orgdf538e2" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2
 ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 d3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U2NyaXB0VHlwZT0iYXBwbGljYXRpb24vZWNt
@@ -2052,12 +2090,11 @@ Ckxhbmd1YWdlOiBlbgpDb3VudHJ5OiBDTgotLT48L2c+PC9zdmc+"plantuml-swiming.svg width=
 </p>
 </div>
 </div>
-</div>
-<div id="outline-container-org3598345" class="outline-3">
-<h3 id="org3598345"><span class="section-number-3">8.7.</span> plantuml 通过html自定义图片样式</h3>
+</li>
+<li><a id="org887702e"></a>plantuml 通过html自定义图片样式<br />
 <div class="outline-text-3" id="text-8-7">
 
-<div id="org7601887" class="figure">
+<div id="orgb338791" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjwh
 RE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3
 LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBi
@@ -2158,9 +2195,8 @@ IiBmaWxsPSJ3aGl0ZSI+SFRUUCBBUEkg5o6l5Y+jPC90ZXh0Pgo8L2c+CjwvZz4KPC9zdmc+Cg=="oa-
 </p>
 </div>
 </div>
-</div>
-<div id="outline-container-org9c20a77" class="outline-3">
-<h3 id="org9c20a77"><span class="section-number-3">8.8.</span> plot 折线图</h3>
+</li>
+<li><a id="orgea9558a"></a>plot 折线图<br />
 <div class="outline-text-3" id="text-8-8">
 <p>
 use <code>org-plot/gnuplot</code> for generate.<br />
@@ -2249,7 +2285,7 @@ use <code>org-plot/gnuplot</code> for generate.<br />
 </table>
 
 
-<div id="orgbe61522" class="figure">
+<div id="org26057bd" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiICBzdGFuZGFsb25lPSJubyI/Pgo8
 c3ZnIAogd2lkdGg9IjYwMCIgaGVpZ2h0PSI0ODAiCiB2aWV3Qm94PSIwIDAgNjAwIDQ4MCIKIHht
 bG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3
@@ -2552,12 +2588,11 @@ eHQ+Cgk8L2c+CjwvZz4KPGcgZmlsbD0ibm9uZSIgY29sb3I9ImJsYWNrIiBzdHJva2U9ImN1cnJl
 bnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjAwIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tl
 LWxpbmVqb2luPSJtaXRlciI+CjwvZz4KPC9nPgo8L3N2Zz4KCg=="zxt.svg width=100% /><br />
 </p>
-<p><span class="figure-number">Figure 4: </span>折线图</p>
+<p><span class="figure-number">Figure 5: </span>折线图</p>
 </div>
 </div>
-</div>
-<div id="outline-container-orgb01e95f" class="outline-3">
-<h3 id="orgb01e95f"><span class="section-number-3">8.9.</span> plot 柱状图</h3>
+</li>
+<li><a id="orge456d7c"></a>plot 柱状图<br />
 <div class="outline-text-3" id="text-8-9">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -2618,7 +2653,7 @@ LWxpbmVqb2luPSJtaXRlciI+CjwvZz4KPC9nPgo8L3N2Zz4KCg=="zxt.svg width=100% /><br />
 </table>
 
 
-<div id="orgad5dc91" class="figure">
+<div id="orgd0b3966" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiICBzdGFuZGFsb25lPSJubyI/Pgo8
 c3ZnIAogd2lkdGg9IjYwMCIgaGVpZ2h0PSI0ODAiCiB2aWV3Qm94PSIwIDAgNjAwIDQ4MCIKIHht
 bG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3
@@ -2936,9 +2971,8 @@ b2tlLWxpbmVqb2luPSJtaXRlciI+CjwvZz4KPC9nPgo8L3N2Zz4KCg=="vvt.svg width=100% /><b
 </p>
 </div>
 </div>
-</div>
-<div id="outline-container-org85dca8e" class="outline-3">
-<h3 id="org85dca8e"><span class="section-number-3">8.10.</span> WHAT IS CONNECTOR</h3>
+</li>
+<li><a id="org051154f"></a>WHAT IS CONNECTOR<br />
 <div class="outline-text-3" id="text-8-10">
 <div class="org-src-container">
 <pre class="src src-ds2">direction: right
@@ -2988,12 +3022,11 @@ DataBase -&gt; System : belong{
 </pre>
 </div>
 </div>
-</div>
-<div id="outline-container-orge176418" class="outline-3">
-<h3 id="orge176418"><span class="section-number-3">8.11.</span> d2 workflow</h3>
+</li>
+<li><a id="orgad5d426"></a>d2 workflow<br />
 <div class="outline-text-3" id="text-8-11">
 
-<div id="org1fa7bb6" class="figure">
+<div id="org062d631" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8v
 d3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkv
 eGxpbmsiIGQyVmVyc2lvbj0iMC42LjEiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1l
@@ -4456,10 +4489,11 @@ MyI+IDwvdGV4dD48L3N2Zz48L3N2Zz4K"devflow.svg width=100% /><br />
 </p>
 </div>
 </div>
+</li>
+</ol>
 </div>
-</div>
-<div id="outline-container-orge50c005" class="outline-2">
-<h2 id="orge50c005"><span class="section-number-2">9.</span> org 转 Word</h2>
+<div id="outline-container-orge1e62a4" class="outline-2">
+<h2 id="orge1e62a4"><span class="section-number-2">9.</span> org 转 Word</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
 <pre class="src src-shell">pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
@@ -4467,8 +4501,8 @@ MyI+IDwvdGV4dD48L3N2Zz48L3N2Zz4K"devflow.svg width=100% /><br />
 </div>
 </div>
 </div>
-<div id="outline-container-org5e77bb4" class="outline-2">
-<h2 id="org5e77bb4"><span class="section-number-2">10.</span> 插入时间</h2>
+<div id="outline-container-org3eb09a3" class="outline-2">
+<h2 id="org3eb09a3"><span class="section-number-2">10.</span> 插入时间</h2>
 <div class="outline-text-2" id="text-10">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -4502,8 +4536,8 @@ MyI+IDwvdGV4dD48L3N2Zz48L3N2Zz4K"devflow.svg width=100% /><br />
 </table>
 </div>
 </div>
-<div id="outline-container-org1af6024" class="outline-2">
-<h2 id="org1af6024"><span class="section-number-2">11.</span> Unicode 字符</h2>
+<div id="outline-container-org95eb76d" class="outline-2">
+<h2 id="org95eb76d"><span class="section-number-2">11.</span> Unicode 字符</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 Use unicode character could express of what you think more directly,cause an image symbol alway make the understanding more clearly.<br />

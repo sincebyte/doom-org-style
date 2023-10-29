@@ -4,7 +4,7 @@
 #+title: doom org style
 #+subtitle: A vairty of template about org mode code which one referenced the doom doc style
 #+author: vanniuner
-#+OPTIONS: prop:nil timestamp:nil \n:t ^:nil f:t toc:nil author:t num:t H:2
+#+OPTIONS: prop:nil timestamp:nil \n:t ^:nil f:t toc:t author:t num:t H:1
 # #+HTML_HEAD: <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
 #+HTML_HEAD: <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
 
@@ -22,23 +22,23 @@
 一个类 *doom doc* 的 *org html* 样式模版 [[http://1.117.167.195/doc/doomorgstyle.html][点此预览🪄]]
 * 使用
 配置 *snippet* 模版，然后在 *org mode* 文件中使用 ~tt~ ~tab~ 就可展开此模版。
-#+begin_src org
-    # -*- mode: snippet -*-
-    # name: title
-    # key: tt
-    # --
-    #+title: `(file-name-sans-extension (buffer-name))`
-    #+SUBTITLE: this is subtitle
-    #+AUTHOR: autor
-    #+HTML_HEAD: <script src="scroll.js"></script>
-    #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org_css.css"/>
-    #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    #+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
-    #+LATEX_COMPILER: xelatex
-    #+LATEX_CLASS: elegantpaper
-    #+MACRO: htmlred @@html:<font color="red"></font>@@
-    #+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
-    #+latex:\newpage
+#+begin_src org -n
+# -*- mode: snippet -*-
+# name: title
+# key: tt
+# --
+#+title: `(file-name-sans-extension (buffer-name))`
+#+SUBTITLE: this is subtitle
+#+AUTHOR: autor
+#+HTML_HEAD: <script src="scroll.js"></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org_css.css"/>
+#+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+#+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: elegantpaper
+#+MACRO: htmlred @@html:<font color="red"></font>@@
+#+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
+#+latex:\newpage
 #+end_src
 
 #+begin_notice-info
@@ -200,7 +200,7 @@ $$\begin{aligned}
 
 * Org 代码
 代码片段开启行号，修改 `~/.emacs.d/.local/straight/repos/org/lisp/ox-html.el`
-#+begin_src lisp
+#+begin_src lisp -n 10
   (let* ((code-lines (split-string code "\n"))
 	 (code-length (length code-lines))
 	 (num-fmt

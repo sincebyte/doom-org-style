@@ -76,26 +76,38 @@
   /* pointer-events:none; */
 }
 
+.light .btncheck {
+  text-shadow: 0 0 12px gray;
+  background-color: white;
+}
+
+.light .btncheck {
+  text-shadow: 0 0 12px gray;
+  background-color: white;
+}
+
+.dark .btncheck {
+  text-shadow: 0 0 12px gray;
+  background-color: hsl(220deg 13% 18%);
+}
+
 .btncheck {
-  content: '';
-  background: url("./swap_horizontal_circle_black_24dp.svg") no-repeat center/2rem 2rem;
+  /* background: ; */
   width: 40px;
   height: 40px;
   display: block;
+  visibility: visible;
   position: fixed;
   right: -15px;
   top: 30px;
   left:215px;
   margin: 3px;
   padding: 0px;
-  text-shadow: 0 0 10px blue;
-  /* filter: drop-shadow(3px 5px 2px gray); */
+  font-size: 40px;
   pointer-events: auto;
-
-  background-color: white;
-   -moz-border-radius: 70px;
-   -webkit-border-radius: 70px;
-   border-radius: 70px;
+  -moz-border-radius: 70px;
+  -webkit-border-radius: 70px;
+  border-radius: 70px;
 }
 
 @keyframes movein {

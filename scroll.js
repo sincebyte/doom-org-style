@@ -32,7 +32,7 @@ function createCheckbox() {
               </div>
               `;
 
-  let buttomcheck = `<div class="btncheck"></div>`;
+  let buttomcheck = `<div class="btncheck">📎</div>`;
 
   $('body').append(dom);
   $('body').append(buttomcheck);

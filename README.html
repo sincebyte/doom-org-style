@@ -193,8 +193,8 @@
   .org-svg { }
 </style>
 <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
-<script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
-<link   href = "https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/base.css" rel="stylesheet" type="text/css"></link>
+<script src="scroll.js"></script>
+<link href="base.css" rel="stylesheet"></link>
 <a href="https://github.com/vanniuner/doom-org-style" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 <script>
   window.MathJax = {
@@ -242,47 +242,47 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge678b66">1. 使用</a></li>
-<li><a href="#orged1f67d">2. 字体样式</a></li>
-<li><a href="#org6d8c8cd">3. 特殊说明</a>
+<li><a href="#org8ac6763">1. 使用</a></li>
+<li><a href="#org9c35a27">2. 字体样式</a></li>
+<li><a href="#org20344db">3. 特殊说明</a>
 <ul>
-<li><a href="#orgcb18504">3.1. quote 摘要、引用</a></li>
-<li><a href="#orgf7c6703">3.2. notice 注意事项、提醒</a></li>
-<li><a href="#orgdf76f8f">3.3. Declare a reference</a></li>
+<li><a href="#org7e013fe">3.1. quote 摘要、引用</a></li>
+<li><a href="#org8b28679">3.2. notice 注意事项、提醒</a></li>
+<li><a href="#org8aff5a3">3.3. Declare a reference</a></li>
 </ul>
 </li>
-<li><a href="#org1239486">4. 段落及高亮</a></li>
-<li><a href="#orga006070">5. 表格</a>
+<li><a href="#orgb13ab15">4. 段落及高亮</a></li>
+<li><a href="#orgbcf8c5a">5. 表格</a>
 <ul>
-<li><a href="#orgab1a91a">5.1. AWK 表格</a></li>
-<li><a href="#orgfaf83e4">5.2. 表格自增 ID</a></li>
+<li><a href="#org6ea3d6e">5.1. AWK 表格</a></li>
+<li><a href="#orgd3fa142">5.2. 表格自增 ID</a></li>
 </ul>
 </li>
-<li><a href="#org36d350e">6. LaTex 公式</a></li>
-<li><a href="#orgc7acc8b">7. Org 代码</a>
+<li><a href="#org2dc504e">6. LaTex 公式</a></li>
+<li><a href="#orgf41e4fb">7. Org 代码</a>
 <ul>
-<li><a href="#org553c7f4">7.1. Java 代码</a></li>
-<li><a href="#orgb0e02f3">7.2. babel java</a></li>
+<li><a href="#orga887c6b">7.1. Java 代码</a></li>
+<li><a href="#org72cb243">7.2. babel java</a></li>
 </ul>
 </li>
-<li><a href="#orgc72515e">8. 图片</a>
+<li><a href="#org4b0be41">8. 图片</a>
 <ul>
-<li><a href="#org48d005e">8.1. 引用本地图片</a></li>
-<li><a href="#org34f4f9a">8.2. dot</a></li>
-<li><a href="#orge8d7147">8.3. dot sk</a></li>
-<li><a href="#org2e9be89">8.4. plantuml with style css</a></li>
-<li><a href="#orgb75ff62">8.5. plant uml 系统 Contex 架构图</a></li>
-<li><a href="#org85cdeba">8.6. 泳道图</a></li>
-<li><a href="#org27a4da6">8.7. plantuml 通过html自定义图片样式</a></li>
-<li><a href="#org1cf0201">8.8. plot 折线图</a></li>
-<li><a href="#org82273b0">8.9. plot 柱状图</a></li>
-<li><a href="#orga3b602e">8.10. WHAT IS CONNECTOR</a></li>
-<li><a href="#orgfa8f851">8.11. d2 workflow</a></li>
+<li><a href="#orgfde77c7">8.1. 引用本地图片</a></li>
+<li><a href="#orgcdb70f3">8.2. dot</a></li>
+<li><a href="#org05a634a">8.3. dot sk</a></li>
+<li><a href="#org775a8fe">8.4. plantuml with style css</a></li>
+<li><a href="#org90f7b3a">8.5. plant uml 系统 Contex 架构图</a></li>
+<li><a href="#orgbb88b90">8.6. 泳道图</a></li>
+<li><a href="#orga535364">8.7. plantuml 通过html自定义图片样式</a></li>
+<li><a href="#org28da25d">8.8. plot 折线图</a></li>
+<li><a href="#org7269489">8.9. plot 柱状图</a></li>
+<li><a href="#org839fe23">8.10. WHAT IS CONNECTOR</a></li>
+<li><a href="#org5663b61">8.11. d2 workflow</a></li>
 </ul>
 </li>
-<li><a href="#org411db57">9. org 转 Word</a></li>
-<li><a href="#org7303be0">10. 插入时间</a></li>
-<li><a href="#orgee3e860">11. Unicode 字符</a></li>
+<li><a href="#org8557c74">9. org 转 Word</a></li>
+<li><a href="#org1a5abaa">10. 插入时间</a></li>
+<li><a href="#org1da0542">11. Unicode 字符</a></li>
 </ul>
 </div>
 </div>
@@ -294,8 +294,8 @@
 <p>
 一个类 <b>doom doc</b> 的 <b>org html</b> 样式模版 <a href="http://1.117.167.195/doc/doomorgstyle.html">点此预览🪄</a><br />
 </p>
-<div id="outline-container-orge678b66" class="outline-2">
-<h2 id="orge678b66"><span class="section-number-2">1.</span> 使用</h2>
+<div id="outline-container-org8ac6763" class="outline-2">
+<h2 id="org8ac6763"><span class="section-number-2">1.</span> 使用</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 配置 <b>snippet</b> 模版，然后在 <b>org mode</b> 文件中使用 <code>tt</code> <code>tab</code> 就可展开此模版。<br />
@@ -320,7 +320,7 @@
 </pre>
 </div>
 
-<div class="notice-info" id="orgd5e54ab">
+<div class="notice-info" id="org7c09ca4">
 <p>
 想使用在线版的静态文件，可以使用下面的配置进行替换<br />
 </p>
@@ -335,8 +335,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orged1f67d" class="outline-2">
-<h2 id="orged1f67d"><span class="section-number-2">2.</span> 字体样式</h2>
+<div id="outline-container-org9c35a27" class="outline-2">
+<h2 id="org9c35a27"><span class="section-number-2">2.</span> 字体样式</h2>
 <div class="outline-text-2" id="text-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-bottom"><span class="table-number">Table 1:</span> 字体样式说明</caption>
@@ -375,12 +375,12 @@
 </table>
 </div>
 </div>
-<div id="outline-container-org6d8c8cd" class="outline-2">
-<h2 id="org6d8c8cd"><span class="section-number-2">3.</span> 特殊说明</h2>
+<div id="outline-container-org20344db" class="outline-2">
+<h2 id="org20344db"><span class="section-number-2">3.</span> 特殊说明</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgcb18504" class="outline-3">
-<h3 id="orgcb18504"><span class="section-number-3">3.1.</span> quote 摘要、引用</h3>
+<div id="outline-container-org7e013fe" class="outline-3">
+<h3 id="org7e013fe"><span class="section-number-3">3.1.</span> quote 摘要、引用</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 可使用`quote`来进行代码块补全，表示摘要，引用<br />
@@ -393,24 +393,24 @@ A combination text editor/really horrible ProgrammingLanguage. To quote the pape
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgf7c6703" class="outline-3">
-<h3 id="orgf7c6703"><span class="section-number-3">3.2.</span> notice 注意事项、提醒</h3>
+<div id="outline-container-org8b28679" class="outline-3">
+<h3 id="org8b28679"><span class="section-number-3">3.2.</span> notice 注意事项、提醒</h3>
 <div class="outline-text-3" id="text-3-2">
-<div class="notice-info" id="orgff99ce0">
+<div class="notice-info" id="orgaa93b76">
 <p>
 你有许多已标记的项目并且你可能错过一个重要的项目时，提醒可以提供帮助<br />
 </p>
 
 </div>
 
-<div class="notice-warning" id="org829bfe6">
+<div class="notice-warning" id="org26fe2e7">
 <p>
 Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverflow. Kindly refer them to this section.<br />
 </p>
 
 </div>
 
-<div class="notice-example" id="org1c1cfbb">
+<div class="notice-example" id="orgf99a66a">
 <p>
 这是 1 个例子<br />
 </p>
@@ -418,21 +418,21 @@ Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverf
 </div>
 </div>
 </div>
-<div id="outline-container-orgdf76f8f" class="outline-3">
-<h3 id="orgdf76f8f"><span class="section-number-3">3.3.</span> Declare a reference</h3>
+<div id="outline-container-org8aff5a3" class="outline-3">
+<h3 id="org8aff5a3"><span class="section-number-3">3.3.</span> Declare a reference</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 According to the documentation <a href="https://orgmode.org/manual/Internal-Links.html">Internal-Links</a> we know there have two ways to sign a particular tag.<br />
 </p>
 <ol class="org-ol">
 <li>the outline of org mode is an natural linkable tag.<br /></li>
-<li>use <a id="org5ca79b1"></a> to declare a linkable tag.<br /></li>
+<li>use <a id="org314c715"></a> to declare a linkable tag.<br /></li>
 </ol>
 </div>
 </div>
 </div>
-<div id="outline-container-org1239486" class="outline-2">
-<h2 id="org1239486"><span class="section-number-2">4.</span> 段落及高亮</h2>
+<div id="outline-container-orgb13ab15" class="outline-2">
+<h2 id="orgb13ab15"><span class="section-number-2">4.</span> 段落及高亮</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Example of an  comment.<br />
@@ -458,8 +458,8 @@ HDFS 是如何实现大数据高速、可靠的存储和访问的呢？<br />
 </ul>
 </div>
 </div>
-<div id="outline-container-orga006070" class="outline-2">
-<h2 id="orga006070"><span class="section-number-2">5.</span> 表格</h2>
+<div id="outline-container-orgbcf8c5a" class="outline-2">
+<h2 id="orgbcf8c5a"><span class="section-number-2">5.</span> 表格</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 <code>C-c ~</code> to convert to tabel.el table<br />
@@ -690,10 +690,10 @@ org table <code>M-k</code> <code>M-j</code> for move Rows up and down<br />
 </tbody>
 </table>
 </div>
-<div id="outline-container-orgab1a91a" class="outline-3">
-<h3 id="orgab1a91a"><span class="section-number-3">5.1.</span> AWK 表格</h3>
+<div id="outline-container-org6ea3d6e" class="outline-3">
+<h3 id="org6ea3d6e"><span class="section-number-3">5.1.</span> AWK 表格</h3>
 <div class="outline-text-3" id="text-5-1">
-<table id="org575d4cb" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org81b276a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -834,8 +834,8 @@ org table <code>M-k</code> <code>M-j</code> for move Rows up and down<br />
 </table>
 </div>
 </div>
-<div id="outline-container-orgfaf83e4" class="outline-3">
-<h3 id="orgfaf83e4"><span class="section-number-3">5.2.</span> 表格自增 ID</h3>
+<div id="outline-container-orgd3fa142" class="outline-3">
+<h3 id="orgd3fa142"><span class="section-number-3">5.2.</span> 表格自增 ID</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 The target scope which at the left of equation , @ means row number and $ means column nubmer of increasing from one.<br />
@@ -883,8 +883,8 @@ The expression which at the right of equation  , @# stands for the row number of
 </div>
 </div>
 </div>
-<div id="outline-container-org36d350e" class="outline-2">
-<h2 id="org36d350e"><span class="section-number-2">6.</span> LaTex 公式</h2>
+<div id="outline-container-org2dc504e" class="outline-2">
+<h2 id="org2dc504e"><span class="section-number-2">6.</span> LaTex 公式</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-txt">$\mbox{需求的价格弹性系数} = \frac{\mbox{需求的变动率}}{\mbox{价格的变动率}}$
@@ -907,8 +907,8 @@ The expression which at the right of equation  , @# stands for the row number of
 </p>
 </div>
 </div>
-<div id="outline-container-orgc7acc8b" class="outline-2">
-<h2 id="orgc7acc8b"><span class="section-number-2">7.</span> Org 代码</h2>
+<div id="outline-container-orgf41e4fb" class="outline-2">
+<h2 id="orgf41e4fb"><span class="section-number-2">7.</span> Org 代码</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 代码片段开启行号，修改 `~/.emacs.d/.local/straight/repos/org/lisp/ox-html.el`<br />
@@ -926,8 +926,8 @@ The expression which at the right of equation  , @# stands for the row number of
 </pre>
 </div>
 </div>
-<div id="outline-container-org553c7f4" class="outline-3">
-<h3 id="org553c7f4"><span class="section-number-3">7.1.</span> Java 代码</h3>
+<div id="outline-container-orga887c6b" class="outline-3">
+<h3 id="orga887c6b"><span class="section-number-3">7.1.</span> Java 代码</h3>
 <div class="outline-text-3" id="text-7-1">
 <div class="org-src-container">
 <pre class="src src-java">    <span style="color: #828b9b;">/**</span>
@@ -955,8 +955,8 @@ The expression which at the right of equation  , @# stands for the row number of
 </div>
 </div>
 </div>
-<div id="outline-container-orgb0e02f3" class="outline-3">
-<h3 id="orgb0e02f3"><span class="section-number-3">7.2.</span> babel java</h3>
+<div id="outline-container-org72cb243" class="outline-3">
+<h3 id="org72cb243"><span class="section-number-3">7.2.</span> babel java</h3>
 <div class="outline-text-3" id="text-7-2">
 <div class="org-src-container">
 <pre class="src src-java"><span style="color: #9A7500;">List</span><span style="color: #3B6EA8;">&lt;</span><span style="color: #9A7500;">Integer</span><span style="color: #3B6EA8;">&gt;</span> <span style="color: #842879;">a</span> = Arrays.asList<span style="color: #3B6EA8;">(</span><span style="color: #97365B; font-weight: bold;">1</span>, <span style="color: #97365B; font-weight: bold;">2</span><span style="color: #3B6EA8;">)</span>;
@@ -970,15 +970,15 @@ The expression which at the right of equation  , @# stands for the row number of
 </div>
 </div>
 </div>
-<div id="outline-container-orgc72515e" class="outline-2">
-<h2 id="orgc72515e"><span class="section-number-2">8.</span> 图片</h2>
+<div id="outline-container-org4b0be41" class="outline-2">
+<h2 id="org4b0be41"><span class="section-number-2">8.</span> 图片</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org48d005e" class="outline-3">
-<h3 id="org48d005e"><span class="section-number-3">8.1.</span> 引用本地图片</h3>
+<div id="outline-container-orgfde77c7" class="outline-3">
+<h3 id="orgfde77c7"><span class="section-number-3">8.1.</span> 引用本地图片</h3>
 <div class="outline-text-3" id="text-8-1">
 
-<div id="org0887d02" class="figure">
+<div id="org67ec711" class="figure">
 <p><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmll
 d0JveD0iMCAwIDUyNy42MTcxODc1IDE5OS4wNjgzNTkzNzUiIHdpZHRoPSI1MjcuNjE3MTg3NSIg
 aGVpZ2h0PSIxOTkuMDY4MzU5Mzc1Ij4KICA8IS0tIHN2Zy1zb3VyY2U6ZXhjYWxpZHJhdyAtLT4K
@@ -1154,11 +1154,11 @@ c3ZnPg=="excalidraw-demo.svg width=100% /><br />
 </div>
 </div>
 </div>
-<div id="outline-container-org34f4f9a" class="outline-3">
-<h3 id="org34f4f9a"><span class="section-number-3">8.2.</span> dot</h3>
+<div id="outline-container-orgcdb70f3" class="outline-3">
+<h3 id="orgcdb70f3"><span class="section-number-3">8.2.</span> dot</h3>
 <div class="outline-text-3" id="text-8-2">
 
-<div id="org91d900d" class="figure">
+<div id="orga39482b" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjwh
 RE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3
 LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBi
@@ -1264,8 +1264,8 @@ Ij7PnzwvdGV4dD4KPC9nPgo8L2c+Cjwvc3ZnPgo="dot-graphviz-demo.svg width=100% /><br 
 </div>
 </div>
 </div>
-<div id="outline-container-orge8d7147" class="outline-3">
-<h3 id="orge8d7147"><span class="section-number-3">8.3.</span> dot sk</h3>
+<div id="outline-container-org05a634a" class="outline-3">
+<h3 id="org05a634a"><span class="section-number-3">8.3.</span> dot sk</h3>
 <div class="outline-text-3" id="text-8-3">
 <div class="org-src-container">
 <pre class="src src-dotsk">digraph G {
@@ -1298,8 +1298,8 @@ Ij7PnzwvdGV4dD4KPC9nPgo8L2c+Cjwvc3ZnPgo="dot-graphviz-demo.svg width=100% /><br 
 </div>
 </div>
 </div>
-<div id="outline-container-org2e9be89" class="outline-3">
-<h3 id="org2e9be89"><span class="section-number-3">8.4.</span> plantuml with style css</h3>
+<div id="outline-container-org775a8fe" class="outline-3">
+<h3 id="org775a8fe"><span class="section-number-3">8.4.</span> plantuml with style css</h3>
 <div class="outline-text-3" id="text-8-4">
 <p>
 plantuml 替换原生样式<br />
@@ -1313,7 +1313,7 @@ DARKO   RANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGRE
 
 
 
-<div id="orga41c775" class="figure">
+<div id="org2187581" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2
 ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 d3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U2NyaXB0VHlwZT0iYXBwbGljYXRpb24vZWNt
@@ -1582,8 +1582,8 @@ Ci0tPjwvZz48L3N2Zz4="plant-uml-order.svg width=100% /><br />
 </div>
 </div>
 </div>
-<div id="outline-container-orgb75ff62" class="outline-3">
-<h3 id="orgb75ff62"><span class="section-number-3">8.5.</span> plant uml 系统 Contex 架构图</h3>
+<div id="outline-container-org90f7b3a" class="outline-3">
+<h3 id="org90f7b3a"><span class="section-number-3">8.5.</span> plant uml 系统 Contex 架构图</h3>
 <div class="outline-text-3" id="text-8-5">
 <p>
 plantuml 替换原生样式<br />
@@ -1595,7 +1595,7 @@ DARKORANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN<
 </pre>
 </div>
 
-<div id="org5fc3265" class="figure">
+<div id="orga095be8" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2
 ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 d3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U2NyaXB0VHlwZT0iYXBwbGljYXRpb24vZWNt
@@ -1947,11 +1947,11 @@ RW5jb2Rpbmc6IFVURi04Ckxhbmd1YWdlOiBlbgpDb3VudHJ5OiBDTgotLT48L2c+PC9zdmc+"plantum
 </div>
 </div>
 </div>
-<div id="outline-container-org85cdeba" class="outline-3">
-<h3 id="org85cdeba"><span class="section-number-3">8.6.</span> 泳道图</h3>
+<div id="outline-container-orgbb88b90" class="outline-3">
+<h3 id="orgbb88b90"><span class="section-number-3">8.6.</span> 泳道图</h3>
 <div class="outline-text-3" id="text-8-6">
 
-<div id="org4578733" class="figure">
+<div id="orgbd744a3" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2
 ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 d3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U2NyaXB0VHlwZT0iYXBwbGljYXRpb24vZWNt
@@ -2127,11 +2127,11 @@ Ckxhbmd1YWdlOiBlbgpDb3VudHJ5OiBDTgotLT48L2c+PC9zdmc+"plantuml-swiming.svg width=
 </div>
 </div>
 </div>
-<div id="outline-container-org27a4da6" class="outline-3">
-<h3 id="org27a4da6"><span class="section-number-3">8.7.</span> plantuml 通过html自定义图片样式</h3>
+<div id="outline-container-orga535364" class="outline-3">
+<h3 id="orga535364"><span class="section-number-3">8.7.</span> plantuml 通过html自定义图片样式</h3>
 <div class="outline-text-3" id="text-8-7">
 
-<div id="orgb67f8fe" class="figure">
+<div id="org0335d35" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjwh
 RE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3
 LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBi
@@ -2233,8 +2233,8 @@ IiBmaWxsPSJ3aGl0ZSI+SFRUUCBBUEkg5o6l5Y+jPC90ZXh0Pgo8L2c+CjwvZz4KPC9zdmc+Cg=="oa-
 </div>
 </div>
 </div>
-<div id="outline-container-org1cf0201" class="outline-3">
-<h3 id="org1cf0201"><span class="section-number-3">8.8.</span> plot 折线图</h3>
+<div id="outline-container-org28da25d" class="outline-3">
+<h3 id="org28da25d"><span class="section-number-3">8.8.</span> plot 折线图</h3>
 <div class="outline-text-3" id="text-8-8">
 <p>
 use <code>org-plot/gnuplot</code> for generate.<br />
@@ -2323,7 +2323,7 @@ use <code>org-plot/gnuplot</code> for generate.<br />
 </table>
 
 
-<div id="org3258584" class="figure">
+<div id="orgeb12a12" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiICBzdGFuZGFsb25lPSJubyI/Pgo8
 c3ZnIAogd2lkdGg9IjYwMCIgaGVpZ2h0PSI0ODAiCiB2aWV3Qm94PSIwIDAgNjAwIDQ4MCIKIHht
 bG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3
@@ -2630,8 +2630,8 @@ LWxpbmVqb2luPSJtaXRlciI+CjwvZz4KPC9nPgo8L3N2Zz4KCg=="zxt.svg width=100% /><br />
 </div>
 </div>
 </div>
-<div id="outline-container-org82273b0" class="outline-3">
-<h3 id="org82273b0"><span class="section-number-3">8.9.</span> plot 柱状图</h3>
+<div id="outline-container-org7269489" class="outline-3">
+<h3 id="org7269489"><span class="section-number-3">8.9.</span> plot 柱状图</h3>
 <div class="outline-text-3" id="text-8-9">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -2692,7 +2692,7 @@ LWxpbmVqb2luPSJtaXRlciI+CjwvZz4KPC9nPgo8L3N2Zz4KCg=="zxt.svg width=100% /><br />
 </table>
 
 
-<div id="orgccfc713" class="figure">
+<div id="org5675923" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiICBzdGFuZGFsb25lPSJubyI/Pgo8
 c3ZnIAogd2lkdGg9IjYwMCIgaGVpZ2h0PSI0ODAiCiB2aWV3Qm94PSIwIDAgNjAwIDQ4MCIKIHht
 bG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3
@@ -3011,8 +3011,8 @@ b2tlLWxpbmVqb2luPSJtaXRlciI+CjwvZz4KPC9nPgo8L3N2Zz4KCg=="vvt.svg width=100% /><b
 </div>
 </div>
 </div>
-<div id="outline-container-orga3b602e" class="outline-3">
-<h3 id="orga3b602e"><span class="section-number-3">8.10.</span> WHAT IS CONNECTOR</h3>
+<div id="outline-container-org839fe23" class="outline-3">
+<h3 id="org839fe23"><span class="section-number-3">8.10.</span> WHAT IS CONNECTOR</h3>
 <div class="outline-text-3" id="text-8-10">
 <div class="org-src-container">
 <pre class="src src-ds2">direction: right
@@ -3063,11 +3063,11 @@ DataBase -&gt; System : belong{
 </div>
 </div>
 </div>
-<div id="outline-container-orgfa8f851" class="outline-3">
-<h3 id="orgfa8f851"><span class="section-number-3">8.11.</span> d2 workflow</h3>
+<div id="outline-container-org5663b61" class="outline-3">
+<h3 id="org5663b61"><span class="section-number-3">8.11.</span> d2 workflow</h3>
 <div class="outline-text-3" id="text-8-11">
 
-<div id="org6cd4e19" class="figure">
+<div id="orgff3c5a8" class="figure">
 <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8v
 d3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkv
 eGxpbmsiIGQyVmVyc2lvbj0iMC42LjEiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1l
@@ -4532,8 +4532,8 @@ MyI+IDwvdGV4dD48L3N2Zz48L3N2Zz4K"devflow.svg width=100% /><br />
 </div>
 </div>
 </div>
-<div id="outline-container-org411db57" class="outline-2">
-<h2 id="org411db57"><span class="section-number-2">9.</span> org 转 Word</h2>
+<div id="outline-container-org8557c74" class="outline-2">
+<h2 id="org8557c74"><span class="section-number-2">9.</span> org 转 Word</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
 <pre class="src src-shell">pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
@@ -4541,8 +4541,8 @@ MyI+IDwvdGV4dD48L3N2Zz48L3N2Zz4K"devflow.svg width=100% /><br />
 </div>
 </div>
 </div>
-<div id="outline-container-org7303be0" class="outline-2">
-<h2 id="org7303be0"><span class="section-number-2">10.</span> 插入时间</h2>
+<div id="outline-container-org1a5abaa" class="outline-2">
+<h2 id="org1a5abaa"><span class="section-number-2">10.</span> 插入时间</h2>
 <div class="outline-text-2" id="text-10">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -4576,8 +4576,8 @@ MyI+IDwvdGV4dD48L3N2Zz48L3N2Zz4K"devflow.svg width=100% /><br />
 </table>
 </div>
 </div>
-<div id="outline-container-orgee3e860" class="outline-2">
-<h2 id="orgee3e860"><span class="section-number-2">11.</span> Unicode 字符</h2>
+<div id="outline-container-org1da0542" class="outline-2">
+<h2 id="org1da0542"><span class="section-number-2">11.</span> Unicode 字符</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 Use unicode character could express of what you think more directly,cause an image symbol alway make the understanding more clearly.<br />

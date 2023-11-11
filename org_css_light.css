@@ -2,7 +2,8 @@
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.4;
-    /* color: hsl(219deg 17% 77%); */
+    color: black;
+    background-image: radial-gradient(#fafafa 30%, transparent 0);
     background: "#fafafa";
 }
 

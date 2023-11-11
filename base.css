@@ -1,6 +1,12 @@
 @import url('org_css_dark.css');
 @import url('org_css_light.css');
 
+body {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   background-size: 5px 5px;
+  }
 
 .toggletheme {
     z-index: 999;
@@ -22,7 +28,7 @@
 .toggletheme label {
   cursor: pointer;
   text-indent: -9999px;
-  width: 2.5rem;
+  width: 2.1rem;
   height: 1rem;
   background: rgba(0,0,0,.95);
   display: block;
@@ -40,7 +46,7 @@
   height: 1rem;
   background: #fff ;
   border-radius: 500rem;
-  transition: 0.3s;
+  transition: 0.2s;
   box-shadow: 0 1px 2px 0 rgba(34,36,38,.15), inset 0 0 0 1px rgba(34,36,38,.15);
   /* transition: background .3s ease,left .3s ease; */
 }
@@ -50,7 +56,7 @@
 }
 
 .toggletheme input:checked + label:after {
-	left: calc(100% - 1.5px);
+	left: calc(100%);
 	transform: translateX(-100%);
 }
 
@@ -68,46 +74,37 @@
   position: relative;
   width: 1rem;
   height: 1rem;
-  top: -1.1rem;
-  left: 3.3rem;
+  top: -1.05rem;
+  left: 2.9rem;
 }
 
-#table-of-contents {
-  /* pointer-events:none; */
-}
 
 .light .btncheck {
   text-shadow: 0 0 12px gray;
-  background-color: white;
-}
-
-.light .btncheck {
-  text-shadow: 0 0 12px gray;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .dark .btncheck {
   text-shadow: 0 0 12px gray;
-  background-color: hsl(220deg 13% 18%);
+  /* background-color: hsl(220deg 13% 18%); */
 }
 
 .btncheck {
-  /* background: ; */
   width: 40px;
   height: 40px;
   display: block;
   visibility: visible;
   position: fixed;
   right: -15px;
-  top: 30px;
-  left:215px;
-  margin: 3px;
+  top: 10px;
+  left: 205px;
+  margin: 0px;
   padding: 0px;
-  font-size: 40px;
+  font-size: 55px;
   pointer-events: auto;
-  -moz-border-radius: 70px;
-  -webkit-border-radius: 70px;
-  border-radius: 70px;
+  /* -moz-border-radius: 70px; */
+  /* -webkit-border-radius: 70px; */
+  /* border-radius: 70px; */
 }
 
 @keyframes movein {

@@ -55,11 +55,11 @@
 }
 
 .toggletheme input:checked + label:after {
-  left: calc(100% - 5px);
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  transform: translateX(-100%);
+  /* left: calc(100% - 5px); */
+  /* -webkit-transform: translateX(-100%); */
+  /* -moz-transform: translateX(-100%); */
+  /* -ms-transform: translateX(-100%); */
+  /* -o-transform: translateX(-100%); */
+  /* transform: translateX(-100%); */
 }
 

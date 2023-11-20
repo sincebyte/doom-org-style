@@ -11,7 +11,7 @@ body {
 .toggletheme {
     z-index: 999;
     position: fixed;
-    top: 2%;
+    top: 25px;
     right: 7%;
     --white:#fff;
     transform: translate(-50%, -50%);
@@ -30,7 +30,7 @@ body {
   text-indent: -9999px;
   width: 2.1rem;
   height: 1rem;
-  background: rgba(0,0,0,.95);
+  background: rgba(0,0,0,.05);
   display: block;
   border: none;
   border-radius: 500rem;
@@ -52,21 +52,32 @@ body {
 }
 
 .toggletheme input:checked + label {
-	background: hsl(219deg 17% 77%);
+	background: rgba(0,0,0,.05);
 }
 
 .toggletheme input:checked + label:after {
 	left: calc(100%);
-	transform: translateX(-100%);
+	transform: translateX(-99%);
+  background: #fff linear-gradient(transparent,rgba(0,0,0,.05))
 }
+
+.dark .toggletheme input:checked + label {
+  background: rgba(0,0,0,.5);
+}
+
+.dark .toggletheme input:checked + label:after {
+  background: hsl(219deg 17% 77%) linear-gradient(transparent,rgba(0,0,0,.05))
+}
+
 
 .white_icon {
   display: block;
   position: relative;
   width: 1rem;
   height: 1rem;
-  top: 2.3rem;
-  left: -1.8rem;
+  top: 2.2rem;
+  left: -1.45rem;
+  color: rgba(0,0,0,.5);
 }
 
 .night_icon {
@@ -74,37 +85,52 @@ body {
   position: relative;
   width: 1rem;
   height: 1rem;
-  top: -1.05rem;
-  left: 2.9rem;
+  top: -1.015rem;
+  left: 2.55rem;
+  color: rgba(0,0,0,.5);
+}
+
+.dark .white_icon {
+  color: rgba(255,255,255,.5);
+}
+
+.dark .night_icon {
+  color: hsla(286, 59%, 66%, 101%);
 }
 
 
 .light .btncheck {
-  text-shadow: 0 0 12px gray;
-  /* background-color: white; */
+  text-shadow: 0 0 20px gray;
+  background-color: rgb(236, 240, 241);
+}
+
+.light .btncheck:hover {
+  text-shadow: 0 0 20px gray;
+  background-color: white;
+  cursor: pointer;
 }
 
 .dark .btncheck {
   text-shadow: 0 0 12px gray;
-  /* background-color: hsl(220deg 13% 18%); */
+  background-color: hsl(217deg 12% 12%);
+}
+
+.dark .btncheck:hover {
+  text-shadow: 0 0 12px gray;
+  background-color: hsl(220deg 13% 18%);
+  cursor: pointer;
 }
 
 .btncheck {
-  width: 40px;
-  height: 40px;
   display: block;
   visibility: visible;
   position: fixed;
-  right: -15px;
-  top: 10px;
-  left: 205px;
-  margin: 0px;
-  padding: 0px;
-  font-size: 55px;
+  top: 25px;
+  left: 220px;
   pointer-events: auto;
-  /* -moz-border-radius: 70px; */
-  /* -webkit-border-radius: 70px; */
-  /* border-radius: 70px; */
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  /* border-radius: 10px; */
 }
 
 @keyframes movein {

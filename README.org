@@ -23,21 +23,12 @@
 * 使用
 配置 *snippet* 模版，然后在 *org mode* 文件中使用 ~tt~ ~tab~ 就可展开此模版。
 #+begin_src org -n
-# -*- mode: snippet -*-
-# name: title
-# key: tt
-# --
-#+title: `(file-name-sans-extension (buffer-name))`
-#+SUBTITLE: this is subtitle
-#+AUTHOR: autor
-#+HTML_HEAD: <script src="scroll.js"></script>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org_css.css"/>
-#+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+#+HTML_HEAD: <script src  = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+#+HTML_HEAD: <script src  = "https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
+#+HTML_HEAD: <link   href = "https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/base.css" rel="stylesheet" type="text/css"></link>
 #+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
 #+LATEX_COMPILER: xelatex
 #+LATEX_CLASS: elegantpaper
-#+MACRO: htmlred @@html:<font color="red"></font>@@
-#+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
 #+latex:\newpage
 #+end_src
 

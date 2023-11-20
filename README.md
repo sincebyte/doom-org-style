@@ -1,30 +1,56 @@
+
+# Table of Contents
+
+1.  [使用](#org62b54af)
+2.  [字体样式](#org969a45b)
+3.  [特殊说明](#orgcdb0e85)
+    1.  [quote 摘要、引用](#orgd1acbd2)
+    2.  [notice 注意事项、提醒](#org68caf1e)
+    3.  [Declare a reference](#org9bbdd93)
+4.  [段落及高亮](#org02ccff7)
+5.  [表格](#org7d7f888)
+    1.  [AWK 表格](#orga4c84a9)
+    2.  [表格自增 ID](#org91e224b)
+6.  [LaTex 公式](#orgbf4267f)
+7.  [Org 代码](#org7bb4a19)
+    1.  [Java 代码](#org6336b0f)
+    2.  [babel java](#org91a05e3)
+8.  [图片](#orgb187c79)
+    1.  [引用本地图片](#org926e7c6)
+    2.  [dot](#org195fb7c)
+    3.  [dot sk](#org221bb5d)
+    4.  [plantuml with style css](#org17ee659)
+    5.  [plant uml 系统 Contex 架构图](#org6121015)
+    6.  [泳道图](#orgb5af136)
+    7.  [plantuml 通过html自定义图片样式](#orgff4d70d)
+    8.  [plot 折线图](#orgfd6f586)
+    9.  [plot 柱状图](#orgd97fe92)
+    10. [WHAT IS CONNECTOR](#org0aad36e)
+    11. [d2 workflow](#org0f864ec)
+9.  [org 转 Word](#org7181a8e)
+10. [插入时间](#orgf7f0d0a)
+11. [Unicode 字符](#org000a974)
+
 > 样式引用：<https://docs.doomemacs.org/latest/#/modules>  
 
 一个类 **doom doc** 的 **org html** 样式模版 [点此预览🪄](http://1.117.167.195/doc/doomorgstyle.html)  
 
 
+<a id="org62b54af"></a>
+
 # 使用
 
 配置 **snippet** 模版，然后在 **org mode** 文件中使用 `tt` `tab` 就可展开此模版。  
 
-    # -*- mode: snippet -*-
-    # name: title
-    # key: tt
-    # --
-    #+title: `(file-name-sans-extension (buffer-name))`
-    #+SUBTITLE: this is subtitle
-    #+AUTHOR: autor
-    #+HTML_HEAD: <script src="scroll.js"></script>
-    #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org_css.css"/>
-    #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    #+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
-    #+LATEX_COMPILER: xelatex
-    #+LATEX_CLASS: elegantpaper
-    #+MACRO: htmlred @@html:<font color="red"></font>@@
-    #+MACRO: latexred @@latex:{\color{red}@@@@latex:}@@
-    #+latex:\newpage
+    1  #+HTML_HEAD: <script src  = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    2  #+HTML_HEAD: <script src  = "https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
+    3  #+HTML_HEAD: <link   href = "https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/base.css" rel="stylesheet" type="text/css"></link>
+    4  #+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
+    5  #+LATEX_COMPILER: xelatex
+    6  #+LATEX_CLASS: elegantpaper
+    7  #+latex:\newpage
 
-<div class="notice-info" id="org607dcf1">
+<div class="notice-info" id="org1b335da">
 <p>
 想使用在线版的静态文件，可以使用下面的配置进行替换<br />
 </p>
@@ -35,6 +61,8 @@
     #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
 
+
+<a id="org969a45b"></a>
 
 # 字体样式
 
@@ -79,8 +107,12 @@
 </table>
 
 
+<a id="orgcdb0e85"></a>
+
 # 特殊说明
 
+
+<a id="orgd1acbd2"></a>
 
 ## quote 摘要、引用
 
@@ -90,23 +122,25 @@
 > A combination text editor/really horrible ProgrammingLanguage. To quote the paper &ldquo;RealProgrammers don&rsquo;t use Pascal&rdquo; (1983):  
 
 
+<a id="org68caf1e"></a>
+
 ## notice 注意事项、提醒
 
-<div class="notice-info" id="orgd296ef9">
+<div class="notice-info" id="org84d8e74">
 <p>
 你有许多已标记的项目并且你可能错过一个重要的项目时，提醒可以提供帮助<br />
 </p>
 
 </div>
 
-<div class="notice-warning" id="orgea37774">
+<div class="notice-warning" id="org62995dc">
 <p>
 Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverflow. Kindly refer them to this section.<br />
 </p>
 
 </div>
 
-<div class="notice-example" id="org08aa720">
+<div class="notice-example" id="org0120787">
 <p>
 这是 1 个例子<br />
 </p>
@@ -114,13 +148,17 @@ Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverf
 </div>
 
 
+<a id="org9bbdd93"></a>
+
 ## Declare a reference
 
 According to the documentation [Internal-Links](https://orgmode.org/manual/Internal-Links.html) we know there have two ways to sign a particular tag.  
 
 1.  the outline of org mode is an natural linkable tag.
-2.  use <a id="org6539cf4"></a> to declare a linkable tag.
+2.  use <a id="orgcc208ce"></a> to declare a linkable tag.
 
+
+<a id="org02ccff7"></a>
 
 # 段落及高亮
 
@@ -136,6 +174,8 @@ HDFS 是如何实现大数据高速、可靠的存储和访问的呢？
 
 -   Hadoop 分布式文件系统 HDFS 的设计目标是管理数以千计的服务器、数以万计的磁盘，将大规模的服务器计算资源当作一个单一存储系统进行管理，对应用程序提供数以 PB 计的存储容量，让应用程序像使用普通文件系统一样存储大规模的文件数据。
 
+
+<a id="org7d7f888"></a>
 
 # 表格
 
@@ -376,9 +416,11 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
+<a id="orga4c84a9"></a>
+
 ## AWK 表格
 
-<table id="orge768ffe" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org4b01aa8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -529,6 +571,8 @@ org table `M-k` `M-j` for move Rows up and down
 </table>
 
 
+<a id="org91e224b"></a>
+
 ## 表格自增 ID
 
 The target scope which at the left of equation , @ means row number and $ means column nubmer of increasing from one.  
@@ -572,6 +616,8 @@ The expression which at the right of equation  , @# stands for the row number of
 `C-c` `C-c` to execute it  
 
 
+<a id="orgbf4267f"></a>
+
 # LaTex 公式
 
     $\mbox{需求的价格弹性系数} = \frac{\mbox{需求的变动率}}{\mbox{价格的变动率}}$
@@ -588,20 +634,24 @@ $$\begin{aligned}
 \end{aligned} $$  
 
 
+<a id="org7bb4a19"></a>
+
 # Org 代码
 
 代码片段开启行号，修改 \`~/.emacs.d/.local/straight/repos/org/lisp/ox-html.el\`  
 
-    (let* ((code-lines (split-string code "\n"))
-       (code-length (length code-lines))
-       (num-fmt
-        (and num-start
-             (format "%%%ds "
-             (format "%(add-hook 'code-review-mode-hook
-            (lambda ()
-              ;; include *Code-Review* buffer into current workspace
-              (persp-add-buffer (current-buffer))))%%ds: "
+    10    (let* ((code-lines (split-string code "\n"))
+    11  	 (code-length (length code-lines))
+    12  	 (num-fmt
+    13  	  (and num-start
+    14  	       (format "%%%ds "
+    15  	       (format "%(add-hook 'code-review-mode-hook
+    16            (lambda ()
+    17              ;; include *Code-Review* buffer into current workspace
+    18              (persp-add-buffer (current-buffer))))%%ds: "
 
+
+<a id="org6336b0f"></a>
 
 ## Java 代码
 
@@ -628,6 +678,8 @@ $$\begin{aligned}
     }
 
 
+<a id="org91a05e3"></a>
+
 ## babel java
 
     List<Integer> a = Arrays.asList(1, 2);
@@ -636,18 +688,26 @@ $$\begin{aligned}
 `C-c` `C-c` to execute it, but export to html will fail when the babel java result generated.  
 
 
+<a id="orgb187c79"></a>
+
 # 图片
 
+
+<a id="org926e7c6"></a>
 
 ## 引用本地图片
 
 ![img](./image/excalidraw-demo.svg "create by <https://excalidraw.com/>")  
 
 
+<a id="org195fb7c"></a>
+
 ## dot
 
 ![img](image/dot-graphviz-demo.svg "XX 系统 v1.2.3 架构图")  
 
+
+<a id="org221bb5d"></a>
 
 ## dot sk
 
@@ -679,6 +739,8 @@ $$\begin{aligned}
     }
 
 
+<a id="org17ee659"></a>
+
 ## plantuml with style css
 
 plantuml 替换原生样式  
@@ -689,6 +751,8 @@ DARKO   RANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGRE
 
 ![img](image/plant-uml-order.svg "有样式的 plantuml 时序图")  
 
+
+<a id="org6121015"></a>
 
 ## plant uml 系统 Contex 架构图
 
@@ -701,15 +765,21 @@ DARKORANGE/LIGHTORANGE/DARKBLUE/LIGHTBLUE/DARKRED/LIGHTRED/DARKGREEN/LIGHTGREEN
 ![img](image/plantuml-c4.svg "系统 Contex 架构图")  
 
 
+<a id="orgb5af136"></a>
+
 ## 泳道图
 
 ![img](./image/plantuml-swiming.svg)  
 
 
+<a id="orgff4d70d"></a>
+
 ## plantuml 通过html自定义图片样式
 
 ![img](image/oa-center.svg)  
 
+
+<a id="orgfd6f586"></a>
 
 ## plot 折线图
 
@@ -807,6 +877,8 @@ use `org-plot/gnuplot` for generate.
 ![img](./zxt.svg "折线图")  
 
 
+<a id="orgd97fe92"></a>
+
 ## plot 柱状图
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -875,6 +947,8 @@ use `org-plot/gnuplot` for generate.
 ![img](./vvt.svg)  
 
 
+<a id="org0aad36e"></a>
+
 ## WHAT IS CONNECTOR
 
     direction: right
@@ -922,130 +996,21 @@ use `org-plot/gnuplot` for generate.
     }
 
 
+<a id="org0f864ec"></a>
+
 ## d2 workflow
 
-    direction: right
-    style.fill : transparent
-    
-    "禅道需求": "需求-PRD"{
-    shape: image
-    icon: https://pp.myapp.com/ma_icon/0/icon_54212284_1655281546/256
-    width: 60
-    height: 60
-    }
-    产品经理: "产品" {
-    shape: person
-    width: 52
-    height: 54
-    style.fill: "#85929E"
-    style.stroke: "#01020d"
-    style.stroke-width: 1
-    }
-    
-    产品经理 -> 禅道需求 : 创建  {
-    #style.animated: true
-    style.stroke-width: 3
-    style.stroke: "#F4D03F"
-    }
-    
-    禅道需求 -> development : 负责人分配  {
-    #style.animated: true
-    style.stroke-width: 3
-    style.stroke: "#F4D03F"
-    }
-    
-    development: "研发" {
-    shape: person
-    width: 52
-    height: 54
-    style.fill: "#4b9ae5"
-    style.stroke-width: 1
-    }
-    概要设计: "DOC\n概要设计" {
-    shape: page
-    width: 59
-    height: 94
-    style.fill: transparent
-    style.fill: "gray"
-    style.stroke-width: 1
-    }
-    development -> 概要设计 : output  {
-    #style.animated: true
-    }
-    方案评审: "评审会议" {
-    icon: https://cdn-icons-png.flaticon.com/512/1324/1324843.png
-    shape: image
-    height: 124
-    height: 124
-    }
-    概要设计 -> 方案评审
-    # development -> 方案评审 : Meeting  {
-    #   #style.animated: true
-    #   # style.stroke-width: 3
-    #   style.stroke: "#F4D03F"
-    # }
-    排期表 : "排期表"{
-    icon: https://icons.terrastruct.com/essentials/092-graph%20bar.svg
-    shape: image
-    }
-    方案评审 -> 排期表 : output{
-    }
-    
-    研发迭代 <- 排期表 : development {
-    #style.animated: true
-    style.stroke-width: 3
-    }
-    测试: "测试" {
-    shape: person
-    width: 52
-    height: 54
-    style.fill: "#EB984E"
-    style.stroke: "#01020d"
-    style.stroke-width: 1
-    }
-    
-    测试 <- 研发迭代 : 提测{
-    style.stroke-width: 3
-    }
-    dev : "dev 环境"{
-    shape: cloud
-    style.fill: "#58D68D"
-    style.stroke: "#2ECC71"
-    style.font-color: "white"
-    
-    }
-    研发迭代 : "研发迭代" {
-    style.3d: true
-    }
-    
-    研发迭代 -> dev : 自测
-    
-    
-    禅道缺陷 : "BUG"{
-    shape: image
-    icon: https://pp.myapp.com/ma_icon/0/icon_54212284_1655281546/256
-    width: 60
-    height: 60
-    }
-    测试 -> 禅道缺陷 : 提交bug {
-    style.animated: true
-    style.stroke-width: 3
-    style.stroke: "red"
-    }
-    禅道缺陷 -> development : 分配 {
-    style.animated: true
-    style.stroke-width: 3
-    }
-    development -> 测试 : 解决bug{
-    style.animated: true
-    style.stroke-width: 3
-    }
+![img](devflow.svg)  
 
+
+<a id="org7181a8e"></a>
 
 # org 转 Word
 
     pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
 
+
+<a id="orgf7f0d0a"></a>
 
 # 插入时间
 
@@ -1083,6 +1048,8 @@ use `org-plot/gnuplot` for generate.
 </tbody>
 </table>
 
+
+<a id="org000a974"></a>
 
 # Unicode 字符
 

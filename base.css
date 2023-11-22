@@ -101,7 +101,7 @@ body {
 
 .light .btncheck {
   text-shadow: 0 0 20px gray;
-  background-color: rgb(236, 240, 241);
+  background-color: rgb(243 242 242);
 }
 
 .light .btncheck:hover {

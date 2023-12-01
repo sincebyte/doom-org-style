@@ -122,6 +122,9 @@ function bindEvent() {
 
         $('#content').css('padding-left','0px');
         $('#content').css('transition','padding-left 0.1s ease');
+
+        $('#preamble').css('transform','translateX(-240px)');
+        $('#preamble').css('animation','moveout 0.2s');
       } else {
         $('.btncheck').css('animation','movein 0.2s');
         $('.btncheck').css('transform','translateX(0px)');
@@ -131,6 +134,10 @@ function bindEvent() {
 
         $('#content').css('padding-left','240px');
         $('#content').css('transition','padding-left 0.1s ease');
+
+
+        $('#preamble').css('animation','movein 0.2s');
+        $('#preamble').css('transform','translateX(0px)');
       }
   })
 

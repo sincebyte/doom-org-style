@@ -624,14 +624,21 @@
     /* background-color: hsla(222, 12%, 11%, 100%); */
 }
 .light #preamble {
-    right: 0;
+    left: 0;
     bottom: 0;
+    background-color: hsla(0, 0%, 73%, 100%);
+    width: 240px;
+    height: 30px;
     margin-right: 0px;
-    margin-bottom: 10px;
     position: fixed;
-    color: hsla(204, 83%, 62%, 100%);
+    color: "#eceff4"
     line-height: .7;
+    font-size: 95%;
+    text-align: center;
     z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .light blockquote:before {

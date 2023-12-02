@@ -764,3 +764,13 @@
   background-color: rgba(144, 147, 153, 0.3);
 }
 
+
+.dark .previousButton, .dark .nextButton{
+  background: transparent;
+  color: #43484d;
+}
+.dark .nextButton:hover,.dark .previousButton:hover{
+  color: #98a3ad;
+  background: rgba(67,72,77,1);
+  cursor: pointer;
+}

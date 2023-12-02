@@ -803,3 +803,12 @@ pre {
     color: rgba(144, 147, 163, 1);;
 }
 
+.light .previousButton, .light .nextButton{
+  background: transparent;
+  color: #747474;
+}
+.light .nextButton:hover,.light .previousButton:hover{
+  color: #000000;
+  background: rgba(230,230,230,0.8);
+  cursor: pointer;
+}

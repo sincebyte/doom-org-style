@@ -5,7 +5,66 @@ $(document).ready(function () {
   }
   createCheckbox();
   bindEvent();
+  createShiftButton();
 });
+
+function nextOutline(){
+  // find level 1
+  var links = $("#text-table-of-contents > ul > li > a");
+  for(var nodeIndex = 0; nodeIndex < links.length; nodeIndex++){
+    var href = $(links[nodeIndex]).attr("href");
+    if($(links[nodeIndex]).attr("class") === "active"){
+      $(links[nodeIndex + 1 ]).click();
+      window.location = href;
+      return;
+    }
+  }
+
+  // find level 2
+  var l2activelink = $("#text-table-of-contents > ul > li .active");
+  var currentHref = l2activelink.parent().parent().parent().find("a:first").attr("href");
+  for(var nodeIndex = 0; nodeIndex < links.length; nodeIndex++){
+    var href = $(links[nodeIndex]).attr("href");
+    if(currentHref === href){
+      $(links[nodeIndex + 1 ]).click();
+      window.location = href;
+      return;
+    }
+  }
+}
+
+function prevOutline(){
+  // find level 1
+  var links = $("#text-table-of-contents > ul > li > a");
+  for(var nodeIndex = 0; nodeIndex < links.length; nodeIndex++){
+    var href = $(links[nodeIndex]).attr("href");
+    if($(links[nodeIndex]).attr("class") === "active"){
+      $(links[nodeIndex - 1 ]).click();
+      window.location = href;
+      return;
+    }
+  }
+
+  // find level 2
+  var l2activelink = $("#text-table-of-contents > ul > li .active");
+  var currentHref = l2activelink.parent().parent().parent().find("a:first").attr("href");
+  for(var nodeIndex = 0; nodeIndex < links.length; nodeIndex++){
+    var href = $(links[nodeIndex]).attr("href");
+    if(currentHref === href){
+      $(links[nodeIndex]).click();
+      window.location = href;
+      return;
+    }
+  }
+}
+
+function createShiftButton() {
+  let previousButton = `<div class="previousButton unselectable" onclick="prevOutline()"><span>＜</span></div>`;
+  let nextButton = `<div class="nextButton unselectable" onclick="nextOutline()"><span>＞</span></div>`;
+  $('#table-of-contents').after(previousButton);
+  $('#content').append(nextButton);
+}
+
 
 function getQueryVariable(variable) {
   var query = window.location.search.substring(1);
@@ -107,6 +166,24 @@ function bindEvent() {
     }
   });
 
+  function scrollbind() {
+    var scrollTop = $(document).scrollTop();
+    var anchors = $('body').find('h2,h3');
+    for (var i = 0; i < anchors.length; i++) {
+      var forelemet = $('div#text-table-of-contents ul li a[href="#' + $(anchors[i]).attr('id') + '"]');
+      if (forelemet.attr("href") === undefined) continue;
+      // console.info("currentt" + currentt + ",forelemet.attr" + forelemet.attr("href"));
+      if (scrollTop > $(anchors[i]).offset().top - 50 && scrollTop < $(anchors[i]).offset().top + $(anchors[i]).height() - 50) {
+        forelemet.addClass("active");
+        currentt = forelemet.attr("href");
+        currentHeight = forelemet.offset().top;
+        $('#table-of-contents').scrollTop(currentHeight / 18);
+      } else if (currentt !== forelemet.attr("href")) {
+        forelemet.removeClass("active");
+      }
+    }
+  }
+
   document.querySelector("input[id=switch]").addEventListener("change", function () {
     setTheme(this.checked ? "dark" : 'light');
   });
@@ -125,6 +202,9 @@ function bindEvent() {
 
         $('#preamble').css('transform','translateX(-240px)');
         $('#preamble').css('animation','moveout 0.2s');
+
+        $('.previousButton').css('transform','translateX(-240px)');
+        $('.previousButton').css('animation','moveout 0.2s');
       } else {
         $('.btncheck').css('animation','movein 0.2s');
         $('.btncheck').css('transform','translateX(0px)');
@@ -135,9 +215,11 @@ function bindEvent() {
         $('#content').css('padding-left','240px');
         $('#content').css('transition','padding-left 0.1s ease');
 
-
         $('#preamble').css('animation','movein 0.2s');
         $('#preamble').css('transform','translateX(0px)');
+
+        $('.previousButton').css('animation','movein 0.2s');
+        $('.previousButton').css('transform','translateX(0px)');
       }
   })
 

@@ -200,3 +200,38 @@ body {
         margin: 1em 0 0 0px;
     }
 }
+
+.previousButton {
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  left: 240px;
+  top: 0px;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+}
+.nextButton {
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+}
+
+
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    user-select: none; /* Standard syntax */
+}

@@ -5,7 +5,6 @@
 #+subtitle: A vairty of template about org mode code which one referenced the doom doc style
 #+author: vanniuner
 #+OPTIONS: prop:nil timestamp:nil \n:t ^:nil f:t toc:t author:t num:t H:2
-# #+HTML_HEAD: <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
 #+HTML_HEAD: <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
 
 # #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>

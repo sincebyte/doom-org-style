@@ -12,14 +12,14 @@ function nextOutline(){
   // find level 1
   var links = $("#text-table-of-contents > ul > li > a");
   for(var nodeIndex = 0; nodeIndex < links.length; nodeIndex++){
-    var href = $(links[nodeIndex]).attr("href");
-    if($(links[nodeIndex]).attr("class") === "active"){
+    var href = $(links[nodeIndex+1]).attr("href");
+    if($(links[nodeIndex]).attr("class") === "active" && nodeIndex < links.length - 1){
       $(links[nodeIndex + 1 ]).click();
       window.location = href;
       return;
     }
   }
-
+  console.info("ok")
   // find level 2
   var l2activelink = $("#text-table-of-contents > ul > li .active");
   var currentHref = l2activelink.parent().parent().parent().find("a:first").attr("href");
@@ -37,9 +37,9 @@ function prevOutline(){
   // find level 1
   var links = $("#text-table-of-contents > ul > li > a");
   for(var nodeIndex = 0; nodeIndex < links.length; nodeIndex++){
-    var href = $(links[nodeIndex]).attr("href");
-    if($(links[nodeIndex]).attr("class") === "active"){
-      $(links[nodeIndex - 1 ]).click();
+    var href = $(links[nodeIndex-1]).attr("href");
+    if($(links[nodeIndex]).attr("class") === "active" && nodeIndex > 0){
+      $(links[nodeIndex - 1]).click();
       window.location = href;
       return;
     }

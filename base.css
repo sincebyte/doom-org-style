@@ -6,8 +6,10 @@ body {
    height: 100%;
    margin: 0;
    background-size: 5px 5px;
-  }
-
+}
+body::-webkit-scrollbar {
+  width: 0; /* 隐藏滚动条 */
+}
 .toggletheme {
     z-index: 999;
     position: fixed;
@@ -154,6 +156,9 @@ body {
 
 
 @media screen and (max-width: 1335px) {
+    #preamble{
+      transform: translateX(-240px);
+    }
 
    .btncheck {
      display: none;
@@ -182,7 +187,7 @@ body {
         display: none;
     }
   .previousButton {
-    width: 100px;
+    width: 30px;
     height: 100vh;
     position: fixed;
     left: 0px;
@@ -195,7 +200,7 @@ body {
     font-size: 2em;
   }
   .nextButton {
-    width: 100px;
+    width: 30px;
     height: 100vh;
     position: fixed;
     right: 0px;
@@ -212,23 +217,26 @@ body {
 
 
 @media screen and (min-width: 1335px) {
-
    .hidden-content {
-      transform: translateX(-240px);
+      transform: translateX(240px);
+   }
+
+    #preamble {
+      transform: translateX(0px);
    }
 
    #content {
        max-width: 60em;
-       padding-left: 240px;
+       /* padding-left: 160px; */
    }
 
     .light h1.title ,.dark h1.title{
         text-align: left;
-        margin: 1em 0 0 0px;
+        margin: 0.5em 0 0 0px;
     }
 
   .previousButton {
-    width: 100px;
+    width: 30px;
     height: 100vh;
     position: fixed;
     left: 240px;
@@ -241,7 +249,7 @@ body {
     font-size: 2em;
   }
   .nextButton {
-    width: 100px;
+    width: 30px;
     height: 100vh;
     position: fixed;
     right: 0px;
@@ -262,4 +270,10 @@ body {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer */
     user-select: none; /* Standard syntax */
+}
+.figure p {
+  text-align: left;
+}
+#preamble {
+  display: none !important;
 }

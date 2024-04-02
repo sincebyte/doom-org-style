@@ -3,8 +3,8 @@
     font-size: 16px;
     line-height: 1.4;
     color: black;
-    background-image: radial-gradient(#fafafa 30%, transparent 0);
-    background: "#fafafa";
+    /* background-image: radial-gradient(#fafafa 30%, transparent 0); */
+    background: transparent;
 }
 
 .light code {
@@ -25,7 +25,7 @@
 }
 
 .light h2 {
-    border-bottom: 8px solid hsl(247,51%,75%);
+    border-bottom: 8px solid hsl(211.91deg 76.21% 44.51%);
     padding-bottom: 0.5em;
     font-size: 1.75em;
 }
@@ -116,8 +116,8 @@
 }
 
 .light #table-of-contents a:hover {
-    color: black;
-    background: transparent;
+    /* color: black; */
+    /* background: transparent; */
 }
 
 .light #table-of-contents {
@@ -145,13 +145,14 @@
     font-weight: bold;
 }
 .light #table-of-contents a:hover{
-    background-color: hsla(0, 0%, 66%, 20%);
-    color: whiter;
+    /* background-color: hsla(0, 0%, 66%, 20%); */
+    /* color: whiter; */
+    color: hsl(211.91deg 76.21% 44.51%);
 }
 
 .light #table-of-contents a.active{
-    background-color: hsla(0, 0%, 66%, 20%);
-    color: whiter;
+    color: hsl(211.91deg 76.21% 44.51%);
+    font-weight: bold;
 }
 
 .light #table-of-contents>div>ul>li>a {
@@ -515,18 +516,18 @@
     }
 
     .light h2 {
-        margin-top: 3em;
+        margin-top: 10px;
     }
 
     .light #table-of-contents {
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 30px;
+        left: calc(((100vw - 960px) / 2) - 240px);
         padding: 2em 0 2em 0em;
         width: 240px;
         height: 100vh;
         font-size: 14px;
-        background: hsl(0,1%,95%);
+        /* background: hsl(0,1%,95%); */
         /* overflow: auto; */
     }
 
@@ -537,6 +538,7 @@
     .light #table-of-contents h2 {
         margin-top: 0;
         margin-left: .5em;
+        display: none;
     }
 
     .light #table-of-contents code {
@@ -812,3 +814,4 @@ pre {
   background: rgba(230,230,230,0.8);
   cursor: pointer;
 }
+

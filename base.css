@@ -263,3 +263,27 @@ body {
     -ms-user-select: none; /* Internet Explorer */
     user-select: none; /* Standard syntax */
 }
+
+.BLOCK {
+  color: #f39c12!important
+}
+
+.TODO {
+  color: #f1c40f!important
+}
+
+.DOING {
+  color: #00CFFF!important
+}
+
+.TEST {
+  color: #9b59b6!important
+}
+
+.DONE {
+  color: #27ae60!important
+}
+
+.REPORT {
+  color: #bdc3c7!important
+}

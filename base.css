@@ -287,3 +287,7 @@ body {
 .REPORT {
   color: #bdc3c7!important
 }
+
+.org-src-container .src, .org-src-container span {
+  font-size: 17px!important
+}

@@ -58,7 +58,6 @@ A combination text editor/really horrible ProgrammingLanguage. To quote the pape
 #+end_quote
 
 ** notice 注意事项、提醒
-
 #+begin_notice-info
 你有许多已标记的项目并且你可能错过一个重要的项目时，提醒可以提供帮助
 #+end_notice-info

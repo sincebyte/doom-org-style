@@ -6,7 +6,17 @@ $(document).ready(function () {
   createCheckbox();
   bindEvent();
   createShiftButton();
+  delma();
 });
+
+function delma(){
+  const elementsWithLinenClass = document.querySelectorAll('.linenr');
+  elementsWithLinenClass.forEach(element => {
+      let textContent = element.textContent;
+      textContent = textContent.replace(/: /g, '');
+      element.textContent = textContent;
+  });
+}
 
 function nextOutline(){
   // find level 1
@@ -19,7 +29,6 @@ function nextOutline(){
       return;
     }
   }
-  console.info("ok")
   // find level 2
   var l2activelink = $("#text-table-of-contents > ul > li .active");
   var currentHref = l2activelink.parent().parent().parent().find("a:first").attr("href");
@@ -114,12 +123,14 @@ function bindEvent() {
     }
   });
 
-  $('div.org-src-container').before().click(function (ev) {
+  $('div.org-src-container').on('click', function (ev) {
     if(ev.target.nodeName === 'DIV'){
       $(ev.target).addClass('click-btn-style');
       setTimeout(function(){
         $(ev.target).removeClass('click-btn-style');
       }, 5000);
+    }else{
+      return;
     }
     const element = $(this);
     const storage = document.createElement('textarea');

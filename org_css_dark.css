@@ -11,19 +11,6 @@
     background: hsl(220deg 13% 18%);
 }
 
-.dark code {
-    font-family: "Inconsolata", monospace;
-    font-size: 16px;
-    padding: 0px 4px 0px;
-    color: hsla(209,68%,75%,100%);
-}
-
-.dark p>code,.dark li>code,.dark td>code {
-    background-color: hsla(212,8%,26%, 100%);;
-    outline: 1px solid hsla(222,13%,14%,100%);
-    cursor: pointer;
-}
-
 .dark h1,.dark h2,.dark h3 ,.dark h4,.dark h5{
     font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
 }
@@ -316,15 +303,18 @@
     content: "💡";
 }
 
-/* .dark pre { */
-/*     font-family: Inconsolata; */
-/*     border: 0; */
-/*     box-shadow: none; */
-/*     padding-top: 0pt; */
-/*     margin: 0em; */
-/*     margin-top: 0.5em; */
-/*     margin-bottom: 2em; */
-/* } */
+.dark pre {
+    font-family: Kode Mono;
+    border: 0;
+    box-shadow: none;
+    padding-top: 0pt;
+    padding-bottom: 0pt;
+    margin: 0em;
+    margin-bottom: 16px;
+    background-color: #f8f8f8;
+    background-size: 8px 8px;
+    background-image: linear-gradient(135deg, transparent 25%, rgba(0, 0, 0, 0.02) 25%, rgba(0, 0, 0, 0.02) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, 0.02) 75%, rgba(0, 0, 0, 0.02));
+}
 
 .dark pre.example:before {
     content: "Properties";
@@ -339,19 +329,14 @@
     font-size: 0.85em;
 }
 
-.dark pre {
-    background-color: #f8f8f8;
-    background-size: 8px 8px;
-    background-image: linear-gradient(135deg, transparent 25%, rgba(0, 0, 0, 0.02) 25%, rgba(0, 0, 0, 0.02) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, 0.02) 75%, rgba(0, 0, 0, 0.02));
-}
-
 .dark pre.src {
     background-color: #24272E;
     /* padding: 0em; */
     /* padding-top: 1em; */
     /* padding-bottom: 1em; */
-    border-left: 4px solid hsla(222,12%,30%,80%) !important;
+    /* border-left: 4px solid hsla(222,12%,30%,80%) !important; */
     /* box-shadow: 1px 1px 1px hsla(222,12%,9%); */
+    overflow: hidden; /* 隐藏具有 .linen 类的元素的滚动条 */
 }
 
 /* .dark pre.src span{ */
@@ -500,10 +485,6 @@
     color: green;
 }
 
-.dark #content h3 {
-    color: #98d0f5;
-}
-
 @media screen {
     .dark h1.title {
         text-align: left;
@@ -604,6 +585,7 @@
 .dark .src {
     color: lightgray;
     background: #24272E;
+    font-family: 'Kode Mono';
 }
 .dark #postamble{
     right: 0;
@@ -624,7 +606,7 @@
     height: 30px;
     margin-right: 0px;
     position: fixed;
-    color: "#eceff4"
+    color: "#eceff4";
     line-height: .7;
     font-size: 95%;
     text-align: center;
@@ -677,13 +659,55 @@
     color: hsla(207, 6%, 38%, 100%);
 }
 
+.dark h1, .dark h2, .dark h3{
+    background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 30px;
+}
+
+
 .dark b {
-    color: #92b4d3;
-    /* background: #1f2228; */
+    background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: underline;
+}
+.underline {
+    /* color: #92b4d3; */
+    background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration-color: #b999ee;
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: auto;
 }
 
 .dark i {
-    color: hsl(286,59%,66%);
+    background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.dark del {
+    color: #9da5e9;
+    text-decoration: line-through;
+}
+
+.dark code {
+    color: #202632;
+    background-image: linear-gradient(to right, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
+    /* -webkit-background-clip: text; */
+    /* color: transparent; */
+    padding: 0px 4px 0px;
+    border: 0px;
+}
+
+.dark p>code,.dark li>code,.dark td>code {
+    outline: 1px solid;
+    box-shadow: 0.5px 0.5px 2px #d78dd2;
+    border-radius: 2px; /* 所有角都设置为相同的圆角半径 */
+    cursor: pointer;
 }
 
 .dark caption {
@@ -696,12 +720,16 @@
 .dark .linenr {
     display: inline-block;
     text-align: right;
-    min-width: 31px;
-    /* background: rgb(52, 58, 64); */
+    /* min-width: 31px; */
+    background: rgb(52, 58, 64);
     color: #4eaaef;
-    padding-top: 8px;
-    padding-bottom: 6px;
-    margin-left: -12px;
+
+    padding: 7px;
+
+    margin-left: -10px;
+    margin-right: 10px;
+
+
     font-size: .775rem;
     font-weight: 900;
     line-height: 0.5rem;

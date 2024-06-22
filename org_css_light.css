@@ -3,8 +3,8 @@
     font-size: 16px;
     line-height: 1.4;
     color: black;
-    background-image: radial-gradient(#fafafa 30%, transparent 0);
-    background: "#fafafa";
+    background-image: radial-gradient(circle, #fafafa 0.01px, transparent 2px);
+    background-size: 5px 5px; /* 控制圆点的间距，这里设为 20px */
 }
 
 .light code {

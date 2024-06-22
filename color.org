@@ -1,0 +1,255 @@
+#+title: color
+#+subtitle: this is subtitle
+#+author: van
+#+HTML_HEAD: <script src  = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+#+HTML_HEAD: <script src="scroll.js"></script>
+#+HTML_HEAD: <link href="base.css" rel="stylesheet"></link>
+#+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: elegantpaper
+#+latex:\newpage
+
+#+begin_quote
+样式引用：https://docs.doomemacs.org/latest/#/modules
+#+end_quote
+#+latex:\newpage
+一个类 *doom doc* 的 *org html* 样式模版 [[http://1.117.167.195/doc/doomorgstyle.html][点此预览🪄]]
+
+* 使用
+配置 *snippet* 模版，然后在 *org mode* 文件中使用 ~tt~ ~tab~ 就可展开此模版。
+#+begin_src org -n
+#+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+#+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
+#+HTML_HEAD: <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/base.css"
+rel="stylesheet" type="text/css"></link>
+#+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: elegantpaper
+#+latex:\newpage
+#+end_src
+
+#+begin_notice-info
+想使用在线版的静态文件，可以使用下面的配置进行替换
+#+end_notice-info
+
+#+begin_src org
+    #+HTML_HEAD: <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet"></link>
+    #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
+#+end_src
+* 字体样式
+#+CAPTION:字体样式说明
+| 样式   | 效果                | 符号 |
+| 粗体   | *bold*              | *    |
+| 斜体   | /italic/            | /    |
+| 下划线 | _underlined_        | —    |
+| 超连接 | http://neoemacs.com | auto |
+| 中横线 | +strike-through+    | +    |
+| 按键   | ~code~              | ~    |
+
+#+begin_quote
+使用符号将字符包围就可得到样式效果
+#+end_quote
+* 特殊说明
+** quote 摘要、引用
+可使用`quote`来进行代码块补全，表示摘要，引用
+#+begin_quote
+TECO - Tape [later text] Editor/COrrector
+A combination text editor/really horrible ProgrammingLanguage. To quote the paper "RealProgrammers don't use Pascal" (1983):
+#+end_quote
+
+** notice 注意事项、提醒
+
+#+begin_notice-info
+你有许多已标记的项目并且你可能错过一个重要的项目时，提醒可以提供帮助
+#+end_notice-info
+
+#+begin_notice-warning
+Please do not file or answer Doom Emacs issues on Reddit, Twitter, or StackOverflow. Kindly refer them to this section.
+#+end_notice-warning
+
+#+begin_notice-example
+这是 1 个例子
+#+end_notice-example
+** Declare a reference
+According to the documentation [[https://orgmode.org/manual/Internal-Links.html][Internal-Links]] we know there have two ways to sign a particular tag.
+1. the outline of org mode is an natural linkable tag.
+2. use <<a particular tag>> to declare a linkable tag.
+* 段落及高亮
+Example of an @@comment:inline@@ comment.
+
+原文：[[https://iuap.yonyoucloud.com/doc/yonbuilder.html#/md-build/yonbuilder/articles/yonbuilder/1-/notes.md?key=%E5%8F%91%E7%89%88%E8%AF%B4%E6%98%8E][用友 bip 产品功能说明]] ，在说明文档
+
+大数据中 *最宝贵* 、最难以代替的就是数据，一切都围绕数据。
+
+HDFS 是最早的大数据存储系统，存储着宝贵的数据资产，各种新算法、框架要想得到广泛使用，必须支持 HDFS，才能获取已存储在里面的数据。所以大数据技术越发展，新技术越多，HDFS 得到的支持越多，越离不开 HDFS。HDFS 也许不是最好的大数据存储技术，但依然是最重要的大数据存储技术。
+
+HDFS 是如何实现大数据高速、可靠的存储和访问的呢？
+ - Hadoop 分布式文件系统 HDFS 的设计目标是管理数以千计的服务器、数以万计的磁盘，将大规模的服务器计算资源当作一个单一存储系统进行管理，对应用程序提供数以 PB 计的存储容量，让应用程序像使用普通文件系统一样存储大规模的文件数据。
+
+#+latex:\newpage
+* 表格
+~C-c ~~ to convert to tabel.el table
+~C-c ~~ to convert to org table
+org table ~M-h~ ~M-l~ for move Columns left and right
+org table ~M-k~ ~M-j~ for move Rows up and down
+#+begin_src txt
+# table.el for merge Columns or Rows
+#+end_src
+
+#+CAPTION[Short caption]: square
+|---+-----+-----+-----+-----------+------------|
+| N | N^2 | N^3 | N^4 |   sqrt(n) | sqrt[4](N) |
+|---+-----+-----+-----+-----------+------------|
+| / |   < |     |   > |         < |          > |
+| 1 |   1 |   1 |   1 |         1 |          1 |
+| 2 |   4 |   8 |  16 | 1.4142136 |  1.1892071 |
+| 3 |   9 |  27 |  81 | 1.7320508 |  1.3160740 |
+|---+-----+-----+-----+-----------+------------|
+
+#+CAPTION: student
+|---+---------+--------+--------+--------+-------+------|
+|   | Student | Prob 1 | Prob 2 | Prob 3 | Total | Note |
+|---+---------+--------+--------+--------+-------+------|
+| ! |         |     P1 |     P2 |     P3 |   Tot |      |
+| # | Maximum |     10 |     15 |     25 |    50 | 10.0 |
+| ^ |         |     m1 |     m2 |     m3 |    mt |      |
+|---+---------+--------+--------+--------+-------+------|
+| # | Peter   |     10 |      8 |     23 |    41 |  8.2 |
+| # | Sam     |      2 |      4 |      3 |     9 |  1.8 |
+|---+---------+--------+--------+--------+-------+------|
+|   | Average |        |        |        |  25.0 |      |
+| ^ |         |        |        |        |    at |      |
+| $ | max=50  |        |        |        |       |      |
+|---+---------+--------+--------+--------+-------+------|
+
+
+#+CAPTION: long table
+#+PLOT: title:"An evaluation of plaintext document formats" transpose:yes type:radar min:0 max:4
+| Format            | Fine-grained-control  | Initial Effort        | Syntax simplicity     | Editor Support          | Integrations                  | Ease-of-referencing | Versatility |
+|-------------------+-----------------------+-----------------------+-----------------------+-------------------------+-------------------------------+---------------------+-------------|
+| Word              | Word^2                | Word^3                | Word^4                | sqrt(Word)              | sqrt(sqrt(Word))              |                   2 |           2 |
+| LaTeX             | LaTeX^2               | LaTeX^3               | LaTeX^4               | sqrt(LaTeX)             | sqrt(sqrt(LaTeX))             |                   4 |           3 |
+| Org Mode          | Org^2 Mode^2          | Org^3 Mode^3          | Org^4 Mode^4          | sqrt(Org Mode)          | sqrt(sqrt(Org Mode))          |                   4 |           4 |
+| Markdown          | Markdown^2            | Markdown^3            | Markdown^4            | sqrt(Markdown)          | sqrt(sqrt(Markdown))          |                   3 |           1 |
+| Markdown + Pandoc | (Markdown + Pandoc)^2 | (Markdown + Pandoc)^3 | (Markdown + Pandoc)^4 | sqrt(Markdown + Pandoc) | sqrt(sqrt(Markdown + Pandoc)) |                   3 |           2 |
+#+TBLFM: $6=vsum($P1..$P3)::$7=10*$Tot/$max;%.1f::$at=vmean(@-II..@-I);%.1f
+#+TBLFM: $2=$1^2::$3=$1^3::$4=$1^4::$5=sqrt($1)::$6=sqrt(sqrt(($1)))
+#+latex:\newpage
+** AWK 表格
+#+name: bbs-list
+| aardvark | 555-5553 | 1200/300      | B |
+| alpo-net | 555-3412 | 2400/1200/300 | A |
+| barfly   | 555-7685 | 1200/300      | A |
+| bites    | 555-1675 | 2400/1200/300 | A |
+| camelot  | 555-0542 | 300           | C |
+| core     | 555-2912 | 1200/300      | C |
+| fooey    | 555-1234 | 2400/1200/300 | B |
+| foot     | 555-6699 | 1200/300      | B |
+| macfoo   | 555-6480 | 1200/300      | A |
+| sdace    | 555-3430 | 2400/1200/300 | A |
+| sabafoo  | 555-2127 | 1200/300      | C |
+
+#+begin_src awk :stdin bbs-list
+/foo/ { print $0 }
+#+end_src
+
+#+CAPTION: 筛选出 foo 匹配的行
+| fooey   | 555-1234 | 2400/1200/300 | B |
+| foot    | 555-6699 | 1200/300      | B |
+| macfoo  | 555-6480 | 1200/300      | A |
+| sabafoo | 555-2127 | 1200/300      | C |
+** 表格自增 ID
+The target scope which at the left of equation , @ means row number and $ means column nubmer of increasing from one.
+The expression which at the right of equation  , @# stands for the row number of increasing from zero.
+
+| 序号 | 字段名 | 名称       |
+|    1 | age    | 年龄       |
+|    2 | bir    | 出生年月日 |
+#+tblfm: @2..$1=@#-1
+
+#+begin_src txt
+#+tblfm: $1=@#-1
+#+end_src
+~C-c~ ~C-c~ to execute it
+* LaTex 公式
+#+begin_src txt
+$\mbox{需求的价格弹性系数} = \frac{\mbox{需求的变动率}}{\mbox{价格的变动率}}$
+#+end_src
+
+$$\mbox{需求的价格弹性系数} = \frac{\mbox{需求的变动率}}{\mbox{价格的变动率}}$$
+
+#+CAPTION: laTex 公式
+$$\begin{aligned}
+\cos 3\theta & = \cos (2 \theta + \theta) \\
+& = \cos 2 \theta \cos \theta - \sin 2 \theta \sin \theta \\
+& = (2 \cos ^2 \theta -1) \cos \theta - (2 \sin \theta\cos \theta ) \sin \theta \\
+& = 2 \cos ^3 \theta - \cos \theta - 2 \sin ^2 \theta \cos \theta \\
+& = 2 \cos ^3 \theta - \cos \theta - 2 (1 - \cos ^2 \theta )\cos \theta \\
+& = 4 \cos ^3 \theta -3 \cos \theta
+\end{aligned} $$
+
+#+latex:\newpage
+
+* Org 代码
+代码片段开启行号，修改 `~/.emacs.d/.local/straight/repos/org/lisp/ox-html.el`
+#+begin_src lisp -n 10
+  (let* ((code-lines (split-string code "\n"))
+	 (code-length (length code-lines))
+	 (num-fmt
+	  (and num-start
+	       (format "%%%ds "
+	       (format "%(add-hook 'code-review-mode-hook
+          (lambda ()
+            ;; include *Code-Review* buffer into current workspace
+            (persp-add-buffer (current-buffer))))%%ds: "
+#+end_src
+** Java 代码
+#+begin_src java
+    /**
+     ,* @param request 调用的请求参数
+     ,* @param needLog true 需要记录日志  false 不记录日志
+     ,* @return
+     ,*/
+    protected NcApiResponse runApply(NcApiRequest request, Boolean needLog) {
+        NcApiResponse ncApiResponse = null;
+        try {
+            final NcApiRequest ncApiRequest = executeBefore(request);
+            ncApiResponse = executeGetRequest(ncApiRequest);
+        } catch (Exception e) {
+            afterExecute(needLog, e, request, ncApiResponse);
+            if (e instanceof BizException) {
+                throw new BizException("NC 提示", ((BizException) e).getErrorMsg(), e);
+            } else {
+                throw new BizException("NC 异常", e.getMessage());
+            }
+        }
+
+        return ncApiResponse;
+    }
+#+end_src
+
+#+latex:\newpage
+
+** babel java
+#+begin_src java :results value list
+List<Integer> a = Arrays.asList(1, 2);
+return a;
+#+end_src
+
+#+RESULTS:
+- 1
+- 2
+
+~C-c~ ~C-c~ to execute it, but export to html will fail when the babel java result generated.
+* 插入时间
+| ~C-c .~ | 插入当前时间 <2023-02-25 Sat> |
+| ~K~     | lask week                     |
+| ~J~     | next week                     |
+| ~L~     | next day                      |
+* Unicode 字符
+Use unicode character could express of what you think more directly,cause an image symbol alway make the understanding more clearly.
+Here are some unicode website of listing those character,✌
+- https://unicode.yunser.com/common
+- https://cn.piliapp.com/symbol/
+

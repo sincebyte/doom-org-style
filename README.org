@@ -20,7 +20,6 @@
 #+latex:\newpage
 一个类 *doom doc* 的 *org html* 样式模版 [[http://1.117.167.195/doc/doomorgstyle.html][点此预览🪄]]
 
-* TEST test
 * 使用
 配置 *snippet* 模版，然后在 *org mode* 文件中使用 ~tt~ ~tab~ 就可展开此模版。
 #+begin_src org -n
@@ -37,18 +36,24 @@
 想使用在线版的静态文件，可以使用下面的配置进行替换
 #+end_notice-info
 
-#+begin_src org
+#+begin_src org -n
     #+HTML_HEAD: <link href="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet"></link>
     #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
 #+end_src
 * 字体样式
 #+CAPTION:字体样式说明
-| 粗体       | *bold*           |
-| 斜体       | /italic/         |
-| 下划线     | _underlined_     |
-| 中横线     | +strike-through+ |
-| 代码，按键 | ~code~           |
+| 样式   | 效果                    | 符号 |
+| 粗体   | *bold*                  | *    |
+| 斜体   | /italic/                | /    |
+| 下划线 | _underlinedggwith_    | —    |
+| 超连接 | http://neoemacs.com     | auto |
+| 中横线 | +strike-through+        | +    |
+| 按键   | ~code~                  | ~    |
+
+#+begin_quote
+使用符号将字符包围就可得到样式效果
+#+end_quote
 * 特殊说明
 ** quote 摘要、引用
 可使用`quote`来进行代码块补全，表示摘要，引用

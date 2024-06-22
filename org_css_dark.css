@@ -7,8 +7,10 @@
     font-size: 16px;
     line-height: 1.4;
     color: hsl(219deg 17% 77%);
-    background-image: radial-gradient(#ffffff 30%, transparent 0);
-    background: hsl(220deg 13% 18%);
+    background: #282c35;
+    background-image: radial-gradient(circle, #252931 0.01px, transparent 2px);
+    background-size: 5px 5px; /* 控制圆点的间距，这里设为 20px */
+
 }
 
 .dark h1,.dark h2,.dark h3 ,.dark h4,.dark h5{
@@ -16,22 +18,28 @@
 }
 
 .dark h2 {
-    border-bottom: 8px solid hsl(247,51%,75%);
-    padding-bottom: 0.5em;
     font-size: 1.75em;
 }
 
+.dark h2::after {
+    content: '\A '; /* 插入文字内容 */
+    display: block; /* 将内容设置为块级元素 */
+    padding-bottom: 0.3em;
+    border-bottom: 8px solid hsl(247,51%,75%);
+}
+
 .dark h3 {
-    border-bottom: 1px solid hsla(286, 59%, 66%, 100%);
     margin-top: 2em;
     font-size: 1.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid hsla(286, 59%, 66%, 100%);
 }
 
 .dark h4 {
-    border-bottom: 1px solid hsla(286, 59%, 66%, 100%);
     margin-top: 2em;
     font-size: 1.5em;
     color: hsl(286deg 60% 67%);
+    border-bottom: 1px solid hsla(286, 59%, 66%, 100%);
 }
 
 .dark h5 {
@@ -311,6 +319,7 @@
     padding-bottom: 0pt;
     margin: 0em;
     margin-bottom: 16px;
+    margin-top: 16px;
     background-color: #f8f8f8;
     background-size: 8px 8px;
     background-image: linear-gradient(135deg, transparent 25%, rgba(0, 0, 0, 0.02) 25%, rgba(0, 0, 0, 0.02) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, 0.02) 75%, rgba(0, 0, 0, 0.02));
@@ -660,6 +669,7 @@
 }
 
 .dark h1, .dark h2, .dark h3{
+    display: inline-block; /* 将标题元素设为行内块级元素 */
     background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
     -webkit-background-clip: text;
     color: transparent;
@@ -673,8 +683,9 @@
     color: transparent;
     text-decoration: underline;
 }
-.underline {
+.dark .underline {
     /* color: #92b4d3; */
+    font-weight: bold!important;
     background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
     -webkit-background-clip: text;
     color: transparent;
@@ -684,6 +695,7 @@
 }
 
 .dark i {
+    font-weight: bold!important;
     background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
     -webkit-background-clip: text;
     color: transparent;
@@ -713,8 +725,13 @@
 .dark caption {
     padding-bottom: 20px;
     caption-side: bottom;
-    color: hsl(286,59%,68%);;
+    color: #d78dd2;
     text-align: left;
+}
+.dark .table-number {
+    background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .dark .linenr {

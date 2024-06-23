@@ -538,11 +538,17 @@
     font-weight: 800;
     line-height: 1;
     font-size: 2.3em;
+    background-image: linear-gradient(to right, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .dark .subtitle {
-    color: hsla(247,51%,75%,100%);
+    /* color: hsla(247,51%,75%,100%); */
     font-weight: 400;
+    background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .dark pre.src:hover:before{
@@ -665,7 +671,10 @@
     font-style: normal;
     font-weight: 500;
     text-align: right;
-    color: hsla(207, 6%, 38%, 100%);
+    /* color: hsla(207, 6%, 38%, 100%); */
+    background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .dark h1, .dark h2, .dark h3{

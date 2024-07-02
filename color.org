@@ -253,3 +253,24 @@ Here are some unicode website of listing those character,✌
 - https://unicode.yunser.com/common
 - https://cn.piliapp.com/symbol/
 
+
+
+#+begin_src xml
+<!-- Spring Boot Starter Data JPA -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+<!-- MyBatis Starter -->
+<dependency>
+	<groupId>org.mybatis.spring.boot</groupId>
+	<artifactId>mybatis-spring-boot-starter</artifactId>
+	<version>3.0.3</version>
+</dependency>
+<!-- H2 Database -->
+<dependency>
+	<groupId>com.h2database</groupId>
+	<artifactId>h2</artifactId>
+	<scope>runtime</scope>
+</dependency>
+#+end_src

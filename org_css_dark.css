@@ -828,3 +828,7 @@
   background: rgba(67,72,77,1);
   cursor: pointer;
 }
+
+.dark .src span {
+    background-color: #24272E!important;
+}

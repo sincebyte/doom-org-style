@@ -4,7 +4,7 @@
 #+title: doom org style
 #+subtitle: A vairty of template about org mode code which one referenced the doom doc style
 #+author: vanniuner
-#+OPTIONS: prop:nil timestamp:nil \n:t ^:nil f:t toc:t author:t num:t H:2
+#+OPTIONS: prop:nil timestamp:nil \n:t ^:nil f:t toc:t author:t num:t H:2 tex:t
 #+HTML_HEAD: <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
 
 # #+HTML_HEAD: <script src="https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
@@ -193,6 +193,17 @@ $$\begin{aligned}
 \end{aligned} $$
 
 #+latex:\newpage
+
+
+在行内显示公式：$S_n = \frac{n}{2} \cdot (a + l) \cdot \sqrt(2)$
+
+或者使用独立公式：
+
+$$\begin{aligned}
+S_n &= \frac{n}{2} \cdot (a + l) \\
+S_n &= \frac{n}{2} \cdot (2a + (n - 1)d) \\
+Sum &= \frac{n}{\sum_{\substack{\begin{array}{l} \text{value} = ready \\ \text{time} \in [week] \end{array}}}\text{dailyPaper.record}}
+\end{aligned}$$
 
 * Org 代码
 代码片段开启行号，修改 `~/.emacs.d/.local/straight/repos/org/lisp/ox-html.el`

@@ -4,6 +4,7 @@
 }
 .dark body {
     font-family: Helvetica, Arial, sans-serif;
+    /* font-family: '仓耳今楷01-9128', Arial, sans-serif; */
     font-size: 16px;
     line-height: 1.4;
     color: hsl(219deg 17% 77%);
@@ -15,6 +16,7 @@
 
 .dark h1,.dark h2,.dark h3 ,.dark h4,.dark h5{
     font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+    /* font-family: 'MyLocalFont', sans-serif; */
 }
 
 .dark h2 {
@@ -50,7 +52,8 @@
 }
 
 .dark h2 code,.dark  h3 code,.dark  h4 code,.dark  h5 code {
-    font-family: inherit !important;
+    /* font-family: inherit !important; */
+    font-family: 'MyLocalFont', sans-serif;
     font-size: inherit !important;
 }
 

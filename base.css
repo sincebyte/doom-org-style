@@ -291,3 +291,7 @@ body {
 .org-src-container .src, .org-src-container span {
   font-size: 15px!important
 }
+
+mjx-container + br {
+    display: none;
+}

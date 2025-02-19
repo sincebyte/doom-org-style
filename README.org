@@ -740,6 +740,5 @@ pandoc -o ~/Desktop/out.docx ~/.doom.d/README.org
 * Unicode 字符
 Use unicode character could express of what you think more directly,cause an image symbol alway make the understanding more clearly.
 Here are some unicode website of listing those character,✌
-- https://unicode.yunser.com/common
-- https://cn.piliapp.com/symbol/
-
+https://unicode.yunser.com/common
+https://cn.piliapp.com/symbol/

@@ -15,6 +15,7 @@ body {
     right: 7%;
     --white:#fff;
     transform: translate(-50%, -50%);
+    display: flex;
     /* filter: drop-shadow(2px 3px 1px rgb(0 0 0 / 0.4)); */
 }
 
@@ -75,8 +76,7 @@ body {
   position: relative;
   width: 1rem;
   height: 1rem;
-  top: 2.2rem;
-  left: -1.45rem;
+  left: 5px;
   color: rgba(0,0,0,.5);
 }
 
@@ -85,8 +85,7 @@ body {
   position: relative;
   width: 1rem;
   height: 1rem;
-  top: -1.015rem;
-  left: 2.55rem;
+  left: 15px;
   color: rgba(0,0,0,.5);
 }
 

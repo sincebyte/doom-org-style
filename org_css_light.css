@@ -134,6 +134,7 @@
 }
 .light #table-of-contents h2 {
     border-bottom: 0;
+    margin-bottom: 0px;
     /* color: white; */
 }
 
@@ -149,7 +150,6 @@
 }
 
 .light #table-of-contents div>ul>li {
-    margin-top: 5px;
     font-weight: bold;
 }
 .light #table-of-contents a:hover{
@@ -545,6 +545,7 @@
     .light #table-of-contents h2 {
         margin-top: 0;
         margin-left: .5em;
+        margin-bottom: 0;
     }
 
     .light #table-of-contents code {

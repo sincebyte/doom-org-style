@@ -89,12 +89,16 @@ body {
   color: rgba(0,0,0,.5);
 }
 
-.dark .white_icon {
-  color: rgba(255,255,255,.5);
+.light .white_icon {
+  color: hsla(286, 59%, 66%, 101%);
 }
 
 .dark .night_icon {
   color: hsla(286, 59%, 66%, 101%);
+}
+
+.light .night_icon {
+  color: #f1f2f6
 }
 
 

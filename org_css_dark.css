@@ -123,6 +123,7 @@
 }
 .dark #table-of-contents h2 {
     border-bottom: 0;
+    margin-bottom: 0;
 }
 
 .dark #text-table-of-contents>ul {
@@ -137,7 +138,6 @@
 }
 
 .dark #table-of-contents div>ul>li {
-    margin-top: 5px;
     font-weight: bold;
 }
 .dark #table-of-contents a:hover{
@@ -526,6 +526,7 @@
     .dark #table-of-contents h2 {
         margin-top: 0;
         margin-left: .5em;
+        margin-bottom: 0;
     }
 
     .dark #table-of-contents code {

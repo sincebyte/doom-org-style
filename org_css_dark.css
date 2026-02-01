@@ -185,6 +185,8 @@
 
 .dark table {
     width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .dark table,.dark th,.dark td {
@@ -205,6 +207,7 @@
 .dark div.notice {
     position: relative;
     padding: 0.25em 1em;
+    margin-top: 1em;
     margin-bottom: 1em;
     border-left: 4px solid;
 }
@@ -244,6 +247,7 @@
     position: relative;
     padding: 0.25em 1em;
     border-left: 4px solid hsla(35,47%,70%,100%);
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 
@@ -253,6 +257,7 @@
     position: relative;
     padding: 0.25em 1em;
     border-left: 4px solid;
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 
@@ -262,6 +267,7 @@
     position: relative;
     padding: 0.25em 1em;
     border-left: 4px solid #060;
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 
@@ -321,11 +327,8 @@
     padding-top: 0pt;
     padding-bottom: 0pt;
     margin: 0em;
-    margin-bottom: 16px;
-    margin-top: 16px;
-    background-color: #f8f8f8;
-    background-size: 8px 8px;
-    background-image: linear-gradient(135deg, transparent 25%, rgba(0, 0, 0, 0.02) 25%, rgba(0, 0, 0, 0.02) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, 0.02) 75%, rgba(0, 0, 0, 0.02));
+    background-color: #24272E;
+    white-space: pre;
 }
 
 .dark pre.example:before {
@@ -343,12 +346,10 @@
 
 .dark pre.src {
     background-color: #24272E;
-    /* padding: 0em; */
-    /* padding-top: 1em; */
-    /* padding-bottom: 1em; */
-    /* border-left: 4px solid hsla(222,12%,30%,80%) !important; */
-    /* box-shadow: 1px 1px 1px hsla(222,12%,9%); */
-    overflow: hidden; /* 隐藏具有 .linen 类的元素的滚动条 */
+    border: none;
+    border-radius: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 /* .dark pre.src span{ */
@@ -356,42 +357,123 @@
 /*     line-height: 1rem; */
 /* } */
 
-.dark pre.src:before {
-    display: block;
-    position: absolute;
-    background-color: #24272E;
-    top: 0;
-    right: 0;
-    padding: 0.25em 0.5em;
-    /* border-bottom-left-radius: 8px; */
-    /* border: 0; */
-    color: #4eaeef;
-    font-size: 80%;
+.dark .org-src-container {
+    position: relative;
+    border: 1px solid hsla(222,12%,30%,80%);
+    border-radius: 0.25rem;
+    overflow: visible;
 }
 
-.dark .org-src-container {
-    /* pointer-events: none; */
-    position: relative;
+.dark pre.src {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.dark pre.src:before {
+    display: none;
 }
 .dark .org-src-container::before {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' fill='%23CECAC3' height='16' viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true' class='octicon octicon-copy js-clipboard-copy-icon m-2'%3E%3Cpath d='M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z'%3E%3C/path%3E%3Cpath d='M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z'%3E%3C/path%3E%3C/svg%3E%0A");
     color: #a39b8f;
     background-color: rgb(28, 30, 31);
-    border-radius: 6px;
+    border-radius: 0.25rem;
     cursor: pointer;
     position: absolute;
     display: inline-block;
     text-decoration: none;
-    left: 102%;
+    right: -3rem;
+    top: 0rem;
     fill: white;
     padding: 7px;
     line-height: 1em;
-    /* top: 1.3em; */
     pointer-events: auto;
-    border-color: rgba(35, 40, 46, 0.573);
-    border: 0.5px solid;
-    filter: drop-shadow(2px 3px 1px rgb(0 0 0 / 0.6));
+    border: 1px solid hsla(222,12%,30%,80%);
+    z-index: 10;
 }
+
+.dark .org-src-container::after {
+    display: block;
+    position: absolute;
+    background-color: #24272E;
+    top: 0;
+    left: -5rem;
+    border-radius:0.25rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid hsla(222,12%,30%,80%);
+    /* border-right: 1px solid hsla(222,12%,30%,80%); */
+    color: #4eaeef;
+    font-size: 80%;
+    text-transform: uppercase;
+    line-height: 1em;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.dark .org-src-container:has(.src-plantuml)::after { content: "UML"; }
+.dark .org-src-container:has(.src-javascript)::after { content: "JS"; }
+.dark .org-src-container:has(.src-clojure)::after { content: "CLJ"; }
+.dark .org-src-container:has(.src-c)::after { content: "C"; }
+.dark .org-src-container:has(.src-java)::after { content: "JAVA"; }
+.dark .org-src-container:has(.src-python)::after { content: "PYTHON"; }
+.dark .org-src-container:has(.src-org)::after { content: "ORG"; }
+.dark .org-src-container:has(.src-sh)::after { content: "SH"; }
+.dark .org-src-container:has(.src-bash)::after { content: "BASH"; }
+.dark .org-src-container:has(.src-html)::after { content: "HTML"; }
+.dark .org-src-container:has(.src-css)::after { content: "CSS"; }
+.dark .org-src-container:has(.src-sql)::after { content: "SQL"; }
+.dark .org-src-container:has(.src-yaml)::after { content: "YAML"; }
+.dark .org-src-container:has(.src-json)::after { content: "JSON"; }
+.dark .org-src-container:has(.src-xml)::after { content: "XML"; }
+.dark .org-src-container:has(.src-markdown)::after { content: "MD"; }
+.dark .org-src-container:has(.src-emacs-lisp)::after { content: "ELISP"; }
+.dark .org-src-container:has(.src-lisp)::after { content: "LISP"; }
+.dark .org-src-container:has(.src-ruby)::after { content: "RUBY"; }
+.dark .org-src-container:has(.src-go)::after { content: "GO"; }
+.dark .org-src-container:has(.src-rust)::after { content: "RUST"; }
+.dark .org-src-container:has(.src-typescript)::after { content: "TS"; }
+.dark .org-src-container:has(.src-tsx)::after { content: "TSX"; }
+.dark .org-src-container:has(.src-jsx)::after { content: "JSX"; }
+.dark .org-src-container:has(.src-vue)::after { content: "VUE"; }
+.dark .org-src-container:has(.src-dockerfile)::after { content: "DOCKER"; }
+.dark .org-src-container:has(.src-nginx)::after { content: "NGINX"; }
+.dark .org-src-container:has(.src-apache)::after { content: "APACHE"; }
+.dark .org-src-container:has(.src-makefile)::after { content: "MAKE"; }
+.dark .org-src-container:has(.src-cmake)::after { content: "CMAKE"; }
+.dark .org-src-container:has(.src-groovy)::after { content: "GROOVY"; }
+.dark .org-src-container:has(.src-kotlin)::after { content: "KOTLIN"; }
+.dark .org-src-container:has(.src-scala)::after { content: "SCALA"; }
+.dark .org-src-container:has(.src-perl)::after { content: "PERL"; }
+.dark .org-src-container:has(.src-php)::after { content: "PHP"; }
+.dark .org-src-container:has(.src-swift)::after { content: "SWIFT"; }
+.dark .org-src-container:has(.src-objective-c)::after { content: "OBJC"; }
+.dark .org-src-container:has(.src-r)::after { content: "R"; }
+.dark .org-src-container:has(.src-julia)::after { content: "JULIA"; }
+.dark .org-src-container:has(.src-matlab)::after { content: "MATLAB"; }
+.dark .org-src-container:has(.src-octave)::after { content: "OCTAVE"; }
+.dark .org-src-container:has(.src-scheme)::after { content: "SCHEME"; }
+.dark .org-src-container:has(.src-racket)::after { content: "RACKET"; }
+.dark .org-src-container:has(.src-erlang)::after { content: "ERLANG"; }
+.dark .org-src-container:has(.src-elixir)::after { content: "ELIXIR"; }
+.dark .org-src-container:has(.src-haskell)::after { content: "HASKELL"; }
+.dark .org-src-container:has(.src-ocaml)::after { content: "OCAML"; }
+.dark .org-src-container:has(.src-fsharp)::after { content: "FSHARP"; }
+.dark .org-src-container:has(.src-dart)::after { content: "DART"; }
+.dark .org-src-container:has(.src-flutter)::after { content: "FLUTTER"; }
+.dark .org-src-container:has(.src-lua)::after { content: "LUA"; }
+.dark .org-src-container:has(.src-vim)::after { content: "VIM"; }
+.dark .org-src-container:has(.src-awk)::after { content: "AWK"; }
+.dark .org-src-container:has(.src-sed)::after { content: "SED"; }
+.dark .org-src-container:has(.src-powershell)::after { content: "PS"; }
+.dark .org-src-container:has(.src-cmd)::after { content: "CMD"; }
+.dark .org-src-container:has(.src-batch)::after { content: "BATCH"; }
+.dark .org-src-container:has(.src-toml)::after { content: "TOML"; }
+.dark .org-src-container:has(.src-ini)::after { content: "INI"; }
+.dark .org-src-container:has(.src-conf)::after { content: "CONF"; }
+.dark .org-src-container:has(.src-properties)::after { content: "PROPS"; }
+.dark .org-src-container:has(.src-diff)::after { content: "DIFF"; }
+.dark .org-src-container:has(.src-patch)::after { content: "PATCH"; }
+.dark .org-src-container:has(.src-log)::after { content: "LOG"; }
+.dark .org-src-container:has(.src-text)::after { content: "TXT"; }
 
 .dark .click-btn-style::before  {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' fill='green' height='16' viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true' class='octicon octicon-check js-clipboard-check-icon color-fg-success m-2 d-none'%3E%3Cpath d='M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'%3E%3C/path%3E%3C/svg%3E");
@@ -400,21 +482,7 @@
     background-color: rgb(28, 30, 31);
 }
 
-.dark pre.src-plantuml:before {
-    content: "UML";
-}
 
-.dark pre.src-javascript:before {
-    content: "JS";
-}
-
-.dark pre.src-clojure:before {
-    content: "CLJ";
-}
-
-.dark pre.src-c:before {
-    content: "C";
-}
 
 .dark span.org-string {
     color: #f94;
@@ -605,6 +673,11 @@
     color: lightgray;
     background: #24272E;
     font-family: 'Kode Mono';
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: auto;
+    padding: 1rem;
+    padding-left: 0;
 }
 .dark #postamble{
     right: 0;
@@ -750,20 +823,14 @@
 .dark .linenr {
     display: inline-block;
     text-align: right;
-    /* min-width: 31px; */
-    background: rgb(52, 58, 64);
+    background: #24272E;
     color: #4eaaef;
-
-    padding: 7px;
-
-    margin-left: -10px;
-    margin-right: 10px;
-
-
-    font-size: .775rem;
-    font-weight: 900;
-    line-height: 0.5rem;
+    padding: 0 0.75rem;
+    margin-right: 0.75rem;
+    font-size: .875rem;
+    font-weight: 400;
     user-select: none;
+    border-right: 1px solid hsla(222,12%,30%,80%);
 }
 
 .dark mjx-container {
@@ -792,34 +859,27 @@
         transform:rotate(10deg)
     }
 }
-/* 美化滚动条 */
-::-webkit-scrollbar {
+.dark .org-src-container::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  /* display: none; */
 }
 
-::-webkit-scrollbar-track {
-  width: 6px;
-  background: rgba(#101f1c, 0.1);
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
-  border-radius: 2em;
+.dark .org-src-container::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgba(144, 147, 153, 0.5);
-  background-clip: padding-box;
-  min-height: 28px;
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
+.dark .org-src-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
   border-radius: 2em;
   transition: background-color 0.3s;
-  cursor: pointer;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(144, 147, 153, 0.3);
+.dark .org-src-container:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(144, 147, 153, 0.5);
+}
+
+.dark .org-src-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(144, 147, 153, 0.7);
 }
 
 

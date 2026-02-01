@@ -270,3 +270,11 @@ body {
 mjx-container + br {
     display: none;
 }
+
+.org-src-container pre {
+    font-variant-ligatures: none;
+}
+
+.org-src-container pre * {
+    font-variant-ligatures: none;
+}

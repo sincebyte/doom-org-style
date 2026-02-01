@@ -7,6 +7,7 @@ $(document).ready(function () {
   bindEvent();
   createShiftButton();
   delma();
+  removeBoxDrawingChars();
 });
 
 function delma(){
@@ -15,6 +16,19 @@ function delma(){
       let textContent = element.textContent;
       textContent = textContent.replace(/: /g, '');
       element.textContent = textContent;
+  });
+}
+
+function removeBoxDrawingChars(){
+  const codeBlocks = document.querySelectorAll('.org-src-container pre, .org-src-container pre *');
+  codeBlocks.forEach(element => {
+      if (element.childNodes) {
+          element.childNodes.forEach(node => {
+              if (node.nodeType === Node.TEXT_NODE) {
+                  node.textContent = node.textContent.replace(/[│┃┇┆┋┇]/g, '');
+              }
+          });
+      }
   });
 }
 

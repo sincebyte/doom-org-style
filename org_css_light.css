@@ -8,16 +8,67 @@
 }
 
 .light code {
-    font-family: "Inconsolata", monospace;
-    font-size: 16px;
-    padding: 0px 4px 0px;
-    color: hsla(209,99%,65%,100%);
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 12.35px;
+    color: rgb(146, 180, 211);
+    background-color: rgb(186, 186, 186);
+    padding: 2px 4px 1px;
+    border: 0px none rgb(146, 180, 211);
+    border-radius: 0px;
+    box-shadow: none;
+    font-weight: 400;
 }
 
 .light p>code, .light li>code, .light td>code {
-    background-color: "#fafafa";
-    outline: 1px solid "#fafafa";
     cursor: pointer;
+}
+
+.light kbd {
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 14.25px;
+    color: rgb(146, 180, 211);
+    background-color: rgb(61, 66, 72);
+    padding: 2px 4px 1px;
+    border: 0px none rgb(146, 180, 211);
+    border-radius: 0px;
+    box-shadow: none;
+    font-weight: 400;
+}
+
+.light .verbatim {
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 12.35px;
+    color: rgb(146, 180, 211);
+    background-color: rgb(186, 186, 186);
+    padding: 2px 4px 1px;
+    border: 0px none rgb(146, 180, 211);
+    border-radius: 0px;
+    box-shadow: none;
+    font-weight: 400;
+}
+
+.light .TODO {
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 7.8px;
+    color: rgb(235, 188, 122);
+    background-color: rgb(186, 186, 186);
+    padding: 1px 2px 1px 1px;
+    border: 1px solid rgba(235, 188, 122, 0.4);
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 400;
+}
+
+.light .FIXME {
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 7.8px;
+    color: rgb(255, 100, 100);
+    background-color: rgb(186, 186, 186);
+    padding: 1px 2px 1px 1px;
+    border: 1px solid rgba(255, 100, 100, 0.4);
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 400;
 }
 
 .light h1, .light h2, .light h3 ,.light h4, .light h5{
@@ -343,13 +394,15 @@
 }
 
 .light pre {
-    font-family: Kode Mono;
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 14.25px;
+    color: rgb(146, 180, 211);
+    background-color: rgb(250, 250, 250);
     border: 0;
     box-shadow: none;
-    padding-top: 0pt;
-    padding-bottom: 0pt;
+    padding: 10.6875px 7.125px;
     margin: 0em;
-    background-color: #f3f5f7;
+    border-radius: 0px;
     white-space: pre;
 }
 
@@ -369,7 +422,7 @@
 .light pre.src {
     background-color: #f3f5f7;
     border: none;
-    border-radius: 1;
+    border-radius: 1em;
     overflow-x: auto;
     overflow-y: hidden;
 }
@@ -804,18 +857,24 @@
 }
 
 .light code {
-    color: #f8f8f8;
-    background-image: linear-gradient(to right, #84266d, #6f3985, #5d409a, #43489d);
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 12.35px;
+    color: #92A8E2;
+    background-color: #3d4248;
+    border-radius: 0em !important;
+    /* background-image: linear-gradient(to right, #84266d, #6f3985, #5d409a, #43489d); */
     /* -webkit-background-clip: text; */
     /* color: transparent; */
-    padding: 0px 4px 0px;
-    border: 0px;
+    padding: 2px 4px 1px;
+    box-shadow: none;
+    font-weight: 400;
+    border: 0px none #92A8E2;
 }
 
 .light p>code,.light li>code,.light td>code {
-    outline: 1px solid;
-    box-shadow: 0.5px 0.5px 2px #d78dd2;
-    border-radius: 2px; /* 所有角都设置为相同的圆角半径 */
+    /* outline: 1px solid; */
+    /* box-shadow: 0.5px 0.5px 2px #d78dd2; */
+    /* border-radius: 2px; /\* 所有角都设置为相同的圆角半径 *\/ */
     cursor: pointer;
 }
 

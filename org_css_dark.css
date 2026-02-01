@@ -321,13 +321,15 @@
 }
 
 .dark pre {
-    font-family: Kode Mono;
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 14.25px;
+    color: rgb(182, 205, 226);
+    background-color: rgb(31, 34, 40);
     border: 0;
     box-shadow: none;
-    padding-top: 0pt;
-    padding-bottom: 0pt;
+    padding: 10.6875px 7.125px;
     margin: 0em;
-    background-color: #24272E;
+    border-radius: 0px;
     white-space: pre;
 }
 
@@ -347,7 +349,7 @@
 .dark pre.src {
     background-color: #24272E;
     border: none;
-    border-radius: 1;
+    border-radius: 1em;
     overflow-x: auto;
     overflow-y: hidden;
 }
@@ -793,19 +795,67 @@
 }
 
 .dark code {
-    color: #202632;
-    background-image: linear-gradient(to right, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
-    /* -webkit-background-clip: text; */
-    /* color: transparent; */
-    padding: 0px 4px 0px;
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 12.35px;
+    color: rgb(182, 205, 226);
+    background-color: rgb(25, 27, 31);
+    padding: 2px 4px 1px;
     border: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    font-weight: 400;
 }
 
 .dark p>code,.dark li>code,.dark td>code {
-    outline: 1px solid;
-    box-shadow: 0.5px 0.5px 2px #d78dd2;
-    border-radius: 2px; /* 所有角都设置为相同的圆角半径 */
     cursor: pointer;
+}
+
+.dark kbd {
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 14.25px;
+    color: rgb(182, 205, 226);
+    background-color: rgb(61, 66, 72);
+    padding: 2px 4px 1px;
+    border: 0px none rgb(182, 205, 226);
+    border-radius: 0px;
+    box-shadow: none;
+    font-weight: 400;
+}
+
+.dark .verbatim {
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 12.35px;
+    color: rgb(182, 205, 226);
+    background-color: rgb(25, 27, 31);
+    padding: 2px 4px 1px;
+    border: 0px none rgb(182, 205, 226);
+    border-radius: 0px;
+    box-shadow: none;
+    font-weight: 400;
+}
+
+.dark .TODO {
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 7.8px;
+    color: rgb(235, 188, 122);
+    background-color: rgb(25, 27, 31);
+    padding: 1px 2px 1px 1px;
+    border: 1px solid rgba(235, 188, 122, 0.4);
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 400;
+}
+
+.dark .FIXME {
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 7.8px;
+    color: rgb(255, 100, 100);
+    background-color: rgb(25, 27, 31);
+    padding: 1px 2px 1px 1px;
+    border: 1px solid rgba(255, 100, 100, 0.4);
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 400;
 }
 
 .dark caption {

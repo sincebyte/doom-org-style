@@ -798,8 +798,8 @@
     font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
     font-size: 12.35px;
     color: rgb(182, 205, 226);
-    background-color: rgb(25, 27, 31);
-    padding: 2px 4px 1px;
+    /* background-color: rgb(25, 27, 31); */
+    padding: 2px 0px 1px;
     border: 0px;
     border-radius: 0px;
     box-shadow: none;
@@ -875,7 +875,7 @@
     text-align: right;
     background: #24272E;
     color: #4eaaef;
-    padding: 0 0.75rem;
+    padding: 0 0.5rem;
     margin-right: 0.75rem;
     font-size: .875rem;
     font-weight: 400;

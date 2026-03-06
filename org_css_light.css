@@ -7,17 +7,17 @@
     background-size: 5px 5px; /* 控制圆点的间距，这里设为 20px */
 }
 
-.light code {
-    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-    font-size: 12.35px;
-    color: rgb(146, 180, 211);
-    /* background-color: rgb(186, 186, 186); */
-    padding: 2px 0px 1px;
-    border: 0px none rgb(146, 180, 211);
-    border-radius: 0px;
-    box-shadow: none;
-    font-weight: 400;
-}
+/* .light code { */
+/*     font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace; */
+/*     font-size: 12.35px; */
+/*     color: rgb(146, 180, 211); */
+/*     /\* background-color: rgb(186, 186, 186); *\/ */
+/*     padding: 2px 0px 1px; */
+/*     border: 0px none rgb(146, 180, 211); */
+/*     border-radius: 0px; */
+/*     box-shadow: none; */
+/*     font-weight: 400; */
+/* } */
 
 .light p>code, .light li>code, .light td>code {
     cursor: pointer;
@@ -856,19 +856,19 @@
     text-decoration: line-through;
 }
 
-/* .light code { */
-/*     font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace; */
-/*     font-size: 12.35px; */
-/*     color: #24272E !important; */
-/*     border-radius: 0em !important; */
-/*     /\* background-image: linear-gradient(to right, #84266d, #6f3985, #5d409a, #43489d); *\/ */
-/*     /\* -webkit-background-clip: text; *\/ */
-/*     /\* color: transparent; *\/ */
-/*     padding: 2px 0px 1px; */
-/*     box-shadow: none; */
-/*     font-weight: 400; */
-/*     border: 0px none #92A8E2; */
-/* } */
+.light code {
+    font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 12.35px;
+    color: #24272E !important;
+    border-radius: 0em !important;
+    /* background-image: linear-gradient(to right, #84266d, #6f3985, #5d409a, #43489d); */
+    /* -webkit-background-clip: text; */
+    color: transparent;
+    padding: 2px 0px 1px;
+    box-shadow: none;
+    font-weight: 400;
+    border: 0px none #92A8E2;
+}
 
 .light p>code,.light li>code,.light td>code {
     /* outline: 1px solid; */

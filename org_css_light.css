@@ -422,7 +422,7 @@
 .light pre.src {
     background-color: #f3f5f7;
     border: none;
-    border-radius: 1em;
+    border-radius: 0.25rem;
     overflow-x: auto;
     overflow-y: hidden;
 }
@@ -858,7 +858,7 @@
 
 .light code {
     font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-    font-size: 12.35px;
+    /* font-size: 12.35px; */
     color: #24272E !important;
     border-radius: 0em !important;
     /* background-image: linear-gradient(to right, #84266d, #6f3985, #5d409a, #43489d); */

@@ -349,7 +349,7 @@
 .dark pre.src {
     background-color: #24272E;
     border: none;
-    border-radius: 1em;
+    border-radius: 0.25rem;
     overflow-x: auto;
     overflow-y: hidden;
 }
@@ -796,7 +796,7 @@
 
 .dark code {
     font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-    font-size: 12.35px;
+    /* font-size: 12.35px; */
     color: rgb(182, 205, 226);
     /* background-color: rgb(25, 27, 31); */
     padding: 2px 0px 1px;

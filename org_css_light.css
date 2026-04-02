@@ -190,14 +190,22 @@
 }
 
 .light table,.light th,.light td {
-    border: 1px solid #666;
+    border: 1px solid hsl(219deg 12% 58%);
+}
+
+.light th {
+    background-color: hsl(219deg 17% 80%);
 }
 
 .light tbody {
     margin-bottom: 2em;
 }
 .light tbody tr:nth-child(odd) {
-    background-color: hsl(219deg 17% 89%);
+    background-color: hsl(219deg 17% 86%);
+}
+
+.light tbody tr:nth-child(even) {
+    background-color: hsl(219deg 17% 95%);
 }
 
 .light img {
@@ -699,16 +707,16 @@
 }
 .light .src-java {
 	color: #24272E;
-	background: #f3f5f7;
+	background: transparent;
 }
 
 .light .src-org span:not(.linenr) {
 	color: #24272E !important;
-	background: #f3f5f7;
+	background: transparent;
 }
 .light .src {
     color: #24272E;
-    background: hsla(0,0%,98%);
+    background: transparent;
     font-family: 'Kode Mono';
     flex-grow: 1;
     flex-shrink: 1;
@@ -983,5 +991,5 @@
 }
 
 .light .src span {
-    background-color: #f3f5f7!important;
+    background-color: transparent !important;
 }

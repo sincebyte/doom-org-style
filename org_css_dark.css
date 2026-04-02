@@ -190,14 +190,22 @@
 }
 
 .dark table,.dark th,.dark td {
-    border: 1px solid #666;
+    border: 1px solid hsl(219deg 12% 42%);
+}
+
+.dark th {
+    background-color: hsl(219deg 17% 16%);
 }
 
 .dark tbody {
     margin-bottom: 2em;
 }
 .dark tbody tr:nth-child(odd) {
-    background-color: hsl(219deg 17% 27%);
+    background-color: hsl(219deg 17% 30%);
+}
+
+.dark tbody tr:nth-child(even) {
+    background-color: hsl(219deg 17% 22%);
 }
 
 .dark img {
@@ -699,16 +707,16 @@
 }
 .dark .src-java {
 	color:lightgray;
-	background: #24272E;
+	background: transparent;
 }
 
 .dark .src-org span:not(.linenr) {
 	color:lightgray !important;
-	background: #24272E;
+	background: transparent;
 }
 .dark .src {
     color: lightgray;
-    background: #24272E;
+    background: transparent;
     font-family: 'Kode Mono';
     flex-grow: 1;
     flex-shrink: 1;
@@ -983,5 +991,5 @@
 }
 
 .dark .src span {
-    background-color: #24272E!important;
+    background-color: transparent !important;
 }

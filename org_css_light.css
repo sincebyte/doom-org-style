@@ -395,6 +395,7 @@
     border: 1px solid hsla(0,0%,78%,100%);
     border-radius: 0.5rem;
     box-shadow: 0 6px 18px rgba(18, 24, 40, 0.08);
+    margin: 1.1rem 0;
     overflow: visible;
 }
 

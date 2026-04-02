@@ -400,7 +400,7 @@
     background-color: rgb(250, 250, 250);
     border: 0;
     box-shadow: none;
-    padding: 10.6875px 7.125px;
+    /* padding: 10.6875px 7.125px; */
     margin: 0em;
     border-radius: 0px;
     white-space: pre;
@@ -745,7 +745,7 @@
     flex-grow: 1;
     flex-shrink: 1;
     overflow: auto;
-    padding: 1rem;
+    /* padding: 1rem; */
     padding-left: 0;
 }
 .light #postamble{

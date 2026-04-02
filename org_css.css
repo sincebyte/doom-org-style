@@ -19,8 +19,8 @@
 .toggletheme label {
   cursor: pointer;
   text-indent: -9999px;
-  width: 55px;
-  height: 30px;
+  width: 46px;
+  height: 24px;
   background: black;
   margin: 0 auto;
   display: flex;
@@ -35,14 +35,15 @@
 .toggletheme label:after {
   content: "";
   background:var(--white);
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
   position: absolute;
-  top: 5px;
+  top: 50%;
   left: 4px;
+  transform: translateY(-50%);
   transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
 }
 
@@ -55,11 +56,6 @@
 }
 
 .toggletheme input:checked + label:after {
-  /* left: calc(100% - 5px); */
-  /* -webkit-transform: translateX(-100%); */
-  /* -moz-transform: translateX(-100%); */
-  /* -ms-transform: translateX(-100%); */
-  /* -o-transform: translateX(-100%); */
-  /* transform: translateX(-100%); */
+  transform: translate(22px, -50%);
 }
 

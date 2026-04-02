@@ -13,8 +13,8 @@ body {
   position: fixed;
   top: 25px;
   right: 7%;
-  width: 50px;
-  height: 25px;
+  width: 42px;
+  height: 22px;
   --light: #d8dbe0;
   --dark: #28292c;
   --link: rgb(27, 129, 112);
@@ -26,9 +26,9 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--dark);
-  border-radius: 25px;
+  border-radius: 22px;
   cursor: pointer;
-  border: 3px solid var(--dark);
+  border: 2px solid var(--dark);
 }
 
 .checkbox {
@@ -40,7 +40,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 25px;
+  border-radius: 22px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -52,22 +52,25 @@ body {
 .slider::before {
   content: "";
   position: absolute;
-  top: 2px;
+  top: 50%;
   left: 2px;
-  width: 21px;
-  height: 21px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
-  box-shadow: inset 12px -4px 0px 0px var(--light);
+  -webkit-box-shadow: inset 10px -3px 0px 0px var(--light);
+  box-shadow: inset 10px -3px 0px 0px var(--light);
   background-color: var(--dark);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
 .checkbox:checked ~ .slider::before {
-  -webkit-transform: translateX(25px);
-  -ms-transform: translateX(25px);
-  transform: translateX(25px);
+  -webkit-transform: translate(20px, -50%);
+  -ms-transform: translate(20px, -50%);
+  transform: translate(20px, -50%);
   background-color: var(--dark);
   -webkit-box-shadow: none;
   box-shadow: none;

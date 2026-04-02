@@ -110,6 +110,7 @@
 .dark #table-of-contents a:visited {
     /* background: transparent; */
     display: block;
+    transition: background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
@@ -141,13 +142,11 @@
     font-weight: bold;
 }
 .dark #table-of-contents a:hover{
-    background-color: hsl(220,13%,18%,100%);
-    color: hsla(286, 59%, 66%, 100%);
+    background-color: transparent;
 }
 
 .dark #table-of-contents a.active{
-    background-color: hsl(220,13%,18%,100%);
-    color: hsla(286, 59%, 66%, 100%);
+    background-color: transparent;
 }
 
 .dark #table-of-contents>div>ul>li>a {
@@ -168,6 +167,26 @@
     padding-bottom: 5px;
     border-left: 4px solid hsla(35, 74%, 70%, 100%);
     background: transparent;
+}
+
+.dark #table-of-contents>div>ul>li>a:hover {
+    background-color: hsla(204, 83%, 62%, 0.12);
+    transform: none;
+    transition: none;
+}
+
+.dark #table-of-contents>div>ul>li>a.active {
+    background-color: hsla(204, 83%, 62%, 0.12);
+}
+
+.dark #table-of-contents>div>ul>li>ul>li>a:hover {
+    background-color: hsla(35, 74%, 70%, 0.16);
+    transform: none;
+    transition: none;
+}
+
+.dark #table-of-contents>div>ul>li>ul>li>a.active {
+    background-color: hsla(35, 74%, 70%, 0.16);
 }
 
 .dark #table-of-contents .tag {

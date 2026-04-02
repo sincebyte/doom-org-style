@@ -139,6 +139,7 @@ function createCheckbox() {
 /* 绑定界面操作事件*/
 function bindEvent() {
     var currentt = true;
+    let currentHeight = 0;
 
     $("div.org-src-container").before().hover(function (ev) {
         if (ev.target.nodeName === "DIV") {
@@ -188,54 +189,48 @@ function bindEvent() {
         currentt = v.attr("href");
     });
 
-    $(window).scroll(function () {
+    function updateTocActiveByScroll() {
         var scrollTop = $(document).scrollTop();
         var anchors = $("body").find("h2,h3");
-        for (var i = 0; i < anchors.length; i++) {
-            var forelemet = $(
-                'div#text-table-of-contents ul li a[href="#' +
-                    $(anchors[i]).attr("id") + '"]',
-            );
-            if (forelemet.attr("href") === undefined) continue;
-            // console.info("currentt" + currentt + ",forelemet.attr" + forelemet.attr("href"));
-            if (
-                scrollTop > $(anchors[i]).offset().top - 50 &&
-                scrollTop <
-                    $(anchors[i]).offset().top + $(anchors[i]).height() - 50
-            ) {
-                forelemet.addClass("active");
-                currentt = forelemet.attr("href");
-                currentHeight = forelemet.offset().top;
-                $("#table-of-contents").scrollTop(currentHeight / 18);
-            } else if (currentt !== forelemet.attr("href")) {
-                forelemet.removeClass("active");
-            }
+        if (!anchors.length) {
+            return;
         }
-    });
 
-    function scrollbind() {
-        var scrollTop = $(document).scrollTop();
-        var anchors = $("body").find("h2,h3");
+        // 取“视口上方最近”的标题，避免刷新后 active 丢失或随机。
+        var offsetTop = scrollTop + 80;
+        var activeIndex = 0;
         for (var i = 0; i < anchors.length; i++) {
-            var forelemet = $(
-                'div#text-table-of-contents ul li a[href="#' +
-                    $(anchors[i]).attr("id") + '"]',
-            );
-            if (forelemet.attr("href") === undefined) continue;
-            // console.info("currentt" + currentt + ",forelemet.attr" + forelemet.attr("href"));
-            if (
-                scrollTop > $(anchors[i]).offset().top - 50 &&
-                scrollTop <
-                    $(anchors[i]).offset().top + $(anchors[i]).height() - 50
-            ) {
-                forelemet.addClass("active");
-                currentt = forelemet.attr("href");
-                currentHeight = forelemet.offset().top;
-                $("#table-of-contents").scrollTop(currentHeight / 18);
-            } else if (currentt !== forelemet.attr("href")) {
-                forelemet.removeClass("active");
+            if ($(anchors[i]).offset().top <= offsetTop) {
+                activeIndex = i;
+            } else {
+                break;
             }
         }
+
+        $("div#text-table-of-contents ul li a").removeClass("active");
+        var activeHeading = $(anchors[activeIndex]);
+        var activeSelector =
+            'div#text-table-of-contents ul li a[href="#' +
+            activeHeading.attr("id") +
+            '"]';
+        var activeLink = $(activeSelector);
+        if (!activeLink.length) {
+            return;
+        }
+        activeLink.addClass("active");
+        currentt = activeLink.attr("href");
+        currentHeight = activeLink.offset().top;
+        $("#table-of-contents").scrollTop(currentHeight / 18);
+    }
+
+    $(window).scroll(updateTocActiveByScroll);
+
+    /**
+     * 按当前滚动位置初始化 TOC 选中状态。
+     */
+    function initTocActiveStateByScroll() {
+        $("div#text-table-of-contents ul li a").removeClass("active");
+        updateTocActiveByScroll();
     }
 
     document.querySelector("input[id=switch]").addEventListener(
@@ -278,6 +273,12 @@ function bindEvent() {
             $(".previousButton").css("transform", "translateX(0px)");
         }
     });
+
+    // 首次渲染后按滚动位置同步 TOC（兼容浏览器恢复滚动位置的时机）。
+    initTocActiveStateByScroll();
+    requestAnimationFrame(initTocActiveStateByScroll);
+    setTimeout(initTocActiveStateByScroll, 80);
+    setTimeout(initTocActiveStateByScroll, 220);
 }
 
 /** 设置动画效果 */

@@ -110,6 +110,7 @@
 .light #table-of-contents a:visited {
     /* background: transparent; */
     display: block;
+    transition: background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
@@ -141,13 +142,11 @@
     font-weight: bold;
 }
 .light #table-of-contents a:hover{
-    background-color: hsla(0, 0%, 66%, 20%);
-    color: black;
+    background-color: transparent;
 }
 
 .light #table-of-contents a.active{
-    background-color: hsla(0, 0%, 66%, 20%);
-    color: black;
+    background-color: transparent;
 }
 
 .light #table-of-contents>div>ul>li>a {
@@ -168,6 +167,26 @@
     padding-bottom: 5px;
     border-left: 4px solid hsla(35, 74%, 70%, 100%);
     background: transparent;
+}
+
+.light #table-of-contents>div>ul>li>a:hover {
+    background-color: hsla(204, 83%, 62%, 0.12);
+    transform: none;
+    transition: none;
+}
+
+.light #table-of-contents>div>ul>li>a.active {
+    background-color: hsla(204, 83%, 62%, 0.12);
+}
+
+.light #table-of-contents>div>ul>li>ul>li>a:hover {
+    background-color: hsla(35, 74%, 70%, 0.16);
+    transform: none;
+    transition: none;
+}
+
+.light #table-of-contents>div>ul>li>ul>li>a.active {
+    background-color: hsla(35, 74%, 70%, 0.16);
 }
 
 .light #table-of-contents .tag {
@@ -982,11 +1001,11 @@
 
 .light .previousButton, .light .nextButton{
   background: transparent;
-  color: #43484d;
+  color: #747474;
 }
 .light .nextButton:hover,.light .previousButton:hover{
-  color: #98a3ad;
-  background: rgba(67,72,77,1);
+  color: #000000;
+  background: rgba(230,230,230,0.8);
   cursor: pointer;
 }
 

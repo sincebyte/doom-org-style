@@ -502,23 +502,23 @@
     color: #09f;
 }
 
-.dark span.org-comment, span.org-comment-delimiter {
+.dark span.org-comment, .dark span.org-comment-delimiter {
     color: #999;
 }
 
-.dark span.org-rainbow-delimiters-depth-1, span.org-rainbow-delimiters-depth-5 {
+.dark span.org-rainbow-delimiters-depth-1, .dark span.org-rainbow-delimiters-depth-5 {
     color: #666;
 }
 
-.dark span.org-rainbow-delimiters-depth-2, span.org-rainbow-delimiters-depth-6 {
+.dark span.org-rainbow-delimiters-depth-2, .dark span.org-rainbow-delimiters-depth-6 {
     color: #888;
 }
 
-.dark span.org-rainbow-delimiters-depth-3, span.org-rainbow-delimiters-depth-7 {
+.dark span.org-rainbow-delimiters-depth-3, .dark span.org-rainbow-delimiters-depth-7 {
     color: #aaa;
 }
 
-.dark span.org-rainbow-delimiters-depth-4, span.org-rainbow-delimiters-depth-8 {
+.dark span.org-rainbow-delimiters-depth-4, .dark span.org-rainbow-delimiters-depth-8 {
     color: #ccc;
 }
 
@@ -700,7 +700,7 @@
     height: 30px;
     margin-right: 0px;
     position: fixed;
-    color: "#eceff4";
+    color: #eceff4;
     line-height: .7;
     font-size: 95%;
     text-align: center;
@@ -728,7 +728,7 @@
 .dark blockquote {
     padding: 0.1em 1.8em;
     background-color: hsl(204,65%,60%,30%);
-    adding: 0.4em 1.8em;
+    padding: 0.4em 1.8em;
     padding-left: 5.2em;
     position: relative;
     font-size: 95%;

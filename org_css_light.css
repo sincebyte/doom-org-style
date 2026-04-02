@@ -118,7 +118,7 @@
     font-weight: bold;
 }
 
-.light a:link, a:hover, a:visited {
+.light a:link, .light a:hover, .light a:visited {
     text-decoration: none;
     color: black;
 }
@@ -205,12 +205,12 @@
 }
 .light #table-of-contents a:hover{
     background-color: hsla(0, 0%, 66%, 20%);
-    color: whiter;
+    color: white;
 }
 
 .light #table-of-contents a.active{
     background-color: hsla(0, 0%, 66%, 20%);
-    color: whiter;
+    color: white;
 }
 
 .light #table-of-contents>div>ul>li>a {
@@ -767,7 +767,7 @@
     height: 30px;
     margin-right: 0px;
     position: fixed;
-    color: "#eceff4"
+    color: #eceff4;
     line-height: .7;
     font-size: 95%;
     text-align: center;
@@ -795,7 +795,7 @@
 .light blockquote {
     padding: 0.1em 1.8em;
     background-color: hsl(204,65%,60%,30%);
-    adding: 0.4em 1.8em;
+    padding: 0.4em 1.8em;
     padding-left: 5.2em;
     position: relative;
     font-size: 95%;

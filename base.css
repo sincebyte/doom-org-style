@@ -195,6 +195,17 @@ body {
       transform: translateX(-240px);
    }
 
+   /* 侧栏 TOC：默认仅顶级；当前章节对应的一级项带 .toc-branch-open 时展开其子 ul */
+   .light #text-table-of-contents > ul > li > ul,
+   .dark #text-table-of-contents > ul > li > ul {
+       display: none;
+   }
+
+   .light #text-table-of-contents > ul > li.toc-branch-open > ul,
+   .dark #text-table-of-contents > ul > li.toc-branch-open > ul {
+       display: block;
+   }
+
    #content {
        max-width: 60em;
        padding-left: 240px;

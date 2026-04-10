@@ -175,6 +175,21 @@ function bindEvent() {
         $(storage).remove();
     });
 
+    /**
+     * 根据当前高亮的 TOC 链接，仅展开其所属一级目录下的子级列表。
+     * @param {JQuery} activeLink 当前应高亮的 a 元素；为空则收起所有子级。
+     */
+    function syncTocBranchForActiveLink(activeLink) {
+        var rootLis = $("#text-table-of-contents > ul > li");
+        rootLis.removeClass("toc-branch-open");
+        if (activeLink && activeLink.length) {
+            var l1Li = activeLink.closest("#text-table-of-contents > ul > li");
+            if (l1Li.length) {
+                l1Li.addClass("toc-branch-open");
+            }
+        }
+    }
+
     $("div#text-table-of-contents ul li a").click(function (event) {
         var anchors = $("body").find("h2,h3");
         for (var i = 0; i < anchors.length; i++) {
@@ -187,12 +202,14 @@ function bindEvent() {
         var v = $(event.target);
         v.addClass("active");
         currentt = v.attr("href");
+        syncTocBranchForActiveLink(v);
     });
 
     function updateTocActiveByScroll() {
         var scrollTop = $(document).scrollTop();
         var anchors = $("body").find("h2,h3");
         if (!anchors.length) {
+            syncTocBranchForActiveLink(null);
             return;
         }
 
@@ -215,9 +232,11 @@ function bindEvent() {
             '"]';
         var activeLink = $(activeSelector);
         if (!activeLink.length) {
+            syncTocBranchForActiveLink(null);
             return;
         }
         activeLink.addClass("active");
+        syncTocBranchForActiveLink(activeLink);
         currentt = activeLink.attr("href");
         currentHeight = activeLink.offset().top;
         $("#table-of-contents").scrollTop(currentHeight / 18);

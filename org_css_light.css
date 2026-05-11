@@ -58,7 +58,7 @@
 }
 
 .light td code {
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .light  a:link, .light a:hover,.light  a:visited {
@@ -873,31 +873,25 @@
 
 
 .light b {
-    background-image: linear-gradient(to left, #84266d, #6f3985, #5d409a, #43489d);
-    -webkit-background-clip: text;
-    color: transparent;
+    color: inherit;
     text-decoration: underline;
 }
 .light .underline {
     /* color: #92b4d3; */
     font-weight: bold!important;
-    background-image: linear-gradient(to left, #84266d, #6f3985, #5d409a, #43489d);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-decoration-color: #b999ee;
+    color: inherit;
+    text-decoration-color: currentColor;
     text-decoration-thickness: 2px;
     text-decoration-skip-ink: auto;
 }
 
 .light i {
     font-weight: bold!important;
-    background-image: linear-gradient(to left, #84266d, #6f3985, #5d409a, #43489d);
-    -webkit-background-clip: text;
-    color: transparent;
+    color: inherit;
 }
 
 .light del {
-    color: #6f3985;
+    color: inherit;
     text-decoration: line-through;
 }
 
@@ -914,6 +908,12 @@
 }
 
 .light p>code,.light li>code,.light td>code {
+    color: #912583;
+    background-color: #f6f8fa;
+    border: 0.5px solid #d1d5da;
+    border-radius: 0.25rem;
+    padding: 0 0.14rem;
+    line-height: 1;
     cursor: pointer;
 }
 
@@ -932,11 +932,12 @@
 .light .verbatim {
     font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
     font-size: 12.35px;
-    color: #24272E;
-    background-color: rgb(25, 27, 31);
-    padding: 2px 4px 1px;
-    border: 0px none rgb(182, 205, 226);
-    border-radius: 0px;
+    color: #912583;
+    background-color: #f6f8fa;
+    padding: 0 0.14rem;
+    border: 0.5px solid #d1d5da;
+    border-radius: 0.15rem;
+    line-height: 1;
     box-shadow: none;
     font-weight: 400;
 }

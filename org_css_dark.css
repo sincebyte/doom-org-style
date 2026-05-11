@@ -58,7 +58,7 @@
 }
 
 .dark td code {
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .dark  a:link, .dark a:hover,.dark  a:visited {
@@ -874,31 +874,25 @@
 
 
 .dark b {
-    background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
-    -webkit-background-clip: text;
-    color: transparent;
+    color: inherit;
     text-decoration: underline;
 }
 .dark .underline {
     /* color: #92b4d3; */
     font-weight: bold!important;
-    background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-decoration-color: #b999ee;
+    color: inherit;
+    text-decoration-color: currentColor;
     text-decoration-thickness: 2px;
     text-decoration-skip-ink: auto;
 }
 
 .dark i {
     font-weight: bold!important;
-    background-image: linear-gradient(to left, #d78dd2, #b999ee, #9da5e9, #8fa9f0);
-    -webkit-background-clip: text;
-    color: transparent;
+    color: inherit;
 }
 
 .dark del {
-    color: #9da5e9;
+    color: inherit;
     text-decoration: line-through;
 }
 
@@ -915,6 +909,12 @@
 }
 
 .dark p>code,.dark li>code,.dark td>code {
+    color: #f3c7ee;
+    background-color: #1b2028;
+    border: 0.5px solid #48566b;
+    border-radius: 0.25rem;
+    padding: 0 0.14rem;
+    line-height: 1;
     cursor: pointer;
 }
 
@@ -933,11 +933,12 @@
 .dark .verbatim {
     font-family: JetBrainsMono, "Fira Code", "Fira Mono", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
     font-size: 12.35px;
-    color: rgb(182, 205, 226);
-    background-color: rgb(25, 27, 31);
-    padding: 2px 4px 1px;
-    border: 0px none rgb(182, 205, 226);
-    border-radius: 0px;
+    color: #f3c7ee;
+    background-color: #1b2028;
+    padding: 0 0.14rem;
+    border: 0.5px solid #48566b;
+    border-radius: 0.15rem;
+    line-height: 1;
     box-shadow: none;
     font-weight: 400;
 }

@@ -22,20 +22,23 @@ function delma() {
     });
 }
 
+function isTextTypeBlock(preElement) {
+    return /\bsrc-(text|txt)\b/.test(preElement.className);
+}
+
 function removeBoxDrawingChars() {
     const codeBlocks = document.querySelectorAll(
-        ".org-src-container pre, .org-src-container pre *",
+        ".org-src-container pre",
     );
-    codeBlocks.forEach((element) => {
-        if (element.childNodes) {
-            element.childNodes.forEach((node) => {
-                if (node.nodeType === Node.TEXT_NODE) {
-                    node.textContent = node.textContent.replace(
-                        /[│┃┇┆┋┇]/g,
-                        "",
-                    );
-                }
-            });
+    codeBlocks.forEach((pre) => {
+        if (isTextTypeBlock(pre)) return;
+        const walker = document.createTreeWalker(pre, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+            node.textContent = node.textContent.replace(
+                /^[ \t]*[│┃┇┆┋┇][ \t]*/gm,
+                "",
+            );
         }
     });
 }

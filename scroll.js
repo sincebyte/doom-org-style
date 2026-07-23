@@ -11,7 +11,17 @@ $(document).ready(function () {
     createShiftButton();
     delma();
     removeBoxDrawingChars();
+    wrapAsciiArrowChars();
+    addVerbatimClass();
 });
+
+function addVerbatimClass() {
+    document.querySelectorAll("code").forEach(function (el) {
+        if (!el.closest("pre")) {
+            el.classList.add("verbatim");
+        }
+    });
+}
 
 function delma() {
     const elementsWithLinenClass = document.querySelectorAll(".linenr");
@@ -24,6 +34,63 @@ function delma() {
 
 function isTextTypeBlock(preElement) {
     return /\bsrc-(text|txt)\b/.test(preElement.className);
+}
+
+const ASCII_ARROW_RE = /[→←▼◄►]/g;
+
+function wrapAsciiArrowChars() {
+    document
+        .querySelectorAll(
+            "pre.src-text code, pre.src-txt code, pre.ascii-art code",
+        )
+        .forEach((code) => {
+            if (code.dataset.asciiArrowsWrapped === "1") {
+                return;
+            }
+            const walker = document.createTreeWalker(
+                code,
+                NodeFilter.SHOW_TEXT,
+            );
+            const textNodes = [];
+            let node;
+            while ((node = walker.nextNode())) {
+                if (node.parentElement?.classList.contains("ascii-arrow-h")) {
+                    continue;
+                }
+                textNodes.push(node);
+            }
+            textNodes.forEach((textNode) => {
+                const text = textNode.textContent;
+                if (!ASCII_ARROW_RE.test(text)) {
+                    return;
+                }
+                ASCII_ARROW_RE.lastIndex = 0;
+                const fragment = document.createDocumentFragment();
+                let lastIndex = 0;
+                let match;
+                while ((match = ASCII_ARROW_RE.exec(text))) {
+                    if (match.index > lastIndex) {
+                        fragment.appendChild(
+                            document.createTextNode(
+                                text.slice(lastIndex, match.index),
+                            ),
+                        );
+                    }
+                    const span = document.createElement("span");
+                    span.className = "ascii-arrow-h";
+                    span.textContent = match[0];
+                    fragment.appendChild(span);
+                    lastIndex = match.index + match[0].length;
+                }
+                if (lastIndex < text.length) {
+                    fragment.appendChild(
+                        document.createTextNode(text.slice(lastIndex)),
+                    );
+                }
+                textNode.parentNode.replaceChild(fragment, textNode);
+            });
+            code.dataset.asciiArrowsWrapped = "1";
+        });
 }
 
 function removeBoxDrawingChars() {

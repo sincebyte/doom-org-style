@@ -43,13 +43,14 @@
 #+end_src
 * 字体样式
 #+CAPTION:字体样式说明
-| 样式   | 效果                    | 符号 |
-| 粗体   | *bold*                  | *    |
-| 斜体   | /italic/                | /    |
-| 下划线 | _underlinedggwith_    | —    |
-| 超连接 | http://neoemacs.com     | auto |
-| 中横线 | +strike-through+        | +    |
-| 按键   | ~code~                  | ~    |
+| 样式   | 效果                | 符号 |
+| 粗体   | *bold*              | *    |
+| 斜体   | /italic/            | /    |
+| 下划线 | _underlinedggwith_  | —    |
+| 超连接 | http://neoemacs.com | auto |
+| 中横线 | +strike-through+    | +    |
+| 按键   | ~code~              | ~    |
+|        | =code=              | =    |
 
 #+begin_quote
 使用符号将字符包围就可得到样式效果
@@ -728,11 +729,41 @@ DataBase -> System : belong{
     }
     #+end_src
 ** ascii image
+用 ~#+begin_src text~ 标记 ASCII 图，导出 HTML 时会自动套用中英等宽字体（见 ~org_css.css~ 中的 ~pre.src-text~ 规则）。若仍错位，可安装 [[https://github.com/be5invis/Sarasa-Gothic][更纱黑体 Sarasa Mono SC]]，或在块前加 =#+ATTR_HTML: :class ascii-art=。
+
 #+begin_src text
 ┌─────────────┐   SSH/MessagePack-RPC  ┌──────────────────┐
 │   Emacs     │ ◄────────────────────► │ tramp-rpc-server │
 │ (tramp-rpc) │                        │     (Rust)       │
 └─────────────┘                        └──────────────────┘
+#+end_src
+
+#+begin_src text
+            ┌──────────────┐
+            │   Selector   │  ← 1 个线程，底层 epoll
+            └──────┬───────┘
+    ┌──────────────┼──────────────┐
+    │ fd=4 可读    │ fd=7 可读    │ fd=12 可写
+    ▼              ▼              ▼
+┌────────┐    ┌────────┐    ┌────────┐
+│Worker-1│    │Worker-2│    │Worker-3│  ← 少量线程，只处理业务
+└────────┘    └────────┘    └────────┘
+#+end_src
+
+#+begin_src text
+  浏览器                     Nginx                      Spring
+  │                           │                           │
+  │   POST /upload/movie.mp4  │                           │
+  │  Authorization: Bearer xx │                           │
+  │ ─────────────────────────→│                           │
+  │                           │   GET /auth (只发Header)  │
+  │                           │ ─────────────────────────→│
+  │                           │         鉴权/配额         │
+  │                           │           200 OK          │
+  │                           │ ←─────────────────────────│
+  │                           │                           │
+  │       开始接收 Body       │                           │
+  │ ←─────────────────────────│       边收边写磁盘        │
 #+end_src
 * org 转 Word
 #+begin_src shell

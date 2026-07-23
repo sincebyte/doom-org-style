@@ -1,5 +1,52 @@
 @import url('org_css_dark.css');
 @import url('org_css_light.css');
+
+/* 仅作用于 text 源码块内的 <code>，不改动 pre 容器本身的行高/内边距等 */
+pre.src-text code,
+pre.src-txt code,
+pre.src-nil code,
+pre.ascii-art code,
+.light pre.src-text code,
+.light pre.src-txt code,
+.light pre.src-nil code,
+.light pre.ascii-art code,
+.dark pre.src-text code,
+.dark pre.src-txt code,
+.dark pre.src-nil code,
+.dark pre.ascii-art code,
+.org-src-container pre.src-text code,
+.org-src-container pre.src-txt code,
+.org-src-container pre.src-nil code,
+.org-src-container pre.ascii-art code {
+    font-family: "Sarasa Mono SC", "Sarasa Gothic SC", "Sarasa Term SC",
+        "等距更纱黑体 SC", ui-monospace, monospace !important;
+    font-variant-east-asian: normal;
+    font-feature-settings: normal;
+    font-synthesis: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-weight: inherit;
+}
+
+/*
+ * 箭头在 Sarasa 里字宽是 │─ 的 2 倍；只 scaleX 压宽度，不压高度，才能与横线垂直对齐。
+ * 由 scroll.js 为 →←▼◄► 包裹 .ascii-arrow-h。
+ */
+pre.src-text code .ascii-arrow-h,
+pre.src-txt code .ascii-arrow-h,
+pre.ascii-art code .ascii-arrow-h,
+.light pre.src-text code .ascii-arrow-h,
+.dark pre.src-text code .ascii-arrow-h {
+    display: inline-block;
+    width: 0.5em;
+    overflow: visible;
+    transform: scaleX(0.5);
+    transform-origin: left center;
+    vertical-align: baseline;
+    text-align: center;
+}
 .toggletheme {
     z-index: 999;
     position: fixed;

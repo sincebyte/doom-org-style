@@ -3,8 +3,7 @@ $(document).ready(function () {
         localStorage.getItem("doomToggleStyle") === "null" ||
         localStorage.getItem("doomToggleStyle") === null
     ) {
-        localStorage.setItem("doomToggleStyle", "light");
-        window.location.reload();
+        setTheme("dark");
     }
     createCheckbox();
     bindEvent();
@@ -192,7 +191,7 @@ function createCheckbox() {
                   <input type="checkbox" class="checkbox" id="switch" ${(isChecked ==
             "dark"
         ? "checked"
-        : "")} name="mode">
+        : "")} name="mode" aria-label="深色模式">
                   <span class="slider"></span>
                 </label>
               </div>`;
@@ -388,4 +387,4 @@ function setTheme(theme) {
 }
 
 //初始化主题
-setTheme(localStorage.getItem("doomToggleStyle"));
+setTheme(localStorage.getItem("doomToggleStyle") === "light" ? "light" : "dark");

@@ -1,5 +1,6 @@
 @import url('org_css_dark.css');
 @import url('org_css_light.css');
+@import url('geek.css');
 
 /* 仅作用于 text 源码块内的 <code>，不改动 pre 容器本身的行高/内边距等 */
 pre.src-text code,
@@ -105,4 +106,3 @@ pre.ascii-art code .ascii-arrow-h,
 .toggletheme input:checked + label:after {
   transform: translate(22px, -50%);
 }
-

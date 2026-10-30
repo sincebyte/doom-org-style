@@ -1,0 +1,555 @@
+/*
+ * Tokyo Night 主题
+ * ---------------------------------------------------------------
+ * 该文件只在 <html data-theme="tokyo-night"> 时生效，因此可以与
+ * base.css 中导入的默认 Doom 主题共存；切换主题只需增删 data-theme。
+ *
+ * 结构约定（新增主题时照此复制即可）：
+ *   1. html[data-theme="<id>"].dark  { ...主题 token... }
+ *   2. html[data-theme="<id>"].light { ...主题 token... }
+ *   3. 组件覆盖规则统一以 html[data-theme="<id>"] 开头，
+ *      颜色全部引用上面的 token，因此明暗两套只需要一份规则。
+ */
+
+/* ===== 设计 token：Tokyo Night（夜） ===== */
+html[data-theme="tokyo-night"].dark {
+    --tn-bg: #1a1b26;
+    --tn-bg-dot: #16161e;
+    --tn-fg: #a9b1d6;
+    --tn-fg-strong: #c0caf5;
+    --tn-fg-dim: #565f89;
+    --tn-surface: #16161e;
+    --tn-surface-2: #1f2335;
+    --tn-surface-3: #292e42;
+    --tn-border: #2f334d;
+    --tn-border-strong: #3b4261;
+    --tn-blue: #7aa2f7;
+    --tn-cyan: #7dcfff;
+    --tn-purple: #bb9af7;
+    --tn-green: #9ece6a;
+    --tn-orange: #ff9e64;
+    --tn-yellow: #e0af68;
+    --tn-red: #f7768e;
+    --tn-link: #7aa2f7;
+    --tn-link-hover: #7dcfff;
+    --tn-link-visited: #bb9af7;
+    --tn-heading-gradient: linear-gradient(to left, #bb9af7, #7aa2f7, #7dcfff);
+    --tn-code-bg: #16161e;
+    --tn-code-fg: #c0caf5;
+    --tn-inline-code-bg: #1f2335;
+    --tn-inline-code-fg: #bb9af7;
+    --tn-inline-code-border: #3b4261;
+    --tn-table-head-from: #292e42;
+    --tn-table-head-to: #1f2335;
+    --tn-table-head-fg: #7dcfff;
+    --tn-row-odd: #1f2335;
+    --tn-row-even: #1a1b26;
+    --tn-row-hover: rgba(122, 162, 247, 0.16);
+    --tn-toc-bg: #16161e;
+    --tn-preamble-bg: #16161e;
+    --tn-preamble-fg: #a9b1d6;
+    --tn-shadow: rgba(0, 0, 0, 0.35);
+    --tn-notice-bg: #1f2335;
+    --tn-notice-info: #7dcfff;
+    --tn-notice-warning: #e0af68;
+    --tn-notice-tip: #9ece6a;
+    --tn-quote-bg: rgba(122, 162, 247, 0.1);
+    --tn-quote-fg: #c0caf5;
+    --tn-scroll-thumb: rgba(122, 162, 247, 0.35);
+    --tn-scroll-thumb-hover: rgba(122, 162, 247, 0.55);
+    /* 主题面板 */
+    --ui-panel-bg: #1f2335;
+    --ui-panel-fg: #c0caf5;
+    --ui-panel-muted: #565f89;
+    --ui-panel-border: #3b4261;
+    --ui-panel-hover: #292e42;
+    --ui-panel-active: rgba(122, 162, 247, 0.16);
+    --ui-accent: #7aa2f7;
+    /* 明暗开关 */
+    --toggle-track-a: #2f3549;
+    --toggle-track-b: #1f2335;
+    --toggle-ring: #3b4261;
+    --toggle-fill-a: #7dcfff;
+    --toggle-fill-b: #7aa2f7;
+    --toggle-glow: rgba(122, 162, 247, 0.4);
+    --toggle-knob-a: #eef1fb;
+    --toggle-knob-b: #b9c1dc;
+    --ui-dock-fg: #a9b1d6;
+}
+
+/* ===== 设计 token：Tokyo Night Day（日） ===== */
+html[data-theme="tokyo-night"].light {
+    --tn-bg: #e1e2e7;
+    --tn-bg-dot: #d5d8e5;
+    --tn-fg: #3760bf;
+    --tn-fg-strong: #2e3a5c;
+    --tn-fg-dim: #848cb5;
+    --tn-surface: #d0d5e3;
+    --tn-surface-2: #dcdee6;
+    --tn-surface-3: #c4c8da;
+    --tn-border: #b6b9c9;
+    --tn-border-strong: #a8aec1;
+    --tn-blue: #2e7de9;
+    --tn-cyan: #007197;
+    --tn-purple: #9854f1;
+    --tn-green: #587539;
+    --tn-orange: #b15c00;
+    --tn-yellow: #8c6c3e;
+    --tn-red: #f52a65;
+    --tn-link: #2e7de9;
+    --tn-link-hover: #007197;
+    --tn-link-visited: #9854f1;
+    --tn-heading-gradient: linear-gradient(to left, #9854f1, #2e7de9, #007197);
+    --tn-code-bg: #d0d5e3;
+    --tn-code-fg: #3760bf;
+    --tn-inline-code-bg: #d0d5e3;
+    --tn-inline-code-fg: #9854f1;
+    --tn-inline-code-border: #b4b5c0;
+    --tn-table-head-from: #d5d8e5;
+    --tn-table-head-to: #c4c8da;
+    --tn-table-head-fg: #2e7de9;
+    --tn-row-odd: #dcdee6;
+    --tn-row-even: #d5d8e5;
+    --tn-row-hover: rgba(46, 125, 233, 0.12);
+    --tn-toc-bg: #d0d5e3;
+    --tn-preamble-bg: #d0d5e3;
+    --tn-preamble-fg: #3760bf;
+    --tn-shadow: rgba(55, 96, 191, 0.12);
+    --tn-notice-bg: #dcdee6;
+    --tn-notice-info: #2e7de9;
+    --tn-notice-warning: #b15c00;
+    --tn-notice-tip: #587539;
+    --tn-quote-bg: rgba(46, 125, 233, 0.08);
+    --tn-quote-fg: #3760bf;
+    --tn-scroll-thumb: rgba(46, 125, 233, 0.35);
+    --tn-scroll-thumb-hover: rgba(46, 125, 233, 0.55);
+    /* 主题面板 */
+    --ui-panel-bg: #dcdee6;
+    --ui-panel-fg: #2e3a5c;
+    --ui-panel-muted: #848cb5;
+    --ui-panel-border: #b6b9c9;
+    --ui-panel-hover: #d0d5e3;
+    --ui-panel-active: rgba(46, 125, 233, 0.12);
+    --ui-accent: #2e7de9;
+    /* 明暗开关 */
+    --toggle-track-a: #cfd3e0;
+    --toggle-track-b: #b6b9c9;
+    --toggle-ring: #dcdee6;
+    --toggle-fill-a: #9854f1;
+    --toggle-fill-b: #2e7de9;
+    --toggle-glow: rgba(46, 125, 233, 0.45);
+    --toggle-knob-a: #ffffff;
+    --toggle-knob-b: #d0d5e3;
+    --ui-dock-fg: #3760bf;
+}
+
+/* ===== 页面底色与文字 ===== */
+html[data-theme="tokyo-night"] body {
+    color: var(--tn-fg);
+    background: var(--tn-bg);
+    background-image: radial-gradient(
+        circle,
+        var(--tn-bg-dot) 0.01px,
+        transparent 2px
+    );
+    background-size: 5px 5px;
+}
+
+/* ===== 标题 ===== */
+html[data-theme="tokyo-night"] .title,
+html[data-theme="tokyo-night"] .subtitle,
+html[data-theme="tokyo-night"] .section-number-2,
+html[data-theme="tokyo-night"] .section-number-3,
+html[data-theme="tokyo-night"] .section-number-4,
+html[data-theme="tokyo-night"] .section-number-5,
+html[data-theme="tokyo-night"] h1,
+html[data-theme="tokyo-night"] h2,
+html[data-theme="tokyo-night"] h3,
+html[data-theme="tokyo-night"] .table-number {
+    background-image: var(--tn-heading-gradient);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+html[data-theme="tokyo-night"] h2::after {
+    border-bottom-color: var(--tn-blue);
+}
+
+html[data-theme="tokyo-night"] h3 {
+    border-bottom-color: var(--tn-purple);
+}
+
+html[data-theme="tokyo-night"] h4 {
+    color: var(--tn-purple);
+    border-bottom-color: var(--tn-purple);
+}
+
+html[data-theme="tokyo-night"] h5 {
+    border-bottom-color: var(--tn-purple);
+}
+
+/* ===== 链接 ===== */
+html[data-theme="tokyo-night"] a:link,
+html[data-theme="tokyo-night"] a:hover {
+    color: var(--tn-link);
+}
+
+html[data-theme="tokyo-night"] a:visited {
+    color: var(--tn-link-visited);
+}
+
+html[data-theme="tokyo-night"] a[href^="http"] {
+    color: var(--tn-link);
+    background-color: rgba(122, 162, 247, 0.075);
+}
+
+html[data-theme="tokyo-night"] a[href^="http"]:visited {
+    color: var(--tn-link-visited);
+    background-color: rgba(187, 154, 247, 0.075);
+}
+
+html[data-theme="tokyo-night"] a[href^="http"]:link:hover,
+html[data-theme="tokyo-night"] a[href^="http"]:visited:hover {
+    color: var(--tn-link-hover);
+}
+
+html[data-theme="tokyo-night"] a[href^="http"]:after {
+    background-color: var(--tn-link);
+}
+
+/* ===== 侧边目录 ===== */
+html[data-theme="tokyo-night"] #table-of-contents {
+    background: var(--tn-toc-bg);
+}
+
+html[data-theme="tokyo-night"] #table-of-contents a:hover {
+    color: var(--tn-purple);
+}
+
+html[data-theme="tokyo-night"] #table-of-contents > div > ul > li > a {
+    border-left-color: var(--tn-blue);
+}
+
+html[data-theme="tokyo-night"] #table-of-contents > div > ul > li > ul > li > a {
+    color: var(--tn-fg);
+    border-left-color: var(--tn-yellow);
+}
+
+html[data-theme="tokyo-night"] #table-of-contents > div > ul > li > a:hover,
+html[data-theme="tokyo-night"] #table-of-contents > div > ul > li > a.active {
+    background-color: rgba(122, 162, 247, 0.12);
+}
+
+html[data-theme="tokyo-night"] #table-of-contents > div > ul > li > ul > li > a:hover,
+html[data-theme="tokyo-night"] #table-of-contents > div > ul > li > ul > li > a.active {
+    background-color: rgba(224, 175, 104, 0.16);
+}
+
+/* ===== 表格 ===== */
+html[data-theme="tokyo-night"] table {
+    border-color: var(--tn-border-strong);
+    box-shadow: 0 8px 22px -16px var(--tn-shadow);
+}
+
+html[data-theme="tokyo-night"] th,
+html[data-theme="tokyo-night"] td {
+    border-color: var(--tn-border-strong);
+}
+
+html[data-theme="tokyo-night"] th {
+    background-image: linear-gradient(
+        180deg,
+        var(--tn-table-head-from),
+        var(--tn-table-head-to)
+    );
+    color: var(--tn-table-head-fg);
+    border-bottom-color: var(--tn-blue);
+    text-shadow: none;
+}
+
+html[data-theme="tokyo-night"] caption {
+    color: var(--tn-fg-dim);
+}
+
+html[data-theme="tokyo-night"] tbody tr:nth-child(odd) {
+    background-color: var(--tn-row-odd);
+}
+
+html[data-theme="tokyo-night"] tbody tr:nth-child(even) {
+    background-color: var(--tn-row-even);
+}
+
+html[data-theme="tokyo-night"] tbody tr:hover {
+    background-color: var(--tn-row-hover);
+}
+
+html[data-theme="tokyo-night"] tbody tr:hover td:first-child {
+    box-shadow: inset 3px 0 0 var(--tn-blue);
+}
+
+/* ===== Admonition / notice ===== */
+html[data-theme="tokyo-night"] div.notice,
+html[data-theme="tokyo-night"] .notice-info,
+html[data-theme="tokyo-night"] .notice-warning,
+html[data-theme="tokyo-night"] .notice-example {
+    background: var(--tn-notice-bg);
+    color: var(--tn-fg-strong);
+    box-shadow:
+        0 0.2rem 0.5rem var(--tn-shadow),
+        0 0 0.0625rem rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="tokyo-night"] div.notice,
+html[data-theme="tokyo-night"] .notice-info {
+    border-left-color: var(--tn-notice-info);
+}
+
+html[data-theme="tokyo-night"] div.notice::before,
+html[data-theme="tokyo-night"] .notice-info::before {
+    background: rgba(125, 207, 255, 0.14);
+    color: var(--tn-fg-strong);
+}
+
+html[data-theme="tokyo-night"] div.notice::after,
+html[data-theme="tokyo-night"] .notice-info::after {
+    color: var(--tn-notice-info);
+}
+
+html[data-theme="tokyo-night"] .notice-info a,
+html[data-theme="tokyo-night"] div.notice a {
+    color: var(--tn-notice-info);
+}
+
+html[data-theme="tokyo-night"] .notice-warning {
+    border-left-color: var(--tn-notice-warning);
+}
+
+html[data-theme="tokyo-night"] .notice-warning::before {
+    background: rgba(224, 175, 104, 0.14);
+    color: var(--tn-fg-strong);
+}
+
+html[data-theme="tokyo-night"] .notice-warning::after {
+    color: var(--tn-notice-warning);
+}
+
+html[data-theme="tokyo-night"] .notice-warning a {
+    color: var(--tn-notice-warning);
+}
+
+html[data-theme="tokyo-night"] .notice-example {
+    border-left-color: var(--tn-notice-tip);
+}
+
+html[data-theme="tokyo-night"] .notice-example::before {
+    background: rgba(158, 206, 106, 0.14);
+    color: var(--tn-fg-strong);
+}
+
+html[data-theme="tokyo-night"] .notice-example::after {
+    color: var(--tn-notice-tip);
+}
+
+html[data-theme="tokyo-night"] .notice-example a {
+    color: var(--tn-notice-tip);
+}
+
+/* ===== 代码块 ===== */
+html[data-theme="tokyo-night"] pre {
+    color: var(--tn-code-fg);
+    background-color: var(--tn-code-bg);
+}
+
+html[data-theme="tokyo-night"] pre.example {
+    background: var(--tn-surface-2);
+    color: var(--tn-fg);
+}
+
+html[data-theme="tokyo-night"] pre.src,
+html[data-theme="tokyo-night"] .org-src-container::after {
+    background: linear-gradient(180deg, var(--tn-bg) 0%, var(--tn-code-bg) 100%);
+}
+
+html[data-theme="tokyo-night"] .org-src-container {
+    border-color: var(--tn-border-strong);
+    box-shadow: 0 6px 20px var(--tn-shadow);
+}
+
+html[data-theme="tokyo-night"] pre.src:has(.linenr)::after {
+    background: var(--tn-border-strong);
+}
+
+html[data-theme="tokyo-night"] .click-btn-style::before {
+    border-color: var(--tn-green);
+}
+
+/* ===== 代码高亮 ===== */
+html[data-theme="tokyo-night"] span.org-string {
+    color: var(--tn-green);
+}
+
+html[data-theme="tokyo-night"] span.org-keyword {
+    color: var(--tn-purple);
+}
+
+html[data-theme="tokyo-night"] span.org-variable-name {
+    color: var(--tn-orange);
+}
+
+html[data-theme="tokyo-night"] span.org-clojure-keyword {
+    color: var(--tn-cyan);
+}
+
+html[data-theme="tokyo-night"] span.org-comment,
+html[data-theme="tokyo-night"] span.org-comment-delimiter {
+    color: var(--tn-fg-dim);
+}
+
+html[data-theme="tokyo-night"] span.org-rainbow-delimiters-depth-1,
+html[data-theme="tokyo-night"] span.org-rainbow-delimiters-depth-5 {
+    color: var(--tn-fg-dim);
+}
+
+html[data-theme="tokyo-night"] span.org-rainbow-delimiters-depth-2,
+html[data-theme="tokyo-night"] span.org-rainbow-delimiters-depth-6 {
+    color: var(--tn-cyan);
+}
+
+html[data-theme="tokyo-night"] span.org-rainbow-delimiters-depth-3,
+html[data-theme="tokyo-night"] span.org-rainbow-delimiters-depth-7 {
+    color: var(--tn-blue);
+}
+
+html[data-theme="tokyo-night"] span.org-rainbow-delimiters-depth-4,
+html[data-theme="tokyo-night"] span.org-rainbow-delimiters-depth-8 {
+    color: var(--tn-purple);
+}
+
+html[data-theme="tokyo-night"] .src-java,
+html[data-theme="tokyo-night"] .src {
+    color: var(--tn-code-fg);
+}
+
+html[data-theme="tokyo-night"] .src-org span:not(.linenr) {
+    color: var(--tn-code-fg) !important;
+}
+
+/* ===== 行内代码 / kbd / verbatim ===== */
+html[data-theme="tokyo-night"] code {
+    color: var(--tn-code-fg);
+}
+
+html[data-theme="tokyo-night"] p > code,
+html[data-theme="tokyo-night"] li > code,
+html[data-theme="tokyo-night"] td > code,
+html[data-theme="tokyo-night"] .verbatim {
+    color: var(--tn-inline-code-fg);
+    background-color: var(--tn-inline-code-bg);
+    border-color: var(--tn-inline-code-border);
+}
+
+html[data-theme="tokyo-night"] kbd {
+    color: var(--tn-code-fg);
+    background-color: var(--tn-surface-3);
+}
+
+/* ===== 任务标记 / 标签 ===== */
+html[data-theme="tokyo-night"] .tag span {
+    background: var(--tn-surface-3);
+    color: var(--tn-fg-strong);
+}
+
+html[data-theme="tokyo-night"] .todo {
+    background: var(--tn-surface-2);
+    color: var(--tn-yellow);
+}
+
+html[data-theme="tokyo-night"] .done {
+    background: var(--tn-surface-2);
+    color: var(--tn-green);
+}
+
+html[data-theme="tokyo-night"] .TODO {
+    color: var(--tn-yellow);
+    background-color: var(--tn-surface);
+    border-color: rgba(224, 175, 104, 0.4);
+}
+
+html[data-theme="tokyo-night"] .FIXME {
+    color: var(--tn-red);
+    background-color: var(--tn-surface);
+    border-color: rgba(247, 118, 142, 0.4);
+}
+
+/* ===== 引用 ===== */
+html[data-theme="tokyo-night"] blockquote {
+    background-color: var(--tn-quote-bg);
+    color: var(--tn-quote-fg);
+    border-left-color: var(--tn-blue);
+}
+
+html[data-theme="tokyo-night"] blockquote:before {
+    text-shadow: 0 0 6px var(--tn-bg);
+}
+
+/* ===== 图注 / 页码 ===== */
+html[data-theme="tokyo-night"] div.figure {
+    color: var(--tn-purple);
+}
+
+/* ===== 页脚 / 页眉 ===== */
+html[data-theme="tokyo-night"] #preamble {
+    background-color: var(--tn-preamble-bg);
+    color: var(--tn-preamble-fg);
+    border-top: 1px solid var(--tn-border);
+}
+
+html[data-theme="tokyo-night"] #postamble {
+    color: var(--tn-link);
+}
+
+/* ===== 翻页按钮 ===== */
+html[data-theme="tokyo-night"] .previousButton,
+html[data-theme="tokyo-night"] .nextButton {
+    color: var(--tn-border-strong);
+}
+
+html[data-theme="tokyo-night"] .nextButton:hover,
+html[data-theme="tokyo-night"] .previousButton:hover {
+    color: var(--tn-link);
+    background: rgba(122, 162, 247, 0.15);
+}
+
+/* ===== 滚动条 ===== */
+html[data-theme="tokyo-night"] .org-src-container:hover::-webkit-scrollbar-thumb {
+    background-color: var(--tn-scroll-thumb);
+}
+
+html[data-theme="tokyo-night"] .org-src-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--tn-scroll-thumb-hover);
+}
+
+/* ===== base.css 中使用 !important 的状态色，需要同级覆盖 ===== */
+html[data-theme="tokyo-night"] .BLOCK {
+    color: var(--tn-orange) !important;
+}
+
+html[data-theme="tokyo-night"] .TODO {
+    color: var(--tn-yellow) !important;
+}
+
+html[data-theme="tokyo-night"] .DOING {
+    color: var(--tn-cyan) !important;
+}
+
+html[data-theme="tokyo-night"] .TEST {
+    color: var(--tn-purple) !important;
+}
+
+html[data-theme="tokyo-night"] .DONE {
+    color: var(--tn-green) !important;
+}
+
+html[data-theme="tokyo-night"] .REPORT {
+    color: var(--tn-fg-dim) !important;
+}

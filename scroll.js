@@ -1,11 +1,55 @@
+/*
+ * ===== 主题注册表 =====
+ *
+ * 新增一套主题只需要两步：
+ *   1. 在 themes/ 下按 themes/tokyo-night.css 的文件结构写一个新主题；
+ *   2. 在下面的数组里追加一项（id 与 CSS 中的 data-theme 一致）。
+ *
+ * id        : 写入 <html data-theme="..."> 的值
+ * name      : 面板里显示的名称
+ * stylesheet: 主题样式文件；为 null 表示主题已内置在 base.css（Doom）
+ * swatches  : 面板预览色板，按明暗模式分别给出
+ */
+const THEME_REGISTRY = [
+    {
+        id: "doom",
+        name: "Doom",
+        description: "Doom Emacs 文档风格",
+        stylesheet: null,
+        swatches: {
+            light: ["#fafafa", "#6f3985", "#4eaeef", "#24272e"],
+            dark: ["#282c35", "#d78dd2", "#4eaeef", "#f3c7ee"],
+        },
+    },
+    {
+        id: "tokyo-night",
+        name: "Tokyo Night",
+        description: "Tokyo Night · Day",
+        stylesheet: "themes/tokyo-night.css",
+        swatches: {
+            light: ["#e1e2e7", "#9854f1", "#2e7de9", "#3760bf"],
+            dark: ["#1a1b26", "#bb9af7", "#7aa2f7", "#7dcfff"],
+        },
+    },
+];
+
+const DEFAULT_THEME_ID = THEME_REGISTRY[0].id;
+const THEME_STORAGE_KEY = "doomColorTheme";
+const MODE_STORAGE_KEY = "doomToggleStyle";
+const THEME_STYLESHEET_ID = "org-theme-stylesheet";
+
+let currentThemeId = DEFAULT_THEME_ID;
+let currentMode = "light";
+
 $(document).ready(function () {
     if (
-        localStorage.getItem("doomToggleStyle") === "null" ||
-        localStorage.getItem("doomToggleStyle") === null
+        localStorage.getItem(MODE_STORAGE_KEY) === "null" ||
+        localStorage.getItem(MODE_STORAGE_KEY) === null
     ) {
-        localStorage.setItem("doomToggleStyle", "light");
+        localStorage.setItem(MODE_STORAGE_KEY, "light");
         window.location.reload();
     }
+    clearPreamble();
     createCheckbox();
     bindEvent();
     createShiftButton();
@@ -13,7 +57,16 @@ $(document).ready(function () {
     removeBoxDrawingChars();
     wrapAsciiArrowChars();
     addVerbatimClass();
+    initTheme();
 });
+
+/** 底栏不再显示 "Made by" 文案，把位置留给主题入口 */
+function clearPreamble() {
+    const preamble = document.getElementById("preamble");
+    if (preamble) {
+        preamble.textContent = "";
+    }
+}
 
 function addVerbatimClass() {
     document.querySelectorAll("code").forEach(function (el) {
@@ -206,6 +259,199 @@ function createCheckbox() {
 
     $("body").append(dom);
     $("body").append(buttomcheck);
+    createThemePanel();
+}
+
+/** 主题面板：左下角入口 + 向上弹出的主题选择面板 */
+function createThemePanel() {
+    const themeOptions = THEME_REGISTRY.map(function (theme) {
+        const swatches = theme.swatches.light
+            .map(function (color) {
+                return `<span class="theme-option__swatch" style="background:${color}"></span>`;
+            })
+            .join("");
+        return `<button type="button" class="theme-option" data-theme-id="${theme.id}" role="radio" aria-checked="false">
+                  <span class="theme-option__swatches" aria-hidden="true">${swatches}</span>
+                  <span class="theme-option__text">
+                    <strong>${theme.name}</strong>
+                    <small>${theme.description}</small>
+                  </span>
+                  <span class="theme-option__check" aria-hidden="true">✓</span>
+                </button>`;
+    }).join("");
+
+    const panel = `<div class="theme-dock">
+        <div class="theme-panel" id="theme-panel" role="dialog" aria-label="选择主题" aria-hidden="true">
+          <div class="theme-panel__head">
+            <span class="theme-panel__title">主题</span>
+            <span class="theme-panel__meta" id="theme-panel-meta">Doom · Light</span>
+          </div>
+          <div class="theme-panel__list" role="radiogroup" aria-label="主题">${themeOptions}</div>
+          <div class="theme-panel__modes" role="group" aria-label="明暗模式">
+            <button type="button" data-mode="light" aria-pressed="true">LIGHT</button>
+            <button type="button" data-mode="dark" aria-pressed="false">DARK</button>
+          </div>
+        </div>
+        <button type="button" class="theme-launcher" id="theme-launcher" aria-haspopup="dialog" aria-expanded="false" aria-controls="theme-panel" title="切换主题">
+          <svg class="theme-launcher__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a9 9 0 1 0 0 18h1.6a2.4 2.4 0 0 0 0-4.8H12a2.1 2.1 0 0 1 0-4.2h4.6A4.4 4.4 0 0 0 21 7.6C21 5 17 3 12 3Z"/>
+            <circle cx="7.6" cy="10.6" r=".9" fill="currentColor" stroke="none"/>
+            <circle cx="10.6" cy="7" r=".9" fill="currentColor" stroke="none"/>
+            <circle cx="15" cy="7.6" r=".9" fill="currentColor" stroke="none"/>
+          </svg>
+          <span class="theme-launcher__name">Doom</span>
+        </button>
+      </div>`;
+
+    // 挂在 #preamble 内：侧栏收起时底栏平移，主题入口也会跟随
+    const mount = document.getElementById("preamble") || document.body;
+    $(mount).append(panel);
+
+    const launcher = document.getElementById("theme-launcher");
+    const panelEl = document.getElementById("theme-panel");
+
+    launcher.addEventListener("click", function (event) {
+        event.stopPropagation();
+        toggleThemePanel();
+    });
+    panelEl.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+
+    panelEl.querySelectorAll("[data-theme-id]").forEach(function (button) {
+        button.addEventListener("click", function () {
+            applyTheme(button.dataset.themeId, currentMode);
+        });
+    });
+
+    panelEl.querySelectorAll("[data-mode]").forEach(function (button) {
+        button.addEventListener("click", function () {
+            applyTheme(currentThemeId, button.dataset.mode);
+        });
+    });
+
+    document.addEventListener("click", function () {
+        setThemePanelOpen(false);
+    });
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            setThemePanelOpen(false);
+        }
+    });
+}
+
+function getTheme(themeId) {
+    return (
+        THEME_REGISTRY.find(function (theme) {
+            return theme.id === themeId;
+        }) || THEME_REGISTRY[0]
+    );
+}
+
+function setThemePanelOpen(open) {
+    const panelEl = document.getElementById("theme-panel");
+    const launcher = document.getElementById("theme-launcher");
+    if (!panelEl || !launcher) {
+        return;
+    }
+    panelEl.classList.toggle("is-open", open);
+    panelEl.setAttribute("aria-hidden", open ? "false" : "true");
+    launcher.setAttribute("aria-expanded", open ? "true" : "false");
+}
+
+function toggleThemePanel() {
+    const panelEl = document.getElementById("theme-panel");
+    if (!panelEl) {
+        return;
+    }
+    setThemePanelOpen(!panelEl.classList.contains("is-open"));
+}
+
+/** 按需加载主题样式表；Doom 已内置，stylesheet 为 null 时移除外部样式 */
+function ensureThemeStylesheet(theme) {
+    const existing = document.getElementById(THEME_STYLESHEET_ID);
+    if (!theme.stylesheet) {
+        if (existing) {
+            existing.remove();
+        }
+        return;
+    }
+    if (existing) {
+        if (existing.getAttribute("href") !== theme.stylesheet) {
+            existing.setAttribute("href", theme.stylesheet);
+        }
+        return;
+    }
+    const link = document.createElement("link");
+    link.id = THEME_STYLESHEET_ID;
+    link.rel = "stylesheet";
+    link.href = theme.stylesheet;
+    document.head.appendChild(link);
+}
+
+/** 同步面板、右上角开关与按钮文案 */
+function syncThemeUI() {
+    const theme = getTheme(currentThemeId);
+    const nameEl = document.querySelector(".theme-launcher__name");
+    if (nameEl) {
+        nameEl.textContent = theme.name;
+    }
+    const metaEl = document.getElementById("theme-panel-meta");
+    if (metaEl) {
+        metaEl.textContent =
+            theme.name + " · " + (currentMode === "dark" ? "Dark" : "Light");
+    }
+    document.querySelectorAll(".theme-option").forEach(function (option) {
+        const active = option.dataset.themeId === currentThemeId;
+        const optionTheme = getTheme(option.dataset.themeId);
+        const swatches =
+            optionTheme.swatches[currentMode] || optionTheme.swatches.light;
+        option.classList.toggle("is-active", active);
+        option.setAttribute("aria-checked", active ? "true" : "false");
+        option.querySelectorAll(".theme-option__swatch").forEach(function (
+            dot,
+            index,
+        ) {
+            dot.style.background = swatches[index] || swatches[0];
+        });
+    });
+    document.querySelectorAll("[data-mode]").forEach(function (button) {
+        const active = button.dataset.mode === currentMode;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+    const checkbox = document.getElementById("switch");
+    if (checkbox) {
+        checkbox.checked = currentMode === "dark";
+    }
+}
+
+/** 应用主题（主题 + 明暗模式），persist 为 false 时仅渲染不写存储 */
+function applyTheme(themeId, mode, persist) {
+    const theme = getTheme(themeId);
+    const nextMode = mode === "dark" ? "dark" : "light";
+    currentThemeId = theme.id;
+    currentMode = nextMode;
+
+    const root = document.documentElement;
+    root.setAttribute("data-theme", theme.id);
+    root.classList.remove(nextMode === "dark" ? "light" : "dark");
+    root.classList.add(nextMode);
+
+    ensureThemeStylesheet(theme);
+
+    if (persist !== false) {
+        localStorage.setItem(THEME_STORAGE_KEY, theme.id);
+        localStorage.setItem(MODE_STORAGE_KEY, nextMode);
+    }
+    syncThemeUI();
+}
+
+/** 首次进入：恢复上次选择的主题与明暗模式 */
+function initTheme() {
+    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY) || DEFAULT_THEME_ID;
+    const storedMode = localStorage.getItem(MODE_STORAGE_KEY) || "light";
+    applyTheme(getTheme(storedTheme).id, storedMode, false);
 }
 
 /* 绑定界面操作事件*/
@@ -380,14 +626,9 @@ function trans() {
     }, 1000);
 }
 
-/** 设置主题色 */
+/** 切换明暗模式；保留该函数以兼容右上角 DAY / NIGHT 开关 */
 function setTheme(theme) {
-    document.documentElement.classList.add(theme);
-    document.documentElement.classList.remove(
-        theme === "light" ? "dark" : "light",
-    );
-    localStorage.setItem("doomToggleStyle", theme);
+    applyTheme(currentThemeId, theme);
 }
 
-//初始化主题
-setTheme(localStorage.getItem("doomToggleStyle"));
+// 初始化在 $(document).ready 中执行（确保主题面板已经创建）

@@ -55,72 +55,279 @@ body {
    background-size: 5px 5px;
   }
 
-.toggle-switch {
+/* ===== 明暗主题切换开关（拟物金属 / 主题蓝 DAY·NIGHT） ===== */
+.theme-toggle {
+  --toggle-w: 68px;
+  --toggle-h: 30px;
+  --thumb-d: 26px;
+  --thumb-offset: 2px;
+  --label-w: 30px;
+  --label-gap: 8px;
+  --side: calc(var(--label-w) + var(--label-gap));
+  --thumb-travel: calc(
+    var(--toggle-w) - var(--thumb-d) - var(--thumb-offset) * 2
+  );
   z-index: 999;
   position: fixed;
-  top: 25px;
+  top: 22px;
   right: 7%;
-  width: 42px;
-  height: 22px;
-  --light: #d8dbe0;
-  --dark: #28292c;
-  --link: rgb(27, 129, 112);
-  --link-hover: rgb(24, 94, 82);
-}
-
-.switch-label {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: var(--dark);
-  border-radius: 22px;
+  display: block;
+  width: calc(var(--toggle-w) + var(--side) * 2);
+  height: var(--toggle-h);
   cursor: pointer;
-  border: 2px solid var(--dark);
+  -webkit-tap-highlight-color: transparent;
+  color: inherit;
 }
 
-.checkbox {
+/* 真实 checkbox 铺满整个开关，保留键盘可聚焦与点击语义 */
+.theme-toggle__input {
   position: absolute;
-  display: none;
-}
-
-.slider {
-  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  border-radius: 22px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
 }
 
-.checkbox:checked ~ .slider {
-  background-color: var(--light);
+.theme-toggle__label {
+  position: absolute;
+  top: 50%;
+  width: var(--label-w);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  opacity: 0.4;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  user-select: none;
 }
 
-.slider::before {
+.theme-toggle__label--day {
+  left: 0;
+  text-align: right;
+}
+
+.theme-toggle__label--night {
+  right: 0;
+  text-align: left;
+}
+
+.theme-toggle__input:not(:checked) ~ .theme-toggle__label--day,
+.theme-toggle__input:checked ~ .theme-toggle__label--night {
+  opacity: 0.65;
+}
+
+/* 轨道：深灰金属凹槽 + 浅色金属外框 */
+.theme-toggle__track {
+  position: absolute;
+  top: 0;
+  left: var(--side);
+  width: var(--toggle-w);
+  height: var(--toggle-h);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #757575 0%, #585858 46%, #3f3f3f 100%);
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.6),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.15),
+    0 0 0 2px #ded9d1,
+    0 0 0 3px rgba(55, 50, 45, 0.16),
+    0 4px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* 主题蓝填充层：切换时淡入，避免渐变背景突变 */
+.theme-toggle__fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, #6ecbff 0%, #4eaeef 46%, #3181d8 100%);
+  box-shadow:
+    inset 0 2px 5px rgba(6, 58, 105, 0.42),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.34);
+  opacity: 0;
+  transition: opacity 0.42s ease;
+}
+
+.theme-toggle__input:checked ~ .theme-toggle__track {
+  box-shadow:
+    0 0 0 2px #ded9d1,
+    0 0 0 3px rgba(55, 50, 45, 0.16),
+    0 4px 14px rgba(78, 174, 239, 0.45);
+}
+
+.theme-toggle__input:checked ~ .theme-toggle__track .theme-toggle__fill {
+  opacity: 1;
+}
+
+/* 轨道内装饰：白天为电源符号，夜晚为左侧高光胶囊 */
+.theme-toggle__track::before {
   content: "";
   position: absolute;
   top: 50%;
-  left: 2px;
-  width: 16px;
-  height: 16px;
+  right: 8px;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-top-color: transparent;
   border-radius: 50%;
-  -webkit-box-shadow: inset 10px -3px 0px 0px var(--light);
-  box-shadow: inset 10px -3px 0px 0px var(--light);
-  background-color: var(--dark);
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  transition:
+    opacity 0.3s ease,
+    background-color 0.3s ease;
 }
 
-.checkbox:checked ~ .slider::before {
-  -webkit-transform: translate(20px, -50%);
-  -ms-transform: translate(20px, -50%);
-  transform: translate(20px, -50%);
-  background-color: var(--dark);
-  -webkit-box-shadow: none;
-  box-shadow: none;
+.theme-toggle__track::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  z-index: 1;
+  width: 2px;
+  height: 5px;
+  margin-top: -7.5px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  transition:
+    opacity 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.theme-toggle__input:checked ~ .theme-toggle__track::before {
+  right: auto;
+  left: 10px;
+  top: 50%;
+  width: 5px;
+  height: 13px;
+  margin-top: -6.5px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.45);
+}
+
+.theme-toggle__input:checked ~ .theme-toggle__track::after {
+  opacity: 0;
+}
+
+/* 旋钮：奶油白球面 + 细密菱形纹理 + 立体投影 */
+.theme-toggle__thumb {
+  position: absolute;
+  top: 50%;
+  left: var(--thumb-offset);
+  z-index: 2;
+  width: var(--thumb-d);
+  height: var(--thumb-d);
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 28%, #fffdf9 0%, #f1ece2 48%, #d8d1c4 100%);
+  box-shadow:
+    0 0 0 1px rgba(60, 50, 38, 0.3),
+    0 3px 6px rgba(0, 0, 0, 0.38),
+    0 5px 10px -4px rgba(0, 0, 0, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.16);
+  transform: translateY(-50%);
+  transition:
+    transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease;
+}
+
+.theme-toggle__thumb::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background-color: #e9e4da;
+  background-image: conic-gradient(
+    from 0deg at 50% 50%,
+    #f5f1e9 0deg 45deg,
+    #e7e2d7 45deg 90deg,
+    #e7e2d7 90deg 135deg,
+    #d7d1c4 135deg 225deg,
+    #e7e2d7 225deg 270deg,
+    #e7e2d7 270deg 315deg,
+    #f5f1e9 315deg 360deg
+  );
+  background-size: 4px 4px;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.55),
+    inset 0 -2px 3px rgba(90, 80, 65, 0.18);
+}
+
+.theme-toggle__thumb::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 32% 24%,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.12) 42%,
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
+.theme-toggle:hover .theme-toggle__thumb {
+  transform: translateY(-50%) scale(1.04);
+  box-shadow:
+    0 0 0 1px rgba(60, 50, 38, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.42),
+    0 7px 13px -4px rgba(0, 0, 0, 0.38),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.16);
+}
+
+.theme-toggle:active .theme-toggle__thumb {
+  transform: translateY(-50%) scale(0.97);
+}
+
+/* 夜晚主题：旋钮滑到右侧，轨道转为主题蓝 */
+.theme-toggle__input:checked ~ .theme-toggle__track .theme-toggle__thumb {
+  transform: translate(var(--thumb-travel), -50%);
+}
+
+.theme-toggle__input:checked:hover
+  ~ .theme-toggle__track
+  .theme-toggle__thumb {
+  transform: translate(var(--thumb-travel), -50%) scale(1.04);
+}
+
+.theme-toggle__input:checked:active
+  ~ .theme-toggle__track
+  .theme-toggle__thumb {
+  transform: translate(var(--thumb-travel), -50%) scale(0.97);
+}
+
+.theme-toggle__input:focus-visible ~ .theme-toggle__track {
+  outline: 2px solid rgba(140, 140, 140, 0.95);
+  outline-offset: 3px;
+}
+
+@media screen and (max-width: 900px) {
+  .theme-toggle {
+    width: var(--toggle-w);
+  }
+
+  .theme-toggle__track {
+    left: 0;
+  }
+
+  .theme-toggle__label {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle__thumb,
+  .theme-toggle__fill,
+  .theme-toggle__label {
+    transition-duration: 0.01ms !important;
+  }
 }
 
 

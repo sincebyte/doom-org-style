@@ -1,5 +1,5 @@
 .dark th, .dark td {
-    padding: 0.5em;
+    padding: 0.55em 0.75em;
     text-align: left;
 }
 .dark body {
@@ -204,27 +204,89 @@
 
 .dark table {
     width: 100%;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1.4em;
+    margin-bottom: 1.4em;
+    font-size: 0.95em;
+    border: 1px solid hsl(219deg 14% 34%);
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    box-shadow: 0 8px 22px -16px rgba(0, 0, 0, 0.8);
 }
 
-.dark table,.dark th,.dark td {
-    border: 1px solid hsl(219deg 12% 42%);
+.dark th,
+.dark td {
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: hsl(219deg 14% 34%);
 }
 
+.dark tr > *:last-child {
+    border-right: 0;
+}
+
+.dark tbody tr:last-child > td {
+    border-bottom: 0;
+}
+
+/* 表头：深色渐变 + 蓝色强调线，与页面蓝色链接色保持一致 */
 .dark th {
-    background-color: hsl(219deg 17% 16%);
+    background-image: linear-gradient(180deg, hsl(219deg 26% 25%), hsl(219deg 28% 18%));
+    color: hsl(204deg 90% 74%);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    border-bottom: 2px solid hsl(204deg 83% 62%);
 }
 
-.dark tbody {
-    margin-bottom: 2em;
+.dark thead tr:first-child > *:first-child {
+    border-top-left-radius: 9px;
 }
+
+.dark thead tr:first-child > *:last-child {
+    border-top-right-radius: 9px;
+}
+
+.dark tbody tr:last-child > *:first-child {
+    border-bottom-left-radius: 9px;
+}
+
+.dark tbody tr:last-child > *:last-child {
+    border-bottom-right-radius: 9px;
+}
+
+.dark caption {
+    color: hsl(219deg 12% 64%);
+    text-align: left;
+    padding-bottom: 0.5em;
+}
+
+/* 表体：单双行相间 */
 .dark tbody tr:nth-child(odd) {
-    background-color: hsl(219deg 17% 30%);
+    background-color: hsl(219deg 17% 27%);
 }
 
 .dark tbody tr:nth-child(even) {
     background-color: hsl(219deg 17% 22%);
+}
+
+.dark tbody tr {
+    transition: background-color 0.18s ease;
+}
+
+/* 悬停：行底色换成半透明蓝，左侧出现强调条 */
+.dark tbody tr:hover {
+    background-color: hsla(204, 83%, 62%, 0.16);
+}
+
+.dark tbody tr td:first-child {
+    box-shadow: inset 3px 0 0 transparent;
+    transition: box-shadow 0.18s ease;
+}
+
+.dark tbody tr:hover td:first-child {
+    box-shadow: inset 3px 0 0 hsl(204deg 83% 62%);
 }
 
 .dark img {

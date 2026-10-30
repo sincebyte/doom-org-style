@@ -186,16 +186,18 @@ function getQueryVariable(variable) {
 /* 创建主题切换按钮*/
 function createCheckbox() {
     var isChecked = localStorage.getItem("doomToggleStyle");
-    let dom = `<!-- From Uiverse.io by Madflows -->
-              <div class="toggle-switch">
-                <label class="switch-label">
-                  <input type="checkbox" class="checkbox" id="switch" ${(isChecked ==
+    let dom = `<label class="theme-toggle" title="切换明暗主题">
+                <input type="checkbox" class="theme-toggle__input" id="switch" ${(isChecked ==
             "dark"
         ? "checked"
-        : "")} name="mode">
-                  <span class="slider"></span>
-                </label>
-              </div>`;
+        : "")} name="mode" aria-label="切换明暗主题">
+                <span class="theme-toggle__label theme-toggle__label--day" aria-hidden="true">DAY</span>
+                <span class="theme-toggle__track">
+                  <span class="theme-toggle__fill" aria-hidden="true"></span>
+                  <span class="theme-toggle__thumb" aria-hidden="true"></span>
+                </span>
+                <span class="theme-toggle__label theme-toggle__label--night" aria-hidden="true">NIGHT</span>
+              </label>`;
 
     let buttomcheck =
         `<div class="btncheck"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="30" viewBox="0 -5 48 50">

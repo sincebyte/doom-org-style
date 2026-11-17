@@ -1,0 +1,578 @@
+/*
+ * GitHub 主题
+ * ---------------------------------------------------------------
+ * 该文件只在 <html data-theme="github"> 时生效，因此可以与
+ * base.css 中导入的默认 Doom 主题共存；切换主题只需增删 data-theme。
+ *
+ * 结构约定（新增主题时照此复制即可）：
+ *   1. html[data-theme="<id>"].dark  { ...主题 token... }
+ *   2. html[data-theme="<id>"].light { ...主题 token... }
+ *   3. 组件覆盖规则统一以 html[data-theme="<id>"] 开头，
+ *      颜色全部引用上面的 token，因此明暗两套只需要一份规则。
+ */
+
+/* ===== 设计 token：GitHub Dark（夜） ===== */
+html[data-theme="github"].dark {
+    --gh-bg: #0d1117;
+    --gh-bg-dot: #161b22;
+    --gh-fg: #c9d1d9;
+    --gh-fg-strong: #e6edf3;
+    --gh-fg-dim: #7d8590;
+    --gh-surface: #161b22;
+    --gh-surface-2: #21262d;
+    --gh-surface-3: #30363d;
+    --gh-border: #30363d;
+    --gh-border-strong: #3d444d;
+    --gh-blue: #2f81f7;
+    --gh-cyan: #39c5cf;
+    --gh-purple: #bc8cff;
+    --gh-green: #3fb950;
+    --gh-orange: #ffa657;
+    --gh-yellow: #d29922;
+    --gh-red: #f85149;
+    --gh-link: #2f81f7;
+    --gh-link-hover: #79c0ff;
+    --gh-link-visited: #bc8cff;
+    --gh-heading-gradient: linear-gradient(to left, #bc8cff, #2f81f7, #79c0ff);
+    --gh-code-bg: #161b22;
+    --gh-code-fg: #e6edf3;
+    --gh-inline-code-bg: #21262d;
+    --gh-inline-code-fg: #e6edf3;
+    --gh-inline-code-border: #30363d;
+    --gh-table-head-from: #21262d;
+    --gh-table-head-to: #161b22;
+    --gh-table-head-fg: #79c0ff;
+    --gh-row-odd: #161b22;
+    --gh-row-even: #0d1117;
+    --gh-row-hover: rgba(47, 129, 247, 0.16);
+    --gh-toc-bg: #161b22;
+    --gh-preamble-bg: #161b22;
+    --gh-preamble-fg: #c9d1d9;
+    --gh-shadow: rgba(0, 0, 0, 0.4);
+    --gh-notice-bg: #161b22;
+    --gh-notice-info: #79c0ff;
+    --gh-notice-warning: #e3b341;
+    --gh-notice-tip: #56d364;
+    --gh-quote-bg: rgba(47, 129, 247, 0.1);
+    --gh-quote-fg: #e6edf3;
+    --gh-scroll-thumb: rgba(201, 209, 217, 0.3);
+    --gh-scroll-thumb-hover: rgba(201, 209, 217, 0.5);
+    /* 链接底色、目录悬停、Admonition、状态标记 */
+    --gh-link-tint: rgba(47, 129, 247, 0.1);
+    --gh-link-visited-tint: rgba(188, 140, 255, 0.1);
+    --gh-toc-hover: rgba(47, 129, 247, 0.12);
+    --gh-toc-sub-hover: rgba(210, 153, 34, 0.16);
+    --gh-notice-info-soft: rgba(47, 129, 247, 0.15);
+    --gh-notice-warning-soft: rgba(210, 153, 34, 0.15);
+    --gh-notice-tip-soft: rgba(63, 185, 80, 0.15);
+    --gh-todo-border: rgba(210, 153, 34, 0.4);
+    --gh-fixme-border: rgba(248, 81, 73, 0.4);
+    --gh-btn-hover: rgba(47, 129, 247, 0.15);
+    /* 主题面板 */
+    --ui-panel-bg: #161b22;
+    --ui-panel-fg: #e6edf3;
+    --ui-panel-muted: #7d8590;
+    --ui-panel-border: #30363d;
+    --ui-panel-hover: #21262d;
+    --ui-panel-active: rgba(47, 129, 247, 0.16);
+    --ui-accent: #2f81f7;
+    /* 明暗开关 */
+    --toggle-track-a: #30363d;
+    --toggle-track-b: #21262d;
+    --toggle-ring: #3d444d;
+    --toggle-fill-a: #bc8cff;
+    --toggle-fill-b: #2f81f7;
+    --toggle-glow: rgba(47, 129, 247, 0.4);
+    --toggle-knob-a: #f0f6fc;
+    --toggle-knob-b: #c9d1d9;
+    --ui-dock-fg: #c9d1d9;
+}
+
+/* ===== 设计 token：GitHub Light（日） ===== */
+html[data-theme="github"].light {
+    --gh-bg: #ffffff;
+    --gh-bg-dot: #f6f8fa;
+    --gh-fg: #1f2328;
+    --gh-fg-strong: #0d1117;
+    --gh-fg-dim: #656d76;
+    --gh-surface: #f6f8fa;
+    --gh-surface-2: #eaeef2;
+    --gh-surface-3: #d8dee4;
+    --gh-border: #d0d7de;
+    --gh-border-strong: #afb8c1;
+    --gh-blue: #0969da;
+    --gh-cyan: #1b7c83;
+    --gh-purple: #8250df;
+    --gh-green: #1a7f37;
+    --gh-orange: #bc4c00;
+    --gh-yellow: #9a6700;
+    --gh-red: #cf222e;
+    --gh-link: #0969da;
+    --gh-link-hover: #0550ae;
+    --gh-link-visited: #6639ba;
+    --gh-heading-gradient: linear-gradient(to left, #8250df, #0969da, #1b7c83);
+    --gh-code-bg: #f6f8fa;
+    --gh-code-fg: #1f2328;
+    --gh-inline-code-bg: #f0f2f4;
+    --gh-inline-code-fg: #1f2328;
+    --gh-inline-code-border: #d0d7de;
+    --gh-table-head-from: #f6f8fa;
+    --gh-table-head-to: #eaeef2;
+    --gh-table-head-fg: #0550ae;
+    --gh-row-odd: #f6f8fa;
+    --gh-row-even: #ffffff;
+    --gh-row-hover: rgba(9, 105, 218, 0.08);
+    --gh-toc-bg: #f6f8fa;
+    --gh-preamble-bg: #f6f8fa;
+    --gh-preamble-fg: #1f2328;
+    --gh-shadow: rgba(31, 35, 40, 0.12);
+    --gh-notice-bg: #f6f8fa;
+    --gh-notice-info: #0969da;
+    --gh-notice-warning: #9a6700;
+    --gh-notice-tip: #1a7f37;
+    --gh-quote-bg: rgba(9, 105, 218, 0.06);
+    --gh-quote-fg: #1f2328;
+    --gh-scroll-thumb: rgba(31, 35, 40, 0.25);
+    --gh-scroll-thumb-hover: rgba(31, 35, 40, 0.4);
+    /* 链接底色、目录悬停、Admonition、状态标记 */
+    --gh-link-tint: rgba(9, 105, 218, 0.08);
+    --gh-link-visited-tint: rgba(102, 57, 186, 0.08);
+    --gh-toc-hover: rgba(9, 105, 218, 0.1);
+    --gh-toc-sub-hover: rgba(154, 103, 0, 0.12);
+    --gh-notice-info-soft: rgba(9, 105, 218, 0.12);
+    --gh-notice-warning-soft: rgba(154, 103, 0, 0.12);
+    --gh-notice-tip-soft: rgba(26, 127, 55, 0.12);
+    --gh-todo-border: rgba(154, 103, 0, 0.4);
+    --gh-fixme-border: rgba(207, 34, 46, 0.4);
+    --gh-btn-hover: rgba(9, 105, 218, 0.1);
+    /* 主题面板 */
+    --ui-panel-bg: #ffffff;
+    --ui-panel-fg: #1f2328;
+    --ui-panel-muted: #656d76;
+    --ui-panel-border: #d0d7de;
+    --ui-panel-hover: #f6f8fa;
+    --ui-panel-active: rgba(9, 105, 218, 0.12);
+    --ui-accent: #0969da;
+    /* 明暗开关 */
+    --toggle-track-a: #d0d7de;
+    --toggle-track-b: #afb8c1;
+    --toggle-ring: #eaeef2;
+    --toggle-fill-a: #8250df;
+    --toggle-fill-b: #0969da;
+    --toggle-glow: rgba(9, 105, 218, 0.35);
+    --toggle-knob-a: #ffffff;
+    --toggle-knob-b: #eaeef2;
+    --ui-dock-fg: #1f2328;
+}
+
+/* ===== 页面底色与文字 ===== */
+html[data-theme="github"] body {
+    color: var(--gh-fg);
+    background: var(--gh-bg);
+    background-image: radial-gradient(
+        circle,
+        var(--gh-bg-dot) 0.01px,
+        transparent 2px
+    );
+    background-size: 5px 5px;
+}
+
+/* ===== 标题 ===== */
+html[data-theme="github"] .title,
+html[data-theme="github"] .subtitle,
+html[data-theme="github"] .section-number-2,
+html[data-theme="github"] .section-number-3,
+html[data-theme="github"] .section-number-4,
+html[data-theme="github"] .section-number-5,
+html[data-theme="github"] h1,
+html[data-theme="github"] h2,
+html[data-theme="github"] h3,
+html[data-theme="github"] .table-number {
+    background-image: var(--gh-heading-gradient);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+html[data-theme="github"] h2::after {
+    border-bottom-color: var(--gh-blue);
+}
+
+html[data-theme="github"] h3 {
+    border-bottom-color: var(--gh-purple);
+}
+
+html[data-theme="github"] h4 {
+    color: var(--gh-purple);
+    border-bottom-color: var(--gh-purple);
+}
+
+html[data-theme="github"] h5 {
+    border-bottom-color: var(--gh-purple);
+}
+
+/* ===== 链接 ===== */
+html[data-theme="github"] a:link,
+html[data-theme="github"] a:hover {
+    color: var(--gh-link);
+}
+
+html[data-theme="github"] a:visited {
+    color: var(--gh-link-visited);
+}
+
+html[data-theme="github"] a[href^="http"] {
+    color: var(--gh-link);
+    background-color: var(--gh-link-tint);
+}
+
+html[data-theme="github"] a[href^="http"]:visited {
+    color: var(--gh-link-visited);
+    background-color: var(--gh-link-visited-tint);
+}
+
+html[data-theme="github"] a[href^="http"]:link:hover,
+html[data-theme="github"] a[href^="http"]:visited:hover {
+    color: var(--gh-link-hover);
+}
+
+html[data-theme="github"] a[href^="http"]:after {
+    background-color: var(--gh-link);
+}
+
+/* ===== 侧边目录 ===== */
+html[data-theme="github"] #table-of-contents {
+    background: var(--gh-toc-bg);
+}
+
+html[data-theme="github"] #table-of-contents a:hover {
+    color: var(--gh-purple);
+}
+
+html[data-theme="github"] #table-of-contents > div > ul > li > a {
+    border-left-color: var(--gh-blue);
+}
+
+html[data-theme="github"] #table-of-contents > div > ul > li > ul > li > a {
+    color: var(--gh-fg);
+    border-left-color: var(--gh-yellow);
+}
+
+html[data-theme="github"] #table-of-contents > div > ul > li > a:hover,
+html[data-theme="github"] #table-of-contents > div > ul > li > a.active {
+    background-color: var(--gh-toc-hover);
+}
+
+html[data-theme="github"] #table-of-contents > div > ul > li > ul > li > a:hover,
+html[data-theme="github"] #table-of-contents > div > ul > li > ul > li > a.active {
+    background-color: var(--gh-toc-sub-hover);
+}
+
+/* ===== 表格 ===== */
+html[data-theme="github"] table {
+    border-color: var(--gh-border-strong);
+    box-shadow: 0 8px 22px -16px var(--gh-shadow);
+}
+
+html[data-theme="github"] th,
+html[data-theme="github"] td {
+    border-color: var(--gh-border-strong);
+}
+
+html[data-theme="github"] th {
+    background-image: linear-gradient(
+        180deg,
+        var(--gh-table-head-from),
+        var(--gh-table-head-to)
+    );
+    color: var(--gh-table-head-fg);
+    border-bottom-color: var(--gh-blue);
+    text-shadow: none;
+}
+
+html[data-theme="github"] caption {
+    color: var(--gh-fg-dim);
+}
+
+html[data-theme="github"] tbody tr:nth-child(odd) {
+    background-color: var(--gh-row-odd);
+}
+
+html[data-theme="github"] tbody tr:nth-child(even) {
+    background-color: var(--gh-row-even);
+}
+
+html[data-theme="github"] tbody tr:hover {
+    background-color: var(--gh-row-hover);
+}
+
+html[data-theme="github"] tbody tr:hover td:first-child {
+    box-shadow: inset 3px 0 0 var(--gh-blue);
+}
+
+/* ===== Admonition / notice ===== */
+html[data-theme="github"] div.notice,
+html[data-theme="github"] .notice-info,
+html[data-theme="github"] .notice-warning,
+html[data-theme="github"] .notice-example {
+    background: var(--gh-notice-bg);
+    color: var(--gh-fg-strong);
+    box-shadow:
+        0 0.2rem 0.5rem var(--gh-shadow),
+        0 0 0.0625rem rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="github"] div.notice,
+html[data-theme="github"] .notice-info {
+    border-left-color: var(--gh-notice-info);
+}
+
+html[data-theme="github"] div.notice::before,
+html[data-theme="github"] .notice-info::before {
+    background: var(--gh-notice-info-soft);
+    color: var(--gh-fg-strong);
+}
+
+html[data-theme="github"] div.notice::after,
+html[data-theme="github"] .notice-info::after {
+    color: var(--gh-notice-info);
+}
+
+html[data-theme="github"] .notice-info a,
+html[data-theme="github"] div.notice a {
+    color: var(--gh-notice-info);
+}
+
+html[data-theme="github"] .notice-warning {
+    border-left-color: var(--gh-notice-warning);
+}
+
+html[data-theme="github"] .notice-warning::before {
+    background: var(--gh-notice-warning-soft);
+    color: var(--gh-fg-strong);
+}
+
+html[data-theme="github"] .notice-warning::after {
+    color: var(--gh-notice-warning);
+}
+
+html[data-theme="github"] .notice-warning a {
+    color: var(--gh-notice-warning);
+}
+
+html[data-theme="github"] .notice-example {
+    border-left-color: var(--gh-notice-tip);
+}
+
+html[data-theme="github"] .notice-example::before {
+    background: var(--gh-notice-tip-soft);
+    color: var(--gh-fg-strong);
+}
+
+html[data-theme="github"] .notice-example::after {
+    color: var(--gh-notice-tip);
+}
+
+html[data-theme="github"] .notice-example a {
+    color: var(--gh-notice-tip);
+}
+
+/* ===== 代码块 ===== */
+html[data-theme="github"] pre {
+    color: var(--gh-code-fg);
+    background-color: var(--gh-code-bg);
+}
+
+html[data-theme="github"] pre.example {
+    background: var(--gh-surface-2);
+    color: var(--gh-fg);
+}
+
+html[data-theme="github"] pre.src,
+html[data-theme="github"] .org-src-container::after {
+    background: linear-gradient(180deg, var(--gh-bg) 0%, var(--gh-code-bg) 100%);
+}
+
+html[data-theme="github"] .org-src-container {
+    border-color: var(--gh-border-strong);
+    box-shadow: 0 6px 20px var(--gh-shadow);
+}
+
+html[data-theme="github"] pre.src:has(.linenr)::after {
+    background: var(--gh-border-strong);
+}
+
+html[data-theme="github"] .click-btn-style::before {
+    border-color: var(--gh-green);
+}
+
+/* ===== 代码高亮 ===== */
+html[data-theme="github"] span.org-string {
+    color: var(--gh-green);
+}
+
+html[data-theme="github"] span.org-keyword {
+    color: var(--gh-purple);
+}
+
+html[data-theme="github"] span.org-variable-name {
+    color: var(--gh-orange);
+}
+
+html[data-theme="github"] span.org-clojure-keyword {
+    color: var(--gh-cyan);
+}
+
+html[data-theme="github"] span.org-comment,
+html[data-theme="github"] span.org-comment-delimiter {
+    color: var(--gh-fg-dim);
+}
+
+html[data-theme="github"] span.org-rainbow-delimiters-depth-1,
+html[data-theme="github"] span.org-rainbow-delimiters-depth-5 {
+    color: var(--gh-fg-dim);
+}
+
+html[data-theme="github"] span.org-rainbow-delimiters-depth-2,
+html[data-theme="github"] span.org-rainbow-delimiters-depth-6 {
+    color: var(--gh-cyan);
+}
+
+html[data-theme="github"] span.org-rainbow-delimiters-depth-3,
+html[data-theme="github"] span.org-rainbow-delimiters-depth-7 {
+    color: var(--gh-blue);
+}
+
+html[data-theme="github"] span.org-rainbow-delimiters-depth-4,
+html[data-theme="github"] span.org-rainbow-delimiters-depth-8 {
+    color: var(--gh-purple);
+}
+
+html[data-theme="github"] .src-java,
+html[data-theme="github"] .src {
+    color: var(--gh-code-fg);
+}
+
+html[data-theme="github"] .src-org span:not(.linenr) {
+    color: var(--gh-code-fg) !important;
+}
+
+/* ===== 行内代码 / kbd / verbatim ===== */
+html[data-theme="github"] code {
+    color: var(--gh-code-fg);
+}
+
+html[data-theme="github"] p > code,
+html[data-theme="github"] li > code,
+html[data-theme="github"] td > code,
+html[data-theme="github"] .verbatim {
+    color: var(--gh-inline-code-fg);
+    background-color: var(--gh-inline-code-bg);
+    border-color: var(--gh-inline-code-border);
+}
+
+html[data-theme="github"] kbd {
+    color: var(--gh-code-fg);
+    background-color: var(--gh-surface-3);
+}
+
+/* ===== 任务标记 / 标签 ===== */
+html[data-theme="github"] .tag span {
+    background: var(--gh-surface-3);
+    color: var(--gh-fg-strong);
+}
+
+html[data-theme="github"] .todo {
+    background: var(--gh-surface-2);
+    color: var(--gh-yellow);
+}
+
+html[data-theme="github"] .done {
+    background: var(--gh-surface-2);
+    color: var(--gh-green);
+}
+
+html[data-theme="github"] .TODO {
+    color: var(--gh-yellow);
+    background-color: var(--gh-surface);
+    border-color: var(--gh-todo-border);
+}
+
+html[data-theme="github"] .FIXME {
+    color: var(--gh-red);
+    background-color: var(--gh-surface);
+    border-color: var(--gh-fixme-border);
+}
+
+/* ===== 引用 ===== */
+html[data-theme="github"] blockquote {
+    background-color: var(--gh-quote-bg);
+    color: var(--gh-quote-fg);
+    border-left-color: var(--gh-blue);
+}
+
+html[data-theme="github"] blockquote:before {
+    text-shadow: 0 0 6px var(--gh-bg);
+}
+
+/* ===== 图注 / 页码 ===== */
+html[data-theme="github"] div.figure {
+    color: var(--gh-purple);
+}
+
+/* ===== 页脚 / 页眉 ===== */
+html[data-theme="github"] #preamble {
+    background-color: var(--gh-preamble-bg);
+    color: var(--gh-preamble-fg);
+    /* 用内阴影画顶部分隔线：不占盒模型，避免底栏高度 30px -> 31px */
+    box-shadow: inset 0 1px 0 var(--gh-border);
+}
+
+html[data-theme="github"] #postamble {
+    color: var(--gh-link);
+}
+
+/* ===== 翻页按钮 ===== */
+html[data-theme="github"] .previousButton,
+html[data-theme="github"] .nextButton {
+    color: var(--gh-border-strong);
+}
+
+html[data-theme="github"] .nextButton:hover,
+html[data-theme="github"] .previousButton:hover {
+    color: var(--gh-link);
+    background: var(--gh-btn-hover);
+}
+
+/* ===== 滚动条 ===== */
+html[data-theme="github"] .org-src-container:hover::-webkit-scrollbar-thumb {
+    background-color: var(--gh-scroll-thumb);
+}
+
+html[data-theme="github"] .org-src-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--gh-scroll-thumb-hover);
+}
+
+/* ===== base.css 中使用 !important 的状态色，需要同级覆盖 ===== */
+html[data-theme="github"] .BLOCK {
+    color: var(--gh-orange) !important;
+}
+
+html[data-theme="github"] .TODO {
+    color: var(--gh-yellow) !important;
+}
+
+html[data-theme="github"] .DOING {
+    color: var(--gh-cyan) !important;
+}
+
+html[data-theme="github"] .TEST {
+    color: var(--gh-purple) !important;
+}
+
+html[data-theme="github"] .DONE {
+    color: var(--gh-green) !important;
+}
+
+html[data-theme="github"] .REPORT {
+    color: var(--gh-fg-dim) !important;
+}

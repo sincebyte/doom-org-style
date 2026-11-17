@@ -1,0 +1,578 @@
+/*
+ * Catppuccin 主题
+ * ---------------------------------------------------------------
+ * 该文件只在 <html data-theme="catppuccin"> 时生效，因此可以与
+ * base.css 中导入的默认 Doom 主题共存；切换主题只需增删 data-theme。
+ *
+ * 结构约定（新增主题时照此复制即可）：
+ *   1. html[data-theme="<id>"].dark  { ...主题 token... }
+ *   2. html[data-theme="<id>"].light { ...主题 token... }
+ *   3. 组件覆盖规则统一以 html[data-theme="<id>"] 开头，
+ *      颜色全部引用上面的 token，因此明暗两套只需要一份规则。
+ */
+
+/* ===== 设计 token：Catppuccin Mocha（夜） ===== */
+html[data-theme="catppuccin"].dark {
+    --cc-bg: #1e1e2e;
+    --cc-bg-dot: #181825;
+    --cc-fg: #cdd6f4;
+    --cc-fg-strong: #cdd6f4;
+    --cc-fg-dim: #6c7086;
+    --cc-surface: #181825;
+    --cc-surface-2: #313244;
+    --cc-surface-3: #45475a;
+    --cc-border: #313244;
+    --cc-border-strong: #45475a;
+    --cc-blue: #89b4fa;
+    --cc-cyan: #89dceb;
+    --cc-purple: #cba6f7;
+    --cc-green: #a6e3a1;
+    --cc-orange: #fab387;
+    --cc-yellow: #f9e2af;
+    --cc-red: #f38ba8;
+    --cc-link: #89b4fa;
+    --cc-link-hover: #b4befe;
+    --cc-link-visited: #cba6f7;
+    --cc-heading-gradient: linear-gradient(to left, #cba6f7, #89b4fa, #94e2d5);
+    --cc-code-bg: #181825;
+    --cc-code-fg: #cdd6f4;
+    --cc-inline-code-bg: #313244;
+    --cc-inline-code-fg: #cba6f7;
+    --cc-inline-code-border: #45475a;
+    --cc-table-head-from: #313244;
+    --cc-table-head-to: #24243a;
+    --cc-table-head-fg: #89b4fa;
+    --cc-row-odd: #181825;
+    --cc-row-even: #1e1e2e;
+    --cc-row-hover: rgba(137, 180, 250, 0.14);
+    --cc-toc-bg: #181825;
+    --cc-preamble-bg: #181825;
+    --cc-preamble-fg: #cdd6f4;
+    --cc-shadow: rgba(0, 0, 0, 0.4);
+    --cc-notice-bg: #313244;
+    --cc-notice-info: #89dceb;
+    --cc-notice-warning: #f9e2af;
+    --cc-notice-tip: #a6e3a1;
+    --cc-quote-bg: rgba(137, 180, 250, 0.1);
+    --cc-quote-fg: #cdd6f4;
+    --cc-scroll-thumb: rgba(137, 180, 250, 0.3);
+    --cc-scroll-thumb-hover: rgba(137, 180, 250, 0.5);
+    /* 链接底色、目录悬停、Admonition、状态标记 */
+    --cc-link-tint: rgba(137, 180, 250, 0.09);
+    --cc-link-visited-tint: rgba(203, 166, 247, 0.09);
+    --cc-toc-hover: rgba(137, 180, 250, 0.12);
+    --cc-toc-sub-hover: rgba(249, 226, 175, 0.14);
+    --cc-notice-info-soft: rgba(137, 220, 235, 0.14);
+    --cc-notice-warning-soft: rgba(249, 226, 175, 0.14);
+    --cc-notice-tip-soft: rgba(166, 227, 161, 0.14);
+    --cc-todo-border: rgba(249, 226, 175, 0.4);
+    --cc-fixme-border: rgba(243, 139, 168, 0.4);
+    --cc-btn-hover: rgba(137, 180, 250, 0.14);
+    /* 主题面板 */
+    --ui-panel-bg: #181825;
+    --ui-panel-fg: #cdd6f4;
+    --ui-panel-muted: #6c7086;
+    --ui-panel-border: #313244;
+    --ui-panel-hover: #313244;
+    --ui-panel-active: rgba(203, 166, 247, 0.16);
+    --ui-accent: #cba6f7;
+    /* 明暗开关 */
+    --toggle-track-a: #45475a;
+    --toggle-track-b: #313244;
+    --toggle-ring: #585b70;
+    --toggle-fill-a: #cba6f7;
+    --toggle-fill-b: #89b4fa;
+    --toggle-glow: rgba(203, 166, 247, 0.35);
+    --toggle-knob-a: #f5e0dc;
+    --toggle-knob-b: #bac2de;
+    --ui-dock-fg: #cdd6f4;
+}
+
+/* ===== 设计 token：Catppuccin Latte（日） ===== */
+html[data-theme="catppuccin"].light {
+    --cc-bg: #eff1f5;
+    --cc-bg-dot: #e6e9ef;
+    --cc-fg: #4c4f69;
+    --cc-fg-strong: #303446;
+    --cc-fg-dim: #8c8fa1;
+    --cc-surface: #e6e9ef;
+    --cc-surface-2: #dce0e8;
+    --cc-surface-3: #ccd0da;
+    --cc-border: #bcc0cc;
+    --cc-border-strong: #acb0be;
+    --cc-blue: #1e66f5;
+    --cc-cyan: #179299;
+    --cc-purple: #8839ef;
+    --cc-green: #40a02b;
+    --cc-orange: #fe640b;
+    --cc-yellow: #df8e1d;
+    --cc-red: #d20f39;
+    --cc-link: #1e66f5;
+    --cc-link-hover: #209fb5;
+    --cc-link-visited: #8839ef;
+    --cc-heading-gradient: linear-gradient(to left, #8839ef, #1e66f5, #179299);
+    --cc-code-bg: #e6e9ef;
+    --cc-code-fg: #4c4f69;
+    --cc-inline-code-bg: #ccd0da;
+    --cc-inline-code-fg: #8839ef;
+    --cc-inline-code-border: #bcc0cc;
+    --cc-table-head-from: #e6e9ef;
+    --cc-table-head-to: #dce0e8;
+    --cc-table-head-fg: #1e66f5;
+    --cc-row-odd: #e6e9ef;
+    --cc-row-even: #eff1f5;
+    --cc-row-hover: rgba(30, 102, 245, 0.1);
+    --cc-toc-bg: #e6e9ef;
+    --cc-preamble-bg: #e6e9ef;
+    --cc-preamble-fg: #4c4f69;
+    --cc-shadow: rgba(76, 79, 105, 0.12);
+    --cc-notice-bg: #e6e9ef;
+    --cc-notice-info: #209fb5;
+    --cc-notice-warning: #b87500;
+    --cc-notice-tip: #2f7d20;
+    --cc-quote-bg: rgba(30, 102, 245, 0.07);
+    --cc-quote-fg: #4c4f69;
+    --cc-scroll-thumb: rgba(76, 79, 105, 0.25);
+    --cc-scroll-thumb-hover: rgba(76, 79, 105, 0.4);
+    /* 链接底色、目录悬停、Admonition、状态标记 */
+    --cc-link-tint: rgba(30, 102, 245, 0.08);
+    --cc-link-visited-tint: rgba(136, 57, 239, 0.08);
+    --cc-toc-hover: rgba(30, 102, 245, 0.1);
+    --cc-toc-sub-hover: rgba(223, 142, 29, 0.16);
+    --cc-notice-info-soft: rgba(32, 159, 181, 0.12);
+    --cc-notice-warning-soft: rgba(223, 142, 29, 0.16);
+    --cc-notice-tip-soft: rgba(64, 160, 43, 0.12);
+    --cc-todo-border: rgba(223, 142, 29, 0.4);
+    --cc-fixme-border: rgba(210, 15, 57, 0.4);
+    --cc-btn-hover: rgba(30, 102, 245, 0.1);
+    /* 主题面板 */
+    --ui-panel-bg: #e6e9ef;
+    --ui-panel-fg: #4c4f69;
+    --ui-panel-muted: #8c8fa1;
+    --ui-panel-border: #bcc0cc;
+    --ui-panel-hover: #dce0e8;
+    --ui-panel-active: rgba(136, 57, 239, 0.12);
+    --ui-accent: #8839ef;
+    /* 明暗开关 */
+    --toggle-track-a: #ccd0da;
+    --toggle-track-b: #bcc0cc;
+    --toggle-ring: #dce0e8;
+    --toggle-fill-a: #8839ef;
+    --toggle-fill-b: #1e66f5;
+    --toggle-glow: rgba(30, 102, 245, 0.35);
+    --toggle-knob-a: #ffffff;
+    --toggle-knob-b: #ccd0da;
+    --ui-dock-fg: #4c4f69;
+}
+
+/* ===== 页面底色与文字 ===== */
+html[data-theme="catppuccin"] body {
+    color: var(--cc-fg);
+    background: var(--cc-bg);
+    background-image: radial-gradient(
+        circle,
+        var(--cc-bg-dot) 0.01px,
+        transparent 2px
+    );
+    background-size: 5px 5px;
+}
+
+/* ===== 标题 ===== */
+html[data-theme="catppuccin"] .title,
+html[data-theme="catppuccin"] .subtitle,
+html[data-theme="catppuccin"] .section-number-2,
+html[data-theme="catppuccin"] .section-number-3,
+html[data-theme="catppuccin"] .section-number-4,
+html[data-theme="catppuccin"] .section-number-5,
+html[data-theme="catppuccin"] h1,
+html[data-theme="catppuccin"] h2,
+html[data-theme="catppuccin"] h3,
+html[data-theme="catppuccin"] .table-number {
+    background-image: var(--cc-heading-gradient);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+html[data-theme="catppuccin"] h2::after {
+    border-bottom-color: var(--cc-blue);
+}
+
+html[data-theme="catppuccin"] h3 {
+    border-bottom-color: var(--cc-purple);
+}
+
+html[data-theme="catppuccin"] h4 {
+    color: var(--cc-purple);
+    border-bottom-color: var(--cc-purple);
+}
+
+html[data-theme="catppuccin"] h5 {
+    border-bottom-color: var(--cc-purple);
+}
+
+/* ===== 链接 ===== */
+html[data-theme="catppuccin"] a:link,
+html[data-theme="catppuccin"] a:hover {
+    color: var(--cc-link);
+}
+
+html[data-theme="catppuccin"] a:visited {
+    color: var(--cc-link-visited);
+}
+
+html[data-theme="catppuccin"] a[href^="http"] {
+    color: var(--cc-link);
+    background-color: var(--cc-link-tint);
+}
+
+html[data-theme="catppuccin"] a[href^="http"]:visited {
+    color: var(--cc-link-visited);
+    background-color: var(--cc-link-visited-tint);
+}
+
+html[data-theme="catppuccin"] a[href^="http"]:link:hover,
+html[data-theme="catppuccin"] a[href^="http"]:visited:hover {
+    color: var(--cc-link-hover);
+}
+
+html[data-theme="catppuccin"] a[href^="http"]:after {
+    background-color: var(--cc-link);
+}
+
+/* ===== 侧边目录 ===== */
+html[data-theme="catppuccin"] #table-of-contents {
+    background: var(--cc-toc-bg);
+}
+
+html[data-theme="catppuccin"] #table-of-contents a:hover {
+    color: var(--cc-purple);
+}
+
+html[data-theme="catppuccin"] #table-of-contents > div > ul > li > a {
+    border-left-color: var(--cc-blue);
+}
+
+html[data-theme="catppuccin"] #table-of-contents > div > ul > li > ul > li > a {
+    color: var(--cc-fg);
+    border-left-color: var(--cc-yellow);
+}
+
+html[data-theme="catppuccin"] #table-of-contents > div > ul > li > a:hover,
+html[data-theme="catppuccin"] #table-of-contents > div > ul > li > a.active {
+    background-color: var(--cc-toc-hover);
+}
+
+html[data-theme="catppuccin"] #table-of-contents > div > ul > li > ul > li > a:hover,
+html[data-theme="catppuccin"] #table-of-contents > div > ul > li > ul > li > a.active {
+    background-color: var(--cc-toc-sub-hover);
+}
+
+/* ===== 表格 ===== */
+html[data-theme="catppuccin"] table {
+    border-color: var(--cc-border-strong);
+    box-shadow: 0 8px 22px -16px var(--cc-shadow);
+}
+
+html[data-theme="catppuccin"] th,
+html[data-theme="catppuccin"] td {
+    border-color: var(--cc-border-strong);
+}
+
+html[data-theme="catppuccin"] th {
+    background-image: linear-gradient(
+        180deg,
+        var(--cc-table-head-from),
+        var(--cc-table-head-to)
+    );
+    color: var(--cc-table-head-fg);
+    border-bottom-color: var(--cc-blue);
+    text-shadow: none;
+}
+
+html[data-theme="catppuccin"] caption {
+    color: var(--cc-fg-dim);
+}
+
+html[data-theme="catppuccin"] tbody tr:nth-child(odd) {
+    background-color: var(--cc-row-odd);
+}
+
+html[data-theme="catppuccin"] tbody tr:nth-child(even) {
+    background-color: var(--cc-row-even);
+}
+
+html[data-theme="catppuccin"] tbody tr:hover {
+    background-color: var(--cc-row-hover);
+}
+
+html[data-theme="catppuccin"] tbody tr:hover td:first-child {
+    box-shadow: inset 3px 0 0 var(--cc-blue);
+}
+
+/* ===== Admonition / notice ===== */
+html[data-theme="catppuccin"] div.notice,
+html[data-theme="catppuccin"] .notice-info,
+html[data-theme="catppuccin"] .notice-warning,
+html[data-theme="catppuccin"] .notice-example {
+    background: var(--cc-notice-bg);
+    color: var(--cc-fg-strong);
+    box-shadow:
+        0 0.2rem 0.5rem var(--cc-shadow),
+        0 0 0.0625rem rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="catppuccin"] div.notice,
+html[data-theme="catppuccin"] .notice-info {
+    border-left-color: var(--cc-notice-info);
+}
+
+html[data-theme="catppuccin"] div.notice::before,
+html[data-theme="catppuccin"] .notice-info::before {
+    background: var(--cc-notice-info-soft);
+    color: var(--cc-fg-strong);
+}
+
+html[data-theme="catppuccin"] div.notice::after,
+html[data-theme="catppuccin"] .notice-info::after {
+    color: var(--cc-notice-info);
+}
+
+html[data-theme="catppuccin"] .notice-info a,
+html[data-theme="catppuccin"] div.notice a {
+    color: var(--cc-notice-info);
+}
+
+html[data-theme="catppuccin"] .notice-warning {
+    border-left-color: var(--cc-notice-warning);
+}
+
+html[data-theme="catppuccin"] .notice-warning::before {
+    background: var(--cc-notice-warning-soft);
+    color: var(--cc-fg-strong);
+}
+
+html[data-theme="catppuccin"] .notice-warning::after {
+    color: var(--cc-notice-warning);
+}
+
+html[data-theme="catppuccin"] .notice-warning a {
+    color: var(--cc-notice-warning);
+}
+
+html[data-theme="catppuccin"] .notice-example {
+    border-left-color: var(--cc-notice-tip);
+}
+
+html[data-theme="catppuccin"] .notice-example::before {
+    background: var(--cc-notice-tip-soft);
+    color: var(--cc-fg-strong);
+}
+
+html[data-theme="catppuccin"] .notice-example::after {
+    color: var(--cc-notice-tip);
+}
+
+html[data-theme="catppuccin"] .notice-example a {
+    color: var(--cc-notice-tip);
+}
+
+/* ===== 代码块 ===== */
+html[data-theme="catppuccin"] pre {
+    color: var(--cc-code-fg);
+    background-color: var(--cc-code-bg);
+}
+
+html[data-theme="catppuccin"] pre.example {
+    background: var(--cc-surface-2);
+    color: var(--cc-fg);
+}
+
+html[data-theme="catppuccin"] pre.src,
+html[data-theme="catppuccin"] .org-src-container::after {
+    background: linear-gradient(180deg, var(--cc-bg) 0%, var(--cc-code-bg) 100%);
+}
+
+html[data-theme="catppuccin"] .org-src-container {
+    border-color: var(--cc-border-strong);
+    box-shadow: 0 6px 20px var(--cc-shadow);
+}
+
+html[data-theme="catppuccin"] pre.src:has(.linenr)::after {
+    background: var(--cc-border-strong);
+}
+
+html[data-theme="catppuccin"] .click-btn-style::before {
+    border-color: var(--cc-green);
+}
+
+/* ===== 代码高亮 ===== */
+html[data-theme="catppuccin"] span.org-string {
+    color: var(--cc-green);
+}
+
+html[data-theme="catppuccin"] span.org-keyword {
+    color: var(--cc-purple);
+}
+
+html[data-theme="catppuccin"] span.org-variable-name {
+    color: var(--cc-orange);
+}
+
+html[data-theme="catppuccin"] span.org-clojure-keyword {
+    color: var(--cc-cyan);
+}
+
+html[data-theme="catppuccin"] span.org-comment,
+html[data-theme="catppuccin"] span.org-comment-delimiter {
+    color: var(--cc-fg-dim);
+}
+
+html[data-theme="catppuccin"] span.org-rainbow-delimiters-depth-1,
+html[data-theme="catppuccin"] span.org-rainbow-delimiters-depth-5 {
+    color: var(--cc-fg-dim);
+}
+
+html[data-theme="catppuccin"] span.org-rainbow-delimiters-depth-2,
+html[data-theme="catppuccin"] span.org-rainbow-delimiters-depth-6 {
+    color: var(--cc-cyan);
+}
+
+html[data-theme="catppuccin"] span.org-rainbow-delimiters-depth-3,
+html[data-theme="catppuccin"] span.org-rainbow-delimiters-depth-7 {
+    color: var(--cc-blue);
+}
+
+html[data-theme="catppuccin"] span.org-rainbow-delimiters-depth-4,
+html[data-theme="catppuccin"] span.org-rainbow-delimiters-depth-8 {
+    color: var(--cc-purple);
+}
+
+html[data-theme="catppuccin"] .src-java,
+html[data-theme="catppuccin"] .src {
+    color: var(--cc-code-fg);
+}
+
+html[data-theme="catppuccin"] .src-org span:not(.linenr) {
+    color: var(--cc-code-fg) !important;
+}
+
+/* ===== 行内代码 / kbd / verbatim ===== */
+html[data-theme="catppuccin"] code {
+    color: var(--cc-code-fg);
+}
+
+html[data-theme="catppuccin"] p > code,
+html[data-theme="catppuccin"] li > code,
+html[data-theme="catppuccin"] td > code,
+html[data-theme="catppuccin"] .verbatim {
+    color: var(--cc-inline-code-fg);
+    background-color: var(--cc-inline-code-bg);
+    border-color: var(--cc-inline-code-border);
+}
+
+html[data-theme="catppuccin"] kbd {
+    color: var(--cc-code-fg);
+    background-color: var(--cc-surface-3);
+}
+
+/* ===== 任务标记 / 标签 ===== */
+html[data-theme="catppuccin"] .tag span {
+    background: var(--cc-surface-3);
+    color: var(--cc-fg-strong);
+}
+
+html[data-theme="catppuccin"] .todo {
+    background: var(--cc-surface-2);
+    color: var(--cc-yellow);
+}
+
+html[data-theme="catppuccin"] .done {
+    background: var(--cc-surface-2);
+    color: var(--cc-green);
+}
+
+html[data-theme="catppuccin"] .TODO {
+    color: var(--cc-yellow);
+    background-color: var(--cc-surface);
+    border-color: var(--cc-todo-border);
+}
+
+html[data-theme="catppuccin"] .FIXME {
+    color: var(--cc-red);
+    background-color: var(--cc-surface);
+    border-color: var(--cc-fixme-border);
+}
+
+/* ===== 引用 ===== */
+html[data-theme="catppuccin"] blockquote {
+    background-color: var(--cc-quote-bg);
+    color: var(--cc-quote-fg);
+    border-left-color: var(--cc-blue);
+}
+
+html[data-theme="catppuccin"] blockquote:before {
+    text-shadow: 0 0 6px var(--cc-bg);
+}
+
+/* ===== 图注 / 页码 ===== */
+html[data-theme="catppuccin"] div.figure {
+    color: var(--cc-purple);
+}
+
+/* ===== 页脚 / 页眉 ===== */
+html[data-theme="catppuccin"] #preamble {
+    background-color: var(--cc-preamble-bg);
+    color: var(--cc-preamble-fg);
+    /* 用内阴影画顶部分隔线：不占盒模型，避免底栏高度 30px -> 31px */
+    box-shadow: inset 0 1px 0 var(--cc-border);
+}
+
+html[data-theme="catppuccin"] #postamble {
+    color: var(--cc-link);
+}
+
+/* ===== 翻页按钮 ===== */
+html[data-theme="catppuccin"] .previousButton,
+html[data-theme="catppuccin"] .nextButton {
+    color: var(--cc-border-strong);
+}
+
+html[data-theme="catppuccin"] .nextButton:hover,
+html[data-theme="catppuccin"] .previousButton:hover {
+    color: var(--cc-link);
+    background: var(--cc-btn-hover);
+}
+
+/* ===== 滚动条 ===== */
+html[data-theme="catppuccin"] .org-src-container:hover::-webkit-scrollbar-thumb {
+    background-color: var(--cc-scroll-thumb);
+}
+
+html[data-theme="catppuccin"] .org-src-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cc-scroll-thumb-hover);
+}
+
+/* ===== base.css 中使用 !important 的状态色，需要同级覆盖 ===== */
+html[data-theme="catppuccin"] .BLOCK {
+    color: var(--cc-orange) !important;
+}
+
+html[data-theme="catppuccin"] .TODO {
+    color: var(--cc-yellow) !important;
+}
+
+html[data-theme="catppuccin"] .DOING {
+    color: var(--cc-cyan) !important;
+}
+
+html[data-theme="catppuccin"] .TEST {
+    color: var(--cc-purple) !important;
+}
+
+html[data-theme="catppuccin"] .DONE {
+    color: var(--cc-green) !important;
+}
+
+html[data-theme="catppuccin"] .REPORT {
+    color: var(--cc-fg-dim) !important;
+}

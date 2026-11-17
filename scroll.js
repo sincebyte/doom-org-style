@@ -10,6 +10,31 @@
  * stylesheet: 主题样式文件；为 null 表示主题已内置在 base.css（Doom）
  * swatches  : 面板预览色板，按明暗模式分别给出
  */
+
+/**
+ * 静态资源基准地址：默认取 scroll.js 自身所在目录。
+ * 页面与静态资源分开部署时（HTML 在站点、JS/CSS 在 CDN），
+ * base.css、themes/*.css、tex-mml-chtml.js 都会跟随 scroll.js 从 CDN 加载，
+ * 而不是页面所在目录。
+ * 如需固定到其他地址，可在引入 scroll.js 之前设置：
+ *   window.DOOM_ASSET_BASE_URL = "https://cdn.example.com/doc/";
+ * 旧的 DOOM_THEME_BASE_URL 仍然可用。
+ */
+const ASSET_BASE_URL = (function () {
+    const configured =
+        window.DOOM_ASSET_BASE_URL || window.DOOM_THEME_BASE_URL;
+    if (configured) {
+        return configured.replace(/\/?$/, "/");
+    }
+    const script =
+        document.currentScript ||
+        document.querySelector('script[src*="scroll.js"]');
+    if (!script || !script.src) {
+        return "";
+    }
+    return script.src.replace(/[^/]*$/, "");
+})();
+
 const THEME_REGISTRY = [
     {
         id: "doom",
@@ -31,6 +56,26 @@ const THEME_REGISTRY = [
             dark: ["#1a1b26", "#bb9af7", "#7aa2f7", "#7dcfff"],
         },
     },
+    {
+        id: "github",
+        name: "GitHub",
+        description: "GitHub · Light / Dark",
+        stylesheet: "themes/github.css",
+        swatches: {
+            light: ["#ffffff", "#0969da", "#8250df", "#1f2328"],
+            dark: ["#0d1117", "#2f81f7", "#bc8cff", "#e6edf3"],
+        },
+    },
+    {
+        id: "catppuccin",
+        name: "Catppuccin",
+        description: "Catppuccin · Latte / Mocha",
+        stylesheet: "themes/catppuccin.css",
+        swatches: {
+            light: ["#eff1f5", "#1e66f5", "#8839ef", "#4c4f69"],
+            dark: ["#1e1e2e", "#89b4fa", "#cba6f7", "#cdd6f4"],
+        },
+    },
 ];
 
 const DEFAULT_THEME_ID = THEME_REGISTRY[0].id;
@@ -41,24 +86,203 @@ const THEME_STYLESHEET_ID = "org-theme-stylesheet";
 let currentThemeId = DEFAULT_THEME_ID;
 let currentMode = "light";
 
-$(document).ready(function () {
-    if (
-        localStorage.getItem(MODE_STORAGE_KEY) === "null" ||
-        localStorage.getItem(MODE_STORAGE_KEY) === null
-    ) {
-        localStorage.setItem(MODE_STORAGE_KEY, "light");
-        window.location.reload();
+/*
+ * ===== 静态资源自举 =====
+ *
+ * 页面只需要引入 scroll.js：
+ *   - base.css 与首屏主题样式在解析阶段自动写入；
+ *   - jQuery 缺失时自动加载；
+ *   - 页面包含公式时自动加载 tex-mml-chtml.js。
+ * 所有相对路径都以 scroll.js 自身所在目录为基准。
+ */
+const BASE_STYLESHEET_ID = "org-base-stylesheet";
+const PARSER_BLOCKING = (function () {
+    const script = document.currentScript;
+    return !!script && !script.async && !script.defer;
+})();
+const JQUERY_URL = resolveAssetUrl(
+    window.DOOM_JQUERY_URL ||
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js",
+);
+const MATHJAX_FILE = "tex-mml-chtml.js";
+
+/** 将相对静态资源解析到 scroll.js 所在目录；绝对地址原样返回 */
+function resolveAssetUrl(path) {
+    if (!path) {
+        return null;
     }
-    clearPreamble();
-    createCheckbox();
-    bindEvent();
-    createShiftButton();
-    delma();
-    removeBoxDrawingChars();
-    wrapAsciiArrowChars();
-    addVerbatimClass();
-    initTheme();
-});
+    if (
+        /^[a-z][a-z0-9+.-]*:/i.test(path) ||
+        path.indexOf("//") === 0 ||
+        path.charAt(0) === "/"
+    ) {
+        return path;
+    }
+    return ASSET_BASE_URL + path.replace(/^\.?\//, "");
+}
+
+/**
+ * 把主题 CSS 的相对路径解析到 scroll.js 所在目录。
+ * 已写成绝对 URL 或站点根路径时保持原样。
+ */
+function resolveThemeStylesheet(stylesheet) {
+    return resolveAssetUrl(stylesheet);
+}
+
+function hasStylesheet(fragment) {
+    return Array.prototype.some.call(
+        document.querySelectorAll('link[rel="stylesheet"]'),
+        function (link) {
+            return (link.getAttribute("href") || "").indexOf(fragment) !== -1;
+        },
+    );
+}
+
+/** 解析阶段用 document.write，保证样式参与首屏渲染；其余情况改用 DOM API */
+function writeStylesheet(href, id) {
+    if (PARSER_BLOCKING && document.readyState === "loading") {
+        document.write(
+            "<link" +
+                (id ? ' id="' + id + '"' : "") +
+                ' rel="stylesheet" href="' +
+                href +
+                '">',
+        );
+        return;
+    }
+    const link = document.createElement("link");
+    if (id) {
+        link.id = id;
+    }
+    link.rel = "stylesheet";
+    link.href = href;
+    document.head.appendChild(link);
+}
+
+/** 旧模板可能已经手写了 base.css，页面就绪后去掉自动注入的重复份 */
+function dedupeBaseStylesheet() {
+    const injected = document.getElementById(BASE_STYLESHEET_ID);
+    if (!injected) {
+        return;
+    }
+    const hasManualBase = Array.prototype.some.call(
+        document.querySelectorAll('link[rel="stylesheet"]'),
+        function (link) {
+            if (link === injected) {
+                return false;
+            }
+            const href = link.getAttribute("href") || "";
+            return (
+                href.indexOf("base.css") !== -1 ||
+                href.indexOf("org_css.css") !== -1
+            );
+        },
+    );
+    if (hasManualBase) {
+        injected.remove();
+    }
+}
+
+/** 自动引入 base.css，并在首屏恢复上次选择的主题 */
+function bootstrapStyles() {
+    if (!hasStylesheet("base.css") && !hasStylesheet("org_css.css")) {
+        const baseHref = resolveAssetUrl("base.css");
+        if (baseHref) {
+            writeStylesheet(baseHref, BASE_STYLESHEET_ID);
+        }
+    }
+
+    const theme = getTheme(
+        localStorage.getItem(THEME_STORAGE_KEY) || DEFAULT_THEME_ID,
+    );
+    const mode =
+        localStorage.getItem(MODE_STORAGE_KEY) === "dark" ? "dark" : "light";
+    const root = document.documentElement;
+    root.classList.remove(mode === "dark" ? "light" : "dark");
+    root.classList.add(mode);
+    root.setAttribute("data-theme", theme.id);
+
+    const themeHref = resolveThemeStylesheet(theme.stylesheet);
+    const existingTheme = document.getElementById(THEME_STYLESHEET_ID);
+    if (!themeHref) {
+        if (existingTheme) {
+            existingTheme.remove();
+        }
+        return;
+    }
+    if (existingTheme) {
+        existingTheme.setAttribute("href", themeHref);
+    } else {
+        writeStylesheet(themeHref, THEME_STYLESHEET_ID);
+    }
+}
+
+function loadScript(src, onload) {
+    const script = document.createElement("script");
+    script.src = src;
+    if (onload) {
+        script.addEventListener("load", onload);
+    }
+    document.head.appendChild(script);
+}
+
+/** 页面已有 jQuery 就直接启动，否则动态加载后启动 */
+function startWithJQuery() {
+    if (window.jQuery) {
+        startApp();
+        return;
+    }
+    loadScript(JQUERY_URL, startApp);
+}
+
+/** 只在页面确实包含公式时加载 MathJax */
+function ensureMathJax() {
+    if (
+        window.MathJax ||
+        document.querySelector('script[src*="tex-mml-chtml.js"]')
+    ) {
+        return;
+    }
+    const body = document.body;
+    if (!body) {
+        return;
+    }
+    const hasMath =
+        document.querySelector(
+            "span.math, div.math, script[type^='math/tex']",
+        ) ||
+        body.textContent.indexOf("\\(") !== -1 ||
+        body.textContent.indexOf("\\[") !== -1;
+    if (!hasMath) {
+        return;
+    }
+    const src = resolveAssetUrl(MATHJAX_FILE);
+    if (src) {
+        loadScript(src);
+    }
+}
+
+function startApp() {    $(document).ready(function () {
+        if (
+            localStorage.getItem(MODE_STORAGE_KEY) === "null" ||
+            localStorage.getItem(MODE_STORAGE_KEY) === null
+        ) {
+            localStorage.setItem(MODE_STORAGE_KEY, "light");
+            window.location.reload();
+        }
+        dedupeBaseStylesheet();
+        clearPreamble();
+        createCheckbox();
+        bindEvent();
+        createShiftButton();
+        delma();
+        removeBoxDrawingChars();
+        wrapAsciiArrowChars();
+        addVerbatimClass();
+        initTheme();
+        ensureMathJax();
+    });
+}
 
 /** 底栏不再显示 "Made by" 文案，把位置留给主题入口 */
 function clearPreamble() {
@@ -369,23 +593,24 @@ function toggleThemePanel() {
 
 /** 按需加载主题样式表；Doom 已内置，stylesheet 为 null 时移除外部样式 */
 function ensureThemeStylesheet(theme) {
+    const stylesheetUrl = resolveThemeStylesheet(theme.stylesheet);
     const existing = document.getElementById(THEME_STYLESHEET_ID);
-    if (!theme.stylesheet) {
+    if (!stylesheetUrl) {
         if (existing) {
             existing.remove();
         }
         return;
     }
     if (existing) {
-        if (existing.getAttribute("href") !== theme.stylesheet) {
-            existing.setAttribute("href", theme.stylesheet);
+        if (existing.getAttribute("href") !== stylesheetUrl) {
+            existing.setAttribute("href", stylesheetUrl);
         }
         return;
     }
     const link = document.createElement("link");
     link.id = THEME_STYLESHEET_ID;
     link.rel = "stylesheet";
-    link.href = theme.stylesheet;
+    link.href = stylesheetUrl;
     document.head.appendChild(link);
 }
 
@@ -632,3 +857,5 @@ function setTheme(theme) {
 }
 
 // 初始化在 $(document).ready 中执行（确保主题面板已经创建）
+bootstrapStyles();
+startWithJQuery();
